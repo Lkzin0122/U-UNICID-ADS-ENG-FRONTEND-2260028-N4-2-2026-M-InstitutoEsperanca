@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Instituto Esperança</title>
+    <meta name="description" content="Entre em contato com o Instituto Esperança ou candidate-se como voluntário. Apoio a pessoas e famílias em situação de vulnerabilidade.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contato.css">
+</head>
+<body>
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
+
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">Instituto Esperança</a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button">Menu</label>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="impacto.html">Impacto</a></li>
+                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="midia.html">Mídia</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="contato.html" aria-current="page">Contato</a></li>
+                    <li><a class="nav-cta" href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        <section class="page-hero" aria-labelledby="titulo-contato">
+            <div class="container">
+                <p class="section-label">Fale conosco</p>
+                <h1 id="titulo-contato">Contato</h1>
+                <p>
+                    O Instituto Esperança é uma proposta de organização social voltada ao
+                    apoio de pessoas e famílias em situação de vulnerabilidade. Use o
+                    formulário abaixo para enviar sua mensagem ou para se candidatar ao
+                    voluntariado.
+                </p>
+            </div>
+        </section>
+
+        <section class="contato-formulario" aria-labelledby="titulo-formulario">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Mensagem</p>
+                    <h2 id="titulo-formulario">Envie sua mensagem</h2>
+                    <p>
+                        Preencha os campos com seus dados. Responderemos o mais breve
+                        possível.
+                    </p>
+                </div>
+
+                <form class="form-contato" action="#" method="post">
+                    <div class="campo">
+                        <label for="nome">Nome</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            autocomplete="name"
+                            required
+                            placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            placeholder="seuemail@exemplo.com">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            autocomplete="tel"
+                            required
+                            placeholder="(11) 99999-9999">
+                    </div>
+
+                    <div class="campo">
+                        <label for="descricao">Descrição do contato</label>
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            rows="6"
+                            required
+                            placeholder="Conte como podemos ajudar ou o motivo do seu contato."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="voluntariado" id="voluntario" aria-labelledby="titulo-voluntario">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-label">Participe</p>
+                    <h2 id="titulo-voluntario">Seja voluntário</h2>
+                    <p>
+                        Doe seu tempo e talentos em iniciativas de educação, inclusão de
+                        pessoas com deficiência (PCD), apoio a crianças e adolescentes,
+                        mães solo, famílias em situação de desabrigo e conscientização
+                        ambiental.
+                    </p>
+                </div>
+
+                <form class="form-voluntario" action="#" method="post">
+                    <div class="campo">
+                        <label for="vol-nome">Nome</label>
+                        <input
+                            type="text"
+                            id="vol-nome"
+                            name="vol-nome"
+                            autocomplete="name"
+                            required
+                            placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="vol-email">E-mail</label>
+                        <input
+                            type="email"
+                            id="vol-email"
+                            name="vol-email"
+                            autocomplete="email"
+                            required
+                            placeholder="seuemail@exemplo.com">
+                    </div>
+
+                    <div class="campo">
+                        <label for="vol-telefone">Telefone</label>
+                        <input
+                            type="tel"
+                            id="vol-telefone"
+                            name="vol-telefone"
+                            autocomplete="tel"
+                            required
+                            placeholder="(11) 99999-9999">
+                    </div>
+
+                    <div class="campo">
+                        <label for="vol-area">Área de interesse</label>
+                        <select id="vol-area" name="vol-area" required>
+                            <option value="" disabled selected>Selecione uma área</option>
+                            <option value="educacao">Educação</option>
+                            <option value="pcd">Inclusão de pessoas com deficiência (PCD)</option>
+                            <option value="criancas">Apoio a crianças e adolescentes</option>
+                            <option value="maes-solo">Apoio a mães solo</option>
+                            <option value="desabrigo">Famílias em situação de desabrigo</option>
+                            <option value="ambiental">Conscientização ambiental</option>
+                            <option value="outra">Outra</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="vol-mensagem">Por que deseja ser voluntário?</label>
+                        <textarea
+                            id="vol-mensagem"
+                            name="vol-mensagem"
+                            rows="5"
+                            required
+                            placeholder="Conte um pouco sobre você e como gostaria de contribuir."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Quero ser voluntário</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-about">
+                <p class="footer-logo">Instituto Esperança</p>
+                <p>Esperança que acolhe, solidariedade que transforma.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <p class="footer-bottom">
+                © 2026 Instituto Esperança. Projeto acadêmico UNICID.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

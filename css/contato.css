@@ -1,0 +1,157 @@
+/* ==============================
+   Página Contato — mobile-first
+   ============================== */
+
+.page-hero {
+    background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+    color: var(--branco);
+    padding: 3rem 0 2.5rem;
+}
+
+.page-hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+}
+
+.page-hero p {
+    max-width: 44rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.contato-formulario {
+    background: var(--creme);
+}
+
+.contato-formulario .section-header,
+.voluntariado .section-header {
+    margin-bottom: 1.75rem;
+}
+
+.contato-formulario h2,
+.voluntariado h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 0.65rem;
+}
+
+.contato-formulario .section-header p:last-child,
+.voluntariado .section-header p:last-child {
+    color: var(--texto-claro);
+    max-width: 40rem;
+}
+
+.form-contato,
+.form-voluntario {
+    max-width: 36rem;
+    display: grid;
+    gap: 1.15rem;
+}
+
+.campo {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.campo label {
+    font-weight: 700;
+    color: var(--azul-escuro);
+    font-size: 0.95rem;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #d5dde3;
+    border-radius: 10px;
+    background: var(--branco);
+    color: var(--texto);
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.campo select {
+    cursor: pointer;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--azul-escuro) 50%),
+        linear-gradient(135deg, var(--azul-escuro) 50%, transparent 50%);
+    background-position: calc(100% - 18px) calc(50% - 3px),
+        calc(100% - 12px) calc(50% - 3px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 2.5rem;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #8a97a0;
+}
+
+.campo input:hover,
+.campo textarea:hover,
+.campo select:hover {
+    border-color: var(--azul);
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    outline: none;
+    border-color: var(--azul-escuro);
+    box-shadow: 0 0 0 3px rgba(52, 124, 207, 0.25);
+}
+
+.form-contato .btn,
+.form-voluntario .btn {
+    justify-self: start;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    margin-top: 0.35rem;
+}
+
+.voluntariado {
+    background: var(--branco);
+}
+
+.voluntariado .form-voluntario {
+    background: var(--azul-claro);
+    border-left: 6px solid var(--azul);
+    border-radius: 14px;
+    padding: 1.35rem 1.25rem;
+}
+
+@media (min-width: 700px) {
+    .form-contato,
+    .form-voluntario {
+        max-width: 44rem;
+    }
+
+    .voluntariado .form-voluntario {
+        padding: 1.75rem 1.75rem;
+    }
+}
+
+@media (min-width: 960px) {
+    .page-hero {
+        padding: 4.5rem 0 3.5rem;
+    }
+
+    .contato-formulario,
+    .voluntariado {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .voluntariado .form-voluntario {
+        max-width: 48rem;
+        padding: 2rem 2.25rem;
+    }
+}
