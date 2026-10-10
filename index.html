@@ -3,76 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Instituto Esperança | Solidariedade que transforma</title>
-
-    <meta name="description" content="O Instituto Esperança atua para transformar vidas por meio da solidariedade, acolhimento e ajuda humanitária.">
-    <link rel="stylesheet" href="style.css">i
-        
+    <meta name="description" content="O Instituto Esperança é uma proposta de organização social voltada ao apoio de pessoas e famílias em situação de vulnerabilidade.">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-    <!-- ==============================
-         HEADER
-    ============================== -->
+    <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
 
     <header>
         <div class="container navbar">
-            <a href="#" class="logo">
-                Instituto Esperança
-            </a>
-            <nav>
-                
-                        <a href="" class="nav-button">
-                            Faça parte
-                        </a>
-                    </li>
+            <a href="index.html" class="logo">Instituto Esperança</a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-button">Menu</label>
+
+            <nav class="site-nav" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="index.html" aria-current="page">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="impacto.html">Impacto</a></li>
+                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="midia.html">Mídia</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a class="nav-cta" href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-
-    <!-- ==============================
-         HERO
-    ============================== -->
-
-    <main>
-
+    <main id="conteudo-principal">
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="esperanca">
-                        Esperança que acolhe.
-                    </h1>
-                    
-                    <h1 class="hero-highlight">
-                        Solidariedade que transforma.
-                    </h1>
+                    <h1 class="esperanca">Esperança que acolhe.</h1>
+                    <p class="hero-highlight">Solidariedade que transforma.</p>
                     <p>
-                        Trabalhamos para levar acolhimento, dignidade e
-                        novas oportunidades a pessoas e comunidades que
-                        mais precisam.
+                        Trabalhamos para levar acolhimento, dignidade e novas oportunidades
+                        a pessoas e comunidades que mais precisam.
                     </p>
                     <div class="buttons">
-
-                        <a href="#atuacao" class="btn btn-primary">
-                            Conheça nosso trabalho
-                        </a>
-
-                        <a href="#ajudar" class="btn btn-outline">
-                            Quero ajudar
-                        </a>
+                        <a href="sobre.html" class="btn btn-primary">Conheça nosso trabalho</a>
+                        <a href="#ajudar" class="btn btn-outline">Quero ajudar</a>
                     </div>
                 </div>
             </div>
         </section>
-
-
-        <!-- ==============================
-             NÚMEROS
-        ============================== -->
 
         <section class="numbers">
             <div class="container numbers-grid">
@@ -80,7 +58,6 @@
                     <strong>+10 mil</strong>
                     <span>Pessoas alcançadas</span>
                 </div>
-
                 <div class="number">
                     <strong>+50</strong>
                     <span>Ações realizadas</span>
@@ -89,7 +66,6 @@
                     <strong>+20</strong>
                     <span>Comunidades atendidas</span>
                 </div>
-
                 <div class="number">
                     <strong>+100</strong>
                     <span>Voluntários envolvidos</span>
@@ -97,165 +73,111 @@
             </div>
         </section>
 
-
-        <!-- ==============================
-             SOBRE
-        ============================== -->
-
         <section class="about" id="sobre">
-
             <div class="container about-grid">
-
                 <div class="about-image">
-
                     <img
-                        src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1000&q=85"
-                        alt="Pessoas realizando uma ação humanitária"
-                    >
-
+                        src="img/comunidade-acolhimento.jpg"
+                        alt="Grupo de pessoas reunidas ao ar livre, representando acolhimento comunitário e apoio solidário.">
                     <div class="about-badge">
                         <strong>Nossa missão</strong>
                         <span>Transformar vidas</span>
                     </div>
-
                 </div>
-
                 <div class="about-text">
-
-                    <div class="section-label">
-                        Quem somos
-                    </div>
-
-                    <h2>
-                        Acreditamos que ninguém deve caminhar sozinho.
-                    </h2>
-
+                    <p class="section-label">Quem somos</p>
+                    <h2>Acreditamos que ninguém deve caminhar sozinho.</h2>
                     <p>
-                        O Instituto Esperança nasceu do desejo de transformar
-                        solidariedade em ações concretas. Atuamos junto a
-                        pessoas e comunidades em situação de vulnerabilidade,
-                        oferecendo apoio e construindo caminhos para um futuro
-                        mais digno.
+                        O Instituto Esperança é uma proposta de organização social voltada
+                        ao apoio de pessoas e famílias em situação de vulnerabilidade.
+                        Atuamos com educação, inclusão de pessoas com deficiência (PCD),
+                        apoio a crianças e adolescentes, mães solo e famílias em situação
+                        de desabrigo, além da conscientização ambiental.
                     </p>
-
                     <p>
-                        Nosso trabalho é feito por pessoas que acreditam no
-                        poder da união, da empatia e da ação.
+                        Nosso trabalho é feito por pessoas que acreditam no poder da união,
+                        da empatia e da ação.
                     </p>
-
                     <ul class="check-list">
-
                         <li>
-                            <span class="check">✓</span>
+                            <span class="check" aria-hidden="true">✓</span>
                             <span>Acolhimento e assistência humanitária</span>
                         </li>
-
                         <li>
-                            <span class="check">✓</span>
-                            <span>Ações sociais em comunidades</span>
+                            <span class="check" aria-hidden="true">✓</span>
+                            <span>Inclusão e educação</span>
                         </li>
-
                         <li>
-                            <span class="check">✓</span>
-                            <span>Mobilização de voluntários</span>
+                            <span class="check" aria-hidden="true">✓</span>
+                            <span>Apoio a famílias e comunidades</span>
                         </li>
-
                         <li>
-                            <span class="check">✓</span>
-                            <span>Educação de qualidade</span>
+                            <span class="check" aria-hidden="true">✓</span>
+                            <span>Conscientização ambiental</span>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
-         
-        <!-- ==============================
-             COMO AJUDAR
-        ============================== -->
 
         <section class="help" id="ajudar">
-
             <div class="container">
-
                 <div class="section-header">
-
-                    <div class="section-label">
-                        Faça parte
-                    </div>
-
-                    <h2>
-                        Você também pode fazer a esperança chegar mais longe.
-                    </h2>
-
-                    <p>
-                        Existem várias maneiras de contribuir com o nosso
-                        trabalho.
-                    </p>
-
+                    <p class="section-label">Faça parte</p>
+                    <h2>Você também pode fazer a esperança chegar mais longe.</h2>
+                    <p>Existem várias maneiras de contribuir com o nosso trabalho.</p>
                 </div>
                 <div class="donation">
-                    
-                        <p>Sua solidariedade pode chegar de diferentes formas.</p>
-                        <p>Faça uma doação monetária e ajude a manter nossas ações.</p>
-                        <p>Doe uma cesta básica e leve alimento a quem mais precisa.</p>
-                        <p>Cada gesto de solidariedade ajuda a levar alimento, dignidade e esperança.</p>
-                </div>
-                    </div>
+                    <p>Sua solidariedade pode chegar de diferentes formas.</p>
+                    <p>Faça uma doação monetária e ajude a manter nossas ações.</p>
+                    <p>Doe uma cesta básica e leve alimento a quem mais precisa.</p>
+                    <p>Cada gesto de solidariedade ajuda a levar alimento, dignidade e esperança.</p>
                 </div>
             </div>
         </section>
-
-
-        <!-- ==============================
-             CTA
-        ============================== -->
 
         <section class="cta">
-
             <div class="container">
-
                 <div class="cta-box">
-
                     <div>
-                        <h2>
-                            Juntos podemos fazer mais.
-                        </h2>
+                        <h2>Juntos podemos fazer mais.</h2>
                         <p>
-                            Seja parte dessa corrente de solidariedade.
-                            Toda ajuda importa e cada gesto pode transformar
-                            uma vida.
+                            Seja parte dessa corrente de solidariedade. Toda ajuda importa
+                            e cada gesto pode transformar uma vida.
                         </p>
                     </div>
-
-                    <a href="#contato" class="btn btn-primary">
-                        Quero fazer parte
-                    </a>
+                    <a href="contato.html" class="btn btn-primary">Quero fazer parte</a>
                 </div>
             </div>
         </section>
-       
-    <!-- ==============================
-         FOOTER
-    ============================== -->
+    </main>
 
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        Instituto Esperança
-                    </div>
-                    <p>
-                        Esperança que acolhe, solidariedade que transforma.
-                        Trabalhamos para construir um futuro mais humano,
-                        justo e solidário.
-                    </p>
-            <div class="footer-bottom">
-
-                <span>
-                    © 2026 Instituto Esperança. Todos os direitos reservados.
-                </span>
+            <div class="footer-about">
+                <p class="footer-logo">Instituto Esperança</p>
+                <p>
+                    Esperança que acolhe, solidariedade que transforma. Trabalhamos para
+                    construir um futuro mais humano, justo e solidário.
+                </p>
             </div>
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="projetos.html">Projetos</a></li>
+                    <li><a href="impacto.html">Impacto</a></li>
+                    <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="midia.html">Mídia</a></li>
+                    <li><a href="noticias.html">Notícias</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
+                </ul>
+            </nav>
+            <p class="footer-bottom">
+                © 2026 Instituto Esperança. Todos os direitos reservados.
+            </p>
         </div>
     </footer>
 </body>
