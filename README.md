@@ -327,8 +327,7 @@ visão.
 
   **Jonathan Santos dos Anjos**       Documentação, programação e design.
 
-  **Addiel Anthonny Arguedas          Documentação, programação e design.
-  Sangalli**                          
+  **Addiel Anthonny Arguedas Sangalli**  Documentação, programação e design.                          
   -----------------------------------------------------------------------
 
 As responsabilidades poderão ser compartilhadas e ajustadas conforme a
