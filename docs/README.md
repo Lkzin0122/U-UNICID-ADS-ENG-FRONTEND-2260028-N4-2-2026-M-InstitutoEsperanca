@@ -329,6 +329,8 @@ visão.
 
   **Addiel Anthonny Arguedas Sangalli**   Documentação, programação e design.
 
+  **Caio Rian**    Documentação, programação e design.
+
   **                          
   -----------------------------------------------------------------------
 
