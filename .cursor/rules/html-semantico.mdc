@@ -1,0 +1,56 @@
+---
+description: HTML semântico, SEO básico e navegação das dez páginas
+globs: "**/*.html"
+alwaysApply: false
+---
+
+# HTML semântico
+
+## Objetivo
+
+Estruturar cada página com HTML5 semântico, hierarquia de títulos e SEO básico, para leitores de tela, teclado e busca.
+
+## Contexto
+
+O README exige `lang="pt-BR"`, elementos regionais (`header`, `nav`, `main`, `section`, `article`, `footer`) e menu compartilhado entre as 10 páginas. O usuário deve localizar seções sem depender só de elementos visuais.
+
+## Regras
+
+- Todo documento: `<html lang="pt-BR">`.
+- Usar `<header>`, `<nav>`, `<main>`, `<section>`, `<article>` e `<footer>` quando fizer sentido.
+- Uma `<h1>` por página. Não pular níveis de heading.
+- `<title>` descritivo e `<meta name="description">` em cada página.
+- Links com texto claro (evitar "clique aqui").
+- Menu igual em todas as páginas, com as 10 rotas e retorno ao início.
+
+## Exemplos e erros
+
+```html
+<!-- ❌ BAD -->
+<html>
+<div class="topo">
+  <a href="index.html">Clique aqui</a>
+</div>
+<div>conteúdo</div>
+
+<!-- ✅ GOOD -->
+<html lang="pt-BR">
+<head>
+  <title>Sobre | Instituto Esperança</title>
+  <meta name="description" content="Proposta, missão, visão e valores do Instituto Esperança.">
+</head>
+<body>
+  <header>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" aria-current="page">Sobre</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Sobre o Instituto Esperança</h1>
+  </main>
+  <footer></footer>
+</body>
+```

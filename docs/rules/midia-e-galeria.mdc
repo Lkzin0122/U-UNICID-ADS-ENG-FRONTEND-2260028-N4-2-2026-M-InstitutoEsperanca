@@ -1,0 +1,43 @@
+---
+description: Requisitos de mídia, galeria, créditos e fontes
+globs: "**/{midia,galeria,noticias,impacto,projetos}.html"
+alwaysApply: false
+---
+
+# Mídia, galeria e conteúdo com fonte
+
+## Objetivo
+
+Publicar imagens, áudio, vídeo e notícias com créditos, controles nativos e responsabilidade sobre dados.
+
+## Contexto
+
+`midia.html` deve incorporar `<video>`, `<audio>` e `<iframe>`. Galeria, notícias, projetos e impacto exigem legendas, fontes e, no impacto, dados só se forem verificáveis.
+
+## Regras
+
+- Em `midia.html`: `<video controls poster="...">`, `<audio controls>` e `<iframe>` identificado.
+- Oferecer alternativa acessível (texto no player, transcrição ou descrição).
+- Imagens da galeria com `alt`, `<figure>`/`<figcaption>` e crédito/fonte.
+- Notícias e artigos com fontes identificadas.
+- Em `impacto.html`, não inventar indicadores; marcar conteúdo demonstrativo.
+
+## Exemplos e erros
+
+```html
+<!-- ❌ BAD -->
+<img src="foto.jpg">
+<video src="campanha.mp4" autoplay></video>
+<p>Impacto: +10 mil pessoas alcançadas.</p>
+
+<!-- ✅ GOOD -->
+<figure>
+  <img src="img/oficina.jpg" alt="Oficina de leitura com crianças e educadores">
+  <figcaption>Oficina de leitura. Foto ilustrativa (Unsplash). Uso acadêmico.</figcaption>
+</figure>
+
+<video controls poster="img/video-capa.jpg">
+  <source src="assets/campanha.mp4" type="video/mp4">
+  Vídeo da campanha. Descrição: apresentação das ações educativas.
+</video>
+```

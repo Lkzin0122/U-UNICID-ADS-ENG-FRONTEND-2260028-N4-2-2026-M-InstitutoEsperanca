@@ -1,0 +1,38 @@
+---
+description: Escopo acadêmico, páginas obrigatórias, pastas e critérios de entrega
+alwaysApply: true
+---
+
+# Escopo e entrega
+
+## Objetivo
+
+Entregar o site institucional do Instituto Esperança com as 10 páginas exigidas, navegação consistente, pastas organizadas e documentação em `docs/`.
+
+## Contexto
+
+Projeto acadêmico UNICID (Desenvolvimento Front-End para Web). Primeira versão em HTML5 e CSS3. JavaScript é opcional. Demonstração: https://institutoesperanca.up.railway.app/
+
+## Regras
+
+- Criar e interligar as 10 páginas: `index.html`, `sobre.html`, `projetos.html`, `impacto.html`, `acessibilidade.html`, `galeria.html`, `midia.html`, `noticias.html`, `contato.html`, `orcamento_hospedagem.html`.
+- Manter a mesma navegação principal em todas as páginas, com retorno ao início.
+- Organizar arquivos em `css/`, `js/`, `img/`, `assets/` e `docs/`.
+- Validar HTML no W3C; corrigir erros ou documentá-los em `docs/`.
+- Em `docs/`: README, diário de bordo, orçamento comparativo e evidências de testes.
+- JS, se existir, não substitui validação nativa nem acessibilidade.
+- Dados de contato podem ser fictícios. Não inventar fatos institucionais.
+
+## Exemplos e erros
+
+```text
+❌ BAD
+- CSS e imagens soltos na raiz, sem pasta
+- Página de notícias sem link no menu
+- Entrega sem docs/ ou sem validação W3C
+
+✅ GOOD
+- Páginas HTML na raiz; estilos em css/; imagens em img/
+- Menu com as 10 páginas em todas as telas
+- docs/ com README, diário, orçamento e testes
+```

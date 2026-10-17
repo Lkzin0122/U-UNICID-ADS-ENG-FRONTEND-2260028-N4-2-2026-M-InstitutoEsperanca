@@ -1,0 +1,44 @@
+---
+description: Paleta, tipografia, tom visual, responsividade e sustentabilidade digital
+globs: "**/*.{css,html}"
+alwaysApply: false
+---
+
+# Identidade visual e responsividade
+
+## Objetivo
+
+Manter identidade institucional consistente, legível e adaptada a celular, tablet e computador.
+
+## Contexto
+
+Paleta: azul, amarelo, branco e preto. Tipografia: Arial, Helvetica, sans-serif. Estilo simples e organizado. A sustentabilidade digital pede imagens otimizadas e menos carregamentos desnecessários.
+
+## Regras
+
+- Usar a paleta definida e manter contraste.
+- Tipografia: `Arial, Helvetica, sans-serif`.
+- Hierarquia visual clara. Estilo institucional, sem excesso decorativo.
+- Tom de voz acolhedor, respeitoso e informativo.
+- Interface mobile-first: menus, formulários e textos devem permanecer usáveis.
+- Priorizar imagens otimizadas. Evitar recursos pesados sem necessidade.
+
+## Exemplos e erros
+
+```css
+/* ❌ BAD */
+body { font-family: "Comic Sans MS"; }
+@media (max-width: 768px) {
+  nav { display: none; } /* some o menu no celular */
+}
+
+/* ✅ GOOD */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #fff;
+}
+@media (min-width: 960px) {
+  .site-nav ul { flex-direction: row; }
+}
+```

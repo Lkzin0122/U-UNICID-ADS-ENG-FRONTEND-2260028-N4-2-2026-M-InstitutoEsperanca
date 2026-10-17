@@ -1,0 +1,193 @@
+/* ==============================
+   Página Impacto — mobile-first
+   ============================== */
+
+.page-hero {
+    background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+    color: var(--branco);
+    padding: 3rem 0 2.5rem;
+}
+
+.page-hero h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+}
+
+.page-hero p {
+    max-width: 46rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.impacto-nota {
+    background: var(--creme);
+    padding-bottom: 2rem;
+}
+
+.impacto-nota h2 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    margin-bottom: 0.85rem;
+}
+
+.nota {
+    background: var(--branco);
+    border: 1px solid #ead9a8;
+    border-left: 6px solid var(--amarelo);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    color: var(--texto);
+    max-width: 48rem;
+}
+
+.impacto-eixos {
+    background: var(--branco);
+}
+
+.impacto-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.impacto-grid article {
+    background: var(--azul-claro);
+    border-left: 6px solid var(--azul);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.impacto-grid h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.impacto-grid p,
+.impacto-grid a {
+    color: var(--texto-claro);
+    font-size: 0.95rem;
+}
+
+.impacto-grid a {
+    color: var(--azul-escuro);
+    text-decoration: underline;
+}
+
+.impacto-tabela {
+    background: #f8faf9;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--branco);
+    min-width: 32rem;
+}
+
+caption {
+    text-align: left;
+    font-weight: 700;
+    color: var(--azul-escuro);
+    margin-bottom: 0.75rem;
+}
+
+th,
+td {
+    border: 1px solid #dce4ea;
+    padding: 0.75rem 0.85rem;
+    text-align: left;
+    vertical-align: top;
+    font-size: 0.95rem;
+}
+
+thead th {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    font-weight: 700;
+}
+
+tbody th {
+    color: var(--azul-escuro);
+    font-weight: 700;
+    background: var(--azul-claro);
+}
+
+tbody tr:nth-child(even) td {
+    background: #f7fafc;
+}
+
+.impacto-tabela a {
+    color: var(--azul-escuro);
+    text-decoration: underline;
+}
+
+.impacto-relacao {
+    background: var(--branco);
+}
+
+.impacto-relacao-grid {
+    display: grid;
+    gap: 1.75rem;
+}
+
+.impacto-relacao h2 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    margin-bottom: 0.85rem;
+}
+
+.impacto-relacao p {
+    color: var(--texto-claro);
+    margin-bottom: 1rem;
+    max-width: 44rem;
+}
+
+.impacto-relacao a:not(.btn) {
+    color: var(--azul-escuro);
+    text-decoration: underline;
+}
+
+.impacto-relacao figure {
+    margin: 0;
+}
+
+.impacto-relacao img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.impacto-relacao figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--texto-claro);
+}
+
+@media (min-width: 700px) {
+    .impacto-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .impacto-relacao img {
+        height: 320px;
+    }
+}
+
+@media (min-width: 960px) {
+    .page-hero {
+        padding: 4.5rem 0 3.5rem;
+    }
+
+    .impacto-relacao-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .impacto-relacao img {
+        height: 380px;
+    }
+}

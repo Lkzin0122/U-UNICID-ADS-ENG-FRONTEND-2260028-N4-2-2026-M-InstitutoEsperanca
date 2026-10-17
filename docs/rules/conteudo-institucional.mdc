@@ -1,0 +1,35 @@
+---
+description: Temas, público-alvo, tom de voz e o que não pode ser inventado
+alwaysApply: true
+---
+
+# Conteúdo institucional
+
+## Objetivo
+
+Apresentar a proposta do Instituto Esperança com linguagem clara, respeitosa e verificável, relacionando impacto social e sustentabilidade.
+
+## Contexto
+
+O Instituto Esperança é uma proposta de organização social voltada ao apoio de pessoas e famílias em situação de vulnerabilidade: educação, inclusão PCD, crianças e adolescentes, mães solo, famílias em situação de desabrigo e conscientização ambiental. O público inclui quem busca apoio, responsáveis, voluntários e parceiros, com diferentes níveis de familiaridade com a internet.
+
+## Regras
+
+- Escrever para o público e para responsáveis. Linguagem simples. Navegação previsível.
+- Cobrir missão, visão e valores sem fabricar história institucional (sem data de fundação ou trajetória inventada).
+- Divulgar projetos de educação, inclusão e sustentabilidade de forma responsável.
+- Em `impacto.html`, usar dados só se forem verificáveis; senão, deixar explícito que são demonstrativos.
+- Creditar imagens e textos. Usar só material autoral ou com permissão.
+- Tom acolhedor, sem linguagem discriminatória ou estigmatizante.
+
+## Exemplos e erros
+
+```text
+❌ BAD
+"Já atendemos 10 mil famílias em 20 comunidades."
+"Ajude os pobres e desvalidos desta instituição centenária."
+
+✅ GOOD
+"Este site apresenta a proposta institucional. Números de atendimento ainda não foram verificados e não são publicados como resultado real."
+"Acolhemos pessoas e famílias em situação de vulnerabilidade com respeito e informação clara."
+```

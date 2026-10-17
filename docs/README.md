@@ -18,7 +18,7 @@
   **Equipe**                          Instituto Esperança
 
   **Integrantes**                     Jonathan Santos dos Anjos; Addiel Anthonny
-                                      Arguedas Sangalli; Lucas Bitencourt; 
+                                      Arguedas Sangalli; Lucas Bitencourt; Caio Rian;
 
   **Data de elaboração**              26/09/2026
 
@@ -265,15 +265,15 @@ compreensão por usuários e mecanismos de busca.
 
 ``` text
 Instituto Esperança
-├── Início (index.html)
-├── Sobre (sobre.html)
-├── Projetos (projetos.html)
-├── Impacto (impacto.html)
+├── Início (index.html)  <!--Feito-->
+├── Sobre (sobre.html)  <!--Feito-->
+├── Projetos (projetos.html)  
+├── Impacto (impacto.html) <!--em andamento-->
 ├── Acessibilidade (acessibilidade.html)
 ├── Galeria (galeria.html)
 ├── Mídia (midia.html)
-├── Notícias (noticias.html)
-├── Contato (contato.html)
+├── Notícias (noticias.html) <!--em andamento-->
+├── Contato (contato.html) <!--Feito-->
 └── Orçamento de hospedagem (orcamento_hospedagem.html)
 ```
 

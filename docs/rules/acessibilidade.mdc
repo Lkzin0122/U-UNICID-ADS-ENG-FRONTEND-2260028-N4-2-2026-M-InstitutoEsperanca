@@ -1,0 +1,47 @@
+---
+description: Acessibilidade digital, teclado, contraste e alternativas de mídia
+globs: "**/*.{html,css}"
+alwaysApply: false
+---
+
+# Acessibilidade
+
+## Objetivo
+
+Garantir que o site seja usável por teclado, leitores de tela e pessoas com baixa visão, conforme o público previsto no README.
+
+## Contexto
+
+O conteúdo precisa ser compreensível para responsáveis e para quem tem pouca familiaridade com a web. Contraste, foco visível e alternativas textuais são critérios de aceitação.
+
+## Regras
+
+- Imagens informativas com `alt` descritivo. Decorativas: `alt=""`.
+- Não transmitir informação só por cor. Contraste adequado texto/fundo.
+- Navegação por teclado: ordem lógica, foco visível, sem `outline: none` sem substituto.
+- Associar `<label>` a cada campo (`for` + `id`). ARIA só quando o HTML semântico não bastar.
+- Vídeo/áudio: controles nativos e alternativa textual quando possível (`poster`, transcrição ou descrição).
+
+## Exemplos e erros
+
+```html
+<!-- ❌ BAD -->
+<img src="campanha.jpg">
+<input type="email" placeholder="E-mail">
+
+<!-- ✅ GOOD -->
+<img src="img/campanha.jpg" alt="Voluntários organizando kits escolares">
+<label for="email">E-mail</label>
+<input id="email" name="email" type="email" required>
+```
+
+```css
+/* ❌ BAD */
+a:focus { outline: none; }
+
+/* ✅ GOOD */
+a:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+```

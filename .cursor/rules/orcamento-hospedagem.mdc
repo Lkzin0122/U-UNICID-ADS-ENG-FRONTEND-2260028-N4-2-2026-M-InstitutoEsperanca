@@ -1,0 +1,34 @@
+---
+description: Página comparativa de hospedagem e domínio
+globs: "**/orcamento_hospedagem.html"
+alwaysApply: false
+---
+
+# Orçamento de hospedagem
+
+## Objetivo
+
+Comparar opções reais de hospedagem e domínio e justificar a escolha com preço, recursos e, se houver dado confiável, prática ambiental.
+
+## Contexto
+
+A página `orcamento_hospedagem.html` faz parte da entrega. A sustentabilidade digital pede considerar custo, recursos e práticas ambientais do fornecedor quando a informação for confiável. Preços inventados quebram o critério de aceitação.
+
+## Regras
+
+- Comparar 3 opções de hospedagem e 3 opções de domínio.
+- Para cada opção: preço, características, fonte consultada e data da consulta quando possível.
+- Incluir justificativa da escolha.
+- Não inventar preços. Se a consulta for acadêmica/demonstrativa, identificar como tal.
+
+## Exemplos e erros
+
+```text
+❌ BAD
+"Hospedagem A: R$ 9,90 (valor estimado sem fonte)."
+Só listar nomes de provedores, sem preço nem justificativa.
+
+✅ GOOD
+Tabela com 3 hostings e 3 domínios, cada um com preço, recurso, URL da fonte e data.
+Parágrafo: "A escolha considera preço da consulta em DD/MM/AAAA, recursos do plano e informação ambiental publicada pelo fornecedor."
+```
