@@ -273,7 +273,7 @@ Instituto Esperança
 ├── Galeria (galeria.html)
 ├── Mídia (midia.html)
 ├── Notícias (noticias.html) <!--em andamento-->
-├── Contato (contato.html) '<!--Feito-->'
+├── Contato (contato.html) <!--Feito-->
 └── Orçamento de hospedagem (orcamento_hospedagem.html)
 ```
 
