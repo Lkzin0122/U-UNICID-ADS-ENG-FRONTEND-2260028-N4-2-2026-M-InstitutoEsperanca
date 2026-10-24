@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-24",
+  "timezone": "America/Sao_Paulo",
+  "endpoint": "https://validator.w3.org/nu/?out=json",
+  "max_concurrent_requests": 3,
+  "results": [
+    {
+      "file": "acessibilidade.html",
+      "sha256": "14017d6c1ab4f3873f5f1860f94327303c9aa2b517cd45951d76798be8e22dcd",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "contato.html",
+      "sha256": "a6aa131e7d9a0059c7c936920c3cae7b82430765de81b77d3cc5177dec412066",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "galeria.html",
+      "sha256": "cd617fcb537e5d079fa357d9bb9b6dd39ef4a137205406198ffcfefa4d4d7ac2",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "impacto.html",
+      "sha256": "1201dc09f50cb4eeeaf01372429d21eb26b99442e33c65cc2d0df792c6552750",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "index.html",
+      "sha256": "7e237f5e691e02761b092a34f18a2abd2fbff58b4fd11f2bb13242dae76fd8fe",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "midia.html",
+      "sha256": "23f26e3751565641b2f3491ac9d1c0ccd88d95112231ca7eb4288c083e32e0e8",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "noticias.html",
+      "sha256": "1e6013307b4437f442822c0e8f42aa9f696785443a29fcf5d8b70fd4559ed6fd",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "orcamento_hospedagem.html",
+      "sha256": "1007836ba4b42f2e926d3478efbbbdb9d5705d5ab6e72cfc666891244fe3fec9",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "participar.html",
+      "sha256": "6f3435b90e8964c5b28fc06ccd822b52b32b551973f67f49cea471a5703c8930",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "perguntas-frequentes.html",
+      "sha256": "b1cba429445943d2230535efd3b297580498b778a95b51a151265d7a25f99f4d",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "projetos.html",
+      "sha256": "3a71e7ed83f86ede4e817420f0704f65b76e5b614ce9f20ca1b9b196faa8b357",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    },
+    {
+      "file": "sobre.html",
+      "sha256": "f65b37c58b772af717bb9a7b1689df5874b01e324d63172c6699c74561a0ac5b",
+      "status": "completed",
+      "errors": 0,
+      "warnings": 0,
+      "checker_version": "26.10.18",
+      "messages": []
+    }
+  ],
+  "summary": {
+    "files": 12,
+    "completed": 12,
+    "errors": 0,
+    "warnings": 0,
+    "network_failures": 0,
+    "response_failures": 0
+  }
+}
