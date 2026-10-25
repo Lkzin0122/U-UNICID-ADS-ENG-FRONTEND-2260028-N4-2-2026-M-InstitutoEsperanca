@@ -1,8 +1,6 @@
 # Escopo do Projeto --- Instituto Esperança
 
-> **Projeto acadêmico de Desenvolvimento Front-End para Web**\
-> **Código da atividade:**
-> `U-UNICID-ADS-FRONTEND-2260028-N4-2-2026-M-InstitutoEsperanca`
+> Documentação do site institucional do Instituto Esperança.
 
 ------------------------------------------------------------------------
 
@@ -11,7 +9,7 @@
   --------------------------------------------------------------------------------
   Campo                               Informação
   ----------------------------------- --------------------------------------------
-  **Protótipo publicado**             https://institutoesperanca.up.railway.app/
+  **Site publicado**             https://institutoesperanca.up.railway.app/
   
   **Nome do projeto/site**            Instituto Esperança
 
@@ -22,11 +20,8 @@
 
   **Data de elaboração**              26/09/2026
 
-  **Instituição**                     Universidade Cidade de São Paulo (UNICID)
 
-  **Professor**                       Paulo Fratta
 
-  **Disciplina**                      Desenvolvimento Front-End para Web
   --------------------------------------------------------------------------------
 
 ## 2. Contexto e justificativa
@@ -177,8 +172,7 @@ O projeto contempla as dez páginas exigidas na atividade:
                                                                fontes identificadas.
 
                              9 **Contato --- `contato.html`**  Dados de contato
-                                                               fictícios para fins
-                                                               acadêmicos,
+                                                               do Instituto,
                                                                identificação dos
                                                                integrantes da equipe
                                                                e formulário com
@@ -210,10 +204,9 @@ serão utilizados atributos e tipos como `required`, `type="email"`,
 `type="tel"`, `type="date"`, `type="number"` e `pattern`.
 
 Os campos deverão ser adequados ao propósito do formulário, sem exigir
-informações desnecessárias. Como o projeto é acadêmico, os dados de
-contato apresentados serão fictícios. A validação do navegador não
-deverá ser descrita como garantia de envio ou armazenamento real de
-mensagens.
+informações desnecessárias. O contato do Instituto é
+institutoesperancaunicid@outlook.com. O formulário prepara a mensagem e
+abre o aplicativo de e-mail; o envio deve ser confirmado nesse aplicativo.
 
 ## 6. Escopo não funcional
 
@@ -313,7 +306,7 @@ visão.
 -   **Validação:** W3C Validator para verificar a estrutura HTML.
 -   **Controle de versão:** ferramenta de versionamento, como Git, se
     utilizada pela equipe.
--   **Hospedagem de demonstração:**
+-   **Hospedagem do site:**
     https://institutoesperanca.up.railway.app/
 
 ## 10. Cronograma e divisão de tarefas
@@ -391,7 +384,7 @@ final do site.
   institucionais          informações incorretas  resultados, histórias
   confirmados                                     ou estatísticas;
                                                   identificar conteúdos
-                                                  demonstrativos
+                                                  ilustrativos
 
   Problemas de            Barreiras para parte do Testar contraste,
   acessibilidade          público                 teclado, textos
@@ -411,10 +404,9 @@ final do site.
 
 O trabalho tem foco na primeira versão de um site em HTML5 e CSS3. O
 JavaScript é opcional nesta entrega. O formulário deverá apresentar
-validação no navegador, mas o envio e o armazenamento efetivo das
-mensagens dependerão de uma integração adicional, caso sejam
-implementados. Dados de contato fictícios deverão ser usados para fins
-acadêmicos.
+validação no navegador e abertura do aplicativo de e-mail com a mensagem
+preenchida para institutoesperancaunicid@outlook.com. O envio é confirmado
+no aplicativo e não há armazenamento de mensagens no site.
 
 ## 12. Critérios de aceitação
 
@@ -442,7 +434,7 @@ critérios forem verificados:
 -   [ ] Os arquivos estão organizados nas pastas previstas e o projeto
     está compactado para entrega.
 -   [ ] Os conteúdos factuais e os dados apresentados foram conferidos;
-    dados demonstrativos estão identificados como tais.
+    dados ilustrativos estão identificados como tais.
 
 ## 13. Aprovação
 

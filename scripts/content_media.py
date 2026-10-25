@@ -122,7 +122,7 @@ PAGES = {
         <track kind="captions" src="assets/manifesto.vtt" srclang="pt-BR" label="Português">
         Seu navegador não reproduz este vídeo. Leia a descrição completa abaixo.
       </video>
-      <figcaption id="descricao-video">Vídeo autoral · 14 segundos · Sem áudio. Animação de textos sobre fundo azul, com detalhes amarelos. Criado para este projeto acadêmico.</figcaption>
+      <figcaption id="descricao-video">Vídeo autoral · 14 segundos · Sem áudio. Animação de textos sobre fundo azul, com detalhes amarelos. Criado para o Instituto Esperança.</figcaption>
     </figure>
     <div class="faq-list">
       <details>
@@ -132,7 +132,7 @@ PAGES = {
           <p><strong>2. Incluir.</strong> Oportunidades para crescer. Aprender, participar e pertencer.</p>
           <p><strong>3. Cuidar.</strong> Pessoas e planeta. O mesmo cuidado. Acolhimento e consciência ambiental.</p>
           <p><strong>4. Participar.</strong> O próximo passo pode ser seu. Conheça os projetos e as formas de participar.</p>
-          <p>A animação apresenta a proposta do Instituto Esperança, um projeto acadêmico da UNICID.</p>
+          <p>A animação apresenta os valores e as frentes de atuação do Instituto Esperança.</p>
         </div>
       </details>
     </div>

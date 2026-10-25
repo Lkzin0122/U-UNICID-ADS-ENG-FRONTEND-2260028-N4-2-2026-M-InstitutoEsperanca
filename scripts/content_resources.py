@@ -84,14 +84,14 @@ PAGES = {
     },
     "orcamento_hospedagem.html": {
         "title": "Orçamento de hospedagem",
-        "description": "Comparativo acadêmico de três hospedagens e três opções de domínio, com preços, fontes oficiais e justificativa para a publicação do site.",
+        "description": "Comparativo de três hospedagens e três opções de domínio, com preços, fontes oficiais e justificativa para a publicação do site.",
         "section": "instituto",
         "content": """
 <section class="page-hero">
     <div class="container">
         <p class="eyebrow">Transparência do projeto</p>
         <h1>Um lugar na internet.<br><em>Uma escolha consciente.</em></h1>
-        <p class="lead">Como manter este projeto acessível e com um custo adequado? Conheça as opções de hospedagem e domínio pesquisadas para a entrega acadêmica.</p>
+        <p class="lead">Conheça as opções de hospedagem e domínio pesquisadas para manter o site acessível e com um custo adequado.</p>
     </div>
 </section>
 <section class="section" aria-labelledby="titulo-hospedagem">
@@ -156,16 +156,16 @@ PAGES = {
         <div class="section-heading">
             <p class="eyebrow">03 / Nossa escolha para esta etapa</p>
             <h2 id="titulo-escolha">Publicar de forma simples.<br>Investir quando fizer sentido.</h2>
-            <p>Para a demonstração acadêmica, a sugestão é GitHub Pages com o endereço gratuito github.io: o projeto já usa arquivos estáticos e pode ser revisado pela equipe em um repositório público.</p>
+            <p>Uma opção de publicação é GitHub Pages com o endereço gratuito github.io: o site usa arquivos estáticos e pode ser mantido pela equipe em um repositório.</p>
             <p>Se um domínio próprio for necessário, a opção .com.br no Registro.br oferece referência de custo em reais: R$ 40,00 por ano na consulta, além da hospedagem gratuita, desde que o nome esteja disponível e os requisitos sejam atendidos.</p>
         </div>
         <div class="card">
             <h3>O que entra nessa conta?</h3>
-            <p><strong>Demonstração acadêmica:</strong> hospedagem gratuita e subdomínio fornecido pela plataforma.</p>
+            <p><strong>Publicação inicial:</strong> hospedagem gratuita e subdomínio fornecido pela plataforma.</p>
             <p><strong>Com domínio próprio .com.br:</strong> R$ 40,00 por ano na consulta. Este valor não inclui serviços adicionais.</p>
             <p><strong>Próxima etapa:</strong> envio real de formulários, e-mail institucional e armazenamento de dados precisam de uma solução própria e de novo orçamento.</p>
             <p><strong>Sustentabilidade digital:</strong> imagens compactas e carregamento de mídia sob demanda reduzem o volume de dados do site. Nenhum fornecedor recebeu uma classificação ambiental sem verificação específica.</p>
-            <a class="text-link" href="sobre.html">Conheça a proposta acadêmica <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="sobre.html">Conheça o Instituto <span aria-hidden="true">→</span></a>
         </div>
     </div>
 </section>
@@ -257,13 +257,13 @@ PAGES = {
         <div class="section-heading">
             <p class="eyebrow">Um compromisso contínuo</p>
             <h2 id="titulo-melhoria">Acessibilidade se constrói<br>com escuta.</h2>
-            <p>Este é um projeto acadêmico em evolução. Os recursos descritos não representam uma certificação de conformidade. Testes com diferentes tecnologias assistivas e com pessoas usuárias ajudam a identificar melhorias.</p>
+            <p>A acessibilidade do site está em melhoria contínua. Testes com tecnologias assistivas e sugestões das pessoas usuárias ajudam a identificar ajustes.</p>
             <a class="text-link" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/pt-BR">Nossa referência: introdução à acessibilidade da W3C <span aria-hidden="true">↗</span></a>
         </div>
         <div class="card">
             <h3>Encontrou uma dificuldade?</h3>
             <p>Ao descrever uma barreira, conte em qual página ela aconteceu, qual recurso você tentou usar e, se souber, o navegador ou a tecnologia assistiva utilizada.</p>
-            <p>O formulário atual permite preparar uma mensagem demonstrativa; ele ainda não a transmite à equipe.</p>
+            <p>Use o formulário para preparar sua mensagem e enviá-la pelo seu aplicativo de e-mail.</p>
             <a class="button button-primary" href="contato.html?assunto=acessibilidade">Preparar relato <span aria-hidden="true">→</span></a>
         </div>
     </div>

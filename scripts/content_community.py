@@ -39,7 +39,7 @@ PAGES = {
             <h2>Ninguém deveria caminhar sozinho.</h2>
             <p>O Instituto Esperança é uma proposta de organização social voltada a pessoas e famílias em situação de vulnerabilidade. Reunimos educação, inclusão e acolhimento em uma mesma visão: aproximar pessoas de novas possibilidades.</p>
             <p>Nosso ponto de partida é a escuta. Crianças, adolescentes, pessoas com deficiência, mães solo e famílias em situação de desabrigo têm histórias e necessidades diferentes. Uma rede de apoio precisa reconhecer cada uma delas.</p>
-            <p>Este site integra um projeto acadêmico da UNICID. Apresentamos a proposta institucional e as iniciativas planejadas, sem atribuir à organização uma história ou resultados que ainda não foram documentados.</p>
+            <p>Conheça o Instituto Esperança, nossos valores e as iniciativas que conectam educação, inclusão e cuidado com as pessoas.</p>
             <a class="text-link" href="projetos.html">Conheça nossas frentes de atuação <span aria-hidden="true">↗</span></a>
         </div>
         <figure class="feature-image">
@@ -77,7 +77,7 @@ PAGES = {
         ) + '''
 <section class="section">
     <div class="container" data-filter-group>
-        <div class="section-heading"><p class="eyebrow">Encontre sua causa</p><h2>Ideias para transformar possibilidades.</h2><p>As iniciativas abaixo são propostas deste projeto acadêmico. Atividades, locais e inscrições ainda não estão confirmados.</p></div>
+        <div class="section-heading"><p class="eyebrow">Encontre sua causa</p><h2>Ideias para transformar possibilidades.</h2><p>Conheça nossas frentes de atuação e entre em contato para saber como participar.</p></div>
         <div class="filter-bar" role="group" aria-label="Filtrar projetos por área">
             <button type="button" class="filter-button" data-filter="all" aria-pressed="true">Todos os projetos</button>
             <button type="button" class="filter-button" data-filter="educacao" aria-pressed="false">Educação</button>
@@ -90,7 +90,7 @@ PAGES = {
             <article class="card project-card" id="educacao" data-filter-item data-category="educacao">
                 <span class="icon-badge" aria-hidden="true">01</span><span class="tag">Educação</span>
                 <h3>Aprender abre caminhos</h3><p>Uma proposta de encontros de leitura, apoio aos estudos e compartilhamento de saberes para crianças, jovens e seus responsáveis.</p>
-                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> crianças, adolescentes e famílias em busca de oportunidades de aprendizagem.</p><p><strong>Como contribuir:</strong> sugerir atividades educativas, organizar materiais e compartilhar habilidades de ensino.</p><p><strong>Etapa:</strong> planejamento acadêmico, sem turmas ou calendário de inscrições.</p></div></details>
+                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> crianças, adolescentes e famílias em busca de oportunidades de aprendizagem.</p><p><strong>Como contribuir:</strong> sugerir atividades educativas, organizar materiais e compartilhar habilidades de ensino.</p></div></details>
                 <a class="text-link" href="contato.html?assunto=voluntariado">Tenho interesse em contribuir <span aria-hidden="true">↗</span></a>
             </article>
             <article class="card project-card" id="inclusao" data-filter-item data-category="inclusao">
@@ -102,25 +102,25 @@ PAGES = {
             <article class="card project-card" id="infancia" data-filter-item data-category="educacao">
                 <span class="icon-badge" aria-hidden="true">03</span><span class="tag">Crianças e adolescentes</span>
                 <h3>Espaço para crescer</h3><p>Atividades educativas, convivência e expressão para valorizar a infância e aproximar crianças, adolescentes e seus responsáveis.</p>
-                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> crianças e adolescentes, com participação e acompanhamento de responsáveis.</p><p><strong>Como contribuir:</strong> propor oficinas de arte, leitura e atividades culturais adequadas a cada faixa etária.</p><p><strong>Etapa:</strong> planejamento acadêmico. Não há atividades abertas ou atendimento especializado disponível.</p></div></details>
+                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> crianças e adolescentes, com participação e acompanhamento de responsáveis.</p><p><strong>Como contribuir:</strong> propor oficinas de arte, leitura e atividades culturais adequadas a cada faixa etária.</p></div></details>
                 <a class="text-link" href="contato.html?assunto=voluntariado">Quero colaborar com a ideia <span aria-hidden="true">↗</span></a>
             </article>
             <article class="card project-card" id="maes-solo" data-filter-item data-category="acolhimento">
                 <span class="icon-badge" aria-hidden="true">04</span><span class="tag">Rede de apoio</span>
                 <h3>Juntas, mais fortes</h3><p>Uma rede proposta para mães solo trocarem experiências, compartilharem informação e encontrarem apoio no cotidiano.</p>
-                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> mães que criam seus filhos sozinhas e pessoas interessadas em fortalecer redes de apoio.</p><p><strong>Como contribuir:</strong> sugerir temas para rodas de conversa e colaborar com materiais informativos.</p><p><strong>Etapa:</strong> concepção acadêmica, sem grupos de atendimento ou encontros confirmados.</p></div></details>
+                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> mães que criam seus filhos sozinhas e pessoas interessadas em fortalecer redes de apoio.</p><p><strong>Como contribuir:</strong> sugerir temas para rodas de conversa e colaborar com materiais informativos.</p></div></details>
                 <a class="text-link" href="contato.html?assunto=apoio">Quero saber mais <span aria-hidden="true">↗</span></a>
             </article>
             <article class="card project-card" id="acolhimento" data-filter-item data-category="acolhimento">
                 <span class="icon-badge" aria-hidden="true">05</span><span class="tag">Acolhimento</span>
                 <h3>Uma rede que acolhe</h3><p>Informação e articulação solidária voltadas a famílias em situação de desabrigo ou vulnerabilidade socioeconômica.</p>
-                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> famílias que precisam de acolhimento e pessoas interessadas em construir redes de solidariedade.</p><p><strong>Como contribuir:</strong> pensar em campanhas de arrecadação e em formas respeitosas de comunicar necessidades.</p><p><strong>Etapa:</strong> proposta acadêmica. O Instituto não oferece abrigo, distribuição ou atendimento emergencial neste site.</p></div></details>
+                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> famílias que precisam de acolhimento e pessoas interessadas em construir redes de solidariedade.</p><p><strong>Como contribuir:</strong> pensar em campanhas de arrecadação e em formas respeitosas de comunicar necessidades.</p></div></details>
                 <a class="text-link" href="contato.html?assunto=parceria">Propor uma colaboração <span aria-hidden="true">↗</span></a>
             </article>
             <article class="card project-card" id="meio-ambiente" data-filter-item data-category="ambiente">
                 <span class="icon-badge" aria-hidden="true">06</span><span class="tag">Sustentabilidade</span>
                 <h3>Cuidar do nosso amanhã</h3><p>Educação ambiental que conecta escolhas do dia a dia, uso consciente de recursos e cuidado com os espaços compartilhados.</p>
-                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> estudantes, famílias e pessoas que desejam aprender e compartilhar práticas sustentáveis.</p><p><strong>Como contribuir:</strong> propor oficinas de reutilização e materiais educativos sobre consumo responsável.</p><p><strong>Etapa:</strong> concepção acadêmica, sem mutirões ou campanhas agendadas.</p></div></details>
+                <details><summary>Conheça a proposta</summary><div><p><strong>Para quem:</strong> estudantes, famílias e pessoas que desejam aprender e compartilhar práticas sustentáveis.</p><p><strong>Como contribuir:</strong> propor oficinas de reutilização e materiais educativos sobre consumo responsável.</p></div></details>
                 <a class="text-link" href="contato.html?assunto=voluntariado">Quero somar nessa frente <span aria-hidden="true">↗</span></a>
             </article>
         </div>
@@ -139,7 +139,7 @@ PAGES = {
         ) + '''
 <section class="section">
     <div class="container">
-        <div class="notice"><h2>O que sabemos hoje</h2><p>Este é um projeto acadêmico em desenvolvimento. Ainda não há números verificados de atendimentos, campanhas realizadas, parcerias ou voluntários. Por isso, apresentamos objetivos e formas de acompanhamento, sem tratá-los como resultados já alcançados.</p></div>
+        <div class="notice"><h2>O que sabemos hoje</h2><p>Acompanhe nossos objetivos e os critérios usados para avaliar as iniciativas. Os resultados devem ser apresentados com fontes, período de referência e dados verificados.</p></div>
     </div>
 </section>
 <section class="section section-tint">
@@ -197,7 +197,7 @@ PAGES = {
             <article class="card" id="apoio"><span class="icon-badge" aria-hidden="true">03</span><span class="tag">Seu apoio</span><h3>Converse sobre uma contribuição</h3><p>Materiais de leitura, itens para oficinas e outras formas de apoio podem fazer parte de futuras campanhas. Conheça primeiro a proposta e as necessidades.</p><a class="text-link" href="contato.html?assunto=apoio">Tenho uma ideia de apoio <span aria-hidden="true">↗</span></a></article>
             <article class="card"><span class="icon-badge" aria-hidden="true">04</span><span class="tag">Sua voz</span><h3>Faça a informação circular</h3><p>Conheça os temas de educação, inclusão e sustentabilidade. Compartilhar informação de fontes confiáveis já ajuda a ampliar essa conversa.</p><a class="text-link" href="noticias.html">Explore os conteúdos <span aria-hidden="true">↗</span></a></article>
         </div>
-        <div class="notice"><h2>Antes de participar</h2><p>Este site é uma demonstração acadêmica. Não há arrecadação de dinheiro, pontos de coleta ou vagas confirmadas. O formulário permite experimentar o contato e preparar uma mensagem, mas não a envia para uma instituição.</p></div>
+        <div class="notice"><h2>Antes de participar</h2><p>Entre em contato com o Instituto para consultar as formas de participação, a disponibilidade de atividades e as orientações para contribuir.</p></div>
     </div>
 </section>
 <section class="section section-tint">
@@ -206,7 +206,7 @@ PAGES = {
         <ol class="steps">
             <li><span class="step-number" aria-hidden="true">01</span><div><h3>Conheça uma causa</h3><p>Explore as frentes propostas e veja quais se conectam com seus interesses.</p><a class="text-link" href="projetos.html">Ver projetos <span aria-hidden="true">↗</span></a></div></li>
             <li><span class="step-number" aria-hidden="true">02</span><div><h3>Pense na sua contribuição</h3><p>Considere suas habilidades, sua disponibilidade e o tipo de atividade de que gostaria de participar.</p></div></li>
-            <li><span class="step-number" aria-hidden="true">03</span><div><h3>Prepare uma mensagem</h3><p>Experimente o formulário e descreva sua ideia. Nesta versão acadêmica, os dados ficam apenas na página.</p><a class="text-link" href="contato.html">Conhecer o formulário <span aria-hidden="true">↗</span></a></div></li>
+            <li><span class="step-number" aria-hidden="true">03</span><div><h3>Prepare uma mensagem</h3><p>Descreva sua ideia no formulário e abra seu aplicativo de e-mail para enviá-la ao Instituto.</p><a class="text-link" href="contato.html">Conhecer o formulário <span aria-hidden="true">↗</span></a></div></li>
         </ol>
     </div>
 </section>
@@ -220,7 +220,7 @@ PAGES = {
     },
     "perguntas-frequentes.html": {
         "title": "Perguntas frequentes",
-        "description": "Tire suas dúvidas sobre o Instituto Esperança, o projeto acadêmico, o voluntariado, as propostas de apoio e o uso do site.",
+        "description": "Tire suas dúvidas sobre o Instituto Esperança, o voluntariado, as formas de apoio e o uso do site.",
         "section": "participe",
         "content": hero(
             "Vamos conversar",
@@ -231,12 +231,12 @@ PAGES = {
     <div class="container split">
         <div class="section-heading"><p class="eyebrow">Perguntas frequentes</p><h2>Bom saber antes de começar.</h2><p>Selecione uma pergunta para ler a resposta. Você também pode navegar usando Tab e abrir cada item com Enter ou Espaço.</p><a class="text-link" href="contato.html">Ir para o contato <span aria-hidden="true">↗</span></a></div>
         <div class="faq-list">
-            <details open><summary>O Instituto Esperança já está em funcionamento?</summary><div><p>Este site apresenta uma proposta de organização social desenvolvida como projeto acadêmico da UNICID. As frentes de atuação são planejadas, e não há informações verificadas de atendimento, campanhas realizadas ou uma sede em funcionamento.</p><a class="text-link" href="sobre.html">Conheça a proposta institucional <span aria-hidden="true">↗</span></a></div></details>
+            <details open><summary>Como posso conhecer o Instituto Esperança?</summary><div><p>Explore as páginas sobre o Instituto e seus projetos. Para informações sobre atividades e participação, fale com a equipe por e-mail.</p><a class="text-link" href="sobre.html">Conheça a proposta institucional <span aria-hidden="true">↗</span></a></div></details>
             <details><summary>Quais são as áreas de atuação propostas?</summary><div><p>Educação; inclusão de pessoas com deficiência; apoio a crianças e adolescentes; redes para mães solo; acolhimento de famílias em situação de desabrigo; e conscientização ambiental.</p><a class="text-link" href="projetos.html">Explore as seis frentes <span aria-hidden="true">↗</span></a></div></details>
-            <details><summary>Como posso demonstrar interesse em ser voluntário?</summary><div><p>A página de participação apresenta possibilidades de contribuição. No formulário de contato, escolha o assunto “Voluntariado” e descreva suas habilidades e interesses. O formulário é demonstrativo: ele não envia uma inscrição nem confirma uma vaga.</p><a class="text-link" href="contato.html?assunto=voluntariado">Experimentar o formulário de interesse <span aria-hidden="true">↗</span></a></div></details>
+            <details><summary>Como posso demonstrar interesse em ser voluntário?</summary><div><p>No formulário de contato, escolha “Voluntariado”, descreva suas habilidades e interesses e envie a mensagem pelo seu aplicativo de e-mail. Consulte a equipe sobre as oportunidades disponíveis.</p><a class="text-link" href="contato.html?assunto=voluntariado">Entrar em contato <span aria-hidden="true">↗</span></a></div></details>
             <details><summary>Posso doar dinheiro ou materiais pelo site?</summary><div><p>Esta versão não recebe pagamentos ou doações e não oferece chave Pix, conta bancária ou ponto de coleta. A página de participação apresenta ideias de apoio para futuras iniciativas. Qualquer campanha real dependerá de organização e informações confirmadas.</p></div></details>
-            <details><summary>Preciso de apoio. O site oferece atendimento?</summary><div><p>O projeto não oferece atendimento social, abrigo ou ajuda emergencial. As páginas explicam a proposta e reúnem conteúdos educativos. O formulário é uma demonstração e não funciona como canal de solicitação de assistência.</p></div></details>
-            <details><summary>Minha mensagem será enviada pelo formulário?</summary><div><p>Não. O formulário valida os campos e permite preparar uma mensagem na própria página. Os dados não são enviados a um servidor nem armazenados como cadastro. Você pode usar dados de exemplo para conhecer o funcionamento.</p></div></details>
+            <details><summary>Preciso de apoio. O site oferece atendimento?</summary><div><p>Entre em contato por e-mail para consultar as iniciativas e as possibilidades de apoio. O site não oferece atendimento de urgência.</p></div></details>
+            <details><summary>Minha mensagem será enviada pelo formulário?</summary><div><p>Após revisar o texto, selecione “Enviar por e-mail”. Seu aplicativo de e-mail abrirá com o destinatário e a mensagem preenchidos. Confirme o envio no aplicativo. Você também pode baixar uma cópia do texto.</p></div></details>
             <details><summary>As fotos e os números representam ações reais do Instituto?</summary><div><p>As imagens são ilustrativas e possuem créditos. Não são registros de atividades do Instituto. A página de impacto apresenta objetivos e indicadores previstos, porque ainda não há resultados institucionais verificados.</p><a class="text-link" href="impacto.html">Entenda o compromisso com a transparência <span aria-hidden="true">↗</span></a></div></details>
             <details><summary>Como navegar pelo site com mais acessibilidade?</summary><div><p>Use Tab para percorrer links e controles, Shift + Tab para voltar e Enter para ativar links. O atalho “Ir para o conteúdo” aparece ao receber foco. Na página de Acessibilidade você encontra os recursos disponíveis e orientações para ajustar a leitura.</p><a class="text-link" href="acessibilidade.html">Ver recursos de acessibilidade <span aria-hidden="true">↗</span></a></div></details>
         </div>

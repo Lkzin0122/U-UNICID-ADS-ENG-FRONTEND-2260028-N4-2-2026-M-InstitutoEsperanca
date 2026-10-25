@@ -114,6 +114,25 @@
     const phoneInput = form.querySelector('#telefone');
     let phoneWidget = null;
     let phoneUtilsReady = false;
+    const formatNationalPhone = (digits, country) => {
+      if (!digits) return '';
+      const areaLength = country.iso2 === 'br' ? 2 : country.dialCode === '1' ? 3 : 0;
+      if (!areaLength) return window.intlTelInput.utils?.formatNumberAsYouType(digits, country.iso2) || digits;
+      const area = digits.slice(0, areaLength);
+      if (area.length < areaLength) return `(${area}`;
+      const local = digits.slice(areaLength);
+      const groupLength = country.iso2 === 'br' ? (local.startsWith('9') || local.length > 8 ? 5 : 4) : 3;
+      const number = local.length > groupLength ? `${local.slice(0, groupLength)}-${local.slice(groupLength)}` : local;
+      return `(${area}) ${number}`;
+    };
+    const formatInternationalPhone = () => {
+      const country = phoneWidget.getSelectedCountry();
+      if (country?.iso2 === 'br' || country?.dialCode === '1') {
+        const digits = phoneWidget.getNumber('E164').slice(country.dialCode.length + 1);
+        return `+${country.dialCode} ${formatNationalPhone(digits, country)}`;
+      }
+      return phoneWidget.getNumber('INTERNATIONAL');
+    };
     if (phoneInput && typeof window.intlTelInput === 'function') {
       const validatePhone = () => {
         const value = phoneInput.value.trim();
@@ -123,12 +142,31 @@
           : '';
         phoneInput.setCustomValidity(error);
       };
-      const formatInternationalPhone = () => {
-        const formatted = phoneWidget.getNumber('INTERNATIONAL');
-        const country = phoneWidget.getSelectedCountry()?.iso2;
-        if (country === 'br') return formatted.replace(/^(\+55)\s+(\d{2})\s+/, '$1 ($2) ');
-        if (country === 'us' || country === 'ca') return formatted.replace(/^(\+1)\s+(\d{3})\s+/, '$1 ($2) ');
-        return formatted;
+      const formatPhoneInput = () => {
+        const country = phoneWidget.getSelectedCountry();
+        if (!country) return;
+        const value = phoneInput.value;
+        const cursor = phoneInput.selectionStart ?? value.length;
+        let digits = value.replace(/\D/g, '');
+        let digitsBeforeCursor = value.slice(0, cursor).replace(/\D/g, '').length;
+        if (value.trim().startsWith('+') && digits.startsWith(country.dialCode)) {
+          digits = digits.slice(country.dialCode.length);
+          digitsBeforeCursor = Math.max(0, digitsBeforeCursor - country.dialCode.length);
+        }
+        const formatted = formatNationalPhone(digits, country);
+        if (formatted === value) return;
+        phoneInput.value = formatted;
+        if (document.activeElement !== phoneInput) return;
+        let position = 0;
+        if (cursor === value.length) position = formatted.length;
+        else {
+          let count = 0;
+          while (position < formatted.length && count < digitsBeforeCursor) {
+            if (/\d/.test(formatted[position])) count++;
+            position++;
+          }
+        }
+        phoneInput.setSelectionRange(position, position);
       };
       const phoneUi = {
         'pt-BR': { selectedCountryAriaLabel: 'Alterar país do telefone; selecionado ${countryName} (${dialCode})', noCountrySelected: 'Selecionar o país do telefone', countryListAriaLabel: 'Lista de países', searchPlaceholder: 'Buscar', clearSearchAriaLabel: 'Limpar busca', closeCountrySelectorAriaLabel: 'Fechar', searchEmptyState: 'Nenhum resultado encontrado', searchSummaryAria: count => count === 0 ? 'Nenhum resultado encontrado' : count === 1 ? '1 resultado encontrado' : `${count} resultados encontrados` },
@@ -145,29 +183,59 @@
         initialCountry: country,
         countryNameLocale: document.documentElement.lang || 'pt-BR',
         uiTranslations: phoneUi[document.documentElement.lang] || phoneUi['pt-BR'],
-        nationalMode: false,
-        separateDialCode: false,
-        formatAsYouType: true,
+        numberDisplayFormat: 'NATIONAL',
+        separateDialCode: true,
+        formatAsYouType: false,
+        strictMode: false,
+        customPlaceholder: (example, selectedCountry) => {
+          if (selectedCountry.iso2 === 'br') return '(11) 91234-5678';
+          if (selectedCountry.dialCode === '1') return '(201) 555-0123';
+          return example;
+        },
         placeholderNumberPolicy: 'AGGRESSIVE',
         countrySearch: true,
         loadUtils: () => import(new URL('assets/vendor/intl-tel-input/js/utils.js', document.baseURI).href),
       });
         phoneUtilsReady = false;
         if (number) phoneWidget.setNumber(number);
-        phoneWidget.promise.then(() => {
+        const widget = phoneWidget;
+        widget.promise.then(() => {
+          if (phoneWidget !== widget) return;
           phoneUtilsReady = true;
+          formatPhoneInput();
           validatePhone();
         }).catch(() => {});
       };
       createPhoneWidget();
-      phoneInput.addEventListener('input', validatePhone);
-      phoneInput.addEventListener('countrychange', validatePhone);
-      phoneInput.addEventListener('blur', () => {
+      phoneInput.addEventListener('input', () => {
+        formatPhoneInput();
         validatePhone();
-        if (phoneUtilsReady && phoneWidget.isValidNumber()) {
-          phoneInput.value = formatInternationalPhone();
-        }
       });
+      phoneInput.addEventListener('countrychange', () => {
+        formatPhoneInput();
+        validatePhone();
+        phoneInput.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+      // Apagar junto de um separador deve remover o dígito, sem prender o cursor na máscara.
+      phoneInput.addEventListener('beforeinput', event => {
+        const backward = event.inputType === 'deleteContentBackward';
+        if (!backward && event.inputType !== 'deleteContentForward') return;
+        const start = phoneInput.selectionStart;
+        const end = phoneInput.selectionEnd;
+        if (start !== end) return;
+        const value = phoneInput.value;
+        let index = backward ? start - 1 : start;
+        if (index < 0 || index >= value.length || /\d/.test(value[index])) return;
+        while (index >= 0 && index < value.length && !/\d/.test(value[index])) index += backward ? -1 : 1;
+        if (index < 0 || index >= value.length) return;
+        event.preventDefault();
+        const from = backward ? index : start;
+        const to = backward ? start : index + 1;
+        phoneInput.value = value.slice(0, from) + value.slice(to);
+        phoneInput.setSelectionRange(from, from);
+        phoneInput.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: event.inputType }));
+      });
+      phoneInput.addEventListener('blur', validatePhone);
       form.addEventListener('submit', validatePhone);
       document.addEventListener('esperanca:languagechange', () => {
         const country = phoneWidget.getSelectedCountry()?.iso2 || 'br';
@@ -180,6 +248,8 @@
     const select = form.querySelector('#assunto');
     if ([...select.options].some(option => option.value === subject)) select.value = subject;
     if (window.location.hash === '#voluntario' && !subject) select.value = 'voluntariado';
+    const sendMessage = document.querySelector('#send-message');
+    const contactAddress = sendMessage.getAttribute('href').slice('mailto:'.length);
     let draft = '';
     const makeDraft = () => {
       const value = id => form.querySelector(`#${id}`).value.trim();
@@ -187,13 +257,18 @@
       const phone = phoneWidget && phoneInput.value.trim() && phoneUtilsReady && phoneWidget.isValidNumber()
         ? formatInternationalPhone()
         : value('telefone') || t('Não informado');
-      return `${t('Instituto Esperança')} — ${t('Rascunho de contato')}\n${t('Demonstração acadêmica: mensagem não enviada.')}\n\n${t('Nome')}: ${value('nome')}\n${t('E-mail')}: ${value('email')}\n${t('Telefone')}: ${phone || t('Não informado')}\n${t('Assunto')}: ${select.selectedOptions[0].textContent}\n\n${value('mensagem')}`;
+      return `${t('Instituto Esperança')} — ${t('Mensagem de contato')}\n\n${t('Nome')}: ${value('nome')}\n${t('E-mail')}: ${value('email')}\n${t('Telefone')}: ${phone || t('Não informado')}\n${t('Assunto')}: ${select.selectedOptions[0].textContent}\n\n${value('mensagem')}`;
+    };
+    const updateDraft = () => {
+      draft = makeDraft();
+      document.querySelector('#message-preview').textContent = draft;
+      const subject = `Instituto Esperança — ${select.selectedOptions[0].textContent}`;
+      sendMessage.href = `mailto:${contactAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
     };
     form.addEventListener('submit', event => {
       event.preventDefault();
       if (!form.reportValidity()) return;
-      draft = makeDraft();
-      document.querySelector('#message-preview').textContent = draft;
+      updateDraft();
       const result = document.querySelector('#form-result');
       result.hidden = false;
       document.querySelector('#draft-status').textContent = '';
@@ -205,8 +280,7 @@
     });
     document.addEventListener('esperanca:languagechange', () => {
       if (!draft) return;
-      draft = makeDraft();
-      document.querySelector('#message-preview').textContent = draft;
+      updateDraft();
       const draftStatus = document.querySelector('#draft-status');
       if (draftStatus.textContent) draftStatus.textContent = window.esperancaI18n?.t('Download solicitado. Sua mensagem não foi enviada ao Instituto.') || draftStatus.textContent;
     });
