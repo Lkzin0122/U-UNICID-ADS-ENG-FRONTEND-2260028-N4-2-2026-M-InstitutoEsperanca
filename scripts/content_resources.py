@@ -99,7 +99,7 @@ PAGES = {
         <div class="section-heading">
             <p class="eyebrow">01 / Hospedagem</p>
             <h2 id="titulo-hospedagem">Onde os arquivos do site ficam.</h2>
-            <p>Estas opções permitem publicar as páginas HTML, os estilos e as imagens. Consulta às fontes oficiais em <time datetime="2026-10-24">24/10/2026</time>.</p>
+            <p>Estas opções permitem publicar as páginas HTML, os estilos e as imagens. Consulta às fontes oficiais em <time datetime="2026-10-24">24/10/2026</time>; Railway: <time datetime="2026-10-31">31/10/2026</time>.</p>
         </div>
         <div class="grid-3">
             <article class="card pricing-card">
@@ -121,11 +121,11 @@ PAGES = {
             </article>
             <article class="card pricing-card">
                 <span class="tag">Plano Free</span>
-                <h3>Netlify</h3>
+                <h3>Railway</h3>
                 <p class="price">US$ 0 <small>por mês</small></p>
-                <p>Publicação com rede de distribuição de conteúdo, domínio próprio e SSL. O plano Free trabalha com uma cota de 300 créditos por mês.</p>
-                <p><strong>Condição:</strong> publicações e tráfego consomem créditos. É preciso acompanhar o uso e os limites do plano.</p>
-                <a class="text-link" href="https://www.netlify.com/pricing/">Fonte: preços da Netlify <span aria-hidden="true">↗</span></a>
+                <p>O plano Free inclui US$ 1 de crédito mensal para executar pequenas aplicações, com subdomínio Railway.</p>
+                <p><strong>Condição:</strong> até 1 vCPU e 0,5 GB de RAM por serviço. A gratuidade está limitada à cota de uso mensal.</p>
+                <a class="text-link" href="https://railway.com/pricing">Fonte: preços da Railway <span aria-hidden="true">↗</span></a>
             </article>
         </div>
     </div>
@@ -263,7 +263,7 @@ PAGES = {
         <div class="card">
             <h3>Encontrou uma dificuldade?</h3>
             <p>Ao descrever uma barreira, conte em qual página ela aconteceu, qual recurso você tentou usar e, se souber, o navegador ou a tecnologia assistiva utilizada.</p>
-            <p>Use o formulário para preparar sua mensagem e enviá-la pelo seu aplicativo de e-mail.</p>
+            <p>Use o formulário para enviar sua mensagem ao Instituto.</p>
             <a class="button button-primary" href="contato.html?assunto=acessibilidade">Preparar relato <span aria-hidden="true">→</span></a>
         </div>
     </div>

@@ -30,6 +30,12 @@ class QuietHandler(http.server.SimpleHTTPRequestHandler):
     def log_message(self, *args):
         pass
 
+    def handle(self):
+        try:
+            super().handle()
+        except (ConnectionResetError, BrokenPipeError):
+            pass  # O navegador pode cancelar recursos ao navegar ou encerrar.
+
 
 class CDP:
     def __init__(self, url):
@@ -187,9 +193,8 @@ def run(render_video=False):
                 client.call('Input.insertText', {'text': digit})
             report['interactions']['phone_' + country] = client.evaluate("document.querySelector('#telefone').value === " + json.dumps(expected) + " && document.querySelector('.iti__selected-dial-code').textContent === " + json.dumps(prefix) + " && document.querySelector('#telefone').checkValidity()")
         client.evaluate("(() => {const input=document.querySelector('#telefone');input.value='';input.dispatchEvent(new Event('input',{bubbles:true}));})()")
-        report['interactions']['contact_preview'] = client.evaluate("""(() => { for (const [id,value] of Object.entries({nome:'Pessoa de teste', email:'institutoesperancaunicid@outlook.com', mensagem:'Quero conhecer as propostas de voluntariado.'})) document.getElementById(id).value=value;document.querySelector('#contact-form').requestSubmit();return !document.querySelector('#form-result').hidden && document.querySelector('#message-preview').textContent.includes('Pessoa de teste') && location.search === '?assunto=voluntariado';})()""")
-        report['interactions']['contact_email'] = client.evaluate("""(() => { const address = new URL(document.querySelector('#send-message').href);return address.protocol === 'mailto:' && address.pathname === 'institutoesperancaunicid@outlook.com' && address.searchParams.get('body').includes('Pessoa de teste') && address.searchParams.get('subject').includes('Voluntariado');})()""")
-        report['interactions']['contact_edit_invalidates'] = client.evaluate("""(() => { document.querySelector('#nome').dispatchEvent(new Event('input',{bubbles:true}));return document.querySelector('#form-result').hidden;})()""")
+        from check_contact import check_contact
+        report['interactions']['contact_emailjs'] = check_contact(client, origin)
         client.navigate(origin + '/perguntas-frequentes.html')
         report['interactions']['faq'] = client.evaluate("""(() => {const d=document.querySelector('.faq-list details');const before=d.open;d.querySelector('summary').click();return d.open!==before;})()""")
         client.navigate(origin + '/midia.html')

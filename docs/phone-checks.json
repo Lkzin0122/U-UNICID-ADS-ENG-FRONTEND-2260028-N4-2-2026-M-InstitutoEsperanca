@@ -1,0 +1,7100 @@
+{
+  "version": "1.13.15",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+  "googleSource": "https://raw.githubusercontent.com/google/libphonenumber/8593ab70fa4fadffc042b2714034f4c52bef7daf/resources/PhoneNumberMetadata.xml",
+  "regions": [
+    {
+      "country": "AC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 5,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AD",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 11,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 13,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AX",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "AZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BB",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BD",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BJ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BQ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 11,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "BZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CD",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 5,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 11,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CV",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CX",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "CZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "DE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 15,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "DJ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "DK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "DM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "DO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "DZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "EC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "EE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "EG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "EH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ER",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ES",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ET",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "FI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "FJ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "FK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 5,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "FM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "FO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 6,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "FR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GB",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GD",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 6,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GP",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GQ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "GY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "HK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "HN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "HR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "HT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "HU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ID",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 12,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 12,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IQ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "IT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 12,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "JE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "JM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "JO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "JP",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KP",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "KZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LB",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 11,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LV",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "LY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MD",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ME",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ML",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MP",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MQ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MV",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MX",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "MZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 6,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 6,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 11,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NP",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "NZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "OM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "PY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "QA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "RE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "RO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "RS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 12,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "RU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "RW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SB",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SD",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 5,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SJ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ST",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SV",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SX",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "SZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TD",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TH",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TJ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TL",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TO",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TR",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TV",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "TZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "UA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "UG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "US",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "UY",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 8,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "UZ",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "VA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 12,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "VC",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "VE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "VG",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "VI",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "VN",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "VU",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 7,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "WF",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 6,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "WS",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 10,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "XK",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 12,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "YE",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "YT",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ZA",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ZM",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    },
+    {
+      "country": "ZW",
+      "selectable": true,
+      "example": true,
+      "national": true,
+      "max": 9,
+      "cap": true,
+      "submission": true,
+      "invalid": true
+    }
+  ],
+  "independentExamples": [
+    {
+      "country": "AC",
+      "type": "fixedLine",
+      "full": "+24762889",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+24762889"
+    },
+    {
+      "country": "AC",
+      "type": "mobile",
+      "full": "+24740123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+24740123"
+    },
+    {
+      "country": "AD",
+      "type": "fixedLine",
+      "full": "+376712345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+376712345"
+    },
+    {
+      "country": "AD",
+      "type": "mobile",
+      "full": "+376312345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+376312345"
+    },
+    {
+      "country": "AE",
+      "type": "fixedLine",
+      "full": "+97122345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97122345678"
+    },
+    {
+      "country": "AE",
+      "type": "mobile",
+      "full": "+971501234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+971501234567"
+    },
+    {
+      "country": "AF",
+      "type": "fixedLine",
+      "full": "+93234567890",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+93234567890"
+    },
+    {
+      "country": "AF",
+      "type": "mobile",
+      "full": "+93701234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+93701234567"
+    },
+    {
+      "country": "AG",
+      "type": "fixedLine",
+      "full": "+12684601234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12684601234"
+    },
+    {
+      "country": "AG",
+      "type": "mobile",
+      "full": "+12684641234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12684641234"
+    },
+    {
+      "country": "AI",
+      "type": "fixedLine",
+      "full": "+12644612345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12644612345"
+    },
+    {
+      "country": "AI",
+      "type": "mobile",
+      "full": "+12642351234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12642351234"
+    },
+    {
+      "country": "AL",
+      "type": "fixedLine",
+      "full": "+35522345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35522345678"
+    },
+    {
+      "country": "AL",
+      "type": "mobile",
+      "full": "+355672123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+355672123456"
+    },
+    {
+      "country": "AM",
+      "type": "fixedLine",
+      "full": "+37410123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37410123456"
+    },
+    {
+      "country": "AM",
+      "type": "mobile",
+      "full": "+37477123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37477123456"
+    },
+    {
+      "country": "AO",
+      "type": "fixedLine",
+      "full": "+244222123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+244222123456"
+    },
+    {
+      "country": "AO",
+      "type": "mobile",
+      "full": "+244923123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+244923123456"
+    },
+    {
+      "country": "AR",
+      "type": "fixedLine",
+      "full": "+541123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+541123456789"
+    },
+    {
+      "country": "AR",
+      "type": "mobile",
+      "full": "+5491123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5491123456789"
+    },
+    {
+      "country": "AS",
+      "type": "fixedLine",
+      "full": "+16846221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16846221234"
+    },
+    {
+      "country": "AS",
+      "type": "mobile",
+      "full": "+16847331234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16847331234"
+    },
+    {
+      "country": "AT",
+      "type": "fixedLine",
+      "full": "+431234567890",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+431234567890"
+    },
+    {
+      "country": "AT",
+      "type": "mobile",
+      "full": "+43664123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+43664123456"
+    },
+    {
+      "country": "AU",
+      "type": "fixedLine",
+      "full": "+61212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+61212345678"
+    },
+    {
+      "country": "AU",
+      "type": "mobile",
+      "full": "+61412345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+61412345678"
+    },
+    {
+      "country": "AW",
+      "type": "fixedLine",
+      "full": "+2975212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2975212345"
+    },
+    {
+      "country": "AW",
+      "type": "mobile",
+      "full": "+2975601234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2975601234"
+    },
+    {
+      "country": "AX",
+      "type": "fixedLine",
+      "full": "+358181234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+358181234567"
+    },
+    {
+      "country": "AX",
+      "type": "mobile",
+      "full": "+358412345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+358412345678"
+    },
+    {
+      "country": "AZ",
+      "type": "fixedLine",
+      "full": "+994123123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+994123123456"
+    },
+    {
+      "country": "AZ",
+      "type": "mobile",
+      "full": "+994401234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+994401234567"
+    },
+    {
+      "country": "BA",
+      "type": "fixedLine",
+      "full": "+38730212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38730212345"
+    },
+    {
+      "country": "BA",
+      "type": "mobile",
+      "full": "+38761123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38761123456"
+    },
+    {
+      "country": "BB",
+      "type": "fixedLine",
+      "full": "+12464123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12464123456"
+    },
+    {
+      "country": "BB",
+      "type": "mobile",
+      "full": "+12462501234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12462501234"
+    },
+    {
+      "country": "BD",
+      "type": "fixedLine",
+      "full": "+88027111234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+88027111234"
+    },
+    {
+      "country": "BD",
+      "type": "mobile",
+      "full": "+8801812345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+8801812345678"
+    },
+    {
+      "country": "BE",
+      "type": "fixedLine",
+      "full": "+3212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3212345678"
+    },
+    {
+      "country": "BE",
+      "type": "mobile",
+      "full": "+32450001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+32450001234"
+    },
+    {
+      "country": "BF",
+      "type": "fixedLine",
+      "full": "+22620491234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22620491234"
+    },
+    {
+      "country": "BF",
+      "type": "mobile",
+      "full": "+22670123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22670123456"
+    },
+    {
+      "country": "BG",
+      "type": "fixedLine",
+      "full": "+3592123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3592123456"
+    },
+    {
+      "country": "BG",
+      "type": "mobile",
+      "full": "+35943012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35943012345"
+    },
+    {
+      "country": "BH",
+      "type": "fixedLine",
+      "full": "+97317001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97317001234"
+    },
+    {
+      "country": "BH",
+      "type": "mobile",
+      "full": "+97336001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97336001234"
+    },
+    {
+      "country": "BI",
+      "type": "fixedLine",
+      "full": "+25722201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+25722201234"
+    },
+    {
+      "country": "BI",
+      "type": "mobile",
+      "full": "+25779561234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+25779561234"
+    },
+    {
+      "country": "BJ",
+      "type": "fixedLine",
+      "full": "+2290120211234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2290120211234"
+    },
+    {
+      "country": "BJ",
+      "type": "mobile",
+      "full": "+2290195123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2290195123456"
+    },
+    {
+      "country": "BL",
+      "type": "fixedLine",
+      "full": "+590590271234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+590590271234"
+    },
+    {
+      "country": "BL",
+      "type": "mobile",
+      "full": "+590690001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+590690001234"
+    },
+    {
+      "country": "BM",
+      "type": "fixedLine",
+      "full": "+14414123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+14414123456"
+    },
+    {
+      "country": "BM",
+      "type": "mobile",
+      "full": "+14413701234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+14413701234"
+    },
+    {
+      "country": "BN",
+      "type": "fixedLine",
+      "full": "+6732345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6732345678"
+    },
+    {
+      "country": "BN",
+      "type": "mobile",
+      "full": "+6737123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6737123456"
+    },
+    {
+      "country": "BO",
+      "type": "fixedLine",
+      "full": "+59122123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+59122123456"
+    },
+    {
+      "country": "BO",
+      "type": "mobile",
+      "full": "+59171234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+59171234567"
+    },
+    {
+      "country": "BQ",
+      "type": "fixedLine",
+      "full": "+5997151234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5997151234"
+    },
+    {
+      "country": "BQ",
+      "type": "mobile",
+      "full": "+5993181234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5993181234"
+    },
+    {
+      "country": "BR",
+      "type": "fixedLine",
+      "full": "+551123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+551123456789"
+    },
+    {
+      "country": "BR",
+      "type": "mobile",
+      "full": "+5511961234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5511961234567"
+    },
+    {
+      "country": "BS",
+      "type": "fixedLine",
+      "full": "+12423456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12423456789"
+    },
+    {
+      "country": "BS",
+      "type": "mobile",
+      "full": "+12423591234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12423591234"
+    },
+    {
+      "country": "BT",
+      "type": "fixedLine",
+      "full": "+9752345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9752345678"
+    },
+    {
+      "country": "BT",
+      "type": "mobile",
+      "full": "+97517123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97517123456"
+    },
+    {
+      "country": "BW",
+      "type": "fixedLine",
+      "full": "+2672401234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2672401234"
+    },
+    {
+      "country": "BW",
+      "type": "mobile",
+      "full": "+26771123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+26771123456"
+    },
+    {
+      "country": "BY",
+      "type": "fixedLine",
+      "full": "+375152450911",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+375152450911"
+    },
+    {
+      "country": "BY",
+      "type": "mobile",
+      "full": "+375294911911",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+375294911911"
+    },
+    {
+      "country": "BZ",
+      "type": "fixedLine",
+      "full": "+5012221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5012221234"
+    },
+    {
+      "country": "BZ",
+      "type": "mobile",
+      "full": "+5016221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5016221234"
+    },
+    {
+      "country": "CA",
+      "type": "fixedLine",
+      "full": "+15062345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+15062345678"
+    },
+    {
+      "country": "CA",
+      "type": "mobile",
+      "full": "+15062345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+15062345678"
+    },
+    {
+      "country": "CC",
+      "type": "fixedLine",
+      "full": "+61891621234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+61891621234"
+    },
+    {
+      "country": "CC",
+      "type": "mobile",
+      "full": "+61412345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+61412345678"
+    },
+    {
+      "country": "CD",
+      "type": "fixedLine",
+      "full": "+2431234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2431234567"
+    },
+    {
+      "country": "CD",
+      "type": "mobile",
+      "full": "+243991234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+243991234567"
+    },
+    {
+      "country": "CF",
+      "type": "fixedLine",
+      "full": "+23621612345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23621612345"
+    },
+    {
+      "country": "CF",
+      "type": "mobile",
+      "full": "+23670012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23670012345"
+    },
+    {
+      "country": "CG",
+      "type": "fixedLine",
+      "full": "+242222123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+242222123456"
+    },
+    {
+      "country": "CG",
+      "type": "mobile",
+      "full": "+242061234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+242061234567"
+    },
+    {
+      "country": "CH",
+      "type": "fixedLine",
+      "full": "+41212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+41212345678"
+    },
+    {
+      "country": "CH",
+      "type": "mobile",
+      "full": "+41781234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+41781234567"
+    },
+    {
+      "country": "CI",
+      "type": "fixedLine",
+      "full": "+2252123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2252123456789"
+    },
+    {
+      "country": "CI",
+      "type": "mobile",
+      "full": "+2250123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2250123456789"
+    },
+    {
+      "country": "CK",
+      "type": "fixedLine",
+      "full": "+68221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68221234"
+    },
+    {
+      "country": "CK",
+      "type": "mobile",
+      "full": "+68271234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68271234"
+    },
+    {
+      "country": "CL",
+      "type": "fixedLine",
+      "full": "+56600123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+56600123456"
+    },
+    {
+      "country": "CL",
+      "type": "mobile",
+      "full": "+56221234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+56221234567"
+    },
+    {
+      "country": "CM",
+      "type": "fixedLine",
+      "full": "+237222123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+237222123456"
+    },
+    {
+      "country": "CM",
+      "type": "mobile",
+      "full": "+237671234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+237671234567"
+    },
+    {
+      "country": "CN",
+      "type": "fixedLine",
+      "full": "+861012345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+861012345678"
+    },
+    {
+      "country": "CN",
+      "type": "mobile",
+      "full": "+8613123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+8613123456789"
+    },
+    {
+      "country": "CO",
+      "type": "fixedLine",
+      "full": "+576012345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+576012345678"
+    },
+    {
+      "country": "CO",
+      "type": "mobile",
+      "full": "+573211234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+573211234567"
+    },
+    {
+      "country": "CR",
+      "type": "fixedLine",
+      "full": "+50622123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50622123456"
+    },
+    {
+      "country": "CR",
+      "type": "mobile",
+      "full": "+50683123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50683123456"
+    },
+    {
+      "country": "CU",
+      "type": "fixedLine",
+      "full": "+5371234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5371234567"
+    },
+    {
+      "country": "CU",
+      "type": "mobile",
+      "full": "+5351234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5351234567"
+    },
+    {
+      "country": "CV",
+      "type": "fixedLine",
+      "full": "+2382211234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2382211234"
+    },
+    {
+      "country": "CV",
+      "type": "mobile",
+      "full": "+2389911234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2389911234"
+    },
+    {
+      "country": "CW",
+      "type": "fixedLine",
+      "full": "+59994351234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+59994351234"
+    },
+    {
+      "country": "CW",
+      "type": "mobile",
+      "full": "+59995181234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+59995181234"
+    },
+    {
+      "country": "CX",
+      "type": "fixedLine",
+      "full": "+61891641234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+61891641234"
+    },
+    {
+      "country": "CX",
+      "type": "mobile",
+      "full": "+61412345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+61412345678"
+    },
+    {
+      "country": "CY",
+      "type": "fixedLine",
+      "full": "+35722345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35722345678"
+    },
+    {
+      "country": "CY",
+      "type": "mobile",
+      "full": "+35796123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35796123456"
+    },
+    {
+      "country": "CZ",
+      "type": "fixedLine",
+      "full": "+420212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+420212345678"
+    },
+    {
+      "country": "CZ",
+      "type": "mobile",
+      "full": "+420601123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+420601123456"
+    },
+    {
+      "country": "DE",
+      "type": "fixedLine",
+      "full": "+4930123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4930123456"
+    },
+    {
+      "country": "DE",
+      "type": "mobile",
+      "full": "+4915123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4915123456789"
+    },
+    {
+      "country": "DJ",
+      "type": "fixedLine",
+      "full": "+25321360003",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+25321360003"
+    },
+    {
+      "country": "DJ",
+      "type": "mobile",
+      "full": "+25377831001",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+25377831001"
+    },
+    {
+      "country": "DK",
+      "type": "fixedLine",
+      "full": "+4532123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4532123456"
+    },
+    {
+      "country": "DK",
+      "type": "mobile",
+      "full": "+4534412345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4534412345"
+    },
+    {
+      "country": "DM",
+      "type": "fixedLine",
+      "full": "+17674201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17674201234"
+    },
+    {
+      "country": "DM",
+      "type": "mobile",
+      "full": "+17672251234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17672251234"
+    },
+    {
+      "country": "DO",
+      "type": "fixedLine",
+      "full": "+18092345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18092345678"
+    },
+    {
+      "country": "DO",
+      "type": "mobile",
+      "full": "+18092345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18092345678"
+    },
+    {
+      "country": "DZ",
+      "type": "fixedLine",
+      "full": "+21312345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+21312345678"
+    },
+    {
+      "country": "DZ",
+      "type": "mobile",
+      "full": "+213551234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+213551234567"
+    },
+    {
+      "country": "EC",
+      "type": "fixedLine",
+      "full": "+59322123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+59322123456"
+    },
+    {
+      "country": "EC",
+      "type": "mobile",
+      "full": "+593991234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+593991234567"
+    },
+    {
+      "country": "EE",
+      "type": "fixedLine",
+      "full": "+3723212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3723212345"
+    },
+    {
+      "country": "EE",
+      "type": "mobile",
+      "full": "+37251234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37251234567"
+    },
+    {
+      "country": "EG",
+      "type": "fixedLine",
+      "full": "+20234567890",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+20234567890"
+    },
+    {
+      "country": "EG",
+      "type": "mobile",
+      "full": "+201001234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+201001234567"
+    },
+    {
+      "country": "EH",
+      "type": "fixedLine",
+      "full": "+212528812345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+212528812345"
+    },
+    {
+      "country": "EH",
+      "type": "mobile",
+      "full": "+212650123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+212650123456"
+    },
+    {
+      "country": "ER",
+      "type": "fixedLine",
+      "full": "+2918370362",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2918370362"
+    },
+    {
+      "country": "ER",
+      "type": "mobile",
+      "full": "+2917123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2917123456"
+    },
+    {
+      "country": "ES",
+      "type": "fixedLine",
+      "full": "+34810123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+34810123456"
+    },
+    {
+      "country": "ES",
+      "type": "mobile",
+      "full": "+34612345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+34612345678"
+    },
+    {
+      "country": "ET",
+      "type": "fixedLine",
+      "full": "+251111112345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+251111112345"
+    },
+    {
+      "country": "ET",
+      "type": "mobile",
+      "full": "+251911234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+251911234567"
+    },
+    {
+      "country": "FI",
+      "type": "fixedLine",
+      "full": "+358131234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+358131234567"
+    },
+    {
+      "country": "FI",
+      "type": "mobile",
+      "full": "+358412345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+358412345678"
+    },
+    {
+      "country": "FJ",
+      "type": "fixedLine",
+      "full": "+6793212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6793212345"
+    },
+    {
+      "country": "FJ",
+      "type": "mobile",
+      "full": "+6797012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6797012345"
+    },
+    {
+      "country": "FK",
+      "type": "fixedLine",
+      "full": "+50031234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50031234"
+    },
+    {
+      "country": "FK",
+      "type": "mobile",
+      "full": "+50051234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50051234"
+    },
+    {
+      "country": "FM",
+      "type": "fixedLine",
+      "full": "+6913201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6913201234"
+    },
+    {
+      "country": "FM",
+      "type": "mobile",
+      "full": "+6913501234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6913501234"
+    },
+    {
+      "country": "FO",
+      "type": "fixedLine",
+      "full": "+298201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+298201234"
+    },
+    {
+      "country": "FO",
+      "type": "mobile",
+      "full": "+298211234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+298211234"
+    },
+    {
+      "country": "FR",
+      "type": "fixedLine",
+      "full": "+33123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+33123456789"
+    },
+    {
+      "country": "FR",
+      "type": "mobile",
+      "full": "+33612345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+33612345678"
+    },
+    {
+      "country": "GA",
+      "type": "fixedLine",
+      "full": "+24101441234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+24101441234"
+    },
+    {
+      "country": "GA",
+      "type": "mobile",
+      "full": "+24106031234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+24106031234"
+    },
+    {
+      "country": "GB",
+      "type": "fixedLine",
+      "full": "+441212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+441212345678"
+    },
+    {
+      "country": "GB",
+      "type": "mobile",
+      "full": "+447400123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+447400123456"
+    },
+    {
+      "country": "GD",
+      "type": "fixedLine",
+      "full": "+14732691234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+14732691234"
+    },
+    {
+      "country": "GD",
+      "type": "mobile",
+      "full": "+14734031234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+14734031234"
+    },
+    {
+      "country": "GE",
+      "type": "fixedLine",
+      "full": "+995322123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+995322123456"
+    },
+    {
+      "country": "GE",
+      "type": "mobile",
+      "full": "+995555123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+995555123456"
+    },
+    {
+      "country": "GF",
+      "type": "fixedLine",
+      "full": "+594594101234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+594594101234"
+    },
+    {
+      "country": "GF",
+      "type": "mobile",
+      "full": "+594694201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+594694201234"
+    },
+    {
+      "country": "GG",
+      "type": "fixedLine",
+      "full": "+441481256789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+441481256789"
+    },
+    {
+      "country": "GG",
+      "type": "mobile",
+      "full": "+447781123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+447781123456"
+    },
+    {
+      "country": "GH",
+      "type": "fixedLine",
+      "full": "+233302345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+233302345678"
+    },
+    {
+      "country": "GH",
+      "type": "mobile",
+      "full": "+233231234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+233231234567"
+    },
+    {
+      "country": "GI",
+      "type": "fixedLine",
+      "full": "+35020012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35020012345"
+    },
+    {
+      "country": "GI",
+      "type": "mobile",
+      "full": "+35057123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35057123456"
+    },
+    {
+      "country": "GL",
+      "type": "fixedLine",
+      "full": "+299321000",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+299321000"
+    },
+    {
+      "country": "GL",
+      "type": "mobile",
+      "full": "+299221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+299221234"
+    },
+    {
+      "country": "GM",
+      "type": "fixedLine",
+      "full": "+2205661234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2205661234"
+    },
+    {
+      "country": "GM",
+      "type": "mobile",
+      "full": "+2203012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2203012345"
+    },
+    {
+      "country": "GN",
+      "type": "fixedLine",
+      "full": "+22430241234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22430241234"
+    },
+    {
+      "country": "GN",
+      "type": "mobile",
+      "full": "+224601123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+224601123456"
+    },
+    {
+      "country": "GP",
+      "type": "fixedLine",
+      "full": "+590590201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+590590201234"
+    },
+    {
+      "country": "GP",
+      "type": "mobile",
+      "full": "+590690001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+590690001234"
+    },
+    {
+      "country": "GQ",
+      "type": "fixedLine",
+      "full": "+240333091234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+240333091234"
+    },
+    {
+      "country": "GQ",
+      "type": "mobile",
+      "full": "+240222123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+240222123456"
+    },
+    {
+      "country": "GR",
+      "type": "fixedLine",
+      "full": "+302123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+302123456789"
+    },
+    {
+      "country": "GR",
+      "type": "mobile",
+      "full": "+306912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+306912345678"
+    },
+    {
+      "country": "GT",
+      "type": "fixedLine",
+      "full": "+50222456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50222456789"
+    },
+    {
+      "country": "GT",
+      "type": "mobile",
+      "full": "+50251234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50251234567"
+    },
+    {
+      "country": "GU",
+      "type": "fixedLine",
+      "full": "+16713001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16713001234"
+    },
+    {
+      "country": "GU",
+      "type": "mobile",
+      "full": "+16713001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16713001234"
+    },
+    {
+      "country": "GW",
+      "type": "fixedLine",
+      "full": "+245443201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+245443201234"
+    },
+    {
+      "country": "GW",
+      "type": "mobile",
+      "full": "+245955012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+245955012345"
+    },
+    {
+      "country": "GY",
+      "type": "fixedLine",
+      "full": "+5922201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5922201234"
+    },
+    {
+      "country": "GY",
+      "type": "mobile",
+      "full": "+5926091234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5926091234"
+    },
+    {
+      "country": "HK",
+      "type": "fixedLine",
+      "full": "+85221234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85221234567"
+    },
+    {
+      "country": "HK",
+      "type": "mobile",
+      "full": "+85251234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85251234567"
+    },
+    {
+      "country": "HN",
+      "type": "fixedLine",
+      "full": "+50422123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50422123456"
+    },
+    {
+      "country": "HN",
+      "type": "mobile",
+      "full": "+50491234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50491234567"
+    },
+    {
+      "country": "HR",
+      "type": "fixedLine",
+      "full": "+38512345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38512345678"
+    },
+    {
+      "country": "HR",
+      "type": "mobile",
+      "full": "+385921234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+385921234567"
+    },
+    {
+      "country": "HT",
+      "type": "fixedLine",
+      "full": "+50922453300",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50922453300"
+    },
+    {
+      "country": "HT",
+      "type": "mobile",
+      "full": "+50934101234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50934101234"
+    },
+    {
+      "country": "HU",
+      "type": "fixedLine",
+      "full": "+3612345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3612345678"
+    },
+    {
+      "country": "HU",
+      "type": "mobile",
+      "full": "+36201234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+36201234567"
+    },
+    {
+      "country": "ID",
+      "type": "fixedLine",
+      "full": "+62218350123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+62218350123"
+    },
+    {
+      "country": "ID",
+      "type": "mobile",
+      "full": "+62812345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+62812345678"
+    },
+    {
+      "country": "IE",
+      "type": "fixedLine",
+      "full": "+3532212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3532212345"
+    },
+    {
+      "country": "IE",
+      "type": "mobile",
+      "full": "+353850123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+353850123456"
+    },
+    {
+      "country": "IL",
+      "type": "fixedLine",
+      "full": "+97221234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97221234567"
+    },
+    {
+      "country": "IL",
+      "type": "mobile",
+      "full": "+972502345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+972502345678"
+    },
+    {
+      "country": "IM",
+      "type": "fixedLine",
+      "full": "+441624756789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+441624756789"
+    },
+    {
+      "country": "IM",
+      "type": "mobile",
+      "full": "+447924123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+447924123456"
+    },
+    {
+      "country": "IN",
+      "type": "fixedLine",
+      "full": "+917410410123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+917410410123"
+    },
+    {
+      "country": "IN",
+      "type": "mobile",
+      "full": "+918123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+918123456789"
+    },
+    {
+      "country": "IO",
+      "type": "fixedLine",
+      "full": "+2463709100",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2463709100"
+    },
+    {
+      "country": "IO",
+      "type": "mobile",
+      "full": "+2463801234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2463801234"
+    },
+    {
+      "country": "IQ",
+      "type": "fixedLine",
+      "full": "+96412345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+96412345678"
+    },
+    {
+      "country": "IQ",
+      "type": "mobile",
+      "full": "+9647912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9647912345678"
+    },
+    {
+      "country": "IR",
+      "type": "fixedLine",
+      "full": "+982123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+982123456789"
+    },
+    {
+      "country": "IR",
+      "type": "mobile",
+      "full": "+989123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+989123456789"
+    },
+    {
+      "country": "IS",
+      "type": "fixedLine",
+      "full": "+3544101234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3544101234"
+    },
+    {
+      "country": "IS",
+      "type": "mobile",
+      "full": "+3546111234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3546111234"
+    },
+    {
+      "country": "IT",
+      "type": "fixedLine",
+      "full": "+390212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+390212345678"
+    },
+    {
+      "country": "IT",
+      "type": "mobile",
+      "full": "+393123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+393123456789"
+    },
+    {
+      "country": "JE",
+      "type": "fixedLine",
+      "full": "+441534456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+441534456789"
+    },
+    {
+      "country": "JE",
+      "type": "mobile",
+      "full": "+447797712345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+447797712345"
+    },
+    {
+      "country": "JM",
+      "type": "fixedLine",
+      "full": "+18765230123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18765230123"
+    },
+    {
+      "country": "JM",
+      "type": "mobile",
+      "full": "+18762101234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18762101234"
+    },
+    {
+      "country": "JO",
+      "type": "fixedLine",
+      "full": "+96262001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+96262001234"
+    },
+    {
+      "country": "JO",
+      "type": "mobile",
+      "full": "+962790123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+962790123456"
+    },
+    {
+      "country": "JP",
+      "type": "fixedLine",
+      "full": "+81312345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+81312345678"
+    },
+    {
+      "country": "JP",
+      "type": "mobile",
+      "full": "+819012345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+819012345678"
+    },
+    {
+      "country": "KE",
+      "type": "fixedLine",
+      "full": "+254202012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+254202012345"
+    },
+    {
+      "country": "KE",
+      "type": "mobile",
+      "full": "+254712123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+254712123456"
+    },
+    {
+      "country": "KG",
+      "type": "fixedLine",
+      "full": "+996312123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+996312123456"
+    },
+    {
+      "country": "KG",
+      "type": "mobile",
+      "full": "+996700123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+996700123456"
+    },
+    {
+      "country": "KH",
+      "type": "fixedLine",
+      "full": "+85523756789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85523756789"
+    },
+    {
+      "country": "KH",
+      "type": "mobile",
+      "full": "+85591234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85591234567"
+    },
+    {
+      "country": "KI",
+      "type": "fixedLine",
+      "full": "+68631234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68631234"
+    },
+    {
+      "country": "KI",
+      "type": "mobile",
+      "full": "+68672001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68672001234"
+    },
+    {
+      "country": "KM",
+      "type": "fixedLine",
+      "full": "+2697712345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2697712345"
+    },
+    {
+      "country": "KM",
+      "type": "mobile",
+      "full": "+2693212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2693212345"
+    },
+    {
+      "country": "KN",
+      "type": "fixedLine",
+      "full": "+18692361234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18692361234"
+    },
+    {
+      "country": "KN",
+      "type": "mobile",
+      "full": "+18697652917",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18697652917"
+    },
+    {
+      "country": "KP",
+      "type": "fixedLine",
+      "full": "+85021234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85021234567"
+    },
+    {
+      "country": "KP",
+      "type": "mobile",
+      "full": "+8501921234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+8501921234567"
+    },
+    {
+      "country": "KR",
+      "type": "fixedLine",
+      "full": "+8222123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+8222123456"
+    },
+    {
+      "country": "KR",
+      "type": "mobile",
+      "full": "+821020000000",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+821020000000"
+    },
+    {
+      "country": "KW",
+      "type": "fixedLine",
+      "full": "+96522345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+96522345678"
+    },
+    {
+      "country": "KW",
+      "type": "mobile",
+      "full": "+96550012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+96550012345"
+    },
+    {
+      "country": "KY",
+      "type": "fixedLine",
+      "full": "+13452221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+13452221234"
+    },
+    {
+      "country": "KY",
+      "type": "mobile",
+      "full": "+13453231234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+13453231234"
+    },
+    {
+      "country": "KZ",
+      "type": "fixedLine",
+      "full": "+77123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+77123456789"
+    },
+    {
+      "country": "KZ",
+      "type": "mobile",
+      "full": "+77710009998",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+77710009998"
+    },
+    {
+      "country": "LA",
+      "type": "fixedLine",
+      "full": "+85621212862",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85621212862"
+    },
+    {
+      "country": "LA",
+      "type": "mobile",
+      "full": "+8562023123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+8562023123456"
+    },
+    {
+      "country": "LB",
+      "type": "fixedLine",
+      "full": "+9611123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9611123456"
+    },
+    {
+      "country": "LB",
+      "type": "mobile",
+      "full": "+96171123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+96171123456"
+    },
+    {
+      "country": "LC",
+      "type": "fixedLine",
+      "full": "+17584305678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17584305678"
+    },
+    {
+      "country": "LC",
+      "type": "mobile",
+      "full": "+17582845678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17582845678"
+    },
+    {
+      "country": "LI",
+      "type": "fixedLine",
+      "full": "+4232345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4232345678"
+    },
+    {
+      "country": "LI",
+      "type": "mobile",
+      "full": "+423660234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+423660234567"
+    },
+    {
+      "country": "LK",
+      "type": "fixedLine",
+      "full": "+94112345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+94112345678"
+    },
+    {
+      "country": "LK",
+      "type": "mobile",
+      "full": "+94712345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+94712345678"
+    },
+    {
+      "country": "LR",
+      "type": "fixedLine",
+      "full": "+23121234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23121234567"
+    },
+    {
+      "country": "LR",
+      "type": "mobile",
+      "full": "+231770123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+231770123456"
+    },
+    {
+      "country": "LS",
+      "type": "fixedLine",
+      "full": "+26622123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+26622123456"
+    },
+    {
+      "country": "LS",
+      "type": "mobile",
+      "full": "+26650123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+26650123456"
+    },
+    {
+      "country": "LT",
+      "type": "fixedLine",
+      "full": "+37031234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37031234567"
+    },
+    {
+      "country": "LT",
+      "type": "mobile",
+      "full": "+37061234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37061234567"
+    },
+    {
+      "country": "LU",
+      "type": "fixedLine",
+      "full": "+35227123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35227123456"
+    },
+    {
+      "country": "LU",
+      "type": "mobile",
+      "full": "+352628123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+352628123456"
+    },
+    {
+      "country": "LV",
+      "type": "fixedLine",
+      "full": "+37163123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37163123456"
+    },
+    {
+      "country": "LV",
+      "type": "mobile",
+      "full": "+37121234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37121234567"
+    },
+    {
+      "country": "LY",
+      "type": "fixedLine",
+      "full": "+218212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+218212345678"
+    },
+    {
+      "country": "LY",
+      "type": "mobile",
+      "full": "+218912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+218912345678"
+    },
+    {
+      "country": "MA",
+      "type": "fixedLine",
+      "full": "+212520123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+212520123456"
+    },
+    {
+      "country": "MA",
+      "type": "mobile",
+      "full": "+212650123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+212650123456"
+    },
+    {
+      "country": "MC",
+      "type": "fixedLine",
+      "full": "+37799123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37799123456"
+    },
+    {
+      "country": "MC",
+      "type": "mobile",
+      "full": "+377612345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+377612345678"
+    },
+    {
+      "country": "MD",
+      "type": "fixedLine",
+      "full": "+37322212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37322212345"
+    },
+    {
+      "country": "MD",
+      "type": "mobile",
+      "full": "+37362112345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37362112345"
+    },
+    {
+      "country": "ME",
+      "type": "fixedLine",
+      "full": "+38230234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38230234567"
+    },
+    {
+      "country": "ME",
+      "type": "mobile",
+      "full": "+38260123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38260123456"
+    },
+    {
+      "country": "MF",
+      "type": "fixedLine",
+      "full": "+590590271234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+590590271234"
+    },
+    {
+      "country": "MF",
+      "type": "mobile",
+      "full": "+590690001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+590690001234"
+    },
+    {
+      "country": "MG",
+      "type": "fixedLine",
+      "full": "+261202123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+261202123456"
+    },
+    {
+      "country": "MG",
+      "type": "mobile",
+      "full": "+261321234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+261321234567"
+    },
+    {
+      "country": "MH",
+      "type": "fixedLine",
+      "full": "+6922471234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6922471234"
+    },
+    {
+      "country": "MH",
+      "type": "mobile",
+      "full": "+6922351234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6922351234"
+    },
+    {
+      "country": "MK",
+      "type": "fixedLine",
+      "full": "+38922012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38922012345"
+    },
+    {
+      "country": "MK",
+      "type": "mobile",
+      "full": "+38972345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38972345678"
+    },
+    {
+      "country": "ML",
+      "type": "fixedLine",
+      "full": "+22320212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22320212345"
+    },
+    {
+      "country": "ML",
+      "type": "mobile",
+      "full": "+22365012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22365012345"
+    },
+    {
+      "country": "MM",
+      "type": "fixedLine",
+      "full": "+951234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+951234567"
+    },
+    {
+      "country": "MM",
+      "type": "mobile",
+      "full": "+9592123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9592123456"
+    },
+    {
+      "country": "MN",
+      "type": "fixedLine",
+      "full": "+97653123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97653123456"
+    },
+    {
+      "country": "MN",
+      "type": "mobile",
+      "full": "+97688123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97688123456"
+    },
+    {
+      "country": "MO",
+      "type": "fixedLine",
+      "full": "+85328212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85328212345"
+    },
+    {
+      "country": "MO",
+      "type": "mobile",
+      "full": "+85366123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+85366123456"
+    },
+    {
+      "country": "MP",
+      "type": "fixedLine",
+      "full": "+16702345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16702345678"
+    },
+    {
+      "country": "MP",
+      "type": "mobile",
+      "full": "+16702345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16702345678"
+    },
+    {
+      "country": "MQ",
+      "type": "fixedLine",
+      "full": "+596596301234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+596596301234"
+    },
+    {
+      "country": "MQ",
+      "type": "mobile",
+      "full": "+596696201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+596696201234"
+    },
+    {
+      "country": "MR",
+      "type": "fixedLine",
+      "full": "+22235123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22235123456"
+    },
+    {
+      "country": "MR",
+      "type": "mobile",
+      "full": "+22222123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22222123456"
+    },
+    {
+      "country": "MS",
+      "type": "fixedLine",
+      "full": "+16644912345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16644912345"
+    },
+    {
+      "country": "MS",
+      "type": "mobile",
+      "full": "+16644923456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16644923456"
+    },
+    {
+      "country": "MT",
+      "type": "fixedLine",
+      "full": "+35621001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35621001234"
+    },
+    {
+      "country": "MT",
+      "type": "mobile",
+      "full": "+35696961234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+35696961234"
+    },
+    {
+      "country": "MU",
+      "type": "fixedLine",
+      "full": "+23054480123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23054480123"
+    },
+    {
+      "country": "MU",
+      "type": "mobile",
+      "full": "+23052512345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23052512345"
+    },
+    {
+      "country": "MV",
+      "type": "fixedLine",
+      "full": "+9606701234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9606701234"
+    },
+    {
+      "country": "MV",
+      "type": "mobile",
+      "full": "+9607712345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9607712345"
+    },
+    {
+      "country": "MW",
+      "type": "fixedLine",
+      "full": "+2651234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2651234567"
+    },
+    {
+      "country": "MW",
+      "type": "mobile",
+      "full": "+265991234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+265991234567"
+    },
+    {
+      "country": "MX",
+      "type": "fixedLine",
+      "full": "+522001234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+522001234567"
+    },
+    {
+      "country": "MX",
+      "type": "mobile",
+      "full": "+522221234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+522221234567"
+    },
+    {
+      "country": "MY",
+      "type": "fixedLine",
+      "full": "+60323856789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+60323856789"
+    },
+    {
+      "country": "MY",
+      "type": "mobile",
+      "full": "+60123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+60123456789"
+    },
+    {
+      "country": "MZ",
+      "type": "fixedLine",
+      "full": "+25821123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+25821123456"
+    },
+    {
+      "country": "MZ",
+      "type": "mobile",
+      "full": "+258821234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+258821234567"
+    },
+    {
+      "country": "NA",
+      "type": "fixedLine",
+      "full": "+26461221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+26461221234"
+    },
+    {
+      "country": "NA",
+      "type": "mobile",
+      "full": "+264811234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+264811234567"
+    },
+    {
+      "country": "NC",
+      "type": "fixedLine",
+      "full": "+687201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+687201234"
+    },
+    {
+      "country": "NC",
+      "type": "mobile",
+      "full": "+687751234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+687751234"
+    },
+    {
+      "country": "NE",
+      "type": "fixedLine",
+      "full": "+22720201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22720201234"
+    },
+    {
+      "country": "NE",
+      "type": "mobile",
+      "full": "+22793123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22793123456"
+    },
+    {
+      "country": "NF",
+      "type": "fixedLine",
+      "full": "+672106609",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+672106609"
+    },
+    {
+      "country": "NF",
+      "type": "mobile",
+      "full": "+672381234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+672381234"
+    },
+    {
+      "country": "NG",
+      "type": "fixedLine",
+      "full": "+2342033123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2342033123456"
+    },
+    {
+      "country": "NG",
+      "type": "mobile",
+      "full": "+2348021234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2348021234567"
+    },
+    {
+      "country": "NI",
+      "type": "fixedLine",
+      "full": "+50521234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50521234567"
+    },
+    {
+      "country": "NI",
+      "type": "mobile",
+      "full": "+50581234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50581234567"
+    },
+    {
+      "country": "NL",
+      "type": "fixedLine",
+      "full": "+31101234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+31101234567"
+    },
+    {
+      "country": "NL",
+      "type": "mobile",
+      "full": "+31612345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+31612345678"
+    },
+    {
+      "country": "NO",
+      "type": "fixedLine",
+      "full": "+4721234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4721234567"
+    },
+    {
+      "country": "NO",
+      "type": "mobile",
+      "full": "+4740612345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4740612345"
+    },
+    {
+      "country": "NP",
+      "type": "fixedLine",
+      "full": "+97714567890",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97714567890"
+    },
+    {
+      "country": "NP",
+      "type": "mobile",
+      "full": "+9779841234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9779841234567"
+    },
+    {
+      "country": "NR",
+      "type": "fixedLine",
+      "full": "+6744441234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6744441234"
+    },
+    {
+      "country": "NR",
+      "type": "mobile",
+      "full": "+6745551234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6745551234"
+    },
+    {
+      "country": "NU",
+      "type": "fixedLine",
+      "full": "+6837012",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6837012"
+    },
+    {
+      "country": "NU",
+      "type": "mobile",
+      "full": "+6838884012",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6838884012"
+    },
+    {
+      "country": "NZ",
+      "type": "fixedLine",
+      "full": "+6432345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6432345678"
+    },
+    {
+      "country": "NZ",
+      "type": "mobile",
+      "full": "+64211234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+64211234567"
+    },
+    {
+      "country": "OM",
+      "type": "fixedLine",
+      "full": "+96823123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+96823123456"
+    },
+    {
+      "country": "OM",
+      "type": "mobile",
+      "full": "+96892123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+96892123456"
+    },
+    {
+      "country": "PA",
+      "type": "fixedLine",
+      "full": "+5072001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5072001234"
+    },
+    {
+      "country": "PA",
+      "type": "mobile",
+      "full": "+50761234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50761234567"
+    },
+    {
+      "country": "PE",
+      "type": "fixedLine",
+      "full": "+5111234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5111234567"
+    },
+    {
+      "country": "PE",
+      "type": "mobile",
+      "full": "+51912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+51912345678"
+    },
+    {
+      "country": "PF",
+      "type": "fixedLine",
+      "full": "+68940412345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68940412345"
+    },
+    {
+      "country": "PF",
+      "type": "mobile",
+      "full": "+68987123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68987123456"
+    },
+    {
+      "country": "PG",
+      "type": "fixedLine",
+      "full": "+6753123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6753123456"
+    },
+    {
+      "country": "PG",
+      "type": "mobile",
+      "full": "+67570123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+67570123456"
+    },
+    {
+      "country": "PH",
+      "type": "fixedLine",
+      "full": "+63232345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+63232345678"
+    },
+    {
+      "country": "PH",
+      "type": "mobile",
+      "full": "+639051234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+639051234567"
+    },
+    {
+      "country": "PK",
+      "type": "fixedLine",
+      "full": "+922123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+922123456789"
+    },
+    {
+      "country": "PK",
+      "type": "mobile",
+      "full": "+923012345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+923012345678"
+    },
+    {
+      "country": "PL",
+      "type": "fixedLine",
+      "full": "+48123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+48123456789"
+    },
+    {
+      "country": "PL",
+      "type": "mobile",
+      "full": "+48512345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+48512345678"
+    },
+    {
+      "country": "PM",
+      "type": "fixedLine",
+      "full": "+508430123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+508430123"
+    },
+    {
+      "country": "PM",
+      "type": "mobile",
+      "full": "+508551234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+508551234"
+    },
+    {
+      "country": "PR",
+      "type": "fixedLine",
+      "full": "+17872345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17872345678"
+    },
+    {
+      "country": "PR",
+      "type": "mobile",
+      "full": "+17872345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17872345678"
+    },
+    {
+      "country": "PS",
+      "type": "fixedLine",
+      "full": "+97022234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97022234567"
+    },
+    {
+      "country": "PS",
+      "type": "mobile",
+      "full": "+970599123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+970599123456"
+    },
+    {
+      "country": "PT",
+      "type": "fixedLine",
+      "full": "+351212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+351212345678"
+    },
+    {
+      "country": "PT",
+      "type": "mobile",
+      "full": "+351912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+351912345678"
+    },
+    {
+      "country": "PW",
+      "type": "fixedLine",
+      "full": "+6802771234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6802771234"
+    },
+    {
+      "country": "PW",
+      "type": "mobile",
+      "full": "+6806201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6806201234"
+    },
+    {
+      "country": "PY",
+      "type": "fixedLine",
+      "full": "+595212345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+595212345678"
+    },
+    {
+      "country": "PY",
+      "type": "mobile",
+      "full": "+595961456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+595961456789"
+    },
+    {
+      "country": "QA",
+      "type": "fixedLine",
+      "full": "+97444123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97444123456"
+    },
+    {
+      "country": "QA",
+      "type": "mobile",
+      "full": "+97433123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+97433123456"
+    },
+    {
+      "country": "RE",
+      "type": "fixedLine",
+      "full": "+262262161234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+262262161234"
+    },
+    {
+      "country": "RE",
+      "type": "mobile",
+      "full": "+262692123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+262692123456"
+    },
+    {
+      "country": "RO",
+      "type": "fixedLine",
+      "full": "+40211234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+40211234567"
+    },
+    {
+      "country": "RO",
+      "type": "mobile",
+      "full": "+40712034567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+40712034567"
+    },
+    {
+      "country": "RS",
+      "type": "fixedLine",
+      "full": "+38110234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38110234567"
+    },
+    {
+      "country": "RS",
+      "type": "mobile",
+      "full": "+381601234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+381601234567"
+    },
+    {
+      "country": "RU",
+      "type": "fixedLine",
+      "full": "+73011234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+73011234567"
+    },
+    {
+      "country": "RU",
+      "type": "mobile",
+      "full": "+79123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+79123456789"
+    },
+    {
+      "country": "RW",
+      "type": "fixedLine",
+      "full": "+250250123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+250250123456"
+    },
+    {
+      "country": "RW",
+      "type": "mobile",
+      "full": "+250720123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+250720123456"
+    },
+    {
+      "country": "SA",
+      "type": "fixedLine",
+      "full": "+966112345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+966112345678"
+    },
+    {
+      "country": "SA",
+      "type": "mobile",
+      "full": "+966512345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+966512345678"
+    },
+    {
+      "country": "SB",
+      "type": "fixedLine",
+      "full": "+67740123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+67740123"
+    },
+    {
+      "country": "SB",
+      "type": "mobile",
+      "full": "+6777421234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6777421234"
+    },
+    {
+      "country": "SC",
+      "type": "fixedLine",
+      "full": "+2484217123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2484217123"
+    },
+    {
+      "country": "SC",
+      "type": "mobile",
+      "full": "+2482510123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2482510123"
+    },
+    {
+      "country": "SD",
+      "type": "fixedLine",
+      "full": "+249153123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+249153123456"
+    },
+    {
+      "country": "SD",
+      "type": "mobile",
+      "full": "+249911231234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+249911231234"
+    },
+    {
+      "country": "SE",
+      "type": "fixedLine",
+      "full": "+468123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+468123456"
+    },
+    {
+      "country": "SE",
+      "type": "mobile",
+      "full": "+46701234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+46701234567"
+    },
+    {
+      "country": "SG",
+      "type": "fixedLine",
+      "full": "+6561234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6561234567"
+    },
+    {
+      "country": "SG",
+      "type": "mobile",
+      "full": "+6581234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6581234567"
+    },
+    {
+      "country": "SH",
+      "type": "fixedLine",
+      "full": "+29022158",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+29022158"
+    },
+    {
+      "country": "SH",
+      "type": "mobile",
+      "full": "+29051234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+29051234"
+    },
+    {
+      "country": "SI",
+      "type": "fixedLine",
+      "full": "+38612345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38612345678"
+    },
+    {
+      "country": "SI",
+      "type": "mobile",
+      "full": "+38631234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38631234567"
+    },
+    {
+      "country": "SJ",
+      "type": "fixedLine",
+      "full": "+4779123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4779123456"
+    },
+    {
+      "country": "SJ",
+      "type": "mobile",
+      "full": "+4741234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+4741234567"
+    },
+    {
+      "country": "SK",
+      "type": "fixedLine",
+      "full": "+421221234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+421221234567"
+    },
+    {
+      "country": "SK",
+      "type": "mobile",
+      "full": "+421912123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+421912123456"
+    },
+    {
+      "country": "SL",
+      "type": "fixedLine",
+      "full": "+23222221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23222221234"
+    },
+    {
+      "country": "SL",
+      "type": "mobile",
+      "full": "+23225123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23225123456"
+    },
+    {
+      "country": "SM",
+      "type": "fixedLine",
+      "full": "+3780549886377",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+3780549886377"
+    },
+    {
+      "country": "SM",
+      "type": "mobile",
+      "full": "+37866661212",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+37866661212"
+    },
+    {
+      "country": "SN",
+      "type": "fixedLine",
+      "full": "+221301012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+221301012345"
+    },
+    {
+      "country": "SN",
+      "type": "mobile",
+      "full": "+221701234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+221701234567"
+    },
+    {
+      "country": "SO",
+      "type": "fixedLine",
+      "full": "+2524012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2524012345"
+    },
+    {
+      "country": "SO",
+      "type": "mobile",
+      "full": "+25271123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+25271123456"
+    },
+    {
+      "country": "SR",
+      "type": "fixedLine",
+      "full": "+597211234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+597211234"
+    },
+    {
+      "country": "SR",
+      "type": "mobile",
+      "full": "+5977412345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+5977412345"
+    },
+    {
+      "country": "SS",
+      "type": "fixedLine",
+      "full": "+211181234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+211181234567"
+    },
+    {
+      "country": "SS",
+      "type": "mobile",
+      "full": "+211977123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+211977123456"
+    },
+    {
+      "country": "ST",
+      "type": "fixedLine",
+      "full": "+2392221234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2392221234"
+    },
+    {
+      "country": "ST",
+      "type": "mobile",
+      "full": "+2399812345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2399812345"
+    },
+    {
+      "country": "SV",
+      "type": "fixedLine",
+      "full": "+50321234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50321234567"
+    },
+    {
+      "country": "SV",
+      "type": "mobile",
+      "full": "+50370123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+50370123456"
+    },
+    {
+      "country": "SX",
+      "type": "fixedLine",
+      "full": "+17215425678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17215425678"
+    },
+    {
+      "country": "SX",
+      "type": "mobile",
+      "full": "+17215205678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17215205678"
+    },
+    {
+      "country": "SY",
+      "type": "fixedLine",
+      "full": "+963112345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+963112345678"
+    },
+    {
+      "country": "SY",
+      "type": "mobile",
+      "full": "+963944567890",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+963944567890"
+    },
+    {
+      "country": "SZ",
+      "type": "fixedLine",
+      "full": "+26822171234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+26822171234"
+    },
+    {
+      "country": "SZ",
+      "type": "mobile",
+      "full": "+26876123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+26876123456"
+    },
+    {
+      "country": "TA",
+      "type": "fixedLine",
+      "full": "+2908999",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2908999"
+    },
+    {
+      "country": "TC",
+      "type": "fixedLine",
+      "full": "+16497121234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16497121234"
+    },
+    {
+      "country": "TC",
+      "type": "mobile",
+      "full": "+16492311234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+16492311234"
+    },
+    {
+      "country": "TD",
+      "type": "fixedLine",
+      "full": "+23522501234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23522501234"
+    },
+    {
+      "country": "TD",
+      "type": "mobile",
+      "full": "+23563012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+23563012345"
+    },
+    {
+      "country": "TG",
+      "type": "fixedLine",
+      "full": "+22822212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22822212345"
+    },
+    {
+      "country": "TG",
+      "type": "mobile",
+      "full": "+22890112345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+22890112345"
+    },
+    {
+      "country": "TH",
+      "type": "fixedLine",
+      "full": "+6621234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6621234567"
+    },
+    {
+      "country": "TH",
+      "type": "mobile",
+      "full": "+66812345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+66812345678"
+    },
+    {
+      "country": "TJ",
+      "type": "fixedLine",
+      "full": "+992372123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+992372123456"
+    },
+    {
+      "country": "TJ",
+      "type": "mobile",
+      "full": "+992917123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+992917123456"
+    },
+    {
+      "country": "TK",
+      "type": "fixedLine",
+      "full": "+6903101",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6903101"
+    },
+    {
+      "country": "TK",
+      "type": "mobile",
+      "full": "+6907290",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6907290"
+    },
+    {
+      "country": "TL",
+      "type": "fixedLine",
+      "full": "+6702112345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6702112345"
+    },
+    {
+      "country": "TL",
+      "type": "mobile",
+      "full": "+67077212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+67077212345"
+    },
+    {
+      "country": "TM",
+      "type": "fixedLine",
+      "full": "+99312345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+99312345678"
+    },
+    {
+      "country": "TM",
+      "type": "mobile",
+      "full": "+99366123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+99366123456"
+    },
+    {
+      "country": "TN",
+      "type": "fixedLine",
+      "full": "+21630010123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+21630010123"
+    },
+    {
+      "country": "TN",
+      "type": "mobile",
+      "full": "+21620123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+21620123456"
+    },
+    {
+      "country": "TO",
+      "type": "fixedLine",
+      "full": "+67620123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+67620123"
+    },
+    {
+      "country": "TO",
+      "type": "mobile",
+      "full": "+6767715123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6767715123"
+    },
+    {
+      "country": "TR",
+      "type": "fixedLine",
+      "full": "+902123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+902123456789"
+    },
+    {
+      "country": "TR",
+      "type": "mobile",
+      "full": "+905012345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+905012345678"
+    },
+    {
+      "country": "TT",
+      "type": "fixedLine",
+      "full": "+18682211234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18682211234"
+    },
+    {
+      "country": "TT",
+      "type": "mobile",
+      "full": "+18682911234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+18682911234"
+    },
+    {
+      "country": "TV",
+      "type": "fixedLine",
+      "full": "+68820123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68820123"
+    },
+    {
+      "country": "TV",
+      "type": "mobile",
+      "full": "+688901234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+688901234"
+    },
+    {
+      "country": "TW",
+      "type": "fixedLine",
+      "full": "+886221234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+886221234567"
+    },
+    {
+      "country": "TW",
+      "type": "mobile",
+      "full": "+886912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+886912345678"
+    },
+    {
+      "country": "TZ",
+      "type": "fixedLine",
+      "full": "+255222345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+255222345678"
+    },
+    {
+      "country": "TZ",
+      "type": "mobile",
+      "full": "+255621234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+255621234567"
+    },
+    {
+      "country": "UA",
+      "type": "fixedLine",
+      "full": "+380311234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+380311234567"
+    },
+    {
+      "country": "UA",
+      "type": "mobile",
+      "full": "+380501234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+380501234567"
+    },
+    {
+      "country": "UG",
+      "type": "fixedLine",
+      "full": "+256312345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+256312345678"
+    },
+    {
+      "country": "UG",
+      "type": "mobile",
+      "full": "+256712345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+256712345678"
+    },
+    {
+      "country": "US",
+      "type": "fixedLine",
+      "full": "+12015550123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12015550123"
+    },
+    {
+      "country": "US",
+      "type": "mobile",
+      "full": "+12015550123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12015550123"
+    },
+    {
+      "country": "UY",
+      "type": "fixedLine",
+      "full": "+59821231234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+59821231234"
+    },
+    {
+      "country": "UY",
+      "type": "mobile",
+      "full": "+59894231234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+59894231234"
+    },
+    {
+      "country": "UZ",
+      "type": "fixedLine",
+      "full": "+998669050123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+998669050123"
+    },
+    {
+      "country": "UZ",
+      "type": "mobile",
+      "full": "+998912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+998912345678"
+    },
+    {
+      "country": "VA",
+      "type": "fixedLine",
+      "full": "+390669812345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+390669812345"
+    },
+    {
+      "country": "VA",
+      "type": "mobile",
+      "full": "+393123456789",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+393123456789"
+    },
+    {
+      "country": "VC",
+      "type": "fixedLine",
+      "full": "+17842661234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17842661234"
+    },
+    {
+      "country": "VC",
+      "type": "mobile",
+      "full": "+17844301234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+17844301234"
+    },
+    {
+      "country": "VE",
+      "type": "fixedLine",
+      "full": "+582121234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+582121234567"
+    },
+    {
+      "country": "VE",
+      "type": "mobile",
+      "full": "+584121234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+584121234567"
+    },
+    {
+      "country": "VG",
+      "type": "fixedLine",
+      "full": "+12842291234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12842291234"
+    },
+    {
+      "country": "VG",
+      "type": "mobile",
+      "full": "+12843001234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+12843001234"
+    },
+    {
+      "country": "VI",
+      "type": "fixedLine",
+      "full": "+13406421234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+13406421234"
+    },
+    {
+      "country": "VI",
+      "type": "mobile",
+      "full": "+13406421234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+13406421234"
+    },
+    {
+      "country": "VN",
+      "type": "fixedLine",
+      "full": "+842101234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+842101234567"
+    },
+    {
+      "country": "VN",
+      "type": "mobile",
+      "full": "+84912345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+84912345678"
+    },
+    {
+      "country": "VU",
+      "type": "fixedLine",
+      "full": "+67822123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+67822123"
+    },
+    {
+      "country": "VU",
+      "type": "mobile",
+      "full": "+6785912345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6785912345"
+    },
+    {
+      "country": "WF",
+      "type": "fixedLine",
+      "full": "+681721234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+681721234"
+    },
+    {
+      "country": "WF",
+      "type": "mobile",
+      "full": "+681821234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+681821234"
+    },
+    {
+      "country": "WS",
+      "type": "fixedLine",
+      "full": "+68522123",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+68522123"
+    },
+    {
+      "country": "WS",
+      "type": "mobile",
+      "full": "+6857212345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+6857212345"
+    },
+    {
+      "country": "XK",
+      "type": "fixedLine",
+      "full": "+38328012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38328012345"
+    },
+    {
+      "country": "XK",
+      "type": "mobile",
+      "full": "+38343201234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+38343201234"
+    },
+    {
+      "country": "YE",
+      "type": "fixedLine",
+      "full": "+9671234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+9671234567"
+    },
+    {
+      "country": "YE",
+      "type": "mobile",
+      "full": "+967712345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+967712345678"
+    },
+    {
+      "country": "YT",
+      "type": "fixedLine",
+      "full": "+262269601234",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+262269601234"
+    },
+    {
+      "country": "YT",
+      "type": "mobile",
+      "full": "+262639012345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+262639012345"
+    },
+    {
+      "country": "ZA",
+      "type": "fixedLine",
+      "full": "+27101234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+27101234567"
+    },
+    {
+      "country": "ZA",
+      "type": "mobile",
+      "full": "+27711234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+27711234567"
+    },
+    {
+      "country": "ZM",
+      "type": "fixedLine",
+      "full": "+260211234567",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+260211234567"
+    },
+    {
+      "country": "ZM",
+      "type": "mobile",
+      "full": "+260955123456",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+260955123456"
+    },
+    {
+      "country": "ZW",
+      "type": "fixedLine",
+      "full": "+2631312345",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+2631312345"
+    },
+    {
+      "country": "ZW",
+      "type": "mobile",
+      "full": "+263712345678",
+      "accepted": true,
+      "paste": true,
+      "typed": true,
+      "actual": "+263712345678"
+    }
+  ],
+  "fixtures": [
+    {
+      "country": "BR",
+      "value": "11961234567",
+      "expected": true,
+      "valid": true,
+      "actual": "+5511961234567",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "1130123456",
+      "expected": true,
+      "valid": true,
+      "actual": "+551130123456",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "00123456789",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "1191234567",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "20961234567",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "2015550123",
+      "expected": true,
+      "valid": true,
+      "actual": "+12015550123",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "1235550123",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "2011550123",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "5550123",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "DE",
+      "value": "+493012345",
+      "expected": true,
+      "valid": true,
+      "actual": "+493012345",
+      "pass": true
+    },
+    {
+      "country": "DE",
+      "value": "+49301234567890123",
+      "expected": true,
+      "valid": true,
+      "actual": "+49301234567890123",
+      "pass": true
+    },
+    {
+      "country": "AT",
+      "value": "+4312345",
+      "expected": true,
+      "valid": true,
+      "actual": "+4312345",
+      "pass": true
+    },
+    {
+      "country": "GB",
+      "value": "+44169772345",
+      "expected": true,
+      "valid": true,
+      "actual": "+44169772345",
+      "pass": true
+    },
+    {
+      "country": "GB",
+      "value": "+447400123456",
+      "expected": true,
+      "valid": true,
+      "actual": "+447400123456",
+      "pass": true
+    },
+    {
+      "country": "ID",
+      "value": "+62812345678",
+      "expected": true,
+      "valid": true,
+      "actual": "+62812345678",
+      "pass": true
+    },
+    {
+      "country": "ID",
+      "value": "+62812345678901",
+      "expected": true,
+      "valid": true,
+      "actual": "+62812345678901",
+      "pass": true
+    },
+    {
+      "country": "IT",
+      "value": "+390236618300",
+      "expected": true,
+      "valid": true,
+      "actual": "+390236618300",
+      "pass": true
+    },
+    {
+      "country": "AR",
+      "value": "011 15-2345-6789",
+      "expected": true,
+      "valid": true,
+      "actual": "+5491123456789",
+      "pass": true
+    },
+    {
+      "country": "CA",
+      "value": "+15062345678",
+      "expected": true,
+      "valid": true,
+      "actual": "+15062345678",
+      "pass": true
+    },
+    {
+      "country": "KZ",
+      "value": "+77011234567",
+      "expected": true,
+      "valid": true,
+      "actual": "+77011234567",
+      "pass": true
+    },
+    {
+      "country": "GG",
+      "value": "+441481256789",
+      "expected": true,
+      "valid": true,
+      "actual": "+441481256789",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "٢٠١٥٥٥٠١٢٣",
+      "expected": true,
+      "valid": true,
+      "actual": "+12015550123",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "２０１５５５０１２３",
+      "expected": true,
+      "valid": true,
+      "actual": "+12015550123",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "(201) 555–0123",
+      "expected": true,
+      "valid": true,
+      "actual": "+12015550123",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "+9992015550123",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "2015550123 ext 456",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "Call me at 2015550123",
+      "expected": false,
+      "valid": false,
+      "actual": "",
+      "pass": true
+    }
+  ],
+  "interactions": {
+    "br_trusted_typing_and_cap": true,
+    "us_trusted_typing_and_cap": true,
+    "international_paste_switches_country_before_limit": true,
+    "overlong_paste_does_not_silently_change_number": true,
+    "selection_replacement_at_max": true,
+    "country_change_preserves_digits_and_blocks_invalid_number": true,
+    "noncancelable_input_restores_last_number": true,
+    "optional_phone_can_be_empty": true,
+    "invalid_autofill_cannot_submit": true,
+    "composition_normalises_fullwidth_digits": true,
+    "oversized_paste_is_rejected_without_truncation": true,
+    "missing_area_code_is_not_inferred": true,
+    "backspace_over_separator_removes_digit": true,
+    "phone_locale_en": true,
+    "phone_locale_zh-CN": true,
+    "phone_locale_de": true,
+    "phone_locale_fr": true,
+    "phone_locale_es-419": true,
+    "phone_locale_ru": true,
+    "phone_locale_ja": true,
+    "phone_locale_pt-BR": true,
+    "phone_error_layout_390": true,
+    "phone_error_layout_768": true,
+    "phone_error_layout_1440": true,
+    "failure_closed_libphonenumber-max.js": true,
+    "failure_closed_phone-data.js": true,
+    "failure_closed_phone-input.js": true,
+    "failure_closed_intlTelInput.min.js": true
+  },
+  "supportedRegions": 244,
+  "javascript_errors": []
+}

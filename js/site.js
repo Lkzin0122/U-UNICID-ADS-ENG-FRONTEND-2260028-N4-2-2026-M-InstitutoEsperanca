@@ -48,12 +48,34 @@
   const menuButton = document.querySelector('.menu-button');
   const nav = document.querySelector('#main-nav');
   const groups = [...document.querySelectorAll('.nav-group')];
-  const closeMenu = () => { nav.classList.remove('is-open'); menuButton.setAttribute('aria-expanded', 'false'); };
+  const desktopQuery = window.matchMedia('(min-width: 1100px)');
+  const updateMenuPosition = () => {
+    const header = menuButton?.closest('.site-header');
+    if (header) header.style.setProperty('--nav-top', `${Math.max(0, header.getBoundingClientRect().bottom)}px`);
+  };
+  const closeMenu = () => {
+    nav?.classList.remove('is-open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    groups.forEach(group => { group.open = false; });
+  };
   menuButton?.addEventListener('click', () => {
+    if (!nav) return;
     const open = menuButton.getAttribute('aria-expanded') !== 'true';
+    if (!open) { closeMenu(); return; }
+    updateMenuPosition();
+    nav.scrollTop = 0;
     menuButton.setAttribute('aria-expanded', String(open));
     nav.classList.toggle('is-open', open);
   });
+  nav?.addEventListener('click', event => {
+    if (!desktopQuery.matches && event.target.closest('a[href]')) closeMenu();
+  });
+  menuButton?.closest('.navbar')?.addEventListener('focusout', event => {
+    if (!event.currentTarget.contains(event.relatedTarget)) closeMenu();
+  });
+  window.addEventListener('scroll', () => { if (nav?.classList.contains('is-open')) updateMenuPosition(); }, { passive: true });
+  window.addEventListener('resize', updateMenuPosition, { passive: true });
+  if (window.ResizeObserver && menuButton) new ResizeObserver(updateMenuPosition).observe(menuButton.closest('.site-header'));
   groups.forEach(group => group.addEventListener('toggle', () => {
     if (group.open) groups.forEach(other => { if (other !== group) other.open = false; });
   }));
@@ -65,9 +87,8 @@
     if (event.key !== 'Escape') return;
     const openGroup = groups.find(group => group.open);
     if (openGroup) { openGroup.open = false; openGroup.querySelector('summary').focus(); }
-    else if (nav.classList.contains('is-open')) { closeMenu(); menuButton.focus(); }
+    else if (nav?.classList.contains('is-open')) { closeMenu(); menuButton?.focus(); }
   });
-  const desktopQuery = window.matchMedia('(min-width: 1100px)');
   desktopQuery.addEventListener?.('change', closeMenu);
 
   document.querySelectorAll('[data-filter-group]').forEach(group => {
@@ -112,189 +133,134 @@
   const form = document.querySelector('#contact-form');
   if (form) {
     const phoneInput = form.querySelector('#telefone');
-    let phoneWidget = null;
-    let phoneUtilsReady = false;
-    const formatNationalPhone = (digits, country) => {
-      if (!digits) return '';
-      const areaLength = country.iso2 === 'br' ? 2 : country.dialCode === '1' ? 3 : 0;
-      if (!areaLength) return window.intlTelInput.utils?.formatNumberAsYouType(digits, country.iso2) || digits;
-      const area = digits.slice(0, areaLength);
-      if (area.length < areaLength) return `(${area}`;
-      const local = digits.slice(areaLength);
-      const groupLength = country.iso2 === 'br' ? (local.startsWith('9') || local.length > 8 ? 5 : 4) : 3;
-      const number = local.length > groupLength ? `${local.slice(0, groupLength)}-${local.slice(groupLength)}` : local;
-      return `(${area}) ${number}`;
+    const phoneUi = {
+      hi: { selectedCountryAriaLabel: 'फ़ोन का देश बदलें; अभी ${countryName} (${dialCode}) चुना गया है', noCountrySelected: 'फ़ोन का देश चुनें', countryListAriaLabel: 'देशों की सूची', searchPlaceholder: 'खोजें', clearSearchAriaLabel: 'खोज मिटाएँ', closeCountrySelectorAriaLabel: 'बंद करें', searchEmptyState: 'कोई परिणाम नहीं मिला', searchSummaryAria: count => count === 0 ? 'कोई परिणाम नहीं मिला' : count === 1 ? '1 परिणाम मिला' : `${count} परिणाम मिले` },
+      'pt-BR': { selectedCountryAriaLabel: 'Alterar país do telefone; selecionado ${countryName} (${dialCode})', noCountrySelected: 'Selecionar o país do telefone', countryListAriaLabel: 'Lista de países', searchPlaceholder: 'Buscar', clearSearchAriaLabel: 'Limpar busca', closeCountrySelectorAriaLabel: 'Fechar', searchEmptyState: 'Nenhum resultado encontrado', searchSummaryAria: count => count === 0 ? 'Nenhum resultado encontrado' : count === 1 ? '1 resultado encontrado' : `${count} resultados encontrados` },
+      en: { selectedCountryAriaLabel: 'Change phone country; currently ${countryName} (${dialCode})', noCountrySelected: 'Select phone country', countryListAriaLabel: 'Country list', searchPlaceholder: 'Search', clearSearchAriaLabel: 'Clear search', closeCountrySelectorAriaLabel: 'Close', searchEmptyState: 'No results found', searchSummaryAria: count => count === 0 ? 'No results found' : count === 1 ? '1 result found' : `${count} results found` },
+      'zh-CN': { selectedCountryAriaLabel: '更改电话号码国家/地区；当前为${countryName}（${dialCode}）', noCountrySelected: '选择电话号码国家/地区', countryListAriaLabel: '国家和地区列表', searchPlaceholder: '搜索', clearSearchAriaLabel: '清除搜索', closeCountrySelectorAriaLabel: '关闭', searchEmptyState: '没有找到结果', searchSummaryAria: count => count === 0 ? '没有找到结果' : `找到${count}个结果` },
+      de: { selectedCountryAriaLabel: 'Telefonland ändern; aktuell ${countryName} (${dialCode})', noCountrySelected: 'Telefonland auswählen', countryListAriaLabel: 'Länderliste', searchPlaceholder: 'Suchen', clearSearchAriaLabel: 'Suche löschen', closeCountrySelectorAriaLabel: 'Schließen', searchEmptyState: 'Keine Ergebnisse gefunden', searchSummaryAria: count => count === 0 ? 'Keine Ergebnisse gefunden' : count === 1 ? '1 Ergebnis gefunden' : `${count} Ergebnisse gefunden` },
+      fr: { selectedCountryAriaLabel: 'Changer le pays du téléphone ; actuellement ${countryName} (${dialCode})', noCountrySelected: 'Sélectionner le pays du téléphone', countryListAriaLabel: 'Liste des pays', searchPlaceholder: 'Rechercher', clearSearchAriaLabel: 'Effacer la recherche', closeCountrySelectorAriaLabel: 'Fermer', searchEmptyState: 'Aucun résultat', searchSummaryAria: count => count === 0 ? 'Aucun résultat' : count === 1 ? '1 résultat' : `${count} résultats` },
+      'es-419': { selectedCountryAriaLabel: 'Cambiar país del teléfono; actualmente ${countryName} (${dialCode})', noCountrySelected: 'Seleccionar país del teléfono', countryListAriaLabel: 'Lista de países', searchPlaceholder: 'Buscar', clearSearchAriaLabel: 'Borrar búsqueda', closeCountrySelectorAriaLabel: 'Cerrar', searchEmptyState: 'No se encontraron resultados', searchSummaryAria: count => count === 0 ? 'No se encontraron resultados' : count === 1 ? '1 resultado encontrado' : `${count} resultados encontrados` },
+      ru: { selectedCountryAriaLabel: 'Изменить страну телефона; выбрана ${countryName} (${dialCode})', noCountrySelected: 'Выбрать страну телефона', countryListAriaLabel: 'Список стран', searchPlaceholder: 'Поиск', clearSearchAriaLabel: 'Очистить поиск', closeCountrySelectorAriaLabel: 'Закрыть', searchEmptyState: 'Ничего не найдено', searchSummaryAria: count => count === 0 ? 'Ничего не найдено' : count === 1 ? 'Найден 1 результат' : `Найдено результатов: ${count}` },
+      ja: { selectedCountryAriaLabel: '電話番号の国を変更。現在は${countryName}（${dialCode}）', noCountrySelected: '電話番号の国を選択', countryListAriaLabel: '国の一覧', searchPlaceholder: '検索', clearSearchAriaLabel: '検索をクリア', closeCountrySelectorAriaLabel: '閉じる', searchEmptyState: '結果が見つかりません', searchSummaryAria: count => count === 0 ? '結果が見つかりません' : `${count}件の結果` },
     };
-    const formatInternationalPhone = () => {
-      const country = phoneWidget.getSelectedCountry();
-      if (country?.iso2 === 'br' || country?.dialCode === '1') {
-        const digits = phoneWidget.getNumber('E164').slice(country.dialCode.length + 1);
-        return `+${country.dialCode} ${formatNationalPhone(digits, country)}`;
-      }
-      return phoneWidget.getNumber('INTERNATIONAL');
+    const phoneController = window.esperancaPhoneInput?.create(phoneInput, phoneUi[document.documentElement.lang] || phoneUi['pt-BR']);
+    const validatePhone = () => {
+      if (phoneController) return phoneController.validate(true);
+      const message = phoneInput.value.trim() ? 'Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.' : '';
+      phoneInput.setCustomValidity(window.esperancaI18n?.t(message) || message);
+      return !message;
     };
-    if (phoneInput && typeof window.intlTelInput === 'function') {
-      const validatePhone = () => {
-        const value = phoneInput.value.trim();
-        const error = !value ? ''
-          : !phoneUtilsReady ? (window.esperancaI18n?.t('Aguarde a validação do telefone carregar e tente novamente.') || 'Aguarde a validação do telefone carregar e tente novamente.')
-          : !phoneWidget.isValidNumber() ? (window.esperancaI18n?.t('Confira o país, o DDD e o número de telefone.') || 'Confira o país, o DDD e o número de telefone.')
-          : '';
-        phoneInput.setCustomValidity(error);
-      };
-      const formatPhoneInput = () => {
-        const country = phoneWidget.getSelectedCountry();
-        if (!country) return;
-        const value = phoneInput.value;
-        const cursor = phoneInput.selectionStart ?? value.length;
-        let digits = value.replace(/\D/g, '');
-        let digitsBeforeCursor = value.slice(0, cursor).replace(/\D/g, '').length;
-        if (value.trim().startsWith('+') && digits.startsWith(country.dialCode)) {
-          digits = digits.slice(country.dialCode.length);
-          digitsBeforeCursor = Math.max(0, digitsBeforeCursor - country.dialCode.length);
-        }
-        const formatted = formatNationalPhone(digits, country);
-        if (formatted === value) return;
-        phoneInput.value = formatted;
-        if (document.activeElement !== phoneInput) return;
-        let position = 0;
-        if (cursor === value.length) position = formatted.length;
-        else {
-          let count = 0;
-          while (position < formatted.length && count < digitsBeforeCursor) {
-            if (/\d/.test(formatted[position])) count++;
-            position++;
-          }
-        }
-        phoneInput.setSelectionRange(position, position);
-      };
-      const phoneUi = {
-        'pt-BR': { selectedCountryAriaLabel: 'Alterar país do telefone; selecionado ${countryName} (${dialCode})', noCountrySelected: 'Selecionar o país do telefone', countryListAriaLabel: 'Lista de países', searchPlaceholder: 'Buscar', clearSearchAriaLabel: 'Limpar busca', closeCountrySelectorAriaLabel: 'Fechar', searchEmptyState: 'Nenhum resultado encontrado', searchSummaryAria: count => count === 0 ? 'Nenhum resultado encontrado' : count === 1 ? '1 resultado encontrado' : `${count} resultados encontrados` },
-        en: { selectedCountryAriaLabel: 'Change phone country; currently ${countryName} (${dialCode})', noCountrySelected: 'Select phone country', countryListAriaLabel: 'Country list', searchPlaceholder: 'Search', clearSearchAriaLabel: 'Clear search', closeCountrySelectorAriaLabel: 'Close', searchEmptyState: 'No results found', searchSummaryAria: count => count === 0 ? 'No results found' : count === 1 ? '1 result found' : `${count} results found` },
-        'zh-CN': { selectedCountryAriaLabel: '更改电话号码国家/地区；当前为${countryName}（${dialCode}）', noCountrySelected: '选择电话号码国家/地区', countryListAriaLabel: '国家和地区列表', searchPlaceholder: '搜索', clearSearchAriaLabel: '清除搜索', closeCountrySelectorAriaLabel: '关闭', searchEmptyState: '没有找到结果', searchSummaryAria: count => count === 0 ? '没有找到结果' : `找到${count}个结果` },
-        de: { selectedCountryAriaLabel: 'Telefonland ändern; aktuell ${countryName} (${dialCode})', noCountrySelected: 'Telefonland auswählen', countryListAriaLabel: 'Länderliste', searchPlaceholder: 'Suchen', clearSearchAriaLabel: 'Suche löschen', closeCountrySelectorAriaLabel: 'Schließen', searchEmptyState: 'Keine Ergebnisse gefunden', searchSummaryAria: count => count === 0 ? 'Keine Ergebnisse gefunden' : count === 1 ? '1 Ergebnis gefunden' : `${count} Ergebnisse gefunden` },
-        fr: { selectedCountryAriaLabel: 'Changer le pays du téléphone ; actuellement ${countryName} (${dialCode})', noCountrySelected: 'Sélectionner le pays du téléphone', countryListAriaLabel: 'Liste des pays', searchPlaceholder: 'Rechercher', clearSearchAriaLabel: 'Effacer la recherche', closeCountrySelectorAriaLabel: 'Fermer', searchEmptyState: 'Aucun résultat', searchSummaryAria: count => count === 0 ? 'Aucun résultat' : count === 1 ? '1 résultat' : `${count} résultats` },
-        'es-419': { selectedCountryAriaLabel: 'Cambiar país del teléfono; actualmente ${countryName} (${dialCode})', noCountrySelected: 'Seleccionar país del teléfono', countryListAriaLabel: 'Lista de países', searchPlaceholder: 'Buscar', clearSearchAriaLabel: 'Borrar búsqueda', closeCountrySelectorAriaLabel: 'Cerrar', searchEmptyState: 'No se encontraron resultados', searchSummaryAria: count => count === 0 ? 'No se encontraron resultados' : count === 1 ? '1 resultado encontrado' : `${count} resultados encontrados` },
-        ru: { selectedCountryAriaLabel: 'Изменить страну телефона; выбрана ${countryName} (${dialCode})', noCountrySelected: 'Выбрать страну телефона', countryListAriaLabel: 'Список стран', searchPlaceholder: 'Поиск', clearSearchAriaLabel: 'Очистить поиск', closeCountrySelectorAriaLabel: 'Закрыть', searchEmptyState: 'Ничего не найдено', searchSummaryAria: count => count === 0 ? 'Ничего не найдено' : count === 1 ? 'Найден 1 результат' : `Найдено результатов: ${count}` },
-        ja: { selectedCountryAriaLabel: '電話番号の国を変更。現在は${countryName}（${dialCode}）', noCountrySelected: '電話番号の国を選択', countryListAriaLabel: '国の一覧', searchPlaceholder: '検索', clearSearchAriaLabel: '検索をクリア', closeCountrySelectorAriaLabel: '閉じる', searchEmptyState: '結果が見つかりません', searchSummaryAria: count => count === 0 ? '結果が見つかりません' : `${count}件の結果` },
-      };
-      const createPhoneWidget = (country = 'br', number = '') => {
-        phoneWidget = window.intlTelInput(phoneInput, {
-        initialCountry: country,
-        countryNameLocale: document.documentElement.lang || 'pt-BR',
-        uiTranslations: phoneUi[document.documentElement.lang] || phoneUi['pt-BR'],
-        numberDisplayFormat: 'NATIONAL',
-        separateDialCode: true,
-        formatAsYouType: false,
-        strictMode: false,
-        customPlaceholder: (example, selectedCountry) => {
-          if (selectedCountry.iso2 === 'br') return '(11) 91234-5678';
-          if (selectedCountry.dialCode === '1') return '(201) 555-0123';
-          return example;
-        },
-        placeholderNumberPolicy: 'AGGRESSIVE',
-        countrySearch: true,
-        loadUtils: () => import(new URL('assets/vendor/intl-tel-input/js/utils.js', document.baseURI).href),
-      });
-        phoneUtilsReady = false;
-        if (number) phoneWidget.setNumber(number);
-        const widget = phoneWidget;
-        widget.promise.then(() => {
-          if (phoneWidget !== widget) return;
-          phoneUtilsReady = true;
-          formatPhoneInput();
-          validatePhone();
-        }).catch(() => {});
-      };
-      createPhoneWidget();
-      phoneInput.addEventListener('input', () => {
-        formatPhoneInput();
-        validatePhone();
-      });
-      phoneInput.addEventListener('countrychange', () => {
-        formatPhoneInput();
-        validatePhone();
-        phoneInput.dispatchEvent(new Event('input', { bubbles: true }));
-      });
-      // Apagar junto de um separador deve remover o dígito, sem prender o cursor na máscara.
-      phoneInput.addEventListener('beforeinput', event => {
-        const backward = event.inputType === 'deleteContentBackward';
-        if (!backward && event.inputType !== 'deleteContentForward') return;
-        const start = phoneInput.selectionStart;
-        const end = phoneInput.selectionEnd;
-        if (start !== end) return;
-        const value = phoneInput.value;
-        let index = backward ? start - 1 : start;
-        if (index < 0 || index >= value.length || /\d/.test(value[index])) return;
-        while (index >= 0 && index < value.length && !/\d/.test(value[index])) index += backward ? -1 : 1;
-        if (index < 0 || index >= value.length) return;
-        event.preventDefault();
-        const from = backward ? index : start;
-        const to = backward ? start : index + 1;
-        phoneInput.value = value.slice(0, from) + value.slice(to);
-        phoneInput.setSelectionRange(from, from);
-        phoneInput.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: event.inputType }));
-      });
-      phoneInput.addEventListener('blur', validatePhone);
-      form.addEventListener('submit', validatePhone);
-      document.addEventListener('esperanca:languagechange', () => {
-        const country = phoneWidget.getSelectedCountry()?.iso2 || 'br';
-        const value = phoneInput.value;
-        phoneWidget.destroy();
-        createPhoneWidget(country, value);
-      });
-    }
+    form.addEventListener('submit', validatePhone);
+    if (!phoneController) phoneInput.addEventListener('input', validatePhone);
+    document.addEventListener('esperanca:languagechange', () => phoneController?.setLocale(phoneUi[document.documentElement.lang] || phoneUi['pt-BR']));
     const subject = new URLSearchParams(window.location.search).get('assunto');
     const select = form.querySelector('#assunto');
     if ([...select.options].some(option => option.value === subject)) select.value = subject;
     if (window.location.hash === '#voluntario' && !subject) select.value = 'voluntariado';
-    const sendMessage = document.querySelector('#send-message');
-    const contactAddress = sendMessage.getAttribute('href').slice('mailto:'.length);
-    let draft = '';
-    const makeDraft = () => {
-      const value = id => form.querySelector(`#${id}`).value.trim();
-      const t = phrase => window.esperancaI18n?.t(phrase) || phrase;
-      const phone = phoneWidget && phoneInput.value.trim() && phoneUtilsReady && phoneWidget.isValidNumber()
-        ? formatInternationalPhone()
-        : value('telefone') || t('Não informado');
-      return `${t('Instituto Esperança')} — ${t('Mensagem de contato')}\n\n${t('Nome')}: ${value('nome')}\n${t('E-mail')}: ${value('email')}\n${t('Telefone')}: ${phone || t('Não informado')}\n${t('Assunto')}: ${select.selectedOptions[0].textContent}\n\n${value('mensagem')}`;
+    const fields = form.querySelector('#contact-fields');
+    const submitLabel = form.querySelector('#contact-submit-label');
+    const result = form.querySelector('#form-result');
+    const status = form.querySelector('#form-status');
+    const fallback = form.querySelector('#contact-fallback');
+    const contactAddress = fallback.getAttribute('href').slice('mailto:'.length);
+    const t = phrase => window.esperancaI18n?.t(phrase) || phrase;
+    let sending = false;
+    let statusPhrase = '';
+    const renderStatus = () => {
+      submitLabel.textContent = t(sending ? 'Enviando…' : 'Enviar mensagem');
+      status.textContent = t(statusPhrase);
     };
-    const updateDraft = () => {
-      draft = makeDraft();
-      document.querySelector('#message-preview').textContent = draft;
-      const subject = `Instituto Esperança — ${select.selectedOptions[0].textContent}`;
-      sendMessage.href = `mailto:${contactAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(draft)}`;
-    };
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      if (!form.reportValidity()) return;
-      updateDraft();
-      const result = document.querySelector('#form-result');
+    const showStatus = (phrase, state) => {
+      statusPhrase = phrase;
+      result.dataset.state = state;
       result.hidden = false;
-      document.querySelector('#draft-status').textContent = '';
-      result.focus();
+      fallback.hidden = state !== 'error';
+      renderStatus();
+      if (!sending) result.focus();
+    };
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (sending) return;
+      const value = id => form.querySelector(`#${id}`).value.trim();
+      form.querySelector('#nome').setCustomValidity(value('nome') ? '' : t('Informe seu nome.'));
+      form.querySelector('#mensagem').setCustomValidity(value('mensagem').length >= 10 ? '' : t('Escreva uma mensagem com pelo menos 10 caracteres.'));
+      if (!validatePhone() || !form.reportValidity()) { form.reportValidity(); return; }
+
+      const params = {
+        from_name: value('nome'),
+        reply_to: value('email'),
+        phone: phoneController?.getNumber('INTERNATIONAL') || t('Não informado'),
+        subject: select.selectedOptions[0].textContent.trim(),
+        message: value('mensagem'),
+      };
+      const body = `${t('Nome')}: ${params.from_name}\n${t('E-mail')}: ${params.reply_to}\n${t('Telefone')}: ${params.phone}\n${t('Assunto')}: ${params.subject}\n\n${params.message}`;
+      fallback.href = `mailto:${contactAddress}?subject=${encodeURIComponent(`Instituto Esperança — ${params.subject}`)}&body=${encodeURIComponent(body)}`;
+      const config = window.ESPERANCA_EMAILJS;
+      if (!config || !['serviceId', 'templateId', 'publicKey'].every(key => typeof config[key] === 'string' && config[key].trim())) {
+        showStatus('O envio pelo site está temporariamente indisponível. Use o e-mail do Instituto para entrar em contato.', 'error');
+        return;
+      }
+
+      sending = true;
+      fields.disabled = true;
+      form.setAttribute('aria-busy', 'true');
+      showStatus('Enviando sua mensagem. Aguarde…', 'sending');
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 20000);
+      try {
+        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            service_id: config.serviceId.trim(),
+            template_id: config.templateId.trim(),
+            user_id: config.publicKey.trim(),
+            template_params: params,
+          }),
+          signal: controller.signal,
+        });
+        if (!response.ok) {
+          // O corpo contém o motivo da recusa (serviço, template, domínio etc.).
+          // Não registre o formulário ou a chave pública junto do diagnóstico.
+          let detail = '';
+          try { detail = (await response.text()).slice(0, 1000); } catch { /* Preserve o status mesmo se o corpo não carregar. */ }
+          [config.publicKey.trim(), params.from_name, params.reply_to, params.phone, params.message].forEach(value => {
+            if (value) detail = detail.split(value).join('[dado omitido]');
+          });
+          console.error('EmailJS: envio recusado.', { status: response.status, detail });
+          const missingTemplate = response.status === 400 && /template id not found/i.test(detail);
+          showStatus(missingTemplate
+            ? 'O envio pelo site está temporariamente indisponível. Use o e-mail do Instituto para entrar em contato.'
+            : response.status === 429
+            ? 'Muitas tentativas de envio. Aguarde um minuto e tente novamente ou use o e-mail do Instituto.'
+            : 'Não foi possível enviar sua mensagem. Tente novamente ou use o e-mail do Instituto.', 'error');
+          return;
+        }
+        form.reset();
+        phoneController?.reset();
+        showStatus('Mensagem enviada com sucesso! Obrigado por entrar em contato com o Instituto.', 'success');
+      } catch (error) {
+        showStatus(error.name === 'AbortError'
+          ? 'Não foi possível confirmar o envio. Aguarde alguns instantes antes de tentar novamente ou entre em contato por e-mail.'
+          : 'Não foi possível enviar sua mensagem. Confira sua conexão e tente novamente ou use o e-mail do Instituto.', 'error');
+      } finally {
+        window.clearTimeout(timeout);
+        sending = false;
+        fields.disabled = false;
+        form.setAttribute('aria-busy', 'false');
+        renderStatus();
+        result.focus();
+      }
     });
-    form.addEventListener('input', () => {
-      document.querySelector('#form-result').hidden = true;
-      draft = '';
+    form.addEventListener('input', event => {
+      if (['nome', 'mensagem'].includes(event.target.id)) event.target.setCustomValidity('');
+      if (!sending) {
+        result.hidden = true;
+        statusPhrase = '';
+      }
     });
-    document.addEventListener('esperanca:languagechange', () => {
-      if (!draft) return;
-      updateDraft();
-      const draftStatus = document.querySelector('#draft-status');
-      if (draftStatus.textContent) draftStatus.textContent = window.esperancaI18n?.t('Download solicitado. Sua mensagem não foi enviada ao Instituto.') || draftStatus.textContent;
-    });
-    document.querySelector('#download-message').addEventListener('click', () => {
-      if (!draft) return;
-      const url = URL.createObjectURL(new Blob(['\uFEFF', draft], { type: 'text/plain;charset=utf-8' }));
-      const anchor = document.createElement('a');
-      anchor.href = url;
-      anchor.download = 'mensagem-instituto-esperanca.txt';
-      document.body.append(anchor);
-      anchor.click();
-      anchor.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-      document.querySelector('#draft-status').textContent = window.esperancaI18n?.t('Download solicitado. Sua mensagem não foi enviada ao Instituto.') || 'Download solicitado. Sua mensagem não foi enviada ao Instituto.';
-    });
+    document.addEventListener('esperanca:languagechange', renderStatus);
+    renderStatus();
   }
 })();

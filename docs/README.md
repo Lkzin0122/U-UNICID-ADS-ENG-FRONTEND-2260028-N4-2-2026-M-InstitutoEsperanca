@@ -205,8 +205,9 @@ serão utilizados atributos e tipos como `required`, `type="email"`,
 
 Os campos deverão ser adequados ao propósito do formulário, sem exigir
 informações desnecessárias. O contato do Instituto é
-institutoesperancaunicid@outlook.com. O formulário prepara a mensagem e
-abre o aplicativo de e-mail; o envio deve ser confirmado nesse aplicativo.
+institutoesperancaunicid@outlook.com. O formulário envia a mensagem pela
+API do EmailJS, após [configurar o serviço e o template](emailjs.md).
+Quando o envio estiver indisponível, oferece o aplicativo de e-mail como alternativa.
 
 ## 6. Escopo não funcional
 
@@ -403,10 +404,10 @@ final do site.
 ### 11.1 Restrições do projeto
 
 O trabalho tem foco na primeira versão de um site em HTML5 e CSS3. O
-JavaScript é opcional nesta entrega. O formulário deverá apresentar
-validação no navegador e abertura do aplicativo de e-mail com a mensagem
-preenchida para institutoesperancaunicid@outlook.com. O envio é confirmado
-no aplicativo e não há armazenamento de mensagens no site.
+JavaScript é necessário para o envio de contato pelo EmailJS. O formulário
+mantém a validação no navegador e envia para institutoesperancaunicid@outlook.com,
+conforme o destinatário fixo configurado no template do serviço. Sem JavaScript,
+o endereço de e-mail continua disponível. Não há armazenamento próprio de mensagens no site.
 
 ## 12. Critérios de aceitação
 

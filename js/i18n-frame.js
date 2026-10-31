@@ -1,7 +1,7 @@
 /* Synchronises the accessible presentation iframe with the selected site language. */
 (() => {
   'use strict';
-  const tags = { 'pt-BR':'pt-BR', en:'en', 'zh-CN':'zh-CN', de:'de', fr:'fr', 'es-419':'es-419', ru:'ru', ja:'ja' };
+  const tags = { 'pt-BR':'pt-BR', en:'en', 'zh-CN':'zh-CN', de:'de', fr:'fr', 'es-419':'es-419', ru:'ru', ja:'ja', hi:'hi' };
   const texts=[];const attributes=[];const headings=[...document.querySelectorAll('h1,h2,h3')].map(element=>({element,html:element.innerHTML,source:(element.innerText||element.textContent).replace(/\s+/g,' ').trim()}));
   const walker=document.createTreeWalker(document,NodeFilter.SHOW_TEXT);let node;
   while((node=walker.nextNode()))if(node.nodeValue.trim()&&!node.parentElement?.closest('style,script,h1,h2,h3'))texts.push({node,source:node.nodeValue});

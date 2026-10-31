@@ -3,7 +3,7 @@
   'use strict';
   const localeTags = {
     'pt-BR': 'pt-BR', en: 'en', 'zh-CN': 'zh-CN', de: 'de', fr: 'fr',
-    'es-419': 'es-419', ru: 'ru', ja: 'ja',
+    'es-419': 'es-419', ru: 'ru', ja: 'ja', hi: 'hi',
   };
   const storageKey = 'esperanca-language';
   const picker = document.querySelector('#language-picker');

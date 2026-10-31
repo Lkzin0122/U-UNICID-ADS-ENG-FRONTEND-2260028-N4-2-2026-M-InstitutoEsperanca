@@ -1,19 +1,19 @@
 # Orçamento comparativo de hospedagem e domínio
 
 Projeto acadêmico Instituto Esperança · UNICID  
-Data da consulta: **24 de outubro de 2026**.
+Data da consulta: **24 de outubro de 2026**. Railway atualizado em **31 de outubro de 2026**.
 
 Este documento registra a pesquisa usada em `orcamento_hospedagem.html`. Nenhum serviço foi contratado. Os preços refletem as páginas oficiais consultadas e podem mudar; a contratação exige confirmar condições, disponibilidade e total no fornecedor.
 
 ## Hospedagem
 
-O projeto utiliza arquivos estáticos de HTML, CSS, JavaScript e mídia. As três alternativas abaixo oferecem uma modalidade gratuita compatível com essa estrutura.
+O projeto utiliza arquivos estáticos de HTML, CSS, JavaScript e mídia. O comparativo inclui duas opções gratuitas para arquivos estáticos e o plano Free da Railway, cuja gratuidade está limitada à cota de uso mensal.
 
 | Serviço | Plano e preço | Recursos e condições relevantes | Fonte oficial |
 | --- | --- | --- | --- |
 | GitHub Pages | GitHub Free, gratuito | Publicação de HTML, CSS e JavaScript a partir de repositório **público** no plano Free. Endereço `github.io` ou domínio próprio. | [O que é GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) |
 | Cloudflare Pages | Free, gratuito para arquivos estáticos | Requisições estáticas gratuitas; 500 builds por mês; até 20 mil arquivos; limite de 25 MiB por arquivo. Funções de servidor têm cotas próprias. | [Preços](https://developers.cloudflare.com/pages/functions/pricing/) e [limites](https://developers.cloudflare.com/pages/platform/limits/) |
-| Netlify | Free, US$ 0 por mês | Rede de distribuição, domínio próprio e SSL; 300 créditos por mês. Uso de tráfego e publicações consome créditos conforme a tabela do serviço. | [Preços da Netlify](https://www.netlify.com/pricing/) |
+| Railway | Free, US$ 0 por mês | Inclui US$ 1 de crédito mensal para pequenas aplicações, com subdomínio Railway. Até 1 vCPU e 0,5 GB de RAM por serviço. A gratuidade está limitada à cota mensal. | [Preços da Railway](https://railway.com/pricing) e [planos e limites](https://docs.railway.com/pricing/plans) |
 
 ## Domínios
 

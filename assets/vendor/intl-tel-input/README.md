@@ -1,5 +1,9 @@
-﻿intl-tel-input v29.5.3
+# intl-tel-input 29.5.10
 
-Local browser assets used by the contact form for country selection, international formatting, and validation. The library is distributed under the MIT License; see LICENSE. Country metadata covers approximately 230 regions. Assets are bundled in this project so the phone control does not depend on a third-party runtime service.
+Local country selector, flags, search and translated country names. MIT license.
 
-Upstream documentation: https://intl-tel-input.com/docs/vanilla-javascript
+The contact form delegates parsing, formatting and validation to the pinned libphonenumber-js/max bundle. The historical `utils.js` asset is retained for compatibility and is not loaded by the form.
+
+Upstream: https://intl-tel-input.com/docs/
+
+Update using `scripts/update_phone_vendor.py` and run the phone browser checks.

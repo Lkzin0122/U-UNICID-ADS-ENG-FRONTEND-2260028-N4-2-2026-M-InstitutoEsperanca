@@ -16,7 +16,7 @@ O site tem **12 páginas HTML**. As dez páginas previstas no escopo foram prese
 | Galeria | `galeria.html` | Ver imagens ilustrativas com contexto e créditos. |
 | Mídia | `midia.html` | Acessar vídeo, áudio e conteúdo incorporado com alternativas textuais. |
 | Notícias e leituras | `noticias.html` | Explorar referências oficiais de educação, inclusão e meio ambiente. |
-| Contato | `contato.html` | Preparar, revisar e baixar uma mensagem demonstrativa. |
+| Contato | `contato.html` | Enviar uma mensagem pelo EmailJS, após configurar a conta. |
 | Orçamento do site | `orcamento_hospedagem.html` | Comparar hospedagem e domínio com fontes e preços consultados. |
 | Como participar | `participar.html` | Conhecer caminhos de voluntariado, apoio e parceria. |
 | Perguntas frequentes | `perguntas-frequentes.html` | Encontrar respostas sobre a proposta e o uso do site. |
@@ -46,10 +46,13 @@ O conteúdo é mantido em módulos Python para evitar divergências entre cabeç
 | `scripts/content_resources.py` | Notícias, orçamento e acessibilidade. |
 | `scripts/content_media.py` | Galeria e mídia. |
 | `css/style.css` | Cores, tipografia, componentes, responsividade e apresentação. |
-| `js/site.js` | Menu móvel, filtros, ampliação de imagens, preferências de leitura e rascunho de contato. |
-| `js/i18n.js` e `js/locales/` | Traduções locais da interface e do conteúdo em português, inglês, chinês simplificado, alemão, francês, espanhol latino-americano, russo e japonês. O idioma selecionado fica salvo no navegador. |
+| `js/site.js` | Menu móvel, filtros, ampliação de imagens, preferências de leitura e envio de contato pelo EmailJS. |
+| `js/emailjs-config.js` | Service ID, Template ID e Public Key da conta EmailJS. Veja [a configuração](emailjs.md). |
+| `js/i18n.js` e `js/locales/` | Traduções locais da interface e do conteúdo em português, inglês, chinês simplificado, alemão, francês, espanhol latino-americano, russo, japonês e hindi. O idioma selecionado fica salvo no navegador. |
 | `js/i18n-frame.js` | Sincroniza o idioma da apresentação incorporada na página de mídia. |
-| `assets/vendor/intl-tel-input/` | Seletor de país e formatação/validação internacional do telefone do formulário de contato. A biblioteca e os dados de telefone ficam no projeto. |
+| `js/phone-input.js` | Controle de telefone: limites por país, edição, formatação, validação e acessibilidade. Veja [a documentação](phone-input.md). |
+| `assets/vendor/intl-tel-input/` | Seletor de país, bandeiras e busca local. |
+| `assets/vendor/libphonenumber-js/` | Metadados completos de numeração, validação precisa, formatos e limites gerados para os telefones. |
 | `img/` e `assets/` | Imagens e arquivos multimídia. |
 
 Após mudar o conteúdo ou a estrutura comum, execute na raiz:
@@ -70,9 +73,9 @@ As preferências de tamanho de texto e contraste usam `localStorage` quando ele 
 
 A troca de idioma usa os pacotes estáticos de `js/locales/`; a navegação do site não depende de um serviço de tradução externo. Alterações no texto de origem devem ser acompanhadas das respectivas traduções nesses pacotes.
 
-O formulário de contato é **demonstrativo**: usa validação nativa do navegador, monta um rascunho na própria página e permite baixar um arquivo de texto. Não envia mensagens, não grava dados pessoais em um servidor e não possui integração com e-mail. A revisão e o download dependem de JavaScript.
+O formulário de contato usa validação nativa do navegador e a API REST do EmailJS para enviar mensagens diretamente ao Instituto. O envio depende de JavaScript e dos três identificadores públicos configurados em `js/emailjs-config.js`. Exibe confirmação somente após uma resposta de sucesso do serviço; em caso de erro, mantém os campos e oferece envio pelo aplicativo de e-mail. Veja [a ativação e o template](emailjs.md).
 
-Não há backend, banco de dados, área administrativa nem cobrança de doações. Para envio real de mensagens ou coleta de inscrições será necessário definir e implementar um serviço apropriado, atualizar o orçamento e revisar a comunicação ao visitante.
+Não há backend próprio, banco de dados, área administrativa nem cobrança de doações. As mensagens de contato são processadas pelo EmailJS e pelo provedor de e-mail conectado. A coleta de inscrições e o armazenamento próprio de dados exigem uma solução adicional.
 
 As iniciativas são propostas acadêmicas. Não foram inventados números de atendimento, depoimentos, resultados institucionais ou disponibilidade de vagas. As imagens são ilustrativas e têm créditos documentados em [Créditos de mídia](creditos-midia.md). Os valores de hospedagem e domínio estão em [Orçamento comparativo](orcamento-comparativo.md).
 

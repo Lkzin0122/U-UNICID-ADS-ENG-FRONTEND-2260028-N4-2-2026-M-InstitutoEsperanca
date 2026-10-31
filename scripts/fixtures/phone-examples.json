@@ -1,0 +1,985 @@
+{
+  "source": "https://raw.githubusercontent.com/google/libphonenumber/8593ab70fa4fadffc042b2714034f4c52bef7daf/resources/PhoneNumberMetadata.xml",
+  "commit": "8593ab70fa4fadffc042b2714034f4c52bef7daf",
+  "countries": {
+    "AC": {
+      "fixedLine": "62889",
+      "mobile": "40123"
+    },
+    "AD": {
+      "fixedLine": "712345",
+      "mobile": "312345"
+    },
+    "AE": {
+      "fixedLine": "22345678",
+      "mobile": "501234567"
+    },
+    "AF": {
+      "fixedLine": "234567890",
+      "mobile": "701234567"
+    },
+    "AG": {
+      "fixedLine": "2684601234",
+      "mobile": "2684641234"
+    },
+    "AI": {
+      "fixedLine": "2644612345",
+      "mobile": "2642351234"
+    },
+    "AL": {
+      "fixedLine": "22345678",
+      "mobile": "672123456"
+    },
+    "AM": {
+      "fixedLine": "10123456",
+      "mobile": "77123456"
+    },
+    "AO": {
+      "fixedLine": "222123456",
+      "mobile": "923123456"
+    },
+    "AR": {
+      "fixedLine": "1123456789",
+      "mobile": "91123456789"
+    },
+    "AS": {
+      "fixedLine": "6846221234",
+      "mobile": "6847331234"
+    },
+    "AT": {
+      "fixedLine": "1234567890",
+      "mobile": "664123456"
+    },
+    "AU": {
+      "fixedLine": "212345678",
+      "mobile": "412345678"
+    },
+    "AW": {
+      "fixedLine": "5212345",
+      "mobile": "5601234"
+    },
+    "AX": {
+      "fixedLine": "181234567",
+      "mobile": "412345678"
+    },
+    "AZ": {
+      "fixedLine": "123123456",
+      "mobile": "401234567"
+    },
+    "BA": {
+      "fixedLine": "30212345",
+      "mobile": "61123456"
+    },
+    "BB": {
+      "fixedLine": "2464123456",
+      "mobile": "2462501234"
+    },
+    "BD": {
+      "fixedLine": "27111234",
+      "mobile": "1812345678"
+    },
+    "BE": {
+      "fixedLine": "12345678",
+      "mobile": "450001234"
+    },
+    "BF": {
+      "fixedLine": "20491234",
+      "mobile": "70123456"
+    },
+    "BG": {
+      "fixedLine": "2123456",
+      "mobile": "43012345"
+    },
+    "BH": {
+      "fixedLine": "17001234",
+      "mobile": "36001234"
+    },
+    "BI": {
+      "fixedLine": "22201234",
+      "mobile": "79561234"
+    },
+    "BJ": {
+      "fixedLine": "0120211234",
+      "mobile": "0195123456"
+    },
+    "BL": {
+      "fixedLine": "590271234",
+      "mobile": "690001234"
+    },
+    "BM": {
+      "fixedLine": "4414123456",
+      "mobile": "4413701234"
+    },
+    "BN": {
+      "fixedLine": "2345678",
+      "mobile": "7123456"
+    },
+    "BO": {
+      "fixedLine": "22123456",
+      "mobile": "71234567"
+    },
+    "BQ": {
+      "fixedLine": "7151234",
+      "mobile": "3181234"
+    },
+    "BR": {
+      "fixedLine": "1123456789",
+      "mobile": "11961234567"
+    },
+    "BS": {
+      "fixedLine": "2423456789",
+      "mobile": "2423591234"
+    },
+    "BT": {
+      "fixedLine": "2345678",
+      "mobile": "17123456"
+    },
+    "BW": {
+      "fixedLine": "2401234",
+      "mobile": "71123456"
+    },
+    "BY": {
+      "fixedLine": "152450911",
+      "mobile": "294911911"
+    },
+    "BZ": {
+      "fixedLine": "2221234",
+      "mobile": "6221234"
+    },
+    "CA": {
+      "fixedLine": "5062345678",
+      "mobile": "5062345678"
+    },
+    "CC": {
+      "fixedLine": "891621234",
+      "mobile": "412345678"
+    },
+    "CD": {
+      "fixedLine": "1234567",
+      "mobile": "991234567"
+    },
+    "CF": {
+      "fixedLine": "21612345",
+      "mobile": "70012345"
+    },
+    "CG": {
+      "fixedLine": "222123456",
+      "mobile": "061234567"
+    },
+    "CH": {
+      "fixedLine": "212345678",
+      "mobile": "781234567"
+    },
+    "CI": {
+      "fixedLine": "2123456789",
+      "mobile": "0123456789"
+    },
+    "CK": {
+      "fixedLine": "21234",
+      "mobile": "71234"
+    },
+    "CL": {
+      "fixedLine": "600123456",
+      "mobile": "221234567"
+    },
+    "CM": {
+      "fixedLine": "222123456",
+      "mobile": "671234567"
+    },
+    "CN": {
+      "fixedLine": "1012345678",
+      "mobile": "13123456789"
+    },
+    "CO": {
+      "fixedLine": "6012345678",
+      "mobile": "3211234567"
+    },
+    "CR": {
+      "fixedLine": "22123456",
+      "mobile": "83123456"
+    },
+    "CU": {
+      "fixedLine": "71234567",
+      "mobile": "51234567"
+    },
+    "CV": {
+      "fixedLine": "2211234",
+      "mobile": "9911234"
+    },
+    "CW": {
+      "fixedLine": "94351234",
+      "mobile": "95181234"
+    },
+    "CX": {
+      "fixedLine": "891641234",
+      "mobile": "412345678"
+    },
+    "CY": {
+      "fixedLine": "22345678",
+      "mobile": "96123456"
+    },
+    "CZ": {
+      "fixedLine": "212345678",
+      "mobile": "601123456"
+    },
+    "DE": {
+      "fixedLine": "30123456",
+      "mobile": "15123456789"
+    },
+    "DJ": {
+      "fixedLine": "21360003",
+      "mobile": "77831001"
+    },
+    "DK": {
+      "fixedLine": "32123456",
+      "mobile": "34412345"
+    },
+    "DM": {
+      "fixedLine": "7674201234",
+      "mobile": "7672251234"
+    },
+    "DO": {
+      "fixedLine": "8092345678",
+      "mobile": "8092345678"
+    },
+    "DZ": {
+      "fixedLine": "12345678",
+      "mobile": "551234567"
+    },
+    "EC": {
+      "fixedLine": "22123456",
+      "mobile": "991234567"
+    },
+    "EE": {
+      "fixedLine": "3212345",
+      "mobile": "51234567"
+    },
+    "EG": {
+      "fixedLine": "234567890",
+      "mobile": "1001234567"
+    },
+    "EH": {
+      "fixedLine": "528812345",
+      "mobile": "650123456"
+    },
+    "ER": {
+      "fixedLine": "8370362",
+      "mobile": "7123456"
+    },
+    "ES": {
+      "fixedLine": "810123456",
+      "mobile": "612345678"
+    },
+    "ET": {
+      "fixedLine": "111112345",
+      "mobile": "911234567"
+    },
+    "FI": {
+      "fixedLine": "131234567",
+      "mobile": "412345678"
+    },
+    "FJ": {
+      "fixedLine": "3212345",
+      "mobile": "7012345"
+    },
+    "FK": {
+      "fixedLine": "31234",
+      "mobile": "51234"
+    },
+    "FM": {
+      "fixedLine": "3201234",
+      "mobile": "3501234"
+    },
+    "FO": {
+      "fixedLine": "201234",
+      "mobile": "211234"
+    },
+    "FR": {
+      "fixedLine": "123456789",
+      "mobile": "612345678"
+    },
+    "GA": {
+      "fixedLine": "01441234",
+      "mobile": "06031234"
+    },
+    "GB": {
+      "fixedLine": "1212345678",
+      "mobile": "7400123456"
+    },
+    "GD": {
+      "fixedLine": "4732691234",
+      "mobile": "4734031234"
+    },
+    "GE": {
+      "fixedLine": "322123456",
+      "mobile": "555123456"
+    },
+    "GF": {
+      "fixedLine": "594101234",
+      "mobile": "694201234"
+    },
+    "GG": {
+      "fixedLine": "1481256789",
+      "mobile": "7781123456"
+    },
+    "GH": {
+      "fixedLine": "302345678",
+      "mobile": "231234567"
+    },
+    "GI": {
+      "fixedLine": "20012345",
+      "mobile": "57123456"
+    },
+    "GL": {
+      "fixedLine": "321000",
+      "mobile": "221234"
+    },
+    "GM": {
+      "fixedLine": "5661234",
+      "mobile": "3012345"
+    },
+    "GN": {
+      "fixedLine": "30241234",
+      "mobile": "601123456"
+    },
+    "GP": {
+      "fixedLine": "590201234",
+      "mobile": "690001234"
+    },
+    "GQ": {
+      "fixedLine": "333091234",
+      "mobile": "222123456"
+    },
+    "GR": {
+      "fixedLine": "2123456789",
+      "mobile": "6912345678"
+    },
+    "GT": {
+      "fixedLine": "22456789",
+      "mobile": "51234567"
+    },
+    "GU": {
+      "fixedLine": "6713001234",
+      "mobile": "6713001234"
+    },
+    "GW": {
+      "fixedLine": "443201234",
+      "mobile": "955012345"
+    },
+    "GY": {
+      "fixedLine": "2201234",
+      "mobile": "6091234"
+    },
+    "HK": {
+      "fixedLine": "21234567",
+      "mobile": "51234567"
+    },
+    "HN": {
+      "fixedLine": "22123456",
+      "mobile": "91234567"
+    },
+    "HR": {
+      "fixedLine": "12345678",
+      "mobile": "921234567"
+    },
+    "HT": {
+      "fixedLine": "22453300",
+      "mobile": "34101234"
+    },
+    "HU": {
+      "fixedLine": "12345678",
+      "mobile": "201234567"
+    },
+    "ID": {
+      "fixedLine": "218350123",
+      "mobile": "812345678"
+    },
+    "IE": {
+      "fixedLine": "2212345",
+      "mobile": "850123456"
+    },
+    "IL": {
+      "fixedLine": "21234567",
+      "mobile": "502345678"
+    },
+    "IM": {
+      "fixedLine": "1624756789",
+      "mobile": "7924123456"
+    },
+    "IN": {
+      "fixedLine": "7410410123",
+      "mobile": "8123456789"
+    },
+    "IO": {
+      "fixedLine": "3709100",
+      "mobile": "3801234"
+    },
+    "IQ": {
+      "fixedLine": "12345678",
+      "mobile": "7912345678"
+    },
+    "IR": {
+      "fixedLine": "2123456789",
+      "mobile": "9123456789"
+    },
+    "IS": {
+      "fixedLine": "4101234",
+      "mobile": "6111234"
+    },
+    "IT": {
+      "fixedLine": "0212345678",
+      "mobile": "3123456789"
+    },
+    "JE": {
+      "fixedLine": "1534456789",
+      "mobile": "7797712345"
+    },
+    "JM": {
+      "fixedLine": "8765230123",
+      "mobile": "8762101234"
+    },
+    "JO": {
+      "fixedLine": "62001234",
+      "mobile": "790123456"
+    },
+    "JP": {
+      "fixedLine": "312345678",
+      "mobile": "9012345678"
+    },
+    "KE": {
+      "fixedLine": "202012345",
+      "mobile": "712123456"
+    },
+    "KG": {
+      "fixedLine": "312123456",
+      "mobile": "700123456"
+    },
+    "KH": {
+      "fixedLine": "23756789",
+      "mobile": "91234567"
+    },
+    "KI": {
+      "fixedLine": "31234",
+      "mobile": "72001234"
+    },
+    "KM": {
+      "fixedLine": "7712345",
+      "mobile": "3212345"
+    },
+    "KN": {
+      "fixedLine": "8692361234",
+      "mobile": "8697652917"
+    },
+    "KP": {
+      "fixedLine": "21234567",
+      "mobile": "1921234567"
+    },
+    "KR": {
+      "fixedLine": "22123456",
+      "mobile": "1020000000"
+    },
+    "KW": {
+      "fixedLine": "22345678",
+      "mobile": "50012345"
+    },
+    "KY": {
+      "fixedLine": "3452221234",
+      "mobile": "3453231234"
+    },
+    "KZ": {
+      "fixedLine": "7123456789",
+      "mobile": "7710009998"
+    },
+    "LA": {
+      "fixedLine": "21212862",
+      "mobile": "2023123456"
+    },
+    "LB": {
+      "fixedLine": "1123456",
+      "mobile": "71123456"
+    },
+    "LC": {
+      "fixedLine": "7584305678",
+      "mobile": "7582845678"
+    },
+    "LI": {
+      "fixedLine": "2345678",
+      "mobile": "660234567"
+    },
+    "LK": {
+      "fixedLine": "112345678",
+      "mobile": "712345678"
+    },
+    "LR": {
+      "fixedLine": "21234567",
+      "mobile": "770123456"
+    },
+    "LS": {
+      "fixedLine": "22123456",
+      "mobile": "50123456"
+    },
+    "LT": {
+      "fixedLine": "31234567",
+      "mobile": "61234567"
+    },
+    "LU": {
+      "fixedLine": "27123456",
+      "mobile": "628123456"
+    },
+    "LV": {
+      "fixedLine": "63123456",
+      "mobile": "21234567"
+    },
+    "LY": {
+      "fixedLine": "212345678",
+      "mobile": "912345678"
+    },
+    "MA": {
+      "fixedLine": "520123456",
+      "mobile": "650123456"
+    },
+    "MC": {
+      "fixedLine": "99123456",
+      "mobile": "612345678"
+    },
+    "MD": {
+      "fixedLine": "22212345",
+      "mobile": "62112345"
+    },
+    "ME": {
+      "fixedLine": "30234567",
+      "mobile": "60123456"
+    },
+    "MF": {
+      "fixedLine": "590271234",
+      "mobile": "690001234"
+    },
+    "MG": {
+      "fixedLine": "202123456",
+      "mobile": "321234567"
+    },
+    "MH": {
+      "fixedLine": "2471234",
+      "mobile": "2351234"
+    },
+    "MK": {
+      "fixedLine": "22012345",
+      "mobile": "72345678"
+    },
+    "ML": {
+      "fixedLine": "20212345",
+      "mobile": "65012345"
+    },
+    "MM": {
+      "fixedLine": "1234567",
+      "mobile": "92123456"
+    },
+    "MN": {
+      "fixedLine": "53123456",
+      "mobile": "88123456"
+    },
+    "MO": {
+      "fixedLine": "28212345",
+      "mobile": "66123456"
+    },
+    "MP": {
+      "fixedLine": "6702345678",
+      "mobile": "6702345678"
+    },
+    "MQ": {
+      "fixedLine": "596301234",
+      "mobile": "696201234"
+    },
+    "MR": {
+      "fixedLine": "35123456",
+      "mobile": "22123456"
+    },
+    "MS": {
+      "fixedLine": "6644912345",
+      "mobile": "6644923456"
+    },
+    "MT": {
+      "fixedLine": "21001234",
+      "mobile": "96961234"
+    },
+    "MU": {
+      "fixedLine": "54480123",
+      "mobile": "52512345"
+    },
+    "MV": {
+      "fixedLine": "6701234",
+      "mobile": "7712345"
+    },
+    "MW": {
+      "fixedLine": "1234567",
+      "mobile": "991234567"
+    },
+    "MX": {
+      "fixedLine": "2001234567",
+      "mobile": "2221234567"
+    },
+    "MY": {
+      "fixedLine": "323856789",
+      "mobile": "123456789"
+    },
+    "MZ": {
+      "fixedLine": "21123456",
+      "mobile": "821234567"
+    },
+    "NA": {
+      "fixedLine": "61221234",
+      "mobile": "811234567"
+    },
+    "NC": {
+      "fixedLine": "201234",
+      "mobile": "751234"
+    },
+    "NE": {
+      "fixedLine": "20201234",
+      "mobile": "93123456"
+    },
+    "NF": {
+      "fixedLine": "106609",
+      "mobile": "381234"
+    },
+    "NG": {
+      "fixedLine": "2033123456",
+      "mobile": "8021234567"
+    },
+    "NI": {
+      "fixedLine": "21234567",
+      "mobile": "81234567"
+    },
+    "NL": {
+      "fixedLine": "101234567",
+      "mobile": "612345678"
+    },
+    "NO": {
+      "fixedLine": "21234567",
+      "mobile": "40612345"
+    },
+    "NP": {
+      "fixedLine": "14567890",
+      "mobile": "9841234567"
+    },
+    "NR": {
+      "fixedLine": "4441234",
+      "mobile": "5551234"
+    },
+    "NU": {
+      "fixedLine": "7012",
+      "mobile": "8884012"
+    },
+    "NZ": {
+      "fixedLine": "32345678",
+      "mobile": "211234567"
+    },
+    "OM": {
+      "fixedLine": "23123456",
+      "mobile": "92123456"
+    },
+    "PA": {
+      "fixedLine": "2001234",
+      "mobile": "61234567"
+    },
+    "PE": {
+      "fixedLine": "11234567",
+      "mobile": "912345678"
+    },
+    "PF": {
+      "fixedLine": "40412345",
+      "mobile": "87123456"
+    },
+    "PG": {
+      "fixedLine": "3123456",
+      "mobile": "70123456"
+    },
+    "PH": {
+      "fixedLine": "232345678",
+      "mobile": "9051234567"
+    },
+    "PK": {
+      "fixedLine": "2123456789",
+      "mobile": "3012345678"
+    },
+    "PL": {
+      "fixedLine": "123456789",
+      "mobile": "512345678"
+    },
+    "PM": {
+      "fixedLine": "430123",
+      "mobile": "551234"
+    },
+    "PR": {
+      "fixedLine": "7872345678",
+      "mobile": "7872345678"
+    },
+    "PS": {
+      "fixedLine": "22234567",
+      "mobile": "599123456"
+    },
+    "PT": {
+      "fixedLine": "212345678",
+      "mobile": "912345678"
+    },
+    "PW": {
+      "fixedLine": "2771234",
+      "mobile": "6201234"
+    },
+    "PY": {
+      "fixedLine": "212345678",
+      "mobile": "961456789"
+    },
+    "QA": {
+      "fixedLine": "44123456",
+      "mobile": "33123456"
+    },
+    "RE": {
+      "fixedLine": "262161234",
+      "mobile": "692123456"
+    },
+    "RO": {
+      "fixedLine": "211234567",
+      "mobile": "712034567"
+    },
+    "RS": {
+      "fixedLine": "10234567",
+      "mobile": "601234567"
+    },
+    "RU": {
+      "fixedLine": "3011234567",
+      "mobile": "9123456789"
+    },
+    "RW": {
+      "fixedLine": "250123456",
+      "mobile": "720123456"
+    },
+    "SA": {
+      "fixedLine": "112345678",
+      "mobile": "512345678"
+    },
+    "SB": {
+      "fixedLine": "40123",
+      "mobile": "7421234"
+    },
+    "SC": {
+      "fixedLine": "4217123",
+      "mobile": "2510123"
+    },
+    "SD": {
+      "fixedLine": "153123456",
+      "mobile": "911231234"
+    },
+    "SE": {
+      "fixedLine": "8123456",
+      "mobile": "701234567"
+    },
+    "SG": {
+      "fixedLine": "61234567",
+      "mobile": "81234567"
+    },
+    "SH": {
+      "fixedLine": "22158",
+      "mobile": "51234"
+    },
+    "SI": {
+      "fixedLine": "12345678",
+      "mobile": "31234567"
+    },
+    "SJ": {
+      "fixedLine": "79123456",
+      "mobile": "41234567"
+    },
+    "SK": {
+      "fixedLine": "221234567",
+      "mobile": "912123456"
+    },
+    "SL": {
+      "fixedLine": "22221234",
+      "mobile": "25123456"
+    },
+    "SM": {
+      "fixedLine": "0549886377",
+      "mobile": "66661212"
+    },
+    "SN": {
+      "fixedLine": "301012345",
+      "mobile": "701234567"
+    },
+    "SO": {
+      "fixedLine": "4012345",
+      "mobile": "71123456"
+    },
+    "SR": {
+      "fixedLine": "211234",
+      "mobile": "7412345"
+    },
+    "SS": {
+      "fixedLine": "181234567",
+      "mobile": "977123456"
+    },
+    "ST": {
+      "fixedLine": "2221234",
+      "mobile": "9812345"
+    },
+    "SV": {
+      "fixedLine": "21234567",
+      "mobile": "70123456"
+    },
+    "SX": {
+      "fixedLine": "7215425678",
+      "mobile": "7215205678"
+    },
+    "SY": {
+      "fixedLine": "112345678",
+      "mobile": "944567890"
+    },
+    "SZ": {
+      "fixedLine": "22171234",
+      "mobile": "76123456"
+    },
+    "TA": {
+      "fixedLine": "8999"
+    },
+    "TC": {
+      "fixedLine": "6497121234",
+      "mobile": "6492311234"
+    },
+    "TD": {
+      "fixedLine": "22501234",
+      "mobile": "63012345"
+    },
+    "TG": {
+      "fixedLine": "22212345",
+      "mobile": "90112345"
+    },
+    "TH": {
+      "fixedLine": "21234567",
+      "mobile": "812345678"
+    },
+    "TJ": {
+      "fixedLine": "372123456",
+      "mobile": "917123456"
+    },
+    "TK": {
+      "fixedLine": "3101",
+      "mobile": "7290"
+    },
+    "TL": {
+      "fixedLine": "2112345",
+      "mobile": "77212345"
+    },
+    "TM": {
+      "fixedLine": "12345678",
+      "mobile": "66123456"
+    },
+    "TN": {
+      "fixedLine": "30010123",
+      "mobile": "20123456"
+    },
+    "TO": {
+      "fixedLine": "20123",
+      "mobile": "7715123"
+    },
+    "TR": {
+      "fixedLine": "2123456789",
+      "mobile": "5012345678"
+    },
+    "TT": {
+      "fixedLine": "8682211234",
+      "mobile": "8682911234"
+    },
+    "TV": {
+      "fixedLine": "20123",
+      "mobile": "901234"
+    },
+    "TW": {
+      "fixedLine": "221234567",
+      "mobile": "912345678"
+    },
+    "TZ": {
+      "fixedLine": "222345678",
+      "mobile": "621234567"
+    },
+    "UA": {
+      "fixedLine": "311234567",
+      "mobile": "501234567"
+    },
+    "UG": {
+      "fixedLine": "312345678",
+      "mobile": "712345678"
+    },
+    "US": {
+      "fixedLine": "2015550123",
+      "mobile": "2015550123"
+    },
+    "UY": {
+      "fixedLine": "21231234",
+      "mobile": "94231234"
+    },
+    "UZ": {
+      "fixedLine": "669050123",
+      "mobile": "912345678"
+    },
+    "VA": {
+      "fixedLine": "0669812345",
+      "mobile": "3123456789"
+    },
+    "VC": {
+      "fixedLine": "7842661234",
+      "mobile": "7844301234"
+    },
+    "VE": {
+      "fixedLine": "2121234567",
+      "mobile": "4121234567"
+    },
+    "VG": {
+      "fixedLine": "2842291234",
+      "mobile": "2843001234"
+    },
+    "VI": {
+      "fixedLine": "3406421234",
+      "mobile": "3406421234"
+    },
+    "VN": {
+      "fixedLine": "2101234567",
+      "mobile": "912345678"
+    },
+    "VU": {
+      "fixedLine": "22123",
+      "mobile": "5912345"
+    },
+    "WF": {
+      "fixedLine": "721234",
+      "mobile": "821234"
+    },
+    "WS": {
+      "fixedLine": "22123",
+      "mobile": "7212345"
+    },
+    "XK": {
+      "fixedLine": "28012345",
+      "mobile": "43201234"
+    },
+    "YE": {
+      "fixedLine": "1234567",
+      "mobile": "712345678"
+    },
+    "YT": {
+      "fixedLine": "269601234",
+      "mobile": "639012345"
+    },
+    "ZA": {
+      "fixedLine": "101234567",
+      "mobile": "711234567"
+    },
+    "ZM": {
+      "fixedLine": "211234567",
+      "mobile": "955123456"
+    },
+    "ZW": {
+      "fixedLine": "1312345",
+      "mobile": "712345678"
+    }
+  }
+}
