@@ -1,0 +1,162 @@
+/* Esperança: azul forte, branco e preto em uma identidade compartilhada. */
+:root{
+  color-scheme:light;
+  --navy:#1744bc;--paper:#f7f9ff;--white:#fff;--tint:#edf2ff;
+  --ink:#191b22;--muted:#515b6e;--line:#aebbd6;--field-line:#6c7d9b;
+  --accent-ink:#1744bc;--accent-link:#15379a;--accent-fill:#1744bc;--accent-hover:#123394;
+  --marker:#0b0b0e;--on-marker:#fff;--on-dark-accent:#fff;
+  --topbar:#1744bc;--topbar-ink:#fff;--brand:#1744bc;--logo-invert:1;
+  --blue:var(--accent-ink);--blue-deep:var(--accent-link);--yellow:var(--accent-fill);
+  --on-dark:#fff;--on-dark-muted:#e3ebff;--on-yellow:#fff;--on-yellow-muted:#f0f2ff;
+  --notice-bg:#eaf0ff;--notice-ink:#233968;--notice-border:#496ba7;
+  --button-dark-hover:#123394;--focus:#1744bc;
+}
+/* O tema muda superfícies e luminosidade; não usa filtros de inversão. */
+html.theme-dark{
+  color-scheme:dark;
+  --navy:#102b52;--paper:#080e19;--white:#1b2b43;--tint:#122037;
+  --ink:#f3f7ff;--muted:#c0d0e5;--line:#536b8b;--field-line:#a0b8d6;
+  --accent-ink:#a9d1ff;--accent-link:#c9e3ff;--accent-fill:#9dc9ff;--accent-hover:#c0dcff;
+  --marker:#9dc9ff;--on-marker:#0b1a30;--on-dark-accent:#bfdcff;
+  --on-yellow:#0b1a30;--on-yellow-muted:#152e4c;--on-dark:#f5f9ff;--on-dark-muted:#d1e2f7;
+  --topbar:#102b52;--topbar-ink:#f5f9ff;--brand:#9dc9ff;--logo-invert:0;
+  --notice-bg:#20314c;--notice-ink:#dbe7ff;--notice-border:#8faad9;
+  --button-dark-hover:#1e426e;--focus:#bedcff;
+}
+/* Paletas alternativas: preservam o tema escolhido e acrescentam pistas visuais. */
+html[data-color-vision="protanopia"]{
+  --accent-ink:#164182;--accent-link:#10356f;--accent-fill:#164182;--accent-hover:#10356f;
+  --brand:#164182;--focus:#164182;
+}
+html.theme-dark[data-color-vision="protanopia"]{
+  --accent-ink:#b2d4ff;--accent-link:#d1e4ff;--focus:#c9dfff;
+  --accent-fill:#a9d0ff;--accent-hover:#d1e4ff;--brand:#a9d0ff;--marker:#a9d0ff;
+}
+html[data-color-vision="deuteranopia"]{
+  --accent-ink:#344697;--accent-link:#28377d;--accent-fill:#344697;--accent-hover:#28377d;
+  --brand:#344697;--focus:#344697;
+}
+html.theme-dark[data-color-vision="deuteranopia"]{
+  --accent-ink:#c2ccff;--accent-link:#dae0ff;--focus:#d2daff;
+  --accent-fill:#becbff;--accent-hover:#dae0ff;--brand:#becbff;--marker:#becbff;
+}
+html[data-color-vision="tritanopia"]{
+  --accent-ink:#763a82;--accent-link:#5f286a;--accent-fill:#763a82;--accent-hover:#5f286a;
+  --brand:#763a82;--focus:#763a82;
+}
+html.theme-dark[data-color-vision="tritanopia"]{
+  --accent-ink:#ecc1f3;--accent-link:#f2d8f7;--focus:#edcef5;
+  --accent-fill:#e4b8ed;--accent-hover:#f2d8f7;--brand:#e4b8ed;--marker:#e4b8ed;
+}
+html[data-color-vision="achromatopsia"]{
+  --accent-ink:#343434;--accent-link:#202020;--accent-fill:#343434;--accent-hover:#202020;
+  --brand:#343434;--focus:#202020;
+  --notice-bg:#eeeee7;--notice-ink:#303030;--notice-border:#575757;
+}
+html.theme-dark[data-color-vision="achromatopsia"]{
+  --accent-ink:#efefeb;--accent-link:#fff;--focus:#fff;
+  --accent-fill:#e3e7ee;--accent-hover:#fff;--brand:#e3e7ee;--marker:#e3e7ee;
+  --notice-bg:#303638;--notice-ink:#fff;--notice-border:#b8c0c2;
+}
+/* Alto contraste usa preto e branco e reforça os contornos. */
+html.high-contrast{
+  --navy:#000;--paper:#fff;--white:#fff;--tint:#f4f4f4;--ink:#000;--muted:#171717;
+  --line:#333;--field-line:#000;--accent-ink:#000;--accent-link:#000;
+  --accent-fill:#000;--accent-hover:#242424;--marker:#000;--on-marker:#fff;--on-dark-accent:#fff;
+  --brand:#000;--logo-invert:1;--on-dark:#fff;--on-dark-muted:#fff;
+  --on-yellow:#fff;--on-yellow-muted:#fff;--button-dark-hover:#292929;--focus:#000;
+  --topbar:#000;--topbar-ink:#fff;
+  --notice-bg:#fff;--notice-ink:#000;--notice-border:#000;
+}
+html.theme-dark.high-contrast{
+  --paper:#000;--white:#080808;--tint:#121212;--ink:#fff;--muted:#fff;
+  --line:#fff;--field-line:#fff;--accent-ink:#fff;--accent-link:#fff;
+  --accent-fill:#fff;--accent-hover:#dedede;--on-yellow:#000;--on-yellow-muted:#000;
+  --marker:#fff;--on-marker:#000;--brand:#fff;--logo-invert:0;--focus:#fff;
+  --notice-bg:#000;--notice-ink:#fff;--notice-border:#fff;
+}
+/* Inversão real: inclui fotografias e continua independente das outras escolhas. */
+html.inverted-colors{filter:invert(1)}
+
+::selection{background:var(--marker);color:var(--on-marker)}
+.navbar{flex-wrap:wrap}
+.site-nav>ul{flex-wrap:wrap}
+.nav-actions{max-width:100%;flex-wrap:wrap}
+:focus-visible{outline:3px solid var(--focus);outline-offset:5px}
+.brand-mark{background:var(--brand)}
+.brand-mark img{filter:brightness(0) invert(var(--logo-invert))}
+.button-primary{background:var(--accent-fill);color:var(--on-yellow);border-color:var(--accent-ink);transition:transform .2s,box-shadow .2s}
+.button-primary:hover{background:var(--accent-hover)}
+.theme-dark:not(.high-contrast) .button-primary{box-shadow:0 0 24px color-mix(in srgb,var(--accent-fill) 12%,transparent)}
+.theme-dark:not(.high-contrast) :is(.card,.project-card,.form-panel,.media-card,.hero-sticker){box-shadow:0 14px 36px #0003}
+.button-dark{color:var(--on-dark);border-color:var(--line)}
+.button-dark:hover{color:var(--on-dark)}
+.button-outline,.menu-button{border-color:var(--field-line)}
+.highlight::after{background:var(--marker);bottom:-.045em;height:.055em}
+.status-dot{background:var(--accent-ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent-fill) 35%,transparent)}
+.theme-dark:not(.high-contrast) .status-dot{background:var(--accent-ink);box-shadow:none}
+.sunburst{color:var(--accent-fill);text-shadow:none}
+.hero-sticker>span{background:var(--marker);color:var(--on-marker)}
+.hero-sticker{box-shadow:0 12px 32px #142d4010}
+.hero-photo figcaption{background:#10204be8}
+.hero-photo::after{background:linear-gradient(transparent,#0b1838b3)}
+.explore-feature::after{background:linear-gradient(transparent,#10204be6)}
+.explore-feature .micro-label{color:var(--on-dark-accent)}
+.media-player,video{background:#101725}
+.image-dialog::backdrop{background:#071022e8}
+.purpose-grid span,.icon-badge{background:var(--tint);border:1px solid var(--line)}
+.purpose-strip{border-bottom:3px solid var(--accent-fill)}
+.path-row:hover .path-arrow{color:var(--on-yellow)}
+.gallery-item button::after{color:var(--ink)}
+.section-blue{color:var(--on-dark);border-block:1px solid var(--line)}
+.section-blue .eyebrow,.trust-symbol{color:var(--on-dark-accent)}
+.section-blue .trust-symbol{color:var(--on-dark-accent)}
+.section-blue .text-link{color:var(--on-dark);text-decoration:underline;text-underline-offset:5px}
+.cta-band{background:var(--accent-fill);border:1px solid var(--accent-ink)}
+.cta-band .eyebrow,.cta-band p:not(.eyebrow){color:var(--on-yellow-muted)}
+.cta-band .button-primary{background:var(--navy);color:var(--on-dark);border-color:var(--on-dark)}
+.cta-band .button-dark{border-color:var(--on-dark)}
+.cta-band :focus-visible{outline-color:var(--on-yellow)}
+.project-image .tag{border:1px solid var(--line)}
+.site-footer{color:var(--on-dark)}
+.topbar{background:var(--topbar);color:var(--topbar-ink)}
+.site-footer .brand-mark{background:var(--accent-fill)}
+.site-footer .brand-mark img{filter:brightness(0) invert(var(--logo-invert))}
+.site-footer :is(.footer-about>p,.footer-motto,.footer-nav a,.footer-bottom){color:var(--on-dark-muted)}
+.site-footer .brand-period,.footer-motto>span,.footer-nav a:hover{color:var(--on-dark-accent)}
+.site-footer .language-picker::after{color:var(--on-dark-accent)}
+.site-footer :focus-visible,.section-blue :focus-visible{outline-color:var(--on-dark-accent)}
+.language-picker select:hover,.language-picker select:focus-visible{border-color:var(--accent-fill);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent-fill) 20%,transparent)}
+input,textarea,select{border-color:var(--field-line);accent-color:var(--accent-ink)}
+.form-panel .iti{--iti-border-color:var(--field-line)}
+.form-panel .iti__dropdown-content{background:var(--white);color:var(--ink)}
+.form-result[data-state="success"]{border-top:3px solid var(--accent-ink)}
+.form-result[data-state="error"]{border-top:3px dashed var(--notice-border)}
+[aria-pressed="true"]:is(button,[data-filter]){border:2px solid currentColor}
+[aria-pressed="true"]:is(button,[data-filter])::after{content:"✓";margin-inline-start:8px;font-weight:700}
+.accessibility-controls [aria-pressed="true"]{background:var(--tint);color:var(--ink);border-style:double}
+.visual-option{padding-block:22px;border-top:1px solid var(--line)}
+.visual-option>label,.visual-option>p:first-child{display:block;font-size:.85rem;font-weight:700;margin-bottom:10px;color:var(--ink)}
+.visual-option .field-hint{display:block;margin-top:10px;line-height:1.7}
+.visual-option .button{max-width:100%;text-align:start}
+.palette-preview{display:flex;gap:8px;margin-top:14px}
+.palette-preview>span{width:28px;height:8px;border-radius:5px;background:var(--accent-ink)}
+.palette-preview>span:nth-child(2){background:var(--accent-fill)}
+.palette-preview>span:nth-child(3){background:var(--marker)}
+.palette-preview>span:nth-child(4){background:var(--navy);border:1px solid var(--line)}
+html[data-color-vision]:not([data-color-vision="off"]) :is(.text-link,.footer-nav a,.faq-list a){text-decoration:underline;text-underline-offset:5px}
+html[data-color-vision]:not([data-color-vision="off"]) .ods-card{border-top-color:var(--accent-ink);border-top-style:dashed}
+html[data-color-vision="achromatopsia"] body{filter:grayscale(1)}
+.high-contrast :is(.card,.project-card,.form-panel,.media-card,.table-wrap,.hero-sticker){border:2px solid var(--line);box-shadow:none}
+.high-contrast :is(.button,input,textarea,select,.menu-button,[data-filter]){border-width:2px}
+.high-contrast :is(.text-link,.footer-nav a,.faq-list a){text-decoration:underline;text-underline-offset:5px}
+.high-contrast :focus-visible{outline-width:4px;outline-style:double}
+.high-contrast .highlight::after{display:none}
+.high-contrast .hero-photo figcaption{background:#000;color:#fff}
+.high-contrast .explore-feature>img{opacity:.35}
+.high-contrast .cta-band :is(.button-dark,.button-primary){border-color:currentColor}
+@media(forced-colors:active){
+ html.inverted-colors,html[data-color-vision="achromatopsia"] body{filter:none}
+ .palette-preview{display:none}
+}
+@media print{html.inverted-colors,html[data-color-vision="achromatopsia"] body{filter:none}}

@@ -117,9 +117,10 @@ PAGES = {
       <p>Quatro mensagens que traduzem o que queremos construir juntos.</p>
     </div>
     <figure class="media-feature">
-      <video controls playsinline preload="metadata" poster="assets/manifesto-poster.svg" width="960" height="540" aria-label="Manifesto visual do Instituto Esperança" aria-describedby="descricao-video">
-        <source src="assets/manifesto.webm" type="video/webm">
+      <video controls playsinline preload="metadata" poster="assets/manifesto-poster.svg" data-hi-poster="assets/manifesto-poster-hi.svg" width="960" height="540" aria-label="Manifesto visual do Instituto Esperança" aria-describedby="descricao-video">
+        <source src="assets/manifesto.webm" data-hi-src="assets/manifesto-hi.webm" type="video/webm">
         <track kind="captions" src="assets/manifesto.vtt" srclang="pt-BR" label="Português">
+        <track kind="captions" src="assets/manifesto-hi.vtt" srclang="hi" label="हिन्दी">
         Seu navegador não reproduz este vídeo. Leia a descrição completa abaixo.
       </video>
       <figcaption id="descricao-video">Vídeo autoral · 14 segundos · Sem áudio. Animação de textos sobre fundo azul, com detalhes amarelos. Criado para o Instituto Esperança.</figcaption>

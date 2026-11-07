@@ -38,3 +38,29 @@ Object.assign(window.esperancaTranslationPacks["es-419"], {
   "Confira o país, o código de área e o número de telefone.": "Revisa el país, el código de área y el número de teléfono.",
   "Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.": "No se pudo cargar la validación del teléfono. Intenta de nuevo o deja este campo opcional en blanco."
 });
+
+/* Paleta e preferências visuais independentes. */
+Object.assign(window.esperancaTranslationPacks["es-419"], {
+  "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.": "Elige el tema, los colores y el tamaño del texto para leer cómodamente. Tus preferencias se guardan en este navegador cuando el almacenamiento está disponible.",
+  "O modo escuro usa fundos em azul-marinho e luz suave, mantendo as cores das imagens.": "El modo oscuro usa fondos azul marino y luz suave, manteniendo los colores de las imágenes.",
+  "Cores para daltonismo": "Colores para daltonismo",
+  "Paleta original": "Paleta original",
+  "Azul e âmbar · vermelho/verde": "Azul y ámbar · rojo/verde",
+  "Roxo e verde · azul/amarelo": "Morado y verde · azul/amarillo",
+  "Escala de cinza": "Escala de grises",
+  "Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.": "Prueba la paleta que te resulte más cómoda. Los enlaces subrayados y las marcas de selección ayudan a identificar acciones sin depender solo de los colores.",
+  "Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.": "Refuerza la diferencia entre texto y fondo, los contornos y el foco. Funciona con el tema claro u oscuro y prioriza la legibilidad sobre las otras paletas.",
+  "Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.": "Invierte todos los colores de la página, incluidas las imágenes. El tema elegido sigue siendo el mismo.",
+  "Restaurar preferências visuais": "Restablecer preferencias visuales"
+});
+
+/* Tipos de daltonismo e tema unificado. */
+Object.assign(window.esperancaTranslationPacks["es-419"], {
+  "Protanopia": "Protanopía",
+  "Deuteranopia": "Deuteranopía",
+  "Tritanopia": "Tritanopía",
+  "Acromatopsia": "Acromatopsia",
+  "O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.": "El modo oscuro usa fondos profundos y luz suave, manteniendo los colores de las imágenes."
+});
+
+Object.assign(window.esperancaTranslationPacks["es-419"], {"Animar coração": "Animar corazón"});

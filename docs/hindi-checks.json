@@ -1,0 +1,304 @@
+{
+  "pages": [
+    {
+      "page": "acessibilidade.html",
+      "records": 155,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "contato.html",
+      "records": 117,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "galeria.html",
+      "records": 122,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "impacto.html",
+      "records": 153,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "index.html",
+      "records": 150,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "midia.html",
+      "records": 98,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "noticias.html",
+      "records": 109,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "orcamento_hospedagem.html",
+      "records": 129,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "participar.html",
+      "records": 111,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "perguntas-frequentes.html",
+      "records": 98,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "projetos.html",
+      "records": 145,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "sobre.html",
+      "records": 94,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    },
+    {
+      "page": "assets/apresentacao.html",
+      "records": 13,
+      "missing": [],
+      "unchanged": [],
+      "incorrect": []
+    }
+  ],
+  "layouts": [
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "galeria.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "galeria.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "galeria.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "impacto.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "impacto.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "impacto.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "midia.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "midia.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "midia.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "noticias.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "noticias.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "noticias.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "orcamento_hospedagem.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "orcamento_hospedagem.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "orcamento_hospedagem.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "participar.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "participar.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "participar.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "perguntas-frequentes.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "perguntas-frequentes.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "perguntas-frequentes.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "projetos.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "projetos.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "projetos.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "sobre.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "sobre.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "sobre.html",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "checks": {
+    "traducao_acessibilidade": true,
+    "traducao_contato": true,
+    "traducao_galeria": true,
+    "traducao_impacto": true,
+    "traducao_index": true,
+    "traducao_midia": true,
+    "traducao_noticias": true,
+    "traducao_orcamento_hospedagem": true,
+    "traducao_participar": true,
+    "traducao_perguntas-frequentes": true,
+    "traducao_projetos": true,
+    "traducao_sobre": true,
+    "layouts_nas_tres_larguras": true,
+    "idioma_persistente": true,
+    "status_dinamico_de_acessibilidade": true,
+    "galeria_e_filtros": true,
+    "paises_e_busca_em_hindi": true,
+    "validacao_de_campos_obrigatorios_em_hindi": true,
+    "email_invalido_e_envio_em_hindi": true,
+    "video_poster_e_legenda_em_hindi": true,
+    "apresentacao_incorporada_em_hindi": true,
+    "retorno_ao_portugues_incluindo_apresentacao": true,
+    "apresentacao_independente_em_hindi": true,
+    "traducao_apresentacao": true,
+    "sem_erros_javascript": true
+  }
+}

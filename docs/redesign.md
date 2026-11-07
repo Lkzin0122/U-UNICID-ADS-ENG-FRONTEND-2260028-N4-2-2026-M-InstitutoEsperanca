@@ -1,6 +1,6 @@
 # Redesign do Instituto Esperança
 
-Atualização de **24 de outubro de 2026**. O projeto mantém a proposta institucional, a marca e a paleta azul e amarela, com novas composições, navegação organizada e conteúdo para as páginas que faltavam.
+Revisão visual de **7 de novembro de 2026**. O projeto mantém a proposta institucional e a marca, com azul forte `#1744bc` nas faixas e nos botões do tema claro, acompanhado por branco e preto. O tema escuro usa fundo quase preto `#080e19`, cartões azulados `#1b2b43`, faixas profundas `#102b52` e botões azul-claros `#9dc9ff` com texto escuro. Tema, inversão, alto contraste em preto/branco e opções Protanopia, Deuteranopia, Tritanopia e Acromatopsia têm funções independentes. Veja a [paleta e a validação das preferências visuais](paleta-acessibilidade.md).
 
 ## Estrutura de navegação
 
@@ -17,7 +17,7 @@ O site tem **12 páginas HTML**. As dez páginas previstas no escopo foram prese
 | Mídia | `midia.html` | Acessar vídeo, áudio e conteúdo incorporado com alternativas textuais. |
 | Notícias e leituras | `noticias.html` | Explorar referências oficiais de educação, inclusão e meio ambiente. |
 | Contato | `contato.html` | Enviar uma mensagem pelo EmailJS, após configurar a conta. |
-| Orçamento do site | `orcamento_hospedagem.html` | Comparar hospedagem e domínio com fontes e preços consultados. |
+| Orçamento do site | `orcamento_hospedagem.html` | Apresentar a hospedagem na Vercel e comparar domínios com fontes e preços consultados. |
 | Como participar | `participar.html` | Conhecer caminhos de voluntariado, apoio e parceria. |
 | Perguntas frequentes | `perguntas-frequentes.html` | Encontrar respostas sobre a proposta e o uso do site. |
 
@@ -72,6 +72,10 @@ O JavaScript adiciona interações ao HTML estático. Conteúdo, links e pergunt
 As preferências de tamanho de texto e contraste usam `localStorage` quando ele está disponível. Não é necessário cadastro. O navegador pode limitar a persistência ao abrir diretamente arquivos locais ou em modos de navegação privada.
 
 A troca de idioma usa os pacotes estáticos de `js/locales/`; a navegação do site não depende de um serviço de tradução externo. Alterações no texto de origem devem ser acompanhadas das respectivas traduções nesses pacotes.
+
+Em 07/11/2026, a revisão do hindi incluiu os textos atuais das 12 páginas, os ODS, a hospedagem na Vercel, os avisos do formulário, a validação de campos, os recursos de acessibilidade e a apresentação incorporada. Marcas, nomes próprios, endereços, moedas e nomes de teclas mantêm sua identificação original. A página de mídia seleciona vídeo, pôster e legendas próprios em hindi; o áudio instrumental não contém fala.
+
+Para verificar a tradução, execute `python -B scripts/check_hindi.py`. A auditoria compara os textos e atributos com o dicionário e verifica os controles no navegador, a persistência do idioma, a apresentação e três larguras de tela. O relatório está em `docs/hindi-checks.json`. Para recriar o vídeo e o pôster após editar seus textos, execute `python -B scripts/create_hindi_media.py`.
 
 O formulário de contato usa validação nativa do navegador e a API REST do EmailJS para enviar mensagens diretamente ao Instituto. O envio depende de JavaScript e dos três identificadores públicos configurados em `js/emailjs-config.js`. Exibe confirmação somente após uma resposta de sucesso do serviço; em caso de erro, mantém os campos e oferece envio pelo aplicativo de e-mail. Veja [a ativação e o template](emailjs.md).
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" id="top">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#102e50"><title>Acessibilidade | Instituto Esperança</title><meta name="description" content="Ajuste a leitura do site e conheça os recursos de navegação por teclado, contraste, textos alternativos e alternativas para os conteúdos multimídia."><link rel="icon" href="img/Logo.png" type="image/png"><link rel="stylesheet" href="css/style.css"><script src="js/i18n.js" defer></script><script src="js/site.js" defer></script></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#1744bc"><title>Acessibilidade | Instituto Esperança</title><meta name="description" content="Ajuste a leitura do site e conheça os recursos de navegação por teclado, contraste, textos alternativos e alternativas para os conteúdos multimídia."><link rel="icon" href="img/Logo.png" type="image/png"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/palette.css"><script src="js/i18n.js" defer></script><script src="js/site.js" defer></script></head>
 <body><a class="skip-link" href="#conteudo-principal" data-i18n="Pular para o conteúdo">Pular para o conteúdo</a>
 <div class="topbar"><div class="container"><span data-i18n="Juntos, a esperança ganha forma.">Juntos, a esperança ganha forma.</span></div></div>
 <header class="site-header"><div class="container navbar"><a href="index.html" class="brand" aria-label="Instituto Esperança — início"><span class="brand-mark"><img src="img/Logo.png" width="30" height="27" alt=""></span><span data-no-translate><small>INSTITUTO</small><strong>esperança<span class="brand-period">.</span></strong></span></a>
@@ -19,7 +19,7 @@
         <div class="section-heading">
             <p class="eyebrow">Sua leitura, do seu jeito</p>
             <h2 id="titulo-ajustes">Mais conforto para ler.</h2>
-            <p>Ajuste o tamanho do texto ou ative o alto contraste. Quando o armazenamento local estiver disponível, suas preferências serão lembradas neste navegador.</p>
+            <p>Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.</p>
             <p>Você também pode usar o zoom do próprio navegador. No computador, experimente <kbd>Ctrl</kbd> + <kbd>+</kbd> para ampliar e <kbd>Ctrl</kbd> + <kbd>0</kbd> para restaurar.</p>
         </div>
         <div class="card accessibility-controls">
@@ -30,16 +30,39 @@
                 <button class="button button-outline" type="button" data-font-size="reset">Tamanho padrão</button>
                 <button class="button button-outline" type="button" data-font-size="increase" aria-label="Aumentar o tamanho do texto">A+</button>
             </div>
-            <p data-font-status role="status" aria-live="polite">Tamanho do texto: 100%.</p><p>Contraste da interface</p>
-            <button class="button button-primary" type="button" data-contrast-toggle aria-pressed="false">Alto contraste</button>
-            <p>Inversão de cores</p>
-            <button class="button button-outline" type="button" data-invert-toggle aria-pressed="false">Inverter cores</button>
-            <p><label for="theme-preference">Tema do site</label></p>
-            <select id="theme-preference" data-theme-preference>
+            <p data-font-status role="status" aria-live="polite">Tamanho do texto: 100%.</p>
+            <div class="visual-option">
+            <label for="theme-preference">Tema do site</label>
+            <select id="theme-preference" data-theme-preference aria-describedby="theme-hint">
                 <option value="system">Seguir sistema</option>
                 <option value="light">Claro</option>
                 <option value="dark">Escuro</option>
             </select>
+            <span class="field-hint" id="theme-hint">O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.</span>
+            </div>
+            <div class="visual-option">
+            <label for="color-vision">Cores para daltonismo</label>
+            <select id="color-vision" data-color-vision aria-describedby="color-vision-hint">
+                <option value="off">Paleta original</option>
+                <option value="protanopia">Protanopia</option>
+                <option value="deuteranopia">Deuteranopia</option>
+                <option value="tritanopia">Tritanopia</option>
+                <option value="achromatopsia">Acromatopsia</option>
+            </select>
+            <span class="field-hint" id="color-vision-hint">Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.</span>
+            <div class="palette-preview" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="visual-option">
+            <p>Contraste da interface</p>
+            <button class="button button-outline" type="button" data-contrast-toggle aria-pressed="false" aria-describedby="contrast-hint">Alto contraste</button>
+            <span class="field-hint" id="contrast-hint">Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.</span>
+            </div>
+            <div class="visual-option">
+            <p>Inversão de cores</p>
+            <button class="button button-outline" type="button" data-invert-toggle aria-pressed="false" aria-describedby="invert-hint">Inverter cores</button>
+            <span class="field-hint" id="invert-hint">Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.</span>
+            </div>
+            <button class="button button-outline" type="button" data-visual-reset>Restaurar preferências visuais</button>
             <p class="small">Esses controles ajustam a apresentação. Nenhum dado pessoal é solicitado.</p>
             <noscript><p class="notice">Para usar os controles desta página, habilite o JavaScript. O zoom e as preferências do navegador continuam disponíveis.</p></noscript>
         </div>
@@ -99,8 +122,8 @@
         </div>
     </div>
 </section>
-</main><footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-about"><a href="index.html" class="brand" aria-label="Instituto Esperança — início"><span class="brand-mark"><img src="img/Logo.png" width="30" height="27" alt=""></span><span data-no-translate><small>INSTITUTO</small><strong>esperança<span class="brand-period">.</span></strong></span></a><p>Esperança que acolhe.<br>Solidariedade que transforma.</p><span class="footer-motto">Feito de pessoas, para pessoas. <span aria-hidden="true">♡</span></span></div><nav class="footer-nav" aria-label="Navegação do rodapé"><div><h2 data-i18n="Conheça">Conheça</h2><ul><li><a href="index.html" data-i18n="Início">Início</a></li><li><a href="sobre.html" data-i18n="O Instituto">O Instituto</a></li><li><a href="projetos.html" data-i18n="Projetos">Projetos</a></li><li><a href="impacto.html" data-i18n="Impacto e transparência">Impacto e transparência</a></li></ul></div><div><h2 data-i18n="Explore">Explore</h2><ul><li><a href="noticias.html" data-i18n="Notícias e leituras">Notícias e leituras</a></li><li><a href="galeria.html" data-i18n="Galeria">Galeria</a></li><li><a href="midia.html" data-i18n="Mídia">Mídia</a></li><li><a href="acessibilidade.html" data-i18n="Acessibilidade" aria-current="page">Acessibilidade</a></li></ul></div><div><h2 data-i18n="Conecte-se">Conecte-se</h2><ul><li><a href="participar.html" data-i18n="Como participar">Como participar</a></li><li><a href="contato.html" data-i18n="Contato">Contato</a></li><li><a href="perguntas-frequentes.html" data-i18n="Perguntas frequentes">Perguntas frequentes</a></li><li><a href="orcamento_hospedagem.html" data-i18n="Orçamento do site">Orçamento do site</a></li></ul></div></nav></div>
+</main><footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-about"><a href="index.html" class="brand" aria-label="Instituto Esperança — início"><span class="brand-mark"><img src="img/Logo.png" width="30" height="27" alt=""></span><span data-no-translate><small>INSTITUTO</small><strong>esperança<span class="brand-period">.</span></strong></span></a><p>Esperança que acolhe.<br>Solidariedade que transforma.</p><span class="footer-motto">Feito de pessoas, para pessoas. <span class="footer-heart-static" aria-hidden="true" data-no-translate>♡</span><button class="heart-pop-button" type="button" data-heart-pop data-js-only hidden aria-label="Animar coração"><span class="heart-pop-glyph" aria-hidden="true" data-no-translate>♡</span></button></span></div><nav class="footer-nav" aria-label="Navegação do rodapé"><div><h2 data-i18n="Conheça">Conheça</h2><ul><li><a href="index.html" data-i18n="Início">Início</a></li><li><a href="sobre.html" data-i18n="O Instituto">O Instituto</a></li><li><a href="projetos.html" data-i18n="Projetos">Projetos</a></li><li><a href="impacto.html" data-i18n="Impacto e transparência">Impacto e transparência</a></li></ul></div><div><h2 data-i18n="Explore">Explore</h2><ul><li><a href="noticias.html" data-i18n="Notícias e leituras">Notícias e leituras</a></li><li><a href="galeria.html" data-i18n="Galeria">Galeria</a></li><li><a href="midia.html" data-i18n="Mídia">Mídia</a></li><li><a href="acessibilidade.html" data-i18n="Acessibilidade" aria-current="page">Acessibilidade</a></li></ul></div><div><h2 data-i18n="Conecte-se">Conecte-se</h2><ul><li><a href="participar.html" data-i18n="Como participar">Como participar</a></li><li><a href="contato.html" data-i18n="Contato">Contato</a></li><li><a href="perguntas-frequentes.html" data-i18n="Perguntas frequentes">Perguntas frequentes</a></li><li><a href="orcamento_hospedagem.html" data-i18n="Orçamento do site">Orçamento do site</a></li></ul></div></nav></div>
 <div class="footer-tools"><label class="language-picker"><span data-i18n="Idioma">Idioma</span><select id="language-picker" aria-label="Idioma do site"><option value="pt-BR">Português (Brasil)</option><option value="en">English</option><option value="zh-CN">普通话</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es-419">Español (Latinoamérica)</option><option value="ru">Русский</option><option value="ja">日本語</option><option value="hi">हिन्दी (Hindi)</option></select></label></div>
-<div class="footer-bottom"><p data-no-translate>© 2026 Instituto Esperança · Projeto acadêmico UNICID.</p><a href="#top">Voltar ao topo <span aria-hidden="true">↑</span></a></div></div></footer>
+<div class="footer-bottom"><p>© 2026 Instituto Esperança · Projeto acadêmico UNICID.</p><a href="#top">Voltar ao topo <span aria-hidden="true">↑</span></a></div></div></footer>
 <dialog id="image-dialog" class="image-dialog" aria-label="Imagem ampliada"><button type="button" class="dialog-close" aria-label="Fechar imagem">×</button><figure><img id="dialog-image" src="img/comunidade-acolhimento.jpg" alt=""><figcaption id="dialog-caption"></figcaption></figure></dialog></body>
 </html>

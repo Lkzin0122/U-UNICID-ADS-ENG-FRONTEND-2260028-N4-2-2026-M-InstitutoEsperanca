@@ -9,7 +9,7 @@
   --------------------------------------------------------------------------------
   Campo                               Informação
   ----------------------------------- --------------------------------------------
-  **Site publicado**             https://institutoesperanca.up.railway.app/
+  **Site publicado**             https://institutoesperanca.vercel.app/
   
   **Nome do projeto/site**            Instituto Esperança
 
@@ -179,8 +179,8 @@ O projeto contempla as dez páginas exigidas na atividade:
                                                                rótulos e validação
                                                                HTML5.
 
-                            10 **Orçamento de hospedagem ---   Comparação de três
-                               `orcamento_hospedagem.html`**   opções de hospedagem
+                            10 **Orçamento de hospedagem ---   Hospedagem na Vercel
+                               `orcamento_hospedagem.html`**   com plano Hobby
                                                                e três opções de
                                                                domínio, com preços,
                                                                características,
@@ -280,7 +280,7 @@ deverão manter acesso à navegação principal.
 ## 8. Conteúdo e identidade visual
 
 -   **Nome:** Instituto Esperança.
--   **Paleta de cores:** azul, amarelo, branco e preto.
+-   **Paleta de cores:** azul forte `#1744bc`, branco e preto no tema claro. O tema escuro usa fundo `#080e19`, cartões `#1b2b43`, faixas `#102b52` e botões claros `#9dc9ff` com texto escuro. Tema, inversão, alto contraste em preto/branco e opções Protanopia, Deuteranopia, Tritanopia e Acromatopsia têm funções independentes; veja [paleta e preferências visuais](paleta-acessibilidade.md).
 -   **Tipografia:** Arial, Helvetica e fontes genéricas `sans-serif`.
 -   **Tom de voz:** acolhedor, respeitoso, claro e informativo, sem
     linguagem discriminatória ou estigmatizante.
@@ -308,7 +308,7 @@ visão.
 -   **Controle de versão:** ferramenta de versionamento, como Git, se
     utilizada pela equipe.
 -   **Hospedagem do site:**
-    https://institutoesperanca.up.railway.app/
+    https://institutoesperanca.vercel.app/
 
 ## 10. Cronograma e divisão de tarefas
 
@@ -431,7 +431,7 @@ critérios forem verificados:
 -   [ ] O HTML foi verificado no W3C Validator e os erros encontrados
     foram corrigidos ou documentados.
 -   [ ] A pasta `docs/` contém o README, o diário de bordo, o orçamento
-    comparativo de hospedagem e domínio e as evidências de testes.
+    orçamento de hospedagem na Vercel, comparação de domínios e as evidências de testes.
 -   [ ] Os arquivos estão organizados nas pastas previstas e o projeto
     está compactado para entrega.
 -   [ ] Os conteúdos factuais e os dados apresentados foram conferidos;

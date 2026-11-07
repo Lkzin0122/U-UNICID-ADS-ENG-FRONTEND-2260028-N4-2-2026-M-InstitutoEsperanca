@@ -3,7 +3,7 @@
  * Configuração do serviço e do template: docs/emailjs.md.
  */
 window.ESPERANCA_EMAILJS = Object.freeze({
-  serviceId: 'service_he74a34',
-  templateId: 'template_o4wlclh',
-  publicKey: 'sO6i0CJOlaRxpGvQK',
+  serviceId: 'service_osrvt2b',
+  templateId: 'template_8qmq9ty',
+  publicKey: 'gWi_TyxrTyZnxHhl3',
 });

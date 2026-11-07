@@ -38,3 +38,29 @@ Object.assign(window.esperancaTranslationPacks["zh-CN"], {
   "Confira o país, o código de área e o número de telefone.": "请检查国家或地区、区号和电话号码。",
   "Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.": "无法加载电话号码验证。请重试，或将此选填项留空。"
 });
+
+/* Paleta e preferências visuais independentes. */
+Object.assign(window.esperancaTranslationPacks["zh-CN"], {
+  "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.": "选择适合阅读的主题、配色和文字大小。存储可用时，偏好设置会保存在此浏览器中。",
+  "O modo escuro usa fundos em azul-marinho e luz suave, mantendo as cores das imagens.": "深色模式使用海军蓝背景和柔和的亮度，同时保留图片原有的颜色。",
+  "Cores para daltonismo": "适合不同色觉的配色",
+  "Paleta original": "原始配色",
+  "Azul e âmbar · vermelho/verde": "蓝色与琥珀色 · 红/绿",
+  "Roxo e verde · azul/amarelo": "紫色与绿色 · 蓝/黄",
+  "Escala de cinza": "灰度",
+  "Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.": "请尝试最适合您的配色。链接下划线和选择标记让您无需仅靠颜色就能识别操作。",
+  "Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.": "增强文字与背景的差异、边框和焦点。支持浅色或深色主题，并优先保证可读性，而非其他配色。",
+  "Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.": "反转页面的所有颜色，包括图片。所选主题保持不变。",
+  "Restaurar preferências visuais": "重置视觉偏好设置"
+});
+
+/* Tipos de daltonismo e tema unificado. */
+Object.assign(window.esperancaTranslationPacks["zh-CN"], {
+  "Protanopia": "红色盲",
+  "Deuteranopia": "绿色盲",
+  "Tritanopia": "蓝色盲",
+  "Acromatopsia": "全色盲",
+  "O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.": "深色模式使用深色背景和柔和的亮度，同时保留图片原有的颜色。"
+});
+
+Object.assign(window.esperancaTranslationPacks["zh-CN"], {"Animar coração": "播放爱心动画"});

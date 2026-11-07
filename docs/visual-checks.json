@@ -1,0 +1,766 @@
+{
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+  "pages": [
+    {
+      "page": "acessibilidade.html",
+      "modes": 40,
+      "textChecks": 5280
+    },
+    {
+      "page": "contato.html",
+      "modes": 40,
+      "textChecks": 4160
+    },
+    {
+      "page": "galeria.html",
+      "modes": 40,
+      "textChecks": 3760
+    },
+    {
+      "page": "impacto.html",
+      "modes": 40,
+      "textChecks": 5800
+    },
+    {
+      "page": "index.html",
+      "modes": 40,
+      "textChecks": 5680
+    },
+    {
+      "page": "midia.html",
+      "modes": 40,
+      "textChecks": 3400
+    },
+    {
+      "page": "noticias.html",
+      "modes": 40,
+      "textChecks": 4000
+    },
+    {
+      "page": "orcamento_hospedagem.html",
+      "modes": 40,
+      "textChecks": 4840
+    },
+    {
+      "page": "participar.html",
+      "modes": 40,
+      "textChecks": 4040
+    },
+    {
+      "page": "perguntas-frequentes.html",
+      "modes": 40,
+      "textChecks": 3640
+    },
+    {
+      "page": "projetos.html",
+      "modes": 40,
+      "textChecks": 5480
+    },
+    {
+      "page": "sobre.html",
+      "modes": 40,
+      "textChecks": 3440
+    }
+  ],
+  "layouts": [
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 390,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 768,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "acessibilidade.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 390,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 768,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 1,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": false,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": true,
+      "invert": false,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": false,
+      "invert": true,
+      "contrast": false,
+      "overflow": false
+    },
+    {
+      "page": "contato.html",
+      "width": 1440,
+      "scale": 2,
+      "dark": true,
+      "invert": true,
+      "contrast": true,
+      "overflow": false
+    }
+  ],
+  "contrast": [],
+  "skipped": [],
+  "hoverTextChecks": 17200,
+  "forcedColors": [
+    {
+      "page": "acessibilidade.html",
+      "checked": 132,
+      "failures": []
+    },
+    {
+      "page": "contato.html",
+      "checked": 104,
+      "failures": []
+    },
+    {
+      "page": "galeria.html",
+      "checked": 94,
+      "failures": []
+    },
+    {
+      "page": "noticias.html",
+      "checked": 100,
+      "failures": []
+    }
+  ],
+  "errors": [],
+  "checks": {
+    "four_requested_options": true,
+    "control_protanopia": true,
+    "control_deuteranopia": true,
+    "control_tritanopia": true,
+    "control_achromatopsia": true,
+    "dark_changes_surfaces_without_filter": true,
+    "inversion_is_independent": true,
+    "color_vision_changes_accents_without_changing_theme": true,
+    "high_contrast_changes_surfaces_and_borders": true,
+    "toggle_states_and_non_color_cues": true,
+    "settings_persist_on_navigation": true,
+    "frame_inherits_without_double_inversion": true,
+    "standalone_frame_inverts_once": true,
+    "reset_all_visual_controls": true,
+    "system_theme_updates": true,
+    "explicit_theme_overrides_system": true,
+    "migrate_red-green": true,
+    "migrate_blue-yellow": true,
+    "migrate_monochrome": true,
+    "forced_system_colors": true,
+    "all_color_combinations_contrast": true,
+    "responsive_and_zoom_layouts": true,
+    "no_javascript_errors": true
+  }
+}

@@ -38,3 +38,29 @@ Object.assign(window.esperancaTranslationPacks["fr"], {
   "Confira o país, o código de área e o número de telefone.": "Vérifiez le pays, l’indicatif régional et le numéro de téléphone.",
   "Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.": "La validation du téléphone n’a pas pu être chargée. Réessayez ou laissez ce champ facultatif vide."
 });
+
+/* Paleta e preferências visuais independentes. */
+Object.assign(window.esperancaTranslationPacks["fr"], {
+  "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.": "Choisissez le thème, les couleurs et la taille du texte pour lire confortablement. Vos préférences sont enregistrées dans ce navigateur si le stockage est disponible.",
+  "O modo escuro usa fundos em azul-marinho e luz suave, mantendo as cores das imagens.": "Le mode sombre utilise des fonds bleu marine et une lumière douce, tout en conservant les couleurs des images.",
+  "Cores para daltonismo": "Couleurs pour le daltonisme",
+  "Paleta original": "Palette originale",
+  "Azul e âmbar · vermelho/verde": "Bleu et ambre · rouge/vert",
+  "Roxo e verde · azul/amarelo": "Violet et vert · bleu/jaune",
+  "Escala de cinza": "Niveaux de gris",
+  "Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.": "Essayez la palette la plus confortable. Les liens soulignés et les marques de sélection permettent d’identifier les actions sans dépendre uniquement des couleurs.",
+  "Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.": "Renforce la différence entre le texte et le fond, les contours et le focus. Compatible avec les thèmes clair et sombre, il privilégie la lisibilité par rapport aux autres palettes.",
+  "Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.": "Inverse toutes les couleurs de la page, y compris les images. Le thème choisi reste identique.",
+  "Restaurar preferências visuais": "Réinitialiser les préférences visuelles"
+});
+
+/* Tipos de daltonismo e tema unificado. */
+Object.assign(window.esperancaTranslationPacks["fr"], {
+  "Protanopia": "Protanopie",
+  "Deuteranopia": "Deutéranopie",
+  "Tritanopia": "Tritanopie",
+  "Acromatopsia": "Achromatopsie",
+  "O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.": "Le mode sombre utilise des fonds profonds et une lumière douce, tout en conservant les couleurs des images."
+});
+
+Object.assign(window.esperancaTranslationPacks["fr"], {"Animar coração": "Animer le cœur"});

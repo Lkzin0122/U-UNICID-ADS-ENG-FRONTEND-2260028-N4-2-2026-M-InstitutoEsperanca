@@ -16,6 +16,15 @@ const audit = `(() => {
   const luminance = color => color.slice(0,3).map(c => {
     c /= 255; return c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4;
   }).reduce((sum,c,i) => sum + c * [.2126,.7152,.0722][i], 0);
+  const isInverted = getComputedStyle(document.documentElement).filter.includes('invert(1)');
+  const isMonochrome = getComputedStyle(document.body).filter.includes('grayscale(1)');
+  const rendered = color => {
+    if (isMonochrome) {
+      const gray = color.reduce((sum,c,i) => sum + c * [.2126,.7152,.0722][i], 0);
+      color = [gray,gray,gray];
+    }
+    return isInverted ? color.map(c => 255-c) : color;
+  };
   const failures = [], skipped = [];
   let checked = 0;
   for (const element of document.body.querySelectorAll('*')) {
@@ -33,11 +42,12 @@ const audit = `(() => {
     let background = [255,255,255];
     for (const parent of ancestors.reverse()) background = over(rgba(getComputedStyle(parent).backgroundColor), background);
     const foreground = over(rgba(style.color), background);
-    const lum = [luminance(foreground),luminance(background)].sort((a,b) => a-b);
+    const lum = [luminance(rendered(foreground)),luminance(rendered(background))].sort((a,b) => a-b);
     const ratio = (lum[1] + .05) / (lum[0] + .05);
     const large = parseFloat(style.fontSize) >= 24 || (parseFloat(style.fontSize) >= 18.66 && parseFloat(style.fontWeight) >= 700);
     checked++;
-    if (ratio + .001 < (large ? 3 : 4.5)) failures.push({
+    const minimum = document.documentElement.classList.contains('high-contrast') ? (large ? 4.5 : 7) : (large ? 3 : 4.5);
+    if (ratio + .001 < minimum) failures.push({
       element: element.tagName.toLowerCase() + (element.className ? '.' + String(element.className).trim().replace(/\\s+/g,'.') : ''),
       text: (field ? element.value || element.placeholder : element.textContent).trim().slice(0,85), ratio: +ratio.toFixed(2),
       color: style.color, background: background.map(Math.round),
@@ -121,14 +131,14 @@ async function main() {
         if (await evaluate('document.readyState === "complete" && document.documentElement.classList.contains("js")')) break;
         await delay(50);
       }
-      for (const dark of [false,true]) for (const invert of [false,true]) for (const contrast of [false,true]) {
-        const mode = {dark,invert,contrast};
-        await evaluate(`document.documentElement.classList.toggle('theme-dark',${dark});document.documentElement.classList.toggle('inverted-colors',${invert});document.documentElement.classList.toggle('high-contrast',${contrast});document.querySelectorAll('.nav-group').forEach(el=>el.open=true)`);
+      for (const vision of ['off','protanopia','deuteranopia','tritanopia','achromatopsia']) for (const dark of [false,true]) for (const invert of [false,true]) for (const contrast of [false,true]) {
+        const mode = {dark,invert,contrast,vision};
+        await evaluate(`document.documentElement.dataset.colorVision='${vision}';document.documentElement.classList.toggle('theme-dark',${dark});document.documentElement.classList.toggle('inverted-colors',${invert});document.documentElement.classList.toggle('high-contrast',${contrast});document.querySelectorAll('.nav-group').forEach(el=>el.open=true)`);
         const result = await evaluate(audit);
         total++; checked += result.checked;
         for (const failure of result.failures) failures.push({page,...mode,...failure});
       }
-      console.log(page + ': 8 combinações verificadas');
+      console.log(page + ': 40 combinações verificadas');
     }
     // Verifica também hover, filtros selecionados e cores forçadas do sistema.
     for (const page of ['noticias.html','galeria.html','acessibilidade.html']) {
@@ -169,7 +179,7 @@ async function main() {
     }
     const uniqueFailures = [...new Map(failures.map(failure => [failure.element + failure.text + failure.ratio, failure])).values()];
     console.log(JSON.stringify({pages:pages.length,combinations:total,textChecks:checked,interactions,failureCount:failures.length,uniqueFailures},null,2));
-    process.exitCode = failures.length || interactions[0].controls !== true || interactions[0].colorScheme !== 'light' || interactions[1].persisted !== true ? 1 : 0;
+    process.exitCode = failures.length || interactions[0].controls !== true || interactions[0].colorScheme !== 'dark' || interactions[1].persisted !== true ? 1 : 0;
   } finally {
     socket?.close();
     child?.kill();

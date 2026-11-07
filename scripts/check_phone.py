@@ -129,6 +129,47 @@ def check_phone(client, origin):
       phoneTest.set('US', '');
       return report;
     })()""")
+    report['formatting'] = client.evaluate("""(() => {
+      const cases = [
+        ['BR','1188899999','(11) 8889-9999',false],
+        ['BR','11888999999','(11) 88899-9999',false],
+        ['BR','1191234567','(11) 9123-4567',false],
+        ['BR','11912345678','(11) 91234-5678',true],
+        ['BR','1130123456','(11) 3012-3456',true],
+        ['BR','+55 11 8889-9999','(11) 8889-9999',false],
+        ['BR','+55 11 96123-4567','(11) 96123-4567',true],
+        ['US','2011550123','(201) 155-0123',false],
+        ['FR','0612345678','06 12 34 56 78',true],
+        ['GB','07400123456','07400 123456',true],
+        ['IT','0236618300','02 3661 8300',true],
+        ['DE','03012345','030 12345',true],
+        ['AR','011 15-2345-6789','011 15-2345-6789',true],
+      ];
+      return cases.map(([country,value,expected,valid]) => {
+        phoneTest.set(country,value);
+        return {country,value,expected,actual:phoneTest.input.value,
+          pass:phoneTest.input.value === expected && phoneTest.controller.validate() === valid};
+      });
+    })()""")
+    report['brazilFormatting'] = client.evaluate("""(() => {
+      const areas = ['11','12','13','14','15','16','17','18','19','21','22','24','27','28',
+        '31','32','33','34','35','37','38','41','42','43','44','45','46','47','48','49',
+        '51','53','54','55','61','62','63','64','65','66','67','68','69','71','73','74','75','77','79',
+        '81','82','83','84','85','86','87','88','89','91','92','93','94','95','96','97','98','99'];
+      const result = {areas:areas.length,cases:0,failures:[]};
+      for (const area of areas) {
+        for (const first of '0123456789') {
+          for (const subscriber of [first+'1234567',first+'12345678']) {
+            const split = subscriber.length - 4;
+            const expected = `(${area}) ${subscriber.slice(0,split)}-${subscriber.slice(split)}`;
+            phoneTest.set('BR',area+subscriber);
+            result.cases++;
+            if (phoneTest.input.value !== expected) result.failures.push({value:area+subscriber,expected,actual:phoneTest.input.value});
+          }
+        }
+      }
+      return result;
+    })()""")
     # Trusted browser text insertion uses beforeinput/input, as on mobile and autofill.
     for country, number, expected in (('br', '11961234567', '(11) 96123-4567'), ('us', '2015550123', '(201) 555-0123')):
         client.evaluate('phoneTest.set(' + json.dumps(country) + ', "")')
@@ -138,6 +179,9 @@ def check_phone(client, origin):
         client.call('Input.insertText', {'text': '999'})
         report['interactions'][country + '_trusted_typing_and_cap'] = client.evaluate('phoneTest.input.value === ' + json.dumps(expected) + ' && phoneTest.input.value === ' + json.dumps(before) + ' && phoneTest.controller.validate()')
     cases = {
+        'mobile_selection_can_become_landline': """(() => {phoneTest.set('BR','11961234567');phoneTest.input.setSelectionRange(5,10);phoneTest.paste('3012');return phoneTest.input.value==='(11) 3012-4567' && phoneTest.controller.getNumber()==='+551130124567';})()""",
+        'landline_selection_can_become_mobile': """(() => {phoneTest.set('BR','1130124567');phoneTest.input.setSelectionRange(5,9);phoneTest.paste('96123');return phoneTest.input.value==='(11) 96123-4567' && phoneTest.controller.getNumber()==='+5511961234567';})()""",
+        'unicode_brazil_digits_use_complete_short_format': """(() => {phoneTest.set('BR','११९१२३४५६७');return phoneTest.input.value==='(11) 9123-4567' && !phoneTest.controller.validate();})()""",
         'international_paste_switches_country_before_limit': """(() => {phoneTest.set('US','');phoneTest.paste('+49 30 1234567890123');return phoneTest.controller.getNumber()==='+49301234567890123' && intlTelInput.getInstance(phoneTest.input).getSelectedCountry().iso2==='de';})()""",
         'overlong_paste_does_not_silently_change_number': """(() => {phoneTest.set('US','2015550123');const before=phoneTest.input.value;phoneTest.input.select();phoneTest.paste('201555012399');return phoneTest.input.value===before && phoneTest.controller.getNumber()==='+12015550123' && !document.querySelector('#phone-error').hidden;})()""",
         'selection_replacement_at_max': """(() => {phoneTest.set('US','2015550123');phoneTest.input.setSelectionRange(1,4);phoneTest.paste('202');return phoneTest.controller.getNumber()==='+12025550123';})()""",
@@ -151,6 +195,19 @@ def check_phone(client, origin):
     }
     for name, expression in cases.items():
         report['interactions'][name] = client.evaluate(expression)
+    client.evaluate("phoneTest.set('BR', '')")
+    for character in '1191234567':
+        client.call('Input.insertText', {'text': character})
+    report['interactions']['eight_subscriber_digits_use_four_four'] = client.evaluate("phoneTest.input.value === '(11) 9123-4567' && !phoneTest.controller.validate()")
+    client.call('Input.insertText', {'text':'8'})
+    report['interactions']['ninth_subscriber_digit_moves_hyphen'] = client.evaluate("phoneTest.input.value === '(11) 91234-5678' && phoneTest.controller.validate()")
+    client.call('Input.dispatchKeyEvent', {'type':'keyDown','key':'Backspace','code':'Backspace','windowsVirtualKeyCode':8})
+    client.call('Input.dispatchKeyEvent', {'type':'keyUp','key':'Backspace','code':'Backspace','windowsVirtualKeyCode':8})
+    report['interactions']['deleting_ninth_digit_restores_four_four'] = client.evaluate("phoneTest.input.value === '(11) 9123-4567'")
+    report['interactions']['brazil_international_paste_uses_complete_short_format'] = client.evaluate("""(() => {
+      phoneTest.set('US','');phoneTest.paste('+55 11 8889-9999');
+      return phoneTest.input.value === '(11) 8889-9999' && intlTelInput.getInstance(phoneTest.input).getSelectedCountry().iso2 === 'br' && !phoneTest.controller.validate();
+    })()""")
     client.evaluate("phoneTest.set('US','2015550123');phoneTest.input.setSelectionRange(6,6)")
     client.call('Input.dispatchKeyEvent', {'type': 'keyDown', 'key': 'Backspace', 'code': 'Backspace', 'windowsVirtualKeyCode': 8})
     client.call('Input.dispatchKeyEvent', {'type': 'keyUp', 'key': 'Backspace', 'code': 'Backspace', 'windowsVirtualKeyCode': 8})
@@ -193,8 +250,9 @@ def check_phone(client, origin):
     failures = [region for region in report['regions'] if not all(region[key] for key in ('selectable', 'example', 'national', 'cap', 'submission', 'invalid'))]
     fixture_failures = [fixture for fixture in report['fixtures'] if not fixture['pass']]
     example_failures = [example for example in report['independentExamples'] if not all(example[key] for key in ('accepted', 'paste', 'typed'))]
-    print(json.dumps({'regions':len(report['regions']), 'region_failures':failures, 'independent_examples':len(report['independentExamples']), 'example_failures':[{key:value for key,value in example.items() if key != 'trace'} for example in example_failures], 'fixture_failures':fixture_failures}, ensure_ascii=True, indent=2))
-    return {'all_regions':len(report['regions']) == report['supportedRegions'] and bool(report['regions']) and not failures, 'google_fixed_and_mobile_examples':bool(report['independentExamples']) and not example_failures, 'specific_fixtures':not fixture_failures, **report['interactions'], 'no_javascript_errors':not report['javascript_errors']}
+    formatting_failures = [case for case in report['formatting'] if not case['pass']]
+    print(json.dumps({'regions':len(report['regions']), 'region_failures':failures, 'independent_examples':len(report['independentExamples']), 'example_failures':[{key:value for key,value in example.items() if key != 'trace'} for example in example_failures], 'fixture_failures':fixture_failures, 'formatting_failures':formatting_failures, 'brazil_formatting':report['brazilFormatting']}, ensure_ascii=True, indent=2))
+    return {'all_regions':len(report['regions']) == report['supportedRegions'] and bool(report['regions']) and not failures, 'google_fixed_and_mobile_examples':bool(report['independentExamples']) and not example_failures, 'specific_fixtures':not fixture_failures, 'complete_length_formatting':not formatting_failures, 'all_brazilian_area_codes':not report['brazilFormatting']['failures'], **report['interactions'], 'no_javascript_errors':not report['javascript_errors']}
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@
 
 Locally bundled `max` build: complete Google libphonenumber numbering metadata, precise validation and formatting. MIT license.
 
-`phone-data.js` contains mobile/fixed-line lengths and example numbers generated from the exact same package metadata. No country rules are handwritten.
+`phone-data.js` contains mobile/fixed-line lengths, national format descriptors and example numbers generated from the exact same package metadata. No country rules are handwritten.
 
 Upstream: https://github.com/catamphetamine/libphonenumber-js
 

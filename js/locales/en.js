@@ -38,3 +38,29 @@ Object.assign(window.esperancaTranslationPacks["en"], {
   "Confira o país, o código de área e o número de telefone.": "Check the country, area code and phone number.",
   "Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.": "Phone validation could not be loaded. Try again or leave this optional field blank."
 });
+
+/* Paleta e preferências visuais independentes. */
+Object.assign(window.esperancaTranslationPacks["en"], {
+  "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.": "Choose the theme, colors and text size for comfortable reading. Your preferences are saved in this browser when storage is available.",
+  "O modo escuro usa fundos em azul-marinho e luz suave, mantendo as cores das imagens.": "Dark mode uses navy backgrounds and soft light while keeping the colors of images.",
+  "Cores para daltonismo": "Colors for color vision differences",
+  "Paleta original": "Original palette",
+  "Azul e âmbar · vermelho/verde": "Blue and amber · red/green",
+  "Roxo e verde · azul/amarelo": "Purple and green · blue/yellow",
+  "Escala de cinza": "Grayscale",
+  "Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.": "Try the palette that feels most comfortable. Underlined links and selection marks help identify actions without relying on color alone.",
+  "Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.": "Increases the difference between text and background, borders and focus. Works with light or dark themes and gives readability priority over other palettes.",
+  "Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.": "Inverts all page colors, including images. Your selected theme stays the same.",
+  "Restaurar preferências visuais": "Reset visual preferences"
+});
+
+/* Tipos de daltonismo e tema unificado. */
+Object.assign(window.esperancaTranslationPacks["en"], {
+  "Protanopia": "Protanopia",
+  "Deuteranopia": "Deuteranopia",
+  "Tritanopia": "Tritanopia",
+  "Acromatopsia": "Achromatopsia",
+  "O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.": "Dark mode uses deep backgrounds and soft light while keeping the colors of images."
+});
+
+Object.assign(window.esperancaTranslationPacks["en"], {"Animar coração": "Animate heart"});

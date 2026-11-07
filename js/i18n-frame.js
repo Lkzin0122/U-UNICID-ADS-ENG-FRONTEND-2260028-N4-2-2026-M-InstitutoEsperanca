@@ -11,8 +11,8 @@
   const apply=()=>{
     document.documentElement.lang=tags[language]||'pt-BR';
     headings.forEach(record=>{record.element.innerHTML=record.html;const value=pack[`__heading__${record.source}`];if(value)record.element.textContent=value;});
-    texts.forEach(record=>{const value=pack[record.source.trim()];if(value){const lead=record.source.match(/^\s*/)?.[0]||'';const tail=record.source.match(/\s*$/)?.[0]||'';record.node.nodeValue=lead+value+tail;}});
-    attributes.forEach(record=>{const value=pack[record.source.trim()];if(value)record.element.setAttribute(record.attribute,value);});
+    texts.forEach(record=>{const value=pack[record.source.trim()];const lead=record.source.match(/^\s*/)?.[0]||'';const tail=record.source.match(/\s*$/)?.[0]||'';record.node.nodeValue=value?lead+value+tail:record.source;});
+    attributes.forEach(record=>{record.element.setAttribute(record.attribute,pack[record.source.trim()]||record.source);});
   };
   const load=next=>{
     language=tags[next]?next:'pt-BR';const id=++requestId;

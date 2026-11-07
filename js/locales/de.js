@@ -38,3 +38,29 @@ Object.assign(window.esperancaTranslationPacks["de"], {
   "Confira o país, o código de área e o número de telefone.": "Prüfen Sie Land, Ortsvorwahl und Telefonnummer.",
   "Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.": "Die Telefonnummernprüfung konnte nicht geladen werden. Versuchen Sie es erneut oder lassen Sie dieses optionale Feld leer."
 });
+
+/* Paleta e preferências visuais independentes. */
+Object.assign(window.esperancaTranslationPacks["de"], {
+  "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.": "Wählen Sie Design, Farben und Textgröße für angenehmes Lesen. Ihre Einstellungen werden in diesem Browser gespeichert, wenn Speicher verfügbar ist.",
+  "O modo escuro usa fundos em azul-marinho e luz suave, mantendo as cores das imagens.": "Das dunkle Design verwendet marineblaue Flächen und sanftes Licht. Die Bildfarben bleiben erhalten.",
+  "Cores para daltonismo": "Farben bei Farbsehschwäche",
+  "Paleta original": "Originalpalette",
+  "Azul e âmbar · vermelho/verde": "Blau und Bernstein · Rot/Grün",
+  "Roxo e verde · azul/amarelo": "Violett und Grün · Blau/Gelb",
+  "Escala de cinza": "Graustufen",
+  "Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.": "Probieren Sie die für Sie angenehmste Palette aus. Unterstrichene Links und Auswahlmarkierungen kennzeichnen Aktionen unabhängig von Farben.",
+  "Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.": "Verstärkt den Unterschied zwischen Text und Hintergrund sowie Konturen und Fokus. Funktioniert mit hellem und dunklem Design und gibt der Lesbarkeit Vorrang vor anderen Paletten.",
+  "Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.": "Kehrt alle Seitenfarben einschließlich der Bilder um. Das gewählte Design bleibt gleich.",
+  "Restaurar preferências visuais": "Visuelle Einstellungen zurücksetzen"
+});
+
+/* Tipos de daltonismo e tema unificado. */
+Object.assign(window.esperancaTranslationPacks["de"], {
+  "Protanopia": "Protanopie",
+  "Deuteranopia": "Deuteranopie",
+  "Tritanopia": "Tritanopie",
+  "Acromatopsia": "Achromatopsie",
+  "O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.": "Das dunkle Design verwendet tiefe Hintergrundfarben und sanftes Licht. Die Bildfarben bleiben erhalten."
+});
+
+Object.assign(window.esperancaTranslationPacks["de"], {"Animar coração": "Herz animieren"});

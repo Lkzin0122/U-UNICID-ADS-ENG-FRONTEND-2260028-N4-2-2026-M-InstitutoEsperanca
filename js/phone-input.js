@@ -95,6 +95,29 @@
         input.placeholder = example?.formatNational() || '';
         input.dataset.phoneMaxDigits = String(Math.max(...rules.lengths));
       };
+      const formatCompleteLength = (state, partial) => {
+        // AsYouType can still choose a longer mask at a complete shorter length.
+        // Select a matching full format without changing the significant digits.
+        if (!state.rules.lengths.includes(state.national.length)) return partial;
+        let best = partial;
+        let bestScore = -1;
+        for (const format of state.rules.formats || []) {
+          const pattern = new RegExp(`^(?:${format.pattern})$`);
+          if (!pattern.test(state.national)) continue;
+          const replacement = format.prefix
+            ? format.format.replace('$1', () => format.prefix) : format.format;
+          const formatted = state.national.replace(pattern, replacement);
+          const nationalDigits = digits(state.national.replace(pattern, format.format));
+          // E.g. Argentine mobile transformations belong to the parser, not this fallback.
+          if (nationalDigits !== state.national || digits(formatted) !== digits(partial)) continue;
+          let common = 0;
+          while (common < Math.min(partial.length, formatted.length) && partial[common] === formatted[common]) common++;
+          const matchesPrefix = !format.leading || new RegExp(`^(?:${format.leading})`).test(state.national);
+          const score = (matchesPrefix ? 1000 : 0) + common;
+          if (score > bestScore) { best = formatted; bestScore = score; }
+        }
+        return best;
+      };
       const apply = (raw, caret = raw.length, notify = false) => {
         if (updating || composing) return;
         if (!ready) { validate(true); return; }
@@ -117,6 +140,7 @@
         else if (state.valid) formatted = state.parsed.formatNational();
         else if (state.international && state.number) formatted = new lib.AsYouType(state.region).input(state.national);
         else formatted = state.formatter.input('');
+        if (!state.valid && state.text) formatted = formatCompleteLength(state, formatted);
         const before = digits(normalise(raw.slice(0, caret))).length;
         const change = digits(formatted).length - digits(normalise(raw)).length;
         const target = Math.max(0, before + (state.international ? change : 0));

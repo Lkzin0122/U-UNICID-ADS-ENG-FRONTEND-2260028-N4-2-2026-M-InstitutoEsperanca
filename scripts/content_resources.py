@@ -84,14 +84,14 @@ PAGES = {
     },
     "orcamento_hospedagem.html": {
         "title": "Orçamento de hospedagem",
-        "description": "Comparativo de três hospedagens e três opções de domínio, com preços, fontes oficiais e justificativa para a publicação do site.",
+        "description": "Conheça a hospedagem do projeto na Vercel, a referência de custo do plano Hobby e as opções de domínio, com fontes oficiais.",
         "section": "instituto",
         "content": """
 <section class="page-hero">
     <div class="container">
         <p class="eyebrow">Transparência do projeto</p>
         <h1>Um lugar na internet.<br><em>Uma escolha consciente.</em></h1>
-        <p class="lead">Conheça as opções de hospedagem e domínio pesquisadas para manter o site acessível e com um custo adequado.</p>
+        <p class="lead">O Instituto Esperança está publicado na Vercel. Conheça a hospedagem escolhida e as opções de domínio para o projeto.</p>
     </div>
 </section>
 <section class="section" aria-labelledby="titulo-hospedagem">
@@ -99,34 +99,24 @@ PAGES = {
         <div class="section-heading">
             <p class="eyebrow">01 / Hospedagem</p>
             <h2 id="titulo-hospedagem">Onde os arquivos do site ficam.</h2>
-            <p>Estas opções permitem publicar as páginas HTML, os estilos e as imagens. Consulta às fontes oficiais em <time datetime="2026-10-24">24/10/2026</time>; Railway: <time datetime="2026-10-31">31/10/2026</time>.</p>
+            <p>A Vercel hospeda as páginas HTML, os estilos, os scripts e as imagens do projeto. Informações do plano consultadas nas fontes oficiais em <time datetime="2026-11-07">07/11/2026</time>.</p>
         </div>
-        <div class="grid-3">
+        <div class="split">
             <article class="card pricing-card">
-                <span class="tag">Sugestão para o projeto</span>
-                <h3>GitHub Pages</h3>
-                <p class="price">Grátis <small>no GitHub Free</small></p>
-                <p>Hospeda HTML, CSS e JavaScript diretamente de um repositório público. Pode usar o endereço github.io ou um domínio próprio.</p>
-                <p><strong>Condição:</strong> o código precisa estar em um repositório público no plano gratuito. O serviço publica arquivos estáticos.</p>
-                <a class="text-link" href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">Fonte: GitHub Docs <span aria-hidden="true">↗</span></a>
+                <span class="tag">Hospedagem do projeto</span>
+                <h3>Vercel</h3>
+                <p class="price">US$ 0 <small>por mês no plano Hobby</small></p>
+                <p>Publicação de sites com distribuição dos arquivos em uma rede global e atualizações a partir do repositório do projeto.</p>
+                <p><strong>Condição:</strong> o plano Hobby é gratuito para uso pessoal e não comercial, sujeito às cotas e regras da plataforma.</p>
+                <a class="text-link" href="https://vercel.com/pricing">Fonte: preços da Vercel <span aria-hidden="true">↗</span></a>
+                <a class="text-link" href="https://vercel.com/docs/plans/hobby">Consultar condições do plano Hobby <span aria-hidden="true">↗</span></a>
             </article>
-            <article class="card pricing-card">
-                <span class="tag">Plano Free</span>
-                <h3>Cloudflare Pages</h3>
-                <p class="price">Grátis <small>para arquivos estáticos</small></p>
-                <p>As requisições a arquivos estáticos são gratuitas. O plano Free inclui até 500 builds por mês e até 20 mil arquivos por site.</p>
-                <p><strong>Condição:</strong> cada arquivo deve ter no máximo 25 MiB. Funções de servidor têm regras próprias de uso.</p>
-                <a class="text-link" href="https://developers.cloudflare.com/pages/functions/pricing/">Fonte: preços da Cloudflare <span aria-hidden="true">↗</span></a>
-                <a class="text-link" href="https://developers.cloudflare.com/pages/platform/limits/">Consultar limites do plano <span aria-hidden="true">↗</span></a>
-            </article>
-            <article class="card pricing-card">
-                <span class="tag">Plano Free</span>
-                <h3>Railway</h3>
-                <p class="price">US$ 0 <small>por mês</small></p>
-                <p>O plano Free inclui US$ 1 de crédito mensal para executar pequenas aplicações, com subdomínio Railway.</p>
-                <p><strong>Condição:</strong> até 1 vCPU e 0,5 GB de RAM por serviço. A gratuidade está limitada à cota de uso mensal.</p>
-                <a class="text-link" href="https://railway.com/pricing">Fonte: preços da Railway <span aria-hidden="true">↗</span></a>
-            </article>
+            <div>
+                <h3>Um endereço para acessar e compartilhar.</h3>
+                <p>O subdomínio vercel.app permite acessar o projeto sem contratar um domínio próprio nesta etapa.</p>
+                <p class="small-print"><strong>Endereço atual:</strong> <a href="https://institutoesperanca.vercel.app/">institutoesperanca.vercel.app</a></p>
+                <a class="text-link" href="https://vercel.com/docs/domains/working-with-domains">Como funcionam os domínios na Vercel <span aria-hidden="true">↗</span></a>
+            </div>
         </div>
     </div>
 </section>
@@ -156,14 +146,14 @@ PAGES = {
         <div class="section-heading">
             <p class="eyebrow">03 / Nossa escolha para esta etapa</p>
             <h2 id="titulo-escolha">Publicar de forma simples.<br>Investir quando fizer sentido.</h2>
-            <p>Uma opção de publicação é GitHub Pages com o endereço gratuito github.io: o site usa arquivos estáticos e pode ser mantido pela equipe em um repositório.</p>
+            <p>A hospedagem escolhida é a Vercel, com o endereço institutoesperanca.vercel.app. O site usa arquivos estáticos, e suas atualizações podem ser publicadas a partir do repositório mantido pela equipe.</p>
             <p>Se um domínio próprio for necessário, a opção .com.br no Registro.br oferece referência de custo em reais: R$ 40,00 por ano na consulta, além da hospedagem gratuita, desde que o nome esteja disponível e os requisitos sejam atendidos.</p>
         </div>
         <div class="card">
             <h3>O que entra nessa conta?</h3>
-            <p><strong>Publicação inicial:</strong> hospedagem gratuita e subdomínio fornecido pela plataforma.</p>
+            <p><strong>Publicação inicial:</strong> Vercel Hobby com referência de US$ 0 por mês e subdomínio vercel.app, respeitando as condições do plano.</p>
             <p><strong>Com domínio próprio .com.br:</strong> R$ 40,00 por ano na consulta. Este valor não inclui serviços adicionais.</p>
-            <p><strong>Próxima etapa:</strong> envio real de formulários, e-mail institucional e armazenamento de dados precisam de uma solução própria e de novo orçamento.</p>
+            <p><strong>Serviços adicionais:</strong> o formulário usa o EmailJS, sujeito às cotas do serviço. E-mail institucional e armazenamento em servidor exigem avaliação e orçamento separados.</p>
             <p><strong>Sustentabilidade digital:</strong> imagens compactas e carregamento de mídia sob demanda reduzem o volume de dados do site. Nenhum fornecedor recebeu uma classificação ambiental sem verificação específica.</p>
             <a class="text-link" href="sobre.html">Conheça o Instituto <span aria-hidden="true">→</span></a>
         </div>
@@ -188,7 +178,7 @@ PAGES = {
         <div class="section-heading">
             <p class="eyebrow">Sua leitura, do seu jeito</p>
             <h2 id="titulo-ajustes">Mais conforto para ler.</h2>
-            <p>Ajuste o tamanho do texto ou ative o alto contraste. Quando o armazenamento local estiver disponível, suas preferências serão lembradas neste navegador.</p>
+            <p>Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.</p>
             <p>Você também pode usar o zoom do próprio navegador. No computador, experimente <kbd>Ctrl</kbd> + <kbd>+</kbd> para ampliar e <kbd>Ctrl</kbd> + <kbd>0</kbd> para restaurar.</p>
         </div>
         <div class="card accessibility-controls">
@@ -199,16 +189,39 @@ PAGES = {
                 <button class="button button-outline" type="button" data-font-size="reset">Tamanho padrão</button>
                 <button class="button button-outline" type="button" data-font-size="increase" aria-label="Aumentar o tamanho do texto">A+</button>
             </div>
-            <p data-font-status role="status" aria-live="polite">Tamanho do texto: 100%.</p><p>Contraste da interface</p>
-            <button class="button button-primary" type="button" data-contrast-toggle aria-pressed="false">Alto contraste</button>
-            <p>Inversão de cores</p>
-            <button class="button button-outline" type="button" data-invert-toggle aria-pressed="false">Inverter cores</button>
-            <p><label for="theme-preference">Tema do site</label></p>
-            <select id="theme-preference" data-theme-preference>
+            <p data-font-status role="status" aria-live="polite">Tamanho do texto: 100%.</p>
+            <div class="visual-option">
+            <label for="theme-preference">Tema do site</label>
+            <select id="theme-preference" data-theme-preference aria-describedby="theme-hint">
                 <option value="system">Seguir sistema</option>
                 <option value="light">Claro</option>
                 <option value="dark">Escuro</option>
             </select>
+            <span class="field-hint" id="theme-hint">O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.</span>
+            </div>
+            <div class="visual-option">
+            <label for="color-vision">Cores para daltonismo</label>
+            <select id="color-vision" data-color-vision aria-describedby="color-vision-hint">
+                <option value="off">Paleta original</option>
+                <option value="protanopia">Protanopia</option>
+                <option value="deuteranopia">Deuteranopia</option>
+                <option value="tritanopia">Tritanopia</option>
+                <option value="achromatopsia">Acromatopsia</option>
+            </select>
+            <span class="field-hint" id="color-vision-hint">Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.</span>
+            <div class="palette-preview" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="visual-option">
+            <p>Contraste da interface</p>
+            <button class="button button-outline" type="button" data-contrast-toggle aria-pressed="false" aria-describedby="contrast-hint">Alto contraste</button>
+            <span class="field-hint" id="contrast-hint">Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.</span>
+            </div>
+            <div class="visual-option">
+            <p>Inversão de cores</p>
+            <button class="button button-outline" type="button" data-invert-toggle aria-pressed="false" aria-describedby="invert-hint">Inverter cores</button>
+            <span class="field-hint" id="invert-hint">Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.</span>
+            </div>
+            <button class="button button-outline" type="button" data-visual-reset>Restaurar preferências visuais</button>
             <p class="small">Esses controles ajustam a apresentação. Nenhum dado pessoal é solicitado.</p>
             <noscript><p class="notice">Para usar os controles desta página, habilite o JavaScript. O zoom e as preferências do navegador continuam disponíveis.</p></noscript>
         </div>

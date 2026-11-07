@@ -7068,6 +7068,9 @@
   "interactions": {
     "br_trusted_typing_and_cap": true,
     "us_trusted_typing_and_cap": true,
+    "mobile_selection_can_become_landline": true,
+    "landline_selection_can_become_mobile": true,
+    "unicode_brazil_digits_use_complete_short_format": true,
     "international_paste_switches_country_before_limit": true,
     "overlong_paste_does_not_silently_change_number": true,
     "selection_replacement_at_max": true,
@@ -7078,6 +7081,10 @@
     "composition_normalises_fullwidth_digits": true,
     "oversized_paste_is_rejected_without_truncation": true,
     "missing_area_code_is_not_inferred": true,
+    "eight_subscriber_digits_use_four_four": true,
+    "ninth_subscriber_digit_moves_hyphen": true,
+    "deleting_ninth_digit_restores_four_four": true,
+    "brazil_international_paste_uses_complete_short_format": true,
     "backspace_over_separator_removes_digit": true,
     "phone_locale_en": true,
     "phone_locale_zh-CN": true,
@@ -7086,6 +7093,7 @@
     "phone_locale_es-419": true,
     "phone_locale_ru": true,
     "phone_locale_ja": true,
+    "phone_locale_hi": true,
     "phone_locale_pt-BR": true,
     "phone_error_layout_390": true,
     "phone_error_layout_768": true,
@@ -7096,5 +7104,103 @@
     "failure_closed_intlTelInput.min.js": true
   },
   "supportedRegions": 244,
+  "formatting": [
+    {
+      "country": "BR",
+      "value": "1188899999",
+      "expected": "(11) 8889-9999",
+      "actual": "(11) 8889-9999",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "11888999999",
+      "expected": "(11) 88899-9999",
+      "actual": "(11) 88899-9999",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "1191234567",
+      "expected": "(11) 9123-4567",
+      "actual": "(11) 9123-4567",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "11912345678",
+      "expected": "(11) 91234-5678",
+      "actual": "(11) 91234-5678",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "1130123456",
+      "expected": "(11) 3012-3456",
+      "actual": "(11) 3012-3456",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "+55 11 8889-9999",
+      "expected": "(11) 8889-9999",
+      "actual": "(11) 8889-9999",
+      "pass": true
+    },
+    {
+      "country": "BR",
+      "value": "+55 11 96123-4567",
+      "expected": "(11) 96123-4567",
+      "actual": "(11) 96123-4567",
+      "pass": true
+    },
+    {
+      "country": "US",
+      "value": "2011550123",
+      "expected": "(201) 155-0123",
+      "actual": "(201) 155-0123",
+      "pass": true
+    },
+    {
+      "country": "FR",
+      "value": "0612345678",
+      "expected": "06 12 34 56 78",
+      "actual": "06 12 34 56 78",
+      "pass": true
+    },
+    {
+      "country": "GB",
+      "value": "07400123456",
+      "expected": "07400 123456",
+      "actual": "07400 123456",
+      "pass": true
+    },
+    {
+      "country": "IT",
+      "value": "0236618300",
+      "expected": "02 3661 8300",
+      "actual": "02 3661 8300",
+      "pass": true
+    },
+    {
+      "country": "DE",
+      "value": "03012345",
+      "expected": "030 12345",
+      "actual": "030 12345",
+      "pass": true
+    },
+    {
+      "country": "AR",
+      "value": "011 15-2345-6789",
+      "expected": "011 15-2345-6789",
+      "actual": "011 15-2345-6789",
+      "pass": true
+    }
+  ],
+  "brazilFormatting": {
+    "areas": 67,
+    "cases": 1340,
+    "failures": []
+  },
   "javascript_errors": []
 }

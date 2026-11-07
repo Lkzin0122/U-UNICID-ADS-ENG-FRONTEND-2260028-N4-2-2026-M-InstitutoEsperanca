@@ -38,3 +38,29 @@ Object.assign(window.esperancaTranslationPacks["ru"], {
   "Confira o país, o código de área e o número de telefone.": "Проверьте страну, код города и номер телефона.",
   "Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.": "Не удалось загрузить проверку телефона. Повторите попытку или оставьте это необязательное поле пустым."
 });
+
+/* Paleta e preferências visuais independentes. */
+Object.assign(window.esperancaTranslationPacks["ru"], {
+  "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.": "Выберите тему, цвета и размер текста для удобного чтения. Настройки сохраняются в этом браузере, если хранилище доступно.",
+  "O modo escuro usa fundos em azul-marinho e luz suave, mantendo as cores das imagens.": "Тёмный режим использует тёмно-синий фон и мягкий свет, сохраняя цвета изображений.",
+  "Cores para daltonismo": "Цвета при особенностях цветового зрения",
+  "Paleta original": "Исходная палитра",
+  "Azul e âmbar · vermelho/verde": "Синий и янтарный · красный/зелёный",
+  "Roxo e verde · azul/amarelo": "Фиолетовый и зелёный · синий/жёлтый",
+  "Escala de cinza": "Оттенки серого",
+  "Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.": "Попробуйте наиболее удобную палитру. Подчёркнутые ссылки и отметки выбора помогают распознавать действия без опоры только на цвет.",
+  "Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.": "Усиливает различие между текстом и фоном, контуры и фокус. Работает со светлой и тёмной темой, отдавая приоритет читаемости перед другими палитрами.",
+  "Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.": "Инвертирует все цвета страницы, включая изображения. Выбранная тема не меняется.",
+  "Restaurar preferências visuais": "Сбросить настройки отображения"
+});
+
+/* Tipos de daltonismo e tema unificado. */
+Object.assign(window.esperancaTranslationPacks["ru"], {
+  "Protanopia": "Протанопия",
+  "Deuteranopia": "Дейтеранопия",
+  "Tritanopia": "Тританопия",
+  "Acromatopsia": "Ахроматопсия",
+  "O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.": "Тёмный режим использует глубокие цвета фона и мягкий свет, сохраняя цвета изображений."
+});
+
+Object.assign(window.esperancaTranslationPacks["ru"], {"Animar coração": "Анимировать сердечко"});
