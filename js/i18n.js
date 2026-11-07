@@ -29,7 +29,7 @@
   }
   document.querySelectorAll('*').forEach(element => {
     if (element.closest('[data-no-translate]')) return;
-    for (const attribute of ['alt', 'title', 'aria-label', 'placeholder', 'data-caption']) {
+    for (const attribute of ['alt', 'title', 'aria-label', 'placeholder', 'data-caption', 'label']) {
       if (element.hasAttribute(attribute) && element.getAttribute(attribute).trim()) {
         attrRecords.push({ element, attribute, source: element.getAttribute(attribute) });
       }
@@ -39,6 +39,10 @@
     attrRecords.push({ element, attribute: 'content', source: element.content });
   });
   const packs = { 'pt-BR': {} };
+  const mediaRecords = [...document.querySelectorAll('video[data-hi-poster]')].map(element => ({
+    element, source: element.querySelector('source'), poster: element.getAttribute('poster'),
+    src: element.querySelector('source').getAttribute('src'),
+  }));
   let activePack = packs['pt-BR'];
   let loadToken = 0;
 
@@ -59,6 +63,15 @@
     });
     textRecords.forEach(record => { record.node.nodeValue = translated(record.source); });
     attrRecords.forEach(record => { record.element.setAttribute(record.attribute, translated(record.source)); });
+    mediaRecords.forEach(record => {
+      const src = language === 'hi' ? record.source.dataset.hiSrc : record.src;
+      record.element.poster = language === 'hi' ? record.element.dataset.hiPoster : record.poster;
+      if (record.source.getAttribute('src') !== src) {
+        record.element.pause();
+        record.source.setAttribute('src', src);
+        record.element.load();
+      }
+    });
     document.querySelectorAll('iframe').forEach(frame => {
       try {
         if (new URL(frame.src, document.baseURI).origin !== location.origin) return;

@@ -224,11 +224,16 @@ def run_browser_checks(check=check_contact):
     try:
         process = subprocess.Popen([str(browser), '--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', '--disable-background-networking', '--remote-debugging-port=0', f'--user-data-dir={profile}', 'about:blank'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         port_file = profile / 'DevToolsActivePort'
+        port = None
         for _ in range(150):
-            if port_file.exists():
+            try:
+                # Windows can expose the file briefly while Chrome still locks it.
+                port = int(port_file.read_text().splitlines()[0])
                 break
-            time.sleep(.1)
-        port = int(port_file.read_text().splitlines()[0])
+            except (OSError, ValueError, IndexError):
+                time.sleep(.1)
+        if port is None:
+            raise RuntimeError('O navegador não disponibilizou a porta de depuração.')
         with urllib.request.urlopen(f'http://127.0.0.1:{port}/json/list') as response:
             target = next(item for item in json.load(response) if item['type'] == 'page')
         client = CDP(target['webSocketDebuggerUrl'])

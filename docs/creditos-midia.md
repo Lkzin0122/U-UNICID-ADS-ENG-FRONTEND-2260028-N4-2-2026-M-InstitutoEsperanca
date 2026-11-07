@@ -28,6 +28,7 @@ condição de vulnerabilidade ou deficiência.
   de `assets/render-video.html` com Canvas e MediaRecorder do navegador.
 - `assets/manifesto-poster.svg`: capa vetorial do vídeo, com a mesma composição.
 - `assets/manifesto.vtt`: alternativa textual sincronizada às quatro mensagens.
+- `assets/manifesto-hi.webm`, `assets/manifesto-poster-hi.svg` e `assets/manifesto-hi.vtt`: versões em hindi da animação, da capa e das legendas, adicionadas em 07/11/2026. O vídeo e o pôster são gerados por `scripts/create_hindi_media.py`, usando a mesma composição autoral e o dicionário local de hindi.
 - `assets/pausa-para-acolher.wav`: composição instrumental original de 16 segundos,
   sintetizada por `scripts/create_audio.py`, sem amostras de terceiros e sem voz.
 - `assets/apresentacao.html`: apresentação incorporada com os três eixos da

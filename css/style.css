@@ -1,6 +1,6 @@
 /* Instituto Esperança · identidade compartilhada · mobile first */
 @charset "UTF-8";
-:root{color-scheme:light;--navy:#102e50;--blue:#1767a8;--blue-deep:#0c4778;--yellow:#f6c953;--paper:#fffefa;--tint:#f2f6f8;--ink:#142f4b;--muted:#526372;--line:#dbe3e8;--white:#fff;--on-dark:#fff;--on-dark-muted:#d3dfeb;--on-yellow:#102e50;--on-yellow-muted:#244564;--notice-bg:#fff7dc;--notice-ink:#4d411e;--notice-border:#a17a14;--button-dark-hover:#0c4778;--radius:18px;--font-scale:1}
+:root{--radius:18px;--font-scale:1}
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:110px;font-size:calc(16px * var(--font-scale))}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
@@ -9,11 +9,25 @@ img{display:block;max-width:100%;height:auto}button,input,select,textarea{font:i
 .hero-copy h1{font-size:clamp(3.3rem,6.4vw,5.2rem)}
 .section-tint,.section-soft{background:var(--tint)}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.js .footer-heart-static{display:none}
+.heart-pop-button{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;margin-block:-12px;margin-inline-start:2px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--on-dark-accent);vertical-align:middle;overflow:visible}
+.heart-pop-glyph{display:inline-block;font-size:1rem;line-height:1;pointer-events:none}
+.heart-pop-particle{position:absolute;left:50%;top:50%;width:1em;height:1em;font-size:1.1rem;line-height:1;transform:translate(-50%,-50%);pointer-events:none;user-select:none}
 .small,.small-text,.media-caption{font-size:.78rem!important;color:var(--muted);line-height:1.8}
 .media-caption{margin-top:16px}.media-feature figcaption{font-size:.75rem;margin-top:14px;color:var(--muted)}
 .gallery-expand,.step-number{display:none}
 .cta-band .button-primary{background:var(--navy);color:#fff}
 .cta-band .button-primary:hover{background:var(--button-dark-hover)}
+.ods-card{display:flex;flex-direction:column;align-items:flex-start;border-top:4px solid var(--ods-color)}
+.ods-card--10{--ods-color:#dd1367}
+.ods-card--4{--ods-color:#c5192d}
+.ods-card--5{--ods-color:#ff3a21}
+.ods-card--12{--ods-color:#bf8b2e}
+.ods-card .icon-badge{margin-bottom:18px}
+.ods-card .eyebrow{margin-bottom:12px}
+.ods-card p:not(.eyebrow){margin-top:16px}
+.ods-card .text-link{margin-top:auto;padding-top:22px}
+#ods .small-print{margin-top:24px}
 .card.project-card{display:flex;flex-direction:column;align-items:flex-start}
 .card.project-card .icon-badge{margin-bottom:15px}
 .card.project-card details{margin-block:20px;font-size:.84rem;width:100%;border-top:1px solid var(--line);padding-top:16px}
@@ -82,25 +96,6 @@ html.language-changing body{opacity:.72;transition:opacity .12s ease}html:not(.l
 .presentation-frame{min-height:550px}
 kbd{font:inherit;font-size:.85em;background:var(--tint);border:1px solid var(--line);padding:2px 6px;border-radius:4px}
 .notice h2{font-size:1.35rem;margin-bottom:10px}
-/* A inversão troca o tema efetivo, mantendo texto e superfície na mesma paleta. */
-html:is(.theme-dark:not(.inverted-colors),.inverted-colors:not(.theme-dark)){
-  color-scheme:dark;
-  --navy:#080f18;--blue:#8bc4ff;--blue-deep:#a4d0ff;--paper:#121a24;
-  --tint:#1c2835;--ink:#f1f5f9;--muted:#c0cbd6;--line:#596879;--white:#1a2531;
-  --notice-bg:#332d1c;--notice-ink:#fff0bf;--notice-border:#c7a84c;
-}
-html.high-contrast{
-  --navy:#000;--blue:#0045ad;--blue-deep:#003c95;--yellow:#ffdc45;
-  --paper:#fff;--tint:#f0f0f0;--ink:#000;--muted:#252525;--line:#666;--white:#fff;
-  --on-dark-muted:#fff;--on-yellow:#000;--on-yellow-muted:#252525;
-  --notice-bg:#fff7dc;--notice-ink:#252525;--notice-border:#666;--button-dark-hover:#222;
-}
-html.high-contrast:is(.theme-dark:not(.inverted-colors),.inverted-colors:not(.theme-dark)){
-  color-scheme:dark;
-  --navy:#000;--blue:#8fc5ff;--blue-deep:#a8d2ff;--yellow:#ffdf4d;--paper:#000;
-  --tint:#111;--ink:#fff;--muted:#e0e0e0;--line:#aaa;--white:#080808;
-  --notice-bg:#111;--notice-ink:#fff;--notice-border:#aaa;
-}
 /* Superfícies coloridas mantêm suas próprias cores de texto em todos os temas. */
 .cta-band{color:var(--on-yellow)}
 .cta-band .eyebrow,.cta-band p:not(.eyebrow){color:var(--on-yellow-muted)}

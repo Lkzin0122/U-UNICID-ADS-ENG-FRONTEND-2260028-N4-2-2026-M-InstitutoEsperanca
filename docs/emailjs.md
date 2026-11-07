@@ -2,6 +2,8 @@
 
 O formulário usa a [API REST oficial do EmailJS](https://www.emailjs.com/docs/rest-api/send/), sem backend ou dependências adicionais. Os três identificadores públicos fornecidos pelo responsável já estão preenchidos em `js/emailjs-config.js`. O serviço precisa estar conectado e o template da conta deve usar os campos descritos abaixo.
 
+A Public Key é destinada ao uso no navegador; sua presença no JavaScript é esperada. Senhas e chaves privadas precisam permanecer fora do site. Veja os [cuidados com chaves e publicação](seguranca.md).
+
 ## Ativação
 
 1. Entre em [dashboard.emailjs.com](https://dashboard.emailjs.com/), adicione e conecte um serviço de e-mail em **Email Services** e copie o **Service ID**.
@@ -37,7 +39,8 @@ Assunto: {{subject}}
 - Exibe sucesso e limpa os campos somente após uma resposta HTTP de sucesso do EmailJS.
 - Preserva a mensagem em erros de rede, configuração, limite de requisições ou demora superior a 20 segundos. Não repete envios automaticamente, pois uma resposta perdida pode corresponder a uma mensagem já processada.
 - Oferece um link de e-mail com o texto preenchido quando o envio direto estiver indisponível.
-- Não salva os campos no navegador. Os dados enviados são processados pelo EmailJS e pelo provedor de e-mail conectado.
+- Salva nome, e-mail, telefone, país, assunto e mensagem como rascunho em `sessionStorage` e `localStorage`, na chave `esperanca-contact-draft`, durante a edição. Ao abrir o contato, restaura primeiro o rascunho da sessão; se ele não existir ou estiver inválido, usa o armazenamento local. Um assunto válido no link tem prioridade sobre o assunto salvo.
+- Remove o rascunho dos dois armazenamentos após a confirmação de sucesso do EmailJS. Em caso de falha, mantém os dados para continuar depois. Falhas de acesso ao armazenamento não impedem o uso do formulário. Os dados enviados são processados pelo EmailJS e pelo provedor de e-mail conectado.
 - Sem JavaScript, o endereço de e-mail continua acessível na página.
 
 As verificações automatizadas simulam as respostas do EmailJS e não enviam mensagens reais. Sem os três identificadores e um serviço/template ativos na conta, o envio real não pode ser validado.
@@ -55,10 +58,15 @@ Se a API retornar **HTTP 400 — `The template ID not found`**, copie o ID exato
 ```powershell
 python -B scripts/check_site.py
 python -B scripts/check_contact.py
+python -B scripts/check_contact_storage.py
 ```
 
 O segundo comando usa o Chrome ou Edge já instalado. Verifica validação, conteúdo da requisição, bloqueio de envios simultâneos, respostas de sucesso e erro, timeout, preservação da mensagem, traduções, três larguras de tela e contato sem JavaScript. O servidor e o navegador temporários são encerrados ao terminar.
 
+O terceiro comando verifica gravação nos dois armazenamentos, restauração de campos e país do telefone, prioridade da sessão e do assunto no link, preservação em erro, limpeza após sucesso, dados corrompidos e funcionamento com armazenamento bloqueado. Todos os envios são simulados.
+
 Em 31/10/2026, as 33 verificações do contato passaram, a auditoria estrutural verificou 12 páginas sem ocorrências e o W3C Nu Validator retornou zero mensagens para `contato.html`.
 
-O template ativo é `template_o4wlclh`. Após corrigir o Template ID, um teste real autorizado pelo responsável foi executado pelo formulário no navegador: a API retornou **HTTP 200 — `OK`**, e a página exibiu a confirmação de sucesso. A aceitação pelo serviço foi verificada; a caixa de entrada do destinatário não foi acessada.
+Na configuração anterior, com o template `template_o4wlclh`, um teste real autorizado pelo responsável foi executado pelo formulário no navegador: a API retornou **HTTP 200 — `OK`**, e a página exibiu a confirmação de sucesso. A aceitação pelo serviço foi verificada; a caixa de entrada do destinatário não foi acessada.
+
+Em 07/11/2026, a configuração foi atualizada para a nova conta fornecida pelo responsável, com o serviço `service_osrvt2b` e o template `template_8qmq9ty`. O resultado do teste real da conta anterior não valida esta nova configuração; o recebimento de mensagens pela nova conta ainda precisa ser conferido com um envio real.

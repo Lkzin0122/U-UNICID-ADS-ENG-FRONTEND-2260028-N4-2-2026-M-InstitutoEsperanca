@@ -1,0 +1,5 @@
+# Configurações do editor e arquivos de credenciais não fazem parte do site.
+.cursor/
+.vscode/
+.env
+.env.*

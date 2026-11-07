@@ -137,6 +137,50 @@ PAGES = {
             "Transformar começa com<br><em>responsabilidade.</em>",
             "Cada iniciativa precisa de propósito, escuta e acompanhamento. Conheça os caminhos que queremos desenvolver e como pretendemos avaliar os resultados.",
         ) + '''
+<section class="section section-tint" aria-labelledby="titulo-ods" id="ods">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Agenda 2030 · Pessoas e planeta</p>
+            <h2 id="titulo-ods">Os ODS que orientam nossa proposta.</h2>
+            <p>Os Objetivos de Desenvolvimento Sustentável (ODS) das Nações Unidas são uma referência para conectar inclusão, educação e cuidado com o ambiente. Pelo foco em ampliar oportunidades e reduzir barreiras, o ODS 10 é o eixo central da proposta do Instituto Esperança.</p>
+        </div>
+        <div class="grid-2">
+            <article class="card ods-card ods-card--10">
+                <span class="icon-badge" aria-hidden="true">10</span>
+                <p class="eyebrow">ODS central do projeto</p>
+                <h3>ODS 10 · Redução das desigualdades</h3>
+                <p>A escuta de pessoas com deficiência, a acessibilidade da informação e o acolhimento de famílias em situação de vulnerabilidade orientam nossa proposta de ampliar a participação social.</p>
+                <p>Relação com a meta 10.2: inclusão e participação de pessoas com diferentes condições e necessidades.</p>
+                <a class="text-link" href="https://brasil.un.org/pt-br/sdgs/10">Conhecer o ODS 10 na ONU <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="card ods-card ods-card--4">
+                <span class="icon-badge" aria-hidden="true">04</span>
+                <p class="eyebrow">Aprendizagem e oportunidades</p>
+                <h3>ODS 4 · Educação de qualidade</h3>
+                <p>Encontros de leitura, apoio aos estudos e atividades educativas são caminhos propostos para aproximar crianças, jovens e famílias do conhecimento.</p>
+                <p>Relação com as metas 4.5 e 4.7: oportunidades de aprendizagem para pessoas em situação de vulnerabilidade e educação para a sustentabilidade.</p>
+                <a class="text-link" href="https://brasil.un.org/pt-br/sdgs/4">Conhecer o ODS 4 na ONU <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="card ods-card ods-card--5">
+                <span class="icon-badge" aria-hidden="true">05</span>
+                <p class="eyebrow">Apoio e valorização do cuidado</p>
+                <h3>ODS 5 · Igualdade de gênero</h3>
+                <p>A rede de apoio proposta para mães solo busca abrir espaço para escuta, troca de experiências e acesso à informação sobre os desafios do cuidado cotidiano.</p>
+                <p>Relação com a meta 5.4: valorização do trabalho de cuidado e da responsabilidade compartilhada nas famílias.</p>
+                <a class="text-link" href="https://brasil.un.org/pt-br/sdgs/5">Conhecer o ODS 5 na ONU <span aria-hidden="true">↗</span></a>
+            </article>
+            <article class="card ods-card ods-card--12">
+                <span class="icon-badge" aria-hidden="true">12</span>
+                <p class="eyebrow">Consciência ambiental</p>
+                <h3>ODS 12 · Consumo e produção responsáveis</h3>
+                <p>Oficinas de reutilização e conteúdos de educação ambiental são propostas para incentivar o uso consciente dos recursos e o cuidado com os espaços compartilhados.</p>
+                <p>Relação com as metas 12.5 e 12.8: redução de resíduos e informação sobre práticas sustentáveis no dia a dia.</p>
+                <a class="text-link" href="https://brasil.un.org/pt-br/sdgs/12">Conhecer o ODS 12 na ONU <span aria-hidden="true">↗</span></a>
+            </article>
+        </div>
+        <p class="small-print">Os ODS indicam a relação entre os objetivos globais e as iniciativas propostas. O acompanhamento de resultados está descrito abaixo.</p>
+    </div>
+</section>
 <section class="section">
     <div class="container">
         <div class="notice"><h2>O que sabemos hoje</h2><p>Acompanhe nossos objetivos e os critérios usados para avaliar as iniciativas. Os resultados devem ser apresentados com fontes, período de referência e dados verificados.</p></div>

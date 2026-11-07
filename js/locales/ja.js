@@ -38,3 +38,29 @@ Object.assign(window.esperancaTranslationPacks["ja"], {
   "Confira o país, o código de área e o número de telefone.": "国、市外局番、電話番号を確認してください。",
   "Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.": "電話番号の検証を読み込めませんでした。再試行するか、この任意項目を空欄にしてください。"
 });
+
+/* Paleta e preferências visuais independentes. */
+Object.assign(window.esperancaTranslationPacks["ja"], {
+  "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.": "読みやすいテーマ、色、文字サイズを選べます。ストレージを利用できる場合、設定はこのブラウザーに保存されます。",
+  "O modo escuro usa fundos em azul-marinho e luz suave, mantendo as cores das imagens.": "ダークモードでは紺色の背景と柔らかな明るさを使い、画像の色はそのまま保ちます。",
+  "Cores para daltonismo": "色の見え方に合わせた配色",
+  "Paleta original": "標準の配色",
+  "Azul e âmbar · vermelho/verde": "青と琥珀色 · 赤／緑",
+  "Roxo e verde · azul/amarelo": "紫と緑 · 青／黄",
+  "Escala de cinza": "グレースケール",
+  "Experimente a paleta mais confortável para você. Links sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.": "見やすい配色をお試しください。リンクの下線と選択マークにより、色だけに頼らず操作を見分けられます。",
+  "Reforça a diferença entre texto e fundo, os contornos e o foco. Funciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.": "文字と背景の違い、輪郭、フォーカスを強調します。明るいテーマと暗いテーマの両方で使え、他の配色より読みやすさを優先します。",
+  "Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.": "画像を含むページ全体の色を反転します。選択したテーマは変わりません。",
+  "Restaurar preferências visuais": "表示設定をリセット"
+});
+
+/* Tipos de daltonismo e tema unificado. */
+Object.assign(window.esperancaTranslationPacks["ja"], {
+  "Protanopia": "1型色覚（プロタノピア）",
+  "Deuteranopia": "2型色覚（デュータラノピア）",
+  "Tritanopia": "3型色覚（トリタノピア）",
+  "Acromatopsia": "全色盲",
+  "O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.": "ダークモードでは深い色の背景と柔らかな明るさを使い、画像の色はそのまま保ちます。"
+});
+
+Object.assign(window.esperancaTranslationPacks["ja"], {"Animar coração": "ハートを動かす"});
