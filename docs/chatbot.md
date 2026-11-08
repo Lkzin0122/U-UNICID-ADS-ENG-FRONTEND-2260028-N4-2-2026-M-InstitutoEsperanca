@@ -1,8 +1,8 @@
 # Agente conversacional Esperança
 
-Na Vercel, o chatbot usa o AI Gateway com Google Gemini 2.5 Flash Lite. Localmente, pode usar o modelo no Ollama. O agente interpreta a pergunta com o histórico, pesquisa a base do projeto e gera uma resposta com as fontes consultadas. A base inicial contém 12 documentos e 185 trechos extraídos do conteúdo publicado. Não há resposta de FAQ substituindo a IA: quando o modelo está indisponível, o chat informa o erro e permite tentar novamente.
+Na Vercel, o chatbot usa o Groq com o modelo Qwen 3.8 27B. Localmente, pode usar o modelo no Ollama. O agente interpreta a pergunta com o histórico, pesquisa a base do projeto e gera uma resposta com as fontes consultadas. A base inicial contém 12 documentos e 185 trechos extraídos do conteúdo publicado. Não há resposta de FAQ substituindo a IA: quando o modelo está indisponível, o chat informa o erro e permite tentar novamente.
 
-## Executar
+## Executar localmente com Ollama
 
 Requisitos: Node.js 22 ou superior, Python 3 para atualizar a base e Ollama.
 
@@ -44,7 +44,7 @@ O gerador `python scripts/build_site.py` também atualiza a base depois de gerar
 Arquivos principais:
 
 - `server/agent.cjs`: planejamento das buscas e geração da resposta.
-- `server/model.cjs`: conexão com o AI Gateway em produção e com o Ollama local.
+- `server/model.cjs`: conexão com o Groq em produção e com o Ollama local.
 - `server/knowledge.cjs`: consulta dos trechos indexados.
 - `scripts/build_chat_knowledge.py`: extração e atualização da base.
 - `api/chat.js`: validação da requisição, histórico, limites e cancelamento.
@@ -54,39 +54,41 @@ Arquivos principais:
 
 A interface mantém até 20 mensagens na sessionStorage da aba. A conversa acompanha a navegação entre as páginas do site. “Nova conversa” apaga o histórico e cancela uma consulta pendente. Apenas perguntas com respostas concluídas entram no histórico enviado ao agente. Em erro, a pergunta é preservada e pode ser repetida sem criar mensagens duplicadas.
 
-Cada pergunta pode ter até 1.000 caracteres. A API aceita as últimas 12 mensagens, e o agente limita o contexto para caber na memória do modelo. As mensagens são enviadas ao servidor do chat e ao provedor de IA configurado. Na Vercel, os trechos recuperados e o histórico usado na resposta seguem para o AI Gateway e o modelo hospedado. A aplicação não grava conversas em banco de dados ou logs próprios. Não envie dados sensíveis.
+Cada pergunta pode ter até 1.000 caracteres. A API aceita as últimas 12 mensagens, e o agente limita o contexto para caber na memória do modelo. As mensagens são enviadas ao servidor do chat e ao provedor de IA configurado. Na Vercel, os trechos recuperados e o histórico usado na resposta seguem para o Groq e o modelo hospedado. A aplicação não grava conversas em banco de dados ou logs próprios. Não envie dados sensíveis.
 
 O servidor atende uma geração por vez localmente e até quatro na Vercel, com limites por processo. Os limites não são distribuídos entre servidores. Se o Ollama estiver fechado, o modelo faltar ou a resposta exceder o tempo, o chat mostra uma falha explícita.
 
 ## Site publicado na Vercel
 
-Em produção, a configuração padrão é:
+A configuração de produção usa o Groq diretamente:
 
-- Provedor: Vercel AI Gateway.
-- Modelo: `google/gemini-2.5-flash-lite`.
-- Autenticação: token OIDC da execução na Vercel; alternativamente, `AI_GATEWAY_API_KEY` nas variáveis de ambiente do servidor.
-- Timeout total: 45 segundos.
+- `AI_PROVIDER=groq`.
+- `GROQ_API_KEY`: chave da conta Groq, salva como Secret nas variáveis de Production da Vercel.
+- `GROQ_MODEL=qwen/qwen3.8-27b`: modelo padrão, com saída estruturada.
+- `AI_TIMEOUT_MS=45000`: timeout total padrão.
 
-O acesso à IA depende da habilitação e da cota do AI Gateway da conta. Na configuração desta conta, o provedor exigiu a verificação de um cartão válido para liberar os créditos e retornou `customer_verification_required` antes de gerar respostas. Essa verificação deve ser concluída no painel da Vercel pela pessoa responsável. O código não altera cobrança ou compra automática de créditos. Nunca coloque credenciais no JavaScript do navegador.
+Crie uma chave em [Groq API Keys](https://console.groq.com/keys), mantendo a conta no plano gratuito, e cadastre-a nas [variáveis do projeto](https://vercel.com/lucas-bitencourts-projects/institutoesperanca/settings/environment-variables). Depois publique novamente. Não cole a chave no chat nem a coloque no HTML ou em arquivos de `js/`.
 
-As variáveis opcionais são `AI_PROVIDER=vercel`, `AI_MODEL`, `AI_GATEWAY_API_KEY` e `AI_TIMEOUT_MS`. Depois de alterar variáveis na Vercel, publique uma nova versão. Não configure `OLLAMA_BASE_URL=http://localhost:11434` para o site público: esse endereço representa a máquina da hospedagem, não o computador onde o Ollama foi instalado.
+O plano gratuito tem cotas de requisições e tokens. Quando o provedor retorna 429, a API informa uma espera temporária e o chat permite repetir a pergunta. O código não faz upgrade de plano, não ativa cobrança e não usa créditos do AI Gateway para essa configuração.
 
-O comando `npm run build` copia somente páginas e recursos públicos para `public/`. A Vercel publica também a função Node.js `api/chat.js`; a base e as regras entram no pacote privado da função. Código do servidor, documentos e segredos ficam fora da pasta estática. A pasta gerada é ignorada pelo Git. O `vercel.json` declara o comando e a pasta de saída, evitando uma publicação contendo apenas HTML antigo.
+Para testar o Groq no computador, copie `.env.example` para `.env` e configure `AI_PROVIDER=groq`, `GROQ_API_KEY` e, opcionalmente, `GROQ_MODEL`. Execute `npm run ai:check` e depois `npm run ai:test`. Esses arquivos são ignorados pelo Git.
 
-Para conferir a versão publicada, envie um POST JSON para `https://institutoesperanca.vercel.app/api/chat` com `{"message":"Quais são os projetos?"}`. Uma resposta 404 indica que a API não entrou na publicação; erros de autenticação ou cota são retornados como mensagens próprias. Um GET nessa rota retorna 405, pois perguntas usam POST.
+O comando `npm run build` copia somente páginas e recursos públicos para `public/`. A Vercel publica também a função Node.js `api/chat.js`; a base e as regras entram no pacote privado da função. Código do servidor, documentos e segredos ficam fora da pasta estática. O `vercel.json` declara o comando e a pasta de saída.
+
+Para conferir a versão publicada, envie um POST JSON para `https://institutoesperanca.vercel.app/api/chat` com `{"message":"Quais são os projetos?"}`. Uma resposta 404 indica que a API não entrou na publicação. Erros de autenticação ou cota são retornados como mensagens próprias. Um GET nessa rota retorna 405, pois perguntas usam POST.
 
 ## Verificação
 
 - `npm test`: testes do agente, recuperação, citações, contexto, validação da API, limites e servidor HTTP. O modelo é simulado nestes testes.
-- `npm run ai:check`: verifica a conexão com o Ollama e a presença do modelo.
+- `npm run ai:check`: verifica o catálogo do provedor configurado, a presença do modelo e a base de conhecimento. Não comprova disponibilidade de cota para gerar respostas.
 - `npm run ai:test`: conversa com o modelo real em três turnos, conferindo educação, continuação contextual e informação sobre Pix.
 - `python scripts/check_site.py`: auditoria das 12 páginas.
 - `python scripts/check_chat_browser.py`: cenários da interface no Chromium instalado, com respostas da API simuladas. O relatório em `docs/chatbot-checks.json` e a captura em `docs/screenshots/chatbot-390.png` correspondem à interface atual.
 
 Na verificação local de 08/11/2026 passaram os 24 testes automatizados, as 39 verificações da interface no navegador e a auditoria das 12 páginas, sem ocorrências. A conversa com o modelo real validou três turnos: interesse em leitura, continuação sobre participação e consulta sobre Pix. As chamadas reais usaram o Qwen3 1.7B instalado no Ollama deste computador.
 
-Na adaptação para a Vercel, passaram 34 testes automatizados, incluindo o transporte para o Gateway com respostas simuladas, autenticação OIDC, tratamento de cota e a separação dos arquivos públicos.
+Na adaptação para o Groq, passaram 38 testes automatizados, incluindo transporte com respostas simuladas, isolamento de credenciais, tratamento de limites do plano gratuito e a separação dos arquivos públicos. A geração real em produção depende da chave cadastrada na Vercel.
 
 Os testes automáticos reduzem erros de integração; não garantem que o modelo nunca erre. A interface oferece fontes para conferir as informações.
 
-Referências: [autenticação do AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok), [saídas estruturadas do Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs), [API e instalação no Windows](https://docs.ollama.com/windows), [saídas estruturadas](https://docs.ollama.com/capabilities/structured-outputs) e [modelo Qwen3 1.7B](https://ollama.com/library/qwen3:1.7b).
+Referências: [plano gratuito e cobrança do Groq](https://console.groq.com/docs/billing-faqs), [limites do Groq](https://console.groq.com/docs/rate-limits), [saídas estruturadas](https://console.groq.com/docs/structured-outputs), [API e instalação do Ollama no Windows](https://docs.ollama.com/windows).

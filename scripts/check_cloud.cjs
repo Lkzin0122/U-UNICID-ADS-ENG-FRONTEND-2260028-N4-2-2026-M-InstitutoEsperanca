@@ -37,6 +37,40 @@ test('Vercel usa o Gateway hospedado com histórico, pesquisa e saída estrutura
   assert.equal(result.sources[0].url, 'projetos.html#educacao');
   assert.ok(!JSON.stringify(result).includes('test-private-key'));
 });
+test('Groq recebe apenas sua própria chave e consulta a mesma base institucional', async () => {
+  const f = setup();
+  f.config.provider = 'groq';
+  f.config.apiKey = 'groq-test-private-key';
+  f.config.oidcToken = 'vercel-token-not-for-groq';
+  const result = await runAgent({ message: 'Quero ajudar com leitura.' }, f);
+  for (const { url, options, body } of f.calls) {
+    assert.equal(url, 'https://api.groq.com/openai/v1/chat/completions');
+    assert.equal(options.headers.Authorization, 'Bearer groq-test-private-key');
+    assert.equal(options.headers['ai-gateway-auth-method'], undefined);
+    assert.equal(body.model, 'qwen/qwen3.8-27b');
+    assert.equal(body.reasoning_effort, 'none');
+    assert.ok(body.max_completion_tokens > 0);
+    assert.equal(body.response_format.json_schema.strict, true);
+    assert.ok(!JSON.stringify(body).includes('vercel-token-not-for-groq'));
+  }
+  assert.equal(result.mode, 'ai');
+  assert.equal(result.sources[0].url, 'projetos.html#educacao');
+  assert.ok(!JSON.stringify(result).includes('private-key'));
+});
+test('Groq não usa uma credencial da Vercel quando falta sua chave', () => {
+  const previous = process.env.GROQ_API_KEY;
+  delete process.env.GROQ_API_KEY;
+  try {
+    assert.throws(() => getConfig({ provider: 'groq', deployed: true, oidcToken: 'unrelated-token' }), error => error.code === 'ai_auth_missing');
+  } finally { if (previous !== undefined) process.env.GROQ_API_KEY = previous; }
+  assert.throws(() => getConfig({ provider: 'groq', apiKey: 'private', baseUrl: 'https://externo.example' }), error => error.code === 'invalid_config');
+});
+test('limite gratuito do Groq informa espera em vez de falha de conexão', async () => {
+  const f = setup();
+  f.config.provider = 'groq';
+  f.fetchImpl = async () => ({ ok: false, status: 429, headers: { get: () => '25' } });
+  await assert.rejects(runAgent({ message: 'Quais são os projetos?' }, f), error => error.code === 'ai_rate_limited' && error.status === 429 && error.retryAfter === 25);
+});
 test('autenticação OIDC da execução chega ao Gateway sem chave manual', async () => {
   const f = setup();
   f.config.apiKey = undefined;

@@ -82,6 +82,7 @@ function createHandler({ agent = runAgent, now = Date.now } = {}) {
     } catch (error) {
       if (res.destroyed) return;
       const safeError = error instanceof AgentError && [400, 429, 499, 502, 503, 504].includes(error.status);
+      if (safeError && Number.isInteger(error.retryAfter)) res.setHeader('Retry-After', String(error.retryAfter));
       return reply(res, safeError ? error.status : 503, {
         code: safeError ? error.code : 'agent_unavailable',
         error: safeError ? error.publicMessage : 'Não consegui conectar ao assistente agora. Tente novamente em alguns instantes.',

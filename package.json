@@ -10,7 +10,7 @@
     "test": "node --test scripts/check_chat.cjs scripts/check_agent.cjs scripts/check_knowledge.cjs scripts/check_cloud.cjs scripts/check_vercel.cjs",
     "knowledge:build": "python scripts/build_chat_knowledge.py",
     "knowledge:check": "python scripts/build_chat_knowledge.py --check",
-    "ai:check": "node --env-file-if-exists=.env scripts/check_ollama.cjs",
+    "ai:check": "node --env-file-if-exists=.env scripts/check_ai.cjs",
     "ai:test": "node --env-file-if-exists=.env scripts/check_chat_live.cjs"
   }
 }
