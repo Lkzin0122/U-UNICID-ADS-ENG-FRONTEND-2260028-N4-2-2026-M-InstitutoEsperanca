@@ -31,7 +31,9 @@ function getConfig(overrides = {}) {
   if (cloud) {
     // Destino fixo: nenhuma credencial pode ser enviada a um endereço configurado pelo visitante.
     if (url.href.replace(/\/$/, '') !== 'https://ai-gateway.vercel.sh/v1') throw new AgentError('invalid_config', 'O endereço do provedor de IA não é válido.');
-    config.apiKey = overrides.apiKey || process.env.AI_GATEWAY_API_KEY || overrides.oidcToken || process.env.VERCEL_OIDC_TOKEN;
+    const explicitKey = overrides.apiKey || process.env.AI_GATEWAY_API_KEY;
+    config.authMethod = explicitKey ? 'api-key' : 'oidc';
+    config.apiKey = explicitKey || overrides.oidcToken || process.env.VERCEL_OIDC_TOKEN;
     if (!config.apiKey) throw new AgentError('ai_auth_missing', 'A IA ainda precisa ser ativada na Vercel. Configure a autenticação do AI Gateway e publique novamente.');
     config.endpoint = 'https://ai-gateway.vercel.sh/v1/chat/completions';
   } else {
@@ -53,7 +55,10 @@ async function callModel(messages, format, { config, signal, externalSignal, fet
   const cloud = config.provider === 'vercel';
   try {
     const headers = { 'Content-Type': 'application/json' };
-    if (cloud) headers.Authorization = 'Bearer ' + config.apiKey;
+    if (cloud) {
+      headers.Authorization = 'Bearer ' + config.apiKey;
+      headers['ai-gateway-auth-method'] = config.authMethod;
+    }
     const body = cloud ? {
       model: config.model, messages, stream: false, temperature: 0.2, max_tokens: tokens,
       response_format: { type: 'json_schema', json_schema: { name: 'institutional_response', strict: true, schema: format } },

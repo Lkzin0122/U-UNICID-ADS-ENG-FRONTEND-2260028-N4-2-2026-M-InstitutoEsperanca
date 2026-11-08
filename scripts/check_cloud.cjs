@@ -25,6 +25,7 @@ test('Vercel usa o Gateway hospedado com histórico, pesquisa e saída estrutura
   for (const { url, options, body } of f.calls) {
     assert.equal(url, 'https://ai-gateway.vercel.sh/v1/chat/completions');
     assert.equal(options.headers.Authorization, 'Bearer test-private-key');
+    assert.equal(options.headers['ai-gateway-auth-method'], 'api-key');
     assert.equal(body.model, 'google/gemini-2.5-flash-lite');
     assert.equal(body.response_format.type, 'json_schema');
     assert.equal(body.response_format.json_schema.strict, true);
@@ -45,6 +46,7 @@ test('autenticação OIDC da execução chega ao Gateway sem chave manual', asyn
   try {
     await runAgent({ message: 'Qual a proposta?' }, f);
     assert.equal(f.calls[0].options.headers.Authorization, 'Bearer test-runtime-oidc');
+    assert.equal(f.calls[0].options.headers['ai-gateway-auth-method'], 'oidc');
   } finally { if (previous !== undefined) process.env.AI_GATEWAY_API_KEY = previous; }
 });
 test('destino da credencial é fixo e produção não tenta usar localhost', () => {
