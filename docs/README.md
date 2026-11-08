@@ -449,4 +449,4 @@ critérios forem verificados:
 
 ## Chatbot institucional
 
-O assistente Esperança usa o AI Gateway na Vercel ou o Ollama local e pesquisa uma base indexada do conteúdo do projeto. Consulte [configuração, execução e testes do chatbot](chatbot.md). O histórico acompanha a navegação nesta aba e pode ser apagado em “Nova conversa”.
+O assistente Esperança usa o Groq na Vercel ou o Ollama local e pesquisa uma base indexada do conteúdo do projeto. Consulte [configuração, execução e testes do chatbot](chatbot.md). O histórico acompanha a navegação nesta aba e pode ser apagado em “Nova conversa”.
