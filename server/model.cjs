@@ -69,7 +69,13 @@ async function callModel(messages, format, { config, signal, externalSignal, fet
     const response = await fetchImpl(config.endpoint, { method: 'POST', headers, signal, body: JSON.stringify(body) });
     if (!response.ok) {
       if (cloud) {
-        if ([401, 403].includes(response.status)) throw new AgentError('ai_auth_failed', 'A Vercel não conseguiu autenticar a IA. Confira o acesso ao AI Gateway no painel.');
+        if ([401, 403].includes(response.status)) {
+          const failure = typeof response.json === 'function' ? await response.json().catch(() => null) : null;
+          if (failure?.error?.type === 'customer_verification_required') {
+            throw new AgentError('ai_account_verification_required', 'O assistente está aguardando a ativação do serviço de IA pela equipe responsável. Tente novamente mais tarde.');
+          }
+          throw new AgentError('ai_auth_failed', 'O assistente está temporariamente indisponível. A equipe responsável precisa verificar a conexão com o serviço de IA.');
+        }
         if ([402, 429].includes(response.status)) throw new AgentError('ai_quota_exceeded', 'A cota de IA está indisponível no momento. Tente mais tarde ou consulte a equipe.');
         if (response.status === 404) throw new AgentError('model_missing', 'O modelo de IA configurado não está disponível no provedor.');
         throw new AgentError('ai_provider_unavailable', 'O serviço de IA está indisponível no momento. Tente novamente em instantes.');

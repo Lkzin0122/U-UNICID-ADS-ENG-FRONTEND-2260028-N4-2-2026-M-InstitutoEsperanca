@@ -53,6 +53,11 @@ test('destino da credencial é fixo e produção não tenta usar localhost', () 
   assert.throws(() => getConfig({ provider: 'vercel', deployed: true, baseUrl: 'https://externo.example', apiKey: 'private' }), error => error.code === 'invalid_config');
   assert.throws(() => getConfig({ provider: 'ollama', deployed: true, baseUrl: 'http://127.0.0.1:11434' }), error => error.code === 'invalid_config');
 });
+test('identifica a verificação exigida pela Vercel sem expor dados de cobrança', async () => {
+  const f = setup();
+  f.fetchImpl = async () => ({ ok: false, status: 403, json: async () => ({ error: { type: 'customer_verification_required', message: 'private billing details' } }) });
+  await assert.rejects(runAgent({ message: 'Oi' }, f), error => error.code === 'ai_account_verification_required' && !error.message.includes('private'));
+});
 test('erros de autenticação, crédito e provedor não expõem detalhes privados', async t => {
   for (const [status, expected] of [[401, 'ai_auth_failed'], [403, 'ai_auth_failed'], [402, 'ai_quota_exceeded'], [429, 'ai_quota_exceeded'], [500, 'ai_provider_unavailable']]) {
     await t.test(String(status), async () => {

@@ -67,7 +67,7 @@ Em produção, a configuração padrão é:
 - Autenticação: token OIDC da execução na Vercel; alternativamente, `AI_GATEWAY_API_KEY` nas variáveis de ambiente do servidor.
 - Timeout total: 45 segundos.
 
-O acesso à IA depende da habilitação e da cota do AI Gateway da conta. O código não ativa compra automática de créditos. Nunca coloque credenciais no JavaScript do navegador.
+O acesso à IA depende da habilitação e da cota do AI Gateway da conta. Na configuração desta conta, o provedor exigiu a verificação de um cartão válido para liberar os créditos e retornou `customer_verification_required` antes de gerar respostas. Essa verificação deve ser concluída no painel da Vercel pela pessoa responsável. O código não altera cobrança ou compra automática de créditos. Nunca coloque credenciais no JavaScript do navegador.
 
 As variáveis opcionais são `AI_PROVIDER=vercel`, `AI_MODEL`, `AI_GATEWAY_API_KEY` e `AI_TIMEOUT_MS`. Depois de alterar variáveis na Vercel, publique uma nova versão. Não configure `OLLAMA_BASE_URL=http://localhost:11434` para o site público: esse endereço representa a máquina da hospedagem, não o computador onde o Ollama foi instalado.
 
