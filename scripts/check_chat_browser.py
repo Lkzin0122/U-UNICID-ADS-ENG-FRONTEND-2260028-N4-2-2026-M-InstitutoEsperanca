@@ -45,14 +45,17 @@ def run():
         checks['initially_closed'] = client.evaluate("document.querySelector('.chat-panel').hidden && document.querySelector('.chat-launcher').getAttribute('aria-expanded')==='false'")
         client.evaluate("document.querySelector('.chat-launcher').click()")
         checks['open_focus_label'] = client.evaluate("document.activeElement.id==='chat-question' && !!document.querySelector('label[for=chat-question]')")
+        checks['textarea_grows_with_message'] = client.evaluate("(()=>{const q=document.querySelector('#chat-question');const before=q.getBoundingClientRect().height;q.value=Array(8).fill('Uma mensagem com mais detalhes.').join('\\n');q.dispatchEvent(new Event('input'));const after=q.getBoundingClientRect().height;q.value='';q.dispatchEvent(new Event('input'));return after>before&&after<=128;})()")
         checks['whitespace_blocked'] = client.evaluate("(()=>{const q=document.querySelector('#chat-question');q.value='   ';document.querySelector('.chat-form').requestSubmit();return !q.checkValidity()&&chatCalls.length===0;})()")
-        client.evaluate("document.querySelector('#chat-question').dispatchEvent(new Event('input'));document.querySelector('.chat-suggestions button').click()")
+        client.evaluate("document.querySelector('#chat-question').dispatchEvent(new Event('input'));document.querySelector('.chat-suggestions button').focus();document.querySelector('.chat-suggestions button').click()")
+        checks['suggestion_moves_focus_to_message'] = client.evaluate("document.activeElement.id==='chat-question'")
         wait_ready(client)
-        checks['offline_is_error_not_fake_answer'] = client.evaluate("!document.querySelector('.chat-error').hidden && document.querySelectorAll('.chat-message[data-role=assistant]').length===1 && !sessionStorage.getItem('esperanca-chat-session-v2')")
+        checks['offline_is_error_not_fake_answer'] = client.evaluate("!document.querySelector('.chat-error').hidden && document.querySelectorAll('.chat-message[data-role=assistant]:not(.chat-welcome)').length===0 && !sessionStorage.getItem('esperanca-chat-session-v2')")
         checks['failed_question_preserved'] = client.evaluate("document.querySelector('#chat-question').value==='Quais são os projetos?'")
         client.evaluate("""window.chatReply=async()=>({ok:true,status:200,json:async()=>({mode:'ai',answer:'A proposta inclui educação, inclusão e sustentabilidade. Qual frente gostaria de conhecer?',sources:[{id:'education',title:'Educação',url:'projetos.html#educacao'}]})});document.querySelector('.chat-retry').click();""")
         wait_ready(client)
         checks['retry_no_duplicate_user'] = client.evaluate("document.querySelectorAll('.chat-message[data-role=user]').length===1 && document.querySelector('.chat-error').hidden")
+        checks['welcome_gives_way_to_conversation'] = client.evaluate("!document.querySelector('.chat-welcome') && document.querySelector('.chat-suggestions').hidden")
         checks['counter_clears'] = client.evaluate("document.querySelector('#chat-count').textContent==='0/1000 caracteres'")
         checks['session_stores_successful_pairs'] = client.evaluate("JSON.parse(sessionStorage.getItem('esperanca-chat-session-v2')).messages.length===2")
         client.evaluate("document.querySelector('#chat-question').dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))")
@@ -74,22 +77,35 @@ def run():
         checks['reset_discards_pending_response'] = client.evaluate("document.querySelectorAll('.chat-message').length===1&&!document.querySelector('.chat-send').disabled")
         checks['reset_removes_session'] = client.evaluate("!sessionStorage.getItem('esperanca-chat-session-v2')")
         checks['no_local_storage_transcript'] = client.evaluate("!Object.keys(localStorage).some(key=>/chat/i.test(key))")
-        for width, height in [(320, 740), (390, 844), (768, 1024), (1440, 1000), (667, 375)]:
+        for width, height in [(320, 740), (390, 844), (768, 1024), (1440, 1000), (667, 375), (390, 430)]:
             client.call('Emulation.setDeviceMetricsOverride', {'width': width, 'height': height, 'deviceScaleFactor': 1, 'mobile': width < 700})
             checks[f'fits_{width}x{height}'] = client.evaluate("(()=>{const panel=document.querySelector('.chat-panel');panel.scrollTop=panel.scrollHeight;const r=panel.getBoundingClientRect();const f=document.querySelector('.chat-form').getBoundingClientRect();return r.left>=0&&r.top>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1&&f.bottom<=r.bottom+1&&document.documentElement.scrollWidth<=innerWidth;})()")
-            if width == 390:
+            if width == 390 and height == 844:
                 screenshot = client.call('Page.captureScreenshot', {'format': 'png'})
                 (ROOT / 'docs/screenshots/chatbot-390.png').write_bytes(base64.b64decode(screenshot['data']))
         client.call('Emulation.setDeviceMetricsOverride', {'width': 390, 'height': 844, 'deviceScaleFactor': 1, 'mobile': True})
         client.evaluate("document.documentElement.style.fontSize='200%'")
         checks['text_200_percent_accessible_with_scroll'] = client.evaluate("(()=>{const panel=document.querySelector('.chat-panel');panel.scrollTop=panel.scrollHeight;return panel.scrollWidth<=panel.clientWidth&&document.querySelector('.chat-form').getBoundingClientRect().bottom<=panel.getBoundingClientRect().bottom+1;})()")
+        checks['close_visible_at_text_200_percent'] = client.evaluate("(()=>{const r=document.querySelector('.chat-close').getBoundingClientRect();return r.top>=0&&r.bottom<=document.documentElement.clientHeight;})()")
         client.evaluate("document.documentElement.style.fontSize=''")
         for theme in ['', 'theme-dark', 'high-contrast', 'theme-dark high-contrast']:
-            client.evaluate(f"document.documentElement.className={json.dumps(theme)}")
+            client.evaluate(f"document.documentElement.className={json.dumps('js ' + theme)}")
             checks[f'contrast_{theme or "light"}'] = client.evaluate(r"""(() => {
               const luminance=color=>{const rgb=color.match(/[\d.]+/g).slice(0,3).map(Number).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4});return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722};
               return ['.chat-launcher','.chat-send','.chat-close'].every(selector=>{const s=getComputedStyle(document.querySelector(selector));const a=luminance(s.color),b=luminance(s.backgroundColor);return (Math.max(a,b)+.05)/(Math.min(a,b)+.05)>=4.5});
             })()""")
+            checks[f'close_visible_{theme or "light"}'] = client.evaluate("(()=>{const r=document.querySelector('.chat-close').getBoundingClientRect();return r.top>=0&&r.bottom<=document.documentElement.clientHeight;})()")
+            if not theme:
+                screenshot = client.call('Page.captureScreenshot', {'format': 'png'})
+                (ROOT / 'docs/screenshots/chatbot-light-390.png').write_bytes(base64.b64decode(screenshot['data']))
+        client.call('Emulation.setDeviceMetricsOverride', {'width': 1440, 'height': 1000, 'deviceScaleFactor': 1, 'mobile': False})
+        client.evaluate("document.documentElement.className='js';document.querySelector('.chat-panel').scrollTop=0")
+        screenshot = client.call('Page.captureScreenshot', {'format': 'png'})
+        (ROOT / 'docs/screenshots/chatbot-1440.png').write_bytes(base64.b64decode(screenshot['data']))
+        client.evaluate("window.fetch=async()=>({ok:true,status:200,json:async()=>({mode:'ai',answer:'Você pode enviar uma mensagem de interesse pelo formulário de contato. Escolha Voluntariado e conte suas habilidades e interesses. A equipe poderá orientar sobre as possibilidades de participação.',sources:[{id:'contact',title:'Contato',url:'contato.html?assunto=voluntariado'}]})});document.querySelector('#chat-question').value='Como posso ser voluntário?';document.querySelector('.chat-form').requestSubmit()")
+        wait_ready(client)
+        screenshot = client.call('Page.captureScreenshot', {'format': 'png'})
+        (ROOT / 'docs/screenshots/chatbot-conversation-1440.png').write_bytes(base64.b64decode(screenshot['data']))
         for page in sorted(ROOT.glob('*.html')):
             client.navigate(origin + '/' + page.name)
             checks[f'widget_{page.stem}'] = client.evaluate("document.querySelectorAll('.chat-launcher').length===1")

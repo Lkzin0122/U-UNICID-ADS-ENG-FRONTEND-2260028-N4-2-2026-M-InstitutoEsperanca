@@ -5,19 +5,29 @@
   const sessionKey = 'esperanca-chat-session-v2';
   const pageNames = ['index.html', 'sobre.html', 'projetos.html', 'impacto.html', 'acessibilidade.html', 'galeria.html', 'midia.html', 'noticias.html', 'contato.html', 'orcamento_hospedagem.html', 'participar.html', 'perguntas-frequentes.html'];
   const allowedPaths = new Set(pageNames.map(name => new URL(name, document.baseURI).pathname));
+  const icons = {
+    chat: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H7l-4 3V11.5a8.5 8.5 0 1 1 17 0Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg>',
+    heart: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 4.7a5.2 5.2 0 0 0-7.4 0L12 5.8l-1.1-1.1a5.2 5.2 0 0 0-7.4 7.4L12 20l8.5-7.9a5.2 5.2 0 0 0 0-7.4Z"/></svg>',
+    close: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>',
+    reset: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10a9 9 0 1 1 1.5 7M3 4v6h6"/></svg>',
+    arrow: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>',
+    send: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 7-7 7 7M12 5v14"/></svg>',
+    book: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v15M3 4h4a5 5 0 0 1 5 2 5 5 0 0 1 5-2h4v15h-4a6 6 0 0 0-5 2 6 6 0 0 0-5-2H3Z"/></svg>',
+    people: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v2"/></svg>',
+  };
   const widget = document.createElement('div');
   widget.className = 'esperanca-chat';
   widget.lang = 'pt-BR';
   widget.setAttribute('data-no-translate', '');
   widget.innerHTML = [
-    '<button class="chat-launcher" type="button" aria-expanded="false" aria-controls="esperanca-chat-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-4 3v-11a10 10 0 0 1 19 0Z"/><path d="M7 11h1m3 0h1m3 0h1"/></svg><span>Converse com a Esperança</span></button>',
+    '<button class="chat-launcher" type="button" aria-label="Conversar com a Esperança" aria-expanded="false" aria-controls="esperanca-chat-panel">' + icons.chat + '<span class="chat-launcher-label">Vamos conversar</span></button>',
     '<section class="chat-panel" id="esperanca-chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title" hidden>',
-    '<div class="chat-header"><div><h2 id="chat-title">Olá, sou a Esperança</h2><p>Assistente virtual · Projeto acadêmico</p></div><button class="chat-close" type="button" aria-label="Fechar conversa">×</button></div>',
+    '<div class="chat-header"><div class="chat-avatar" aria-hidden="true">' + icons.heart + '</div><div class="chat-heading"><h2 id="chat-title">Esperança <span class="chat-ai-badge">IA</span></h2><p>Assistente do Instituto</p></div><div class="chat-header-actions"><button class="chat-reset" type="button" aria-label="Nova conversa" title="Nova conversa">' + icons.reset + '</button><button class="chat-close" type="button" aria-label="Fechar conversa" title="Fechar conversa">' + icons.close + '</button></div></div>',
     '<div class="chat-log" role="log" aria-label="Mensagens da conversa" aria-live="polite" aria-relevant="additions" tabindex="0"></div>',
-    '<div class="chat-suggestions" aria-label="Sugestões de perguntas"><button type="button">Quais são os projetos?</button><button type="button">Como ser voluntário?</button><button type="button">Posso doar?</button></div>',
+    '<div class="chat-suggestions" aria-label="Sugestões de perguntas"><p>Por onde você quer começar?</p><button type="button">' + icons.book + '<span>Quais são os projetos?</span>' + icons.arrow + '</button><button type="button">' + icons.people + '<span>Como ser voluntário?</span>' + icons.arrow + '</button><button type="button">' + icons.heart + '<span>Posso doar?</span>' + icons.arrow + '</button></div>',
     '<p class="chat-status" role="status" aria-live="polite"></p>',
     '<div class="chat-error" hidden><p role="alert"></p><button class="chat-retry" type="button">Tentar novamente</button></div>',
-    '<form class="chat-form"><label for="chat-question">Sua pergunta sobre o Instituto</label><div class="chat-input-row"><textarea id="chat-question" name="message" rows="2" maxlength="1000" required placeholder="Como posso ajudar?" aria-describedby="chat-privacy chat-count"></textarea><button class="chat-send" type="submit">Enviar</button></div><div class="chat-footer"><small id="chat-count">0/1000 caracteres</small><button class="chat-reset" type="button">Nova conversa</button></div><p class="chat-privacy" id="chat-privacy">A conversa fica nesta aba. Suas mensagens são enviadas ao servidor do chat. Não envie dados sensíveis. As respostas são geradas por IA; confira as fontes.</p></form>',
+    '<form class="chat-form"><label for="chat-question">Sua mensagem</label><div class="chat-input-row"><textarea id="chat-question" name="message" rows="1" maxlength="1000" required placeholder="Pergunte à Esperança…" aria-describedby="chat-privacy chat-count"></textarea><button class="chat-send" type="submit" aria-label="Enviar mensagem" title="Enviar mensagem">' + icons.send + '</button></div><div class="chat-footer"><small id="chat-count">0/1000 caracteres</small><small class="chat-keyboard-hint"><kbd>Enter</kbd> para enviar</small><span class="chat-session-note">Conversa nesta aba</span></div><p class="chat-privacy" id="chat-privacy">As mensagens são enviadas à IA. Evite dados sensíveis e confira as fontes.</p></form>',
     '</section>',
   ].join('');
   document.body.append(widget);
@@ -31,6 +41,7 @@
   const send = $('.chat-send');
   const errorBox = $('.chat-error');
   const retry = $('.chat-retry');
+  const suggestions = $('.chat-suggestions');
   let transcript = [];
   let pending = null;
   let failed = null;
@@ -85,6 +96,9 @@
     text.textContent = content;
     article.append(author, text);
     if (sources.length) {
+      const sourceTitle = document.createElement('div');
+      sourceTitle.className = 'chat-sources-title';
+      sourceTitle.textContent = 'Para conferir';
       const links = document.createElement('div');
       links.className = 'chat-sources';
       links.setAttribute('aria-label', 'Fontes consultadas');
@@ -93,6 +107,7 @@
         item.textContent = source.title;
         if (source.url) {
           item.href = source.url;
+          item.insertAdjacentHTML('beforeend', icons.arrow);
           if (new URL(source.url).origin !== location.origin) {
             item.target = '_blank';
             item.rel = 'noopener noreferrer';
@@ -100,11 +115,11 @@
         }
         links.append(item);
       });
-      article.append(links);
+      article.append(sourceTitle, links);
     }
     if (generated) {
       const label = document.createElement('small');
-      label.textContent = 'Resposta com IA · Confira as fontes';
+      label.textContent = 'Gerado por IA';
       article.append(label);
     }
     log.append(article);
@@ -113,16 +128,47 @@
   }
   function renderTranscript() {
     log.replaceChildren();
-    if (!transcript.length) addMessage('assistant', 'Olá! Sou a Esperança. Posso conversar com você sobre os projetos, o voluntariado e as informações do Instituto. O que gostaria de saber?');
-    else transcript.forEach(message => addMessage(message.role, message.content, message.sources, message.role === 'assistant'));
+    suggestions.hidden = transcript.length > 0;
+    if (!transcript.length) {
+      const welcome = addMessage('assistant', 'Vamos falar sobre os projetos, as formas de participar e o que você encontra por aqui.');
+      welcome.classList.add('chat-welcome');
+      const symbol = document.createElement('div');
+      symbol.className = 'chat-welcome-symbol';
+      symbol.innerHTML = icons.heart;
+      const heading = document.createElement('h3');
+      heading.textContent = 'Que bom ter você aqui.';
+      const author = welcome.querySelector('.chat-author');
+      author.textContent = 'CUIDADO COMEÇA COM UMA CONVERSA';
+      author.before(symbol);
+      author.after(heading);
+      log.append(suggestions);
+    } else {
+      log.append(suggestions);
+      transcript.forEach(message => addMessage(message.role, message.content, message.sources, message.role === 'assistant'));
+    }
+  }
+  function resizeInput() {
+    input.style.height = 'auto';
+    input.style.height = Math.max(48, Math.min(128, input.scrollHeight)) + 'px';
   }
   function updateCount() {
     input.setCustomValidity('');
     $('#chat-count').textContent = input.value.length + '/1000 caracteres';
+    resizeInput();
+  }
+  function updateViewport() {
+    const viewport = window.visualViewport;
+    const layoutHeight = document.documentElement.clientHeight || innerHeight;
+    widget.style.setProperty('--chat-viewport-height', (viewport?.height || layoutHeight) + 'px');
+    widget.style.setProperty('--chat-keyboard-offset', Math.max(0, layoutHeight - (viewport?.height || layoutHeight) - (viewport?.offsetTop || 0)) + 'px');
   }
   function toggle(open) {
     panel.hidden = !open;
     launcher.setAttribute('aria-expanded', String(open));
+    launcher.setAttribute('aria-label', open ? 'Fechar conversa' : 'Conversar com a Esperança');
+    $('.chat-launcher-label').textContent = open ? 'Fechar conversa' : 'Vamos conversar';
+    updateViewport();
+    resizeInput();
     (open ? input : launcher).focus();
     if (open) log.scrollTop = log.scrollHeight;
   }
@@ -145,7 +191,9 @@
     send.disabled = true;
     retry.disabled = true;
     form.setAttribute('aria-busy', 'true');
-    status.textContent = 'Consultando as informações do projeto…';
+    status.textContent = 'Esperança está consultando as informações…';
+    suggestions.hidden = true;
+    log.querySelector('.chat-welcome')?.remove();
     const bubble = userMessage || addMessage('user', message);
     bubble.dataset.state = 'pending';
     if (input.value.trim() === message) { input.value = ''; updateCount(); }
@@ -166,8 +214,8 @@
       saveTranscript();
       bubble.dataset.state = 'sent';
       addMessage('assistant', result.answer.trim(), sources, true);
-      while (log.children.length > 20) log.firstElementChild.remove();
-      status.textContent = 'Resposta pronta. Você pode continuar a conversa.';
+      while (log.querySelectorAll('.chat-message').length > 20) log.querySelector('.chat-message').remove();
+      status.textContent = '';
     } catch (error) {
       if (id !== requestId) return;
       failed = { message, bubble };
@@ -190,6 +238,10 @@
 
   transcript = restoreTranscript();
   renderTranscript();
+  updateViewport();
+  window.visualViewport?.addEventListener('resize', updateViewport);
+  window.visualViewport?.addEventListener('scroll', updateViewport);
+  window.addEventListener('resize', updateViewport, { passive: true });
   launcher.addEventListener('click', () => toggle(panel.hidden));
   $('.chat-close').addEventListener('click', () => toggle(false));
   widget.addEventListener('keydown', event => {
@@ -222,11 +274,12 @@
   retry.addEventListener('click', () => {
     if (failed && !pending) ask(failed.message, failed.bubble);
   });
-  $('.chat-suggestions').addEventListener('click', event => {
+  suggestions.addEventListener('click', event => {
     const button = event.target.closest('button');
     if (!button || pending) return;
-    input.value = button.textContent;
+    input.value = button.querySelector('span').textContent;
     updateCount();
+    input.focus();
     form.requestSubmit();
   });
   form.addEventListener('submit', event => {
