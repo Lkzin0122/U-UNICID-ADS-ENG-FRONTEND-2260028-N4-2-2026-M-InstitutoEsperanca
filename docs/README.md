@@ -408,6 +408,8 @@ JavaScript é necessário para o envio de contato pelo EmailJS. O formulário
 mantém a validação no navegador e envia para institutoesperancaunicid@outlook.com,
 conforme o destinatário fixo configurado no template do serviço. Sem JavaScript,
 o endereço de e-mail continua disponível. Não há armazenamento próprio de mensagens no site.
+O chatbot institucional também usa JavaScript e um servidor Node.js conectado
+ao modelo local no Ollama. O agente consulta uma base indexada do conteúdo do site.
 
 ## 12. Critérios de aceitação
 
@@ -444,3 +446,7 @@ critérios forem verificados:
 
 **Assinatura:**
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+## Chatbot institucional
+
+O assistente Esperança usa o AI Gateway na Vercel ou o Ollama local e pesquisa uma base indexada do conteúdo do projeto. Consulte [configuração, execução e testes do chatbot](chatbot.md). O histórico acompanha a navegação nesta aba e pode ser apagado em “Nova conversa”.

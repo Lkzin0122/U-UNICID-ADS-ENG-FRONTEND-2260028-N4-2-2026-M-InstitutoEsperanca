@@ -119,12 +119,17 @@ def main():
         body_class = ' class="home-page"' if filename == 'index.html' else ''
         html = f'''<!DOCTYPE html>
 <html lang="pt-BR" id="top">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#1744bc"><title>{escape(page['title'])} | Instituto Esperança</title><meta name="description" content="{escape(page['description'], quote=True)}"><link rel="icon" href="img/Logo.png" type="image/png"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/palette.css">{phone_assets}<script src="js/i18n.js" defer></script><script src="js/site.js" defer></script></head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#1744bc"><title>{escape(page['title'])} | Instituto Esperança</title><meta name="description" content="{escape(page['description'], quote=True)}"><link rel="icon" href="img/Logo.png" type="image/png"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/palette.css"><link rel="stylesheet" href="css/chatbot.css">{phone_assets}<script src="js/i18n.js" defer></script><script src="js/site.js" defer></script><script src="js/chatbot.js" defer></script></head>
 <body{body_class}>{header(filename)}{breadcrumb}<main id="conteudo-principal" tabindex="-1">{page['content']}</main>{footer(filename)}</body>
 </html>
 '''
         (ROOT / filename).write_text(html, encoding='utf-8')
     print(f'{len(pages)} páginas geradas.')
+    from build_chat_knowledge import build_index, render
+    knowledge_output = ROOT / 'data/knowledge-index.json'
+    knowledge_output.parent.mkdir(parents=True, exist_ok=True)
+    knowledge_output.write_text(render(build_index(ROOT)), encoding='utf-8', newline='\n')
+    print('Base de conhecimento do agente atualizada.')
 
 
 if __name__ == '__main__':

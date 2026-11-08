@@ -1,0 +1,1375 @@
+{
+  "schema_version": 1,
+  "version": "29fb9c3036f5a13cfe40c6a16b953e2977b97cd73b217f680091f49ae2f4c447",
+  "sources": [
+    {
+      "id": "page:acessibilidade",
+      "title": "Acessibilidade",
+      "url": "acessibilidade.html",
+      "origin": "acessibilidade.html"
+    },
+    {
+      "id": "page:contato",
+      "title": "Contato",
+      "url": "contato.html",
+      "origin": "contato.html"
+    },
+    {
+      "id": "page:galeria",
+      "title": "Galeria",
+      "url": "galeria.html",
+      "origin": "galeria.html"
+    },
+    {
+      "id": "page:impacto",
+      "title": "Impacto e transparência",
+      "url": "impacto.html",
+      "origin": "impacto.html"
+    },
+    {
+      "id": "page:index",
+      "title": "Solidariedade que transforma",
+      "url": "index.html",
+      "origin": "index.html"
+    },
+    {
+      "id": "page:midia",
+      "title": "Mídia",
+      "url": "midia.html",
+      "origin": "midia.html"
+    },
+    {
+      "id": "page:noticias",
+      "title": "Notícias e leituras",
+      "url": "noticias.html",
+      "origin": "noticias.html"
+    },
+    {
+      "id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem",
+      "url": "orcamento_hospedagem.html",
+      "origin": "orcamento_hospedagem.html"
+    },
+    {
+      "id": "page:participar",
+      "title": "Como participar",
+      "url": "participar.html",
+      "origin": "participar.html"
+    },
+    {
+      "id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes",
+      "url": "perguntas-frequentes.html",
+      "origin": "perguntas-frequentes.html"
+    },
+    {
+      "id": "page:projetos",
+      "title": "Projetos e iniciativas",
+      "url": "projetos.html",
+      "origin": "projetos.html"
+    },
+    {
+      "id": "page:sobre",
+      "title": "Sobre o Instituto",
+      "url": "sobre.html",
+      "origin": "sobre.html"
+    }
+  ],
+  "chunks": [
+    {
+      "id": "chunk-080822345537bfa6",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade",
+      "text": "Um espaço para mais pessoas",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-630e88af9db811c7",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar.",
+      "text": "Inclusão começa no acesso.\nEncontre recursos para adaptar a leitura e orientações para explorar o site no seu ritmo.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-5f1b285d22dd6a83",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar.",
+      "text": "Sua leitura, do seu jeito",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-1b281f70e8eedbdb",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler.",
+      "text": "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável.\nSuas preferências ficam salvas neste navegador quando o armazenamento está disponível.\nVocê também pode usar o zoom do próprio navegador.\nNo computador, experimente Ctrl + + para ampliar e Ctrl + 0 para restaurar.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-c4f8ab830700eb29",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "text": "Tamanho do texto\nTamanho do texto: 100%.\nTema do site O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.\nCores para daltonismo Experimente a paleta mais confortável para você.\nLinks sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.\nContraste da interface",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-b5d6f8225c608702",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "text": "Reforça a diferença entre texto e fundo, os contornos e o foco.\nFunciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.",
+      "url": "acessibilidade.html#contrast-hint"
+    },
+    {
+      "id": "chunk-0a08cedec2e0f4c4",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "text": "Inversão de cores",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-0d52f8eadd197b08",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "text": "Inverte todas as cores da página, incluindo imagens.\nO tema escolhido continua o mesmo.",
+      "url": "acessibilidade.html#invert-hint"
+    },
+    {
+      "id": "chunk-21025d39c4dae6ee",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "text": "Esses controles ajustam a apresentação.\nNenhum dado pessoal é solicitado.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-3d3cf930b7d4c55c",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar.",
+      "text": "Recursos do site",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-d56fda5f5ed9c6b8",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Pequenos cuidados. Menos barreiras. · Navegação por teclado",
+      "text": "Links, botões e campos podem ser alcançados com Tab .\nUm contorno destaca o item em foco para ajudar você a se localizar.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-381121a3ca936bc3",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Pequenos cuidados. Menos barreiras. · Um atalho para o conteúdo",
+      "text": "O primeiro link da página aparece ao receber foco e permite pular o menu, levando você diretamente ao conteúdo principal.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-7e43d429569b2c7d",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Pequenos cuidados. Menos barreiras. · Imagens com contexto",
+      "text": "Imagens informativas têm descrições alternativas.\nA galeria inclui legendas e créditos para deixar claro o contexto de cada imagem.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-aaf997ca6f7f0365",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Pequenos cuidados. Menos barreiras. · Formulários identificados",
+      "text": "Cada campo possui um rótulo.\nO navegador indica campos obrigatórios e verifica o formato do e-mail antes de preparar a mensagem.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-092c43df407b7aea",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Pequenos cuidados. Menos barreiras. · Mídia com alternativas",
+      "text": "Os players têm controles próprios.\nA página de mídia oferece conteúdo em texto para complementar a experiência com áudio e vídeo.\nExplorar os conteúdos",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-424f1695fafef5ad",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Pequenos cuidados. Menos barreiras. · Respeito ao seu ritmo",
+      "text": "O layout se adapta a diferentes telas.\nAs transições são reduzidas quando a preferência por menos movimento está ativada no seu dispositivo.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-61ce42558461d0ac",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar.",
+      "text": "Guia rápido",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-23fbca258ffac014",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Explore sem o mouse.",
+      "text": "Use os comandos do teclado para percorrer o conteúdo.\nOs mesmos links estão disponíveis no menu e no rodapé.\nComandos básicos de navegação\nTecla\nO que faz\nTab\nVai para o próximo link, botão ou campo.\nShift + Tab\nVolta para o item anterior.\nEnter\nAbre o link ou ativa o controle selecionado.\nEspaço\nAtiva um botão ou abre uma pergunta da lista de dúvidas.\nEsc\nFecha a ampliação de imagem da galeria.",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-fa48decfa06169a9",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar.",
+      "text": "Um compromisso contínuo",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-c086142376f408a4",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta.",
+      "text": "A acessibilidade do site está em melhoria contínua.\nTestes com tecnologias assistivas e sugestões das pessoas usuárias ajudam a identificar ajustes.\nNossa referência: introdução à acessibilidade da W3C",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-9959b0dbbe96a895",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Encontrou uma dificuldade?",
+      "text": "Ao descrever uma barreira, conte em qual página ela aconteceu, qual recurso você tentou usar e, se souber, o navegador ou a tecnologia assistiva utilizada.\nUse o formulário para enviar sua mensagem ao Instituto.\nPreparar relato",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-ec428dc58cd01d0f",
+      "source_id": "page:contato",
+      "title": "Contato",
+      "text": "Vamos conversar",
+      "url": "contato.html#top"
+    },
+    {
+      "id": "chunk-046430c564ec1f98",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta.",
+      "text": "Dúvidas, ideias ou vontade de participar?\nEscolha um assunto e prepare sua mensagem.",
+      "url": "contato.html#top"
+    },
+    {
+      "id": "chunk-d98579f6718ce716",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta.",
+      "text": "Um espaço para você",
+      "url": "contato.html#top"
+    },
+    {
+      "id": "chunk-65e5b1cb0f077a27",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta. · O que te trouxe até aqui?",
+      "text": "Queremos aproximar quem busca informação de quem deseja contribuir.\nConhecer os projetos\nExplorar o voluntariado\nPropor uma parceria\nCompartilhar uma sugestão",
+      "url": "contato.html#top"
+    },
+    {
+      "id": "chunk-5cba01f9213c1648",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta. · O que te trouxe até aqui? · Uma dúvida rápida?",
+      "text": "Talvez a resposta já esteja nas perguntas frequentes.\nConsultar respostas\nE-mail de contato: institutoesperancaunicid@outlook.com",
+      "url": "contato.html#top"
+    },
+    {
+      "id": "chunk-a6bf6a057592a28a",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta. · Envie sua mensagem",
+      "text": "Preencha os campos e envie sua mensagem diretamente para o Instituto.",
+      "url": "contato.html#form-notice"
+    },
+    {
+      "id": "chunk-ef57521c4a841d5d",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta. · Envie sua mensagem",
+      "text": "Seu nome (obrigatório) E-mail (obrigatório) Telefone (opcional) Selecione o país.\nDigite o telefone completo com o código de área, quando houver, ou cole um número com +código internacional.\nO formato e o limite de dígitos são automáticos.\nQuero falar sobre Sua mensagem (obrigatório) De 10 a 2.000 caracteres.\nEvite incluir informações sensíveis.\nSeu rascunho é salvo neste navegador e removido após a confirmação do envio.",
+      "url": "contato.html#contact-fields"
+    },
+    {
+      "id": "chunk-90980ee022329ec3",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta. · Envie sua mensagem",
+      "text": "Enviar pelo aplicativo de e-mail",
+      "url": "contato.html#contact-fallback"
+    },
+    {
+      "id": "chunk-196c0fcebb23cdca",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta.",
+      "text": "Quem está por trás do projeto",
+      "url": "contato.html#top"
+    },
+    {
+      "id": "chunk-f8e6f2a9094299d9",
+      "source_id": "page:contato",
+      "title": "Contato · Uma boa conexão começa com escuta. · Uma construção em equipe.",
+      "text": "Conheça a equipe responsável pelo site do Instituto Esperança.\nJonathan Santos dos Anjos\nAddiel Anthonny Arguedas Sangalli\nLucas Bitencourt\nCaio Rian",
+      "url": "contato.html#top"
+    },
+    {
+      "id": "chunk-be71ecc8daa3ca5e",
+      "source_id": "page:galeria",
+      "title": "Galeria",
+      "text": "NOSSO OLHAR",
+      "url": "galeria.html#top"
+    },
+    {
+      "id": "chunk-7a78e55a74b32e1f",
+      "source_id": "page:galeria",
+      "title": "Galeria · Imagens que inspiram novos caminhos.",
+      "text": "Aprender, cuidar e estar junto.\nUm olhar para os temas que dão sentido à nossa proposta.",
+      "url": "galeria.html#top"
+    },
+    {
+      "id": "chunk-e6bf184e081f777d",
+      "source_id": "page:galeria",
+      "title": "Galeria · Imagens que inspiram novos caminhos.",
+      "text": "GALERIA DE INSPIRAÇÕES",
+      "url": "galeria.html#top"
+    },
+    {
+      "id": "chunk-56e567b4c8321e15",
+      "source_id": "page:galeria",
+      "title": "Galeria · Imagens que inspiram novos caminhos. · O cuidado tem muitas formas.",
+      "text": "Selecione um tema e abra as imagens para ver os detalhes.\nAcolhimento Pertencer faz diferença.\nA convivência inspira nossa proposta de uma comunidade que acolhe.\nImagem ilustrativa · Larm Rmah / Unsplash\nEducação Aprender abre caminhos.\nLivros, curiosidade e espaço para descobrir o mundo.\nImagem ilustrativa · Element5 Digital / Unsplash\nMeio ambiente Cuidar também é plantar.\nPequenos cuidados com o ambiente podem ser compartilhados.\nImagem ilustrativa · Unsplash\nVoluntariado Presença que soma.\nTempo, habilidades e disposição para fazer parte.\nImagem ilustrativa · Unsplash\nLeitura Histórias para compartilhar.\nA leitura aproxima pessoas de novas ideias e possibilidades.\nImagem ilustrativa · Unsplash\nAs fotografias são ilustrativas e foram selecionadas no Unsplash.\nElas representam os temas do projeto e não documentam atividades realizadas pelo Instituto.\nConheça a licença das imagens.",
+      "url": "galeria.html#top"
+    },
+    {
+      "id": "chunk-c697b14c5c27fbbf",
+      "source_id": "page:galeria",
+      "title": "Galeria · Imagens que inspiram novos caminhos.",
+      "text": "DA INSPIRAÇÃO À PROPOSTA",
+      "url": "galeria.html#top"
+    },
+    {
+      "id": "chunk-58a2bd49ac38979c",
+      "source_id": "page:galeria",
+      "title": "Galeria · Imagens que inspiram novos caminhos. · Conheça as ideias por trás das imagens.",
+      "text": "Em Projetos, você encontra as frentes de atuação propostas e as formas de se aproximar de cada uma delas.\nExplorar os projetos",
+      "url": "galeria.html#top"
+    },
+    {
+      "id": "chunk-b7def33aa983163a",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência",
+      "text": "Impacto e transparência",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-215f0570e92aca45",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade.",
+      "text": "Cada iniciativa precisa de propósito, escuta e acompanhamento.\nConheça os caminhos que queremos desenvolver e como pretendemos avaliar os resultados.",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-1854e30af0ccc082",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade.",
+      "text": "Agenda 2030 · Pessoas e planeta",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-166d29c99fc2781c",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta.",
+      "text": "Os Objetivos de Desenvolvimento Sustentável (ODS) das Nações Unidas são uma referência para conectar inclusão, educação e cuidado com o ambiente.\nPelo foco em ampliar oportunidades e reduzir barreiras, o ODS 10 é o eixo central da proposta do Instituto Esperança.\nODS central do projeto",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-bbd77e1caee4a3cd",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta. · ODS 10 · Redução das desigualdades",
+      "text": "A escuta de pessoas com deficiência, a acessibilidade da informação e o acolhimento de famílias em situação de vulnerabilidade orientam nossa proposta de ampliar a participação social.\nRelação com a meta 10.2: inclusão e participação de pessoas com diferentes condições e necessidades.\nConhecer o ODS 10 na ONU",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-f0a6743e5a9a440a",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta.",
+      "text": "Aprendizagem e oportunidades",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-5fcb68d2a3f5a4f2",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta. · ODS 4 · Educação de qualidade",
+      "text": "Encontros de leitura, apoio aos estudos e atividades educativas são caminhos propostos para aproximar crianças, jovens e famílias do conhecimento.\nRelação com as metas 4.5 e 4.7: oportunidades de aprendizagem para pessoas em situação de vulnerabilidade e educação para a sustentabilidade.\nConhecer o ODS 4 na ONU",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-4151109f7c49a424",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta.",
+      "text": "Apoio e valorização do cuidado",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-7c81b711c3d6f98d",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta. · ODS 5 · Igualdade de gênero",
+      "text": "A rede de apoio proposta para mães solo busca abrir espaço para escuta, troca de experiências e acesso à informação sobre os desafios do cuidado cotidiano.\nRelação com a meta 5.4: valorização do trabalho de cuidado e da responsabilidade compartilhada nas famílias.\nConhecer o ODS 5 na ONU",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-2b224974f2451bf6",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta.",
+      "text": "Consciência ambiental",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-1107d9293e61e759",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta. · ODS 12 · Consumo e produção responsáveis",
+      "text": "Oficinas de reutilização e conteúdos de educação ambiental são propostas para incentivar o uso consciente dos recursos e o cuidado com os espaços compartilhados.\nRelação com as metas 12.5 e 12.8: redução de resíduos e informação sobre práticas sustentáveis no dia a dia.\nConhecer o ODS 12 na ONU",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-f055cd0e9561489c",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Os ODS que orientam nossa proposta.",
+      "text": "Os ODS indicam a relação entre os objetivos globais e as iniciativas propostas.\nO acompanhamento de resultados está descrito abaixo.",
+      "url": "impacto.html#ods"
+    },
+    {
+      "id": "chunk-5e1b8a9bfee0e663",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · O que sabemos hoje",
+      "text": "Acompanhe nossos objetivos e os critérios usados para avaliar as iniciativas.\nOs resultados devem ser apresentados com fontes, período de referência e dados verificados.",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-711cfb0409f27d0f",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade.",
+      "text": "Nossa direção",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-b76c42e5d9eae664",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · O impacto que queremos construir.",
+      "text": "Quatro compromissos conectam as seis frentes propostas para o Instituto.",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-9a04234a962ce7c0",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · O impacto que queremos construir. · Mais acesso ao conhecimento",
+      "text": "Ampliar o contato com a leitura, o aprendizado e a informação compreensível para diferentes idades.\nFrente de educação",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-cccbfdc1fe061595",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · O impacto que queremos construir. · Menos barreiras para participar",
+      "text": "Ouvir pessoas com deficiência e reconhecer obstáculos de comunicação, navegação e convivência.\nFrente de inclusão",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-3960872979fc7c85",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · O impacto que queremos construir. · Redes de apoio mais próximas",
+      "text": "Aproximar famílias, mães solo e responsáveis de informação e possibilidades de articulação comunitária.\nFrente de acolhimento",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-bdcd919b5037d3a1",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · O impacto que queremos construir. · Cuidado com o ambiente",
+      "text": "Incentivar escolhas conscientes e relacionar o uso de recursos ao bem-estar das comunidades.\nFrente de sustentabilidade",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-e2638e6fee65b607",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade.",
+      "text": "Acompanhamento",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-6e2f3ca0150ce7bb",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Objetivos claros. Dados com contexto.",
+      "text": "Uma proposta de registro para quando as iniciativas puderem ser implementadas.\nPlano de acompanhamento de impacto — indicadores ainda não medidos.\nO que acompanhar\nComo registrar\nSituação atual\nParticipação nas atividades\nRegistros de presença com cuidado com a privacidade e indicação do período.\nSem dados verificados\nAções educativas\nDescrição das oficinas realizadas, dos objetivos e dos materiais utilizados.\nIniciativas propostas\nAcessibilidade e inclusão\nBarreiras identificadas, melhorias realizadas e retorno dos participantes.\nRecursos digitais descritos no site\nRedes de voluntariado\nParticipação e atividades desenvolvidas, sem divulgar dados pessoais.\nSem equipe voluntária confirmada\nEducação ambiental\nTemas trabalhados e avaliação das atividades de conscientização.\nIniciativas propostas",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-2b383806d7160126",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade.",
+      "text": "Nosso compromisso",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-4900788231e2fee6",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Transparência também é uma forma de cuidado.",
+      "text": "Um número só faz sentido quando sabemos de onde ele vem, a que período se refere e o que representa.\nA proposta é divulgar resultados acompanhados dessas informações, respeitando a privacidade das pessoas envolvidas.\nEnquanto os dados institucionais não estiverem disponíveis, o site distingue iniciativas planejadas, conteúdo educativo e imagens ilustrativas.\nConheça os recursos de inclusão",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-c98600b85993d507",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade.",
+      "text": "A esperança se constrói junto",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-8a5d1130b244c9cf",
+      "source_id": "page:impacto",
+      "title": "Impacto e transparência · Transformar começa com responsabilidade. · Boas perguntas ajudam a melhorar.",
+      "text": "Quer entender nossa proposta ou compartilhar uma sugestão?\nO primeiro passo é abrir uma conversa.\nIr para contato",
+      "url": "impacto.html#top"
+    },
+    {
+      "id": "chunk-bad24063f7edd20f",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma",
+      "text": "Pessoas no centro.\nEsperança em movimento.",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-7519152dd031a2f2",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente.",
+      "text": "Acolher, incluir e abrir caminhos.\nUma proposta que conecta pessoas a um futuro com mais oportunidades.\nQuero fazer parte Conheça os projetos Pequenos gestos.\nNovas possibilidades.\nImagem ilustrativa · Larm Rmah / Unsplash\nO futuro é coletivo.\nE pode começar com você.",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-ed0a0954e8b5d8a7",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente.",
+      "text": "Educação que abre portas\nInclusão que aproxima\nCuidado que transforma\nNossa razão de existir",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-558be95d1578f242",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Ninguém deveria caminhar sozinho.",
+      "text": "Acreditamos na força de uma comunidade que cuida de quem faz parte dela.\nO Instituto Esperança é uma proposta de organização social que reúne educação, inclusão e consciência ambiental para apoiar pessoas e famílias em situação de vulnerabilidade.\nConheça a nossa essência",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-1d24187b15c30b13",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente.",
+      "text": "Caminhos de transformação",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-030168eb447eac94",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Cuidado que ganha forma.",
+      "text": "Conheça algumas das iniciativas propostas para aproximar pessoas e oportunidades.\nTodos os projetos\nEducação Aprender para ir além",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-7ed39596793a5ac9",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Cuidado que ganha forma. · Aprender abre caminhos",
+      "text": "Leitura, troca de conhecimentos e oportunidades para desenvolver novos caminhos.\nConhecer a proposta",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-c0bd7b3c7baffcbb",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Cuidado que ganha forma.",
+      "text": "Acolhimento Uma rede de cuidado",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-c282a3965ad38602",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Cuidado que ganha forma. · Uma rede que acolhe",
+      "text": "Escuta e informação para mães solo, crianças e famílias que precisam de apoio.\nConhecer a proposta",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-e81be106021ef761",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Cuidado que ganha forma.",
+      "text": "Sustentabilidade Cuidar também é preservar",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-a8c90744ee388346",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Cuidado que ganha forma. · Cuidar do nosso amanhã",
+      "text": "Educação ambiental para cultivar hábitos mais conscientes dentro e fora de casa.\nConhecer a proposta",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-b69d0a36650880a4",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente.",
+      "text": "Seu lugar nessa história",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-dd1c252c7f49ab7a",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Existe um jeito de fazer parte que é seu.",
+      "text": "Tempo, conhecimento, parceria.\nCada contribuição pode aproximar uma ideia de quem precisa dela.\nDescubra como participar 01",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-d37ec675e984f640",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Existe um jeito de fazer parte que é seu. · Compartilhe seu tempo",
+      "text": "Explore as possibilidades de voluntariado.\n02",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-14bbb458eafb40cb",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Existe um jeito de fazer parte que é seu. · Fortaleça uma causa",
+      "text": "Entenda como apoiar as iniciativas propostas.\n03",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-b7ceb3cbd596936f",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Existe um jeito de fazer parte que é seu. · Construa uma parceria",
+      "text": "Conecte sua experiência a um propósito.",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-ec2258c5bd3666c4",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente.",
+      "text": "Confiança se constrói com clareza",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-d6092a5af5d3076e",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Uma boa causa merece informação transparente.",
+      "text": "Nosso compromisso é compartilhar informações claras sobre as iniciativas e apresentar resultados com dados verificados.\nEntenda nosso compromisso",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-090fb9632153298a",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente.",
+      "text": "Para ver, ouvir e se inspirar",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-0887bfc2233cb0f0",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Conhecimento também aproxima.",
+      "text": "Explore os conteúdos Nossa galeria",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-fa4f0626896e7306",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Conhecimento também aproxima. · Imagens que inspiram cuidado.",
+      "text": "Leituras e referências",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-06a0a70fc462543f",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Conhecimento também aproxima. · Ideias para um mundo mais inclusivo.",
+      "text": "Educação, inclusão e sustentabilidade com fontes identificadas.\nNossa mensagem",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-f9be3b19bf6c1fa3",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · Conhecimento também aproxima. · Dê um play na esperança.",
+      "text": "Uma pausa para conhecer o que nos move.",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-e80975f0c5e2ec65",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente.",
+      "text": "Vamos construir juntos?",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-371bf8fd35a0e5ca",
+      "source_id": "page:index",
+      "title": "Solidariedade que transforma · Toda mudança começa com gente. · A próxima conexão pode começar com você.",
+      "text": "Vamos conversar",
+      "url": "index.html#top"
+    },
+    {
+      "id": "chunk-67fe564c2e19a5be",
+      "source_id": "page:midia",
+      "title": "Mídia",
+      "text": "VER, OUVIR E CONHECER",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-89a1e590639bb920",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento.",
+      "text": "Conheça a essência da nossa proposta no seu ritmo.\nAqui, cada conteúdo também tem uma alternativa em texto.",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-3f7ea4c7f5323a8d",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento.",
+      "text": "01 / MANIFESTO VISUAL",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-2d51fc358f69bc8d",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento. · Esperança é um convite.",
+      "text": "Quatro mensagens que traduzem o que queremos construir juntos.\nSeu navegador não reproduz este vídeo.\nLeia a descrição completa abaixo.",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-73702156e00114ad",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento. · Esperança é um convite.",
+      "text": "Vídeo autoral · 14 segundos · Sem áudio.\nAnimação de textos sobre fundo azul, com detalhes amarelos.\nCriado para o Instituto Esperança.",
+      "url": "midia.html#descricao-video"
+    },
+    {
+      "id": "chunk-fbefeabc054a503f",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento. · Esperança é um convite.",
+      "text": "Ler o conteúdo do vídeo\n1.\nAcolher.\nEsperança que acolhe.\nSolidariedade que transforma.\n2.\nIncluir.\nOportunidades para crescer.\nAprender, participar e pertencer.\n3.\nCuidar.\nPessoas e planeta.\nO mesmo cuidado.\nAcolhimento e consciência ambiental.\n4.\nParticipar.\nO próximo passo pode ser seu.\nConheça os projetos e as formas de participar.\nA animação apresenta os valores e as frentes de atuação do Instituto Esperança.",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-30d78fb059a2a056",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento.",
+      "text": "02 / UMA PAUSA",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-9c2b67a6556418e9",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento. · Pausa para acolher.",
+      "text": "Uma pequena composição instrumental para acompanhar a ideia de presença e cuidado.\nAperte o play quando quiser ouvir.\nTrilha original criada para o projeto · 16 segundos · Sem fala.\nTrilha instrumental",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-4844042dce015f66",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento. · Pausa para acolher. · Um momento de calma",
+      "text": "Seu navegador não reproduz este áudio.\nBaixar a trilha instrumental.\nDescrição sonora: sequência suave de notas sintetizadas em quatro acordes, com sons que diminuem gradualmente.\nNão há voz, palavras ou informações adicionais no áudio.",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-50e62c6f41e71745",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento.",
+      "text": "03 / APRESENTAÇÃO INTERATIVA",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-5796493cfeba256e",
+      "source_id": "page:midia",
+      "title": "Mídia · Uma ideia que ganha voz e movimento. · Nossa proposta, de perto.",
+      "text": "Explore os três caminhos que conectam educação, inclusão e cuidado.\nConteúdo autoral do projeto.\nAbrir a apresentação em página própria",
+      "url": "midia.html#top"
+    },
+    {
+      "id": "chunk-f3f8e5c497d4e864",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras",
+      "text": "Informação que aproxima",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-1b734a17bfcb3492",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano.",
+      "text": "Educação, inclusão e cuidado com o planeta.\nUma seleção de leituras para ampliar a conversa e inspirar pequenos passos.",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-64c0d0a366760f34",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano.",
+      "text": "Notícias & conhecimento",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-64bcad1c001bbb0e",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Vale a leitura.",
+      "text": "Guias e referências de organizações que produzem conhecimento sobre os temas da nossa proposta.\nFontes consultadas em 24 de outubro de 2026 .\nEducação\nUNICEF Brasil · Referência",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-24676c984fcacbe3",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Vale a leitura. · Aprender precisa ser uma oportunidade para todos.",
+      "text": "A página de educação do UNICEF Brasil reúne desafios e iniciativas relacionados ao acesso à escola e à aprendizagem de crianças e adolescentes.\nUma leitura para famílias, educadores e quem quer entender melhor a importância da permanência escolar.\nLer no UNICEF Brasil",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-a155fa2325522d2b",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Vale a leitura.",
+      "text": "Inclusão\nW3C · Guia em português",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-b581ad337245d128",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Vale a leitura. · Uma internet que mais pessoas possam usar.",
+      "text": "A introdução da W3C à acessibilidade apresenta barreiras digitais e explica por que conteúdo, navegação e ferramentas precisam considerar pessoas com diferentes necessidades.\nUm bom ponto de partida para pensar inclusão também nos ambientes digitais que frequentamos.\nExplorar o guia da W3C",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-7a60e8f0d54ed6b2",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Vale a leitura.",
+      "text": "Meio ambiente\nNações Unidas · ODS 12",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-035c27a5f22fe14d",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Vale a leitura. · Cuidar dos recursos é cuidar do futuro.",
+      "text": "O Objetivo de Desenvolvimento Sustentável 12 reúne metas de consumo e produção responsáveis, incluindo redução de desperdício, reutilização e uso consciente dos recursos.\nConheça os objetivos que ajudam a conectar escolhas cotidianas e responsabilidade coletiva.\nConhecer o ODS 12",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-e1abbbbc3ce0813e",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano.",
+      "text": "Compartilhar com responsabilidade",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-17e08d18606723e0",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Boa informação também é cuidado.",
+      "text": "Antes de encaminhar uma notícia ou campanha, reserve um momento para conferir de onde ela veio.\nConheça nosso compromisso com a transparência\nProcure a fonte original.\nAbra a publicação da organização responsável e leia além do título.\nConfira a data e o contexto.\nUm conteúdo antigo pode não representar a situação de hoje.\nCompartilhe com o link.\nAssim, outras pessoas também conseguem verificar e aprofundar a leitura.",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-8f06bfbd19a67364",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano.",
+      "text": "Continue a conversa",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-6fa8415c8ecd07cb",
+      "source_id": "page:noticias",
+      "title": "Notícias e leituras · Novas ideias para transformar o cotidiano. · Conhecimento que vira participação.",
+      "text": "Descubra as propostas do Instituto e encontre uma causa com a qual você se identifica.\nExplorar os projetos",
+      "url": "noticias.html#top"
+    },
+    {
+      "id": "chunk-75d2ef18632ce908",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem",
+      "text": "Transparência do projeto",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-93fa28a6e6937910",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente.",
+      "text": "O Instituto Esperança está publicado na Vercel.\nConheça a hospedagem escolhida e as opções de domínio para o projeto.",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-5169d31474c87162",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente.",
+      "text": "01 / Hospedagem",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-b9b747c21478bb54",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente. · Onde os arquivos do site ficam.",
+      "text": "A Vercel hospeda as páginas HTML, os estilos, os scripts e as imagens do projeto.\nInformações do plano consultadas nas fontes oficiais em 07/11/2026 .\nHospedagem do projeto",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-7e36f852d50fdb09",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente. · Onde os arquivos do site ficam. · Vercel",
+      "text": "US$ 0 por mês no plano Hobby\nPublicação de sites com distribuição dos arquivos em uma rede global e atualizações a partir do repositório do projeto.\nCondição: o plano Hobby é gratuito para uso pessoal e não comercial, sujeito às cotas e regras da plataforma.\nFonte: preços da Vercel Consultar condições do plano Hobby",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-e887a15ea44afe99",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente. · Onde os arquivos do site ficam. · Um endereço para acessar e compartilhar.",
+      "text": "O subdomínio vercel.app permite acessar o projeto sem contratar um domínio próprio nesta etapa.\nEndereço atual: institutoesperanca.vercel.app\nComo funcionam os domínios na Vercel",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-ec60c662d7b612e6",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente.",
+      "text": "02 / Domínio",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-243fe100c0074968",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente. · O endereço para encontrar o projeto.",
+      "text": "Domínio é uma contratação separada da hospedagem.\nA comparação considera registros comuns, sem nomes premium e sem verificação de disponibilidade de um nome específico.\nPreços de domínio consultados em 24/10/2026.\nValores anuais na moeda original.\nOpção\nPrimeiro ano\nRenovação anual\nO que considerar\nFonte oficial\n.com.br · Registro.br\nR$ 40,00\nR$ 40,00\nPagamento em reais.\nConfira os requisitos de registro e a disponibilidade do nome.\nRegistro.br\n.org · Porkbun\nUS$ 7,98 (promoção)\nUS$ 11,84\nPreço de registro promocional para o primeiro ano.\nA tabela informa taxas ICANN incluídas.\nPorkbun\n.com · Namecheap\nUS$ 11,28 (promoção)\nUS$ 18,48\nAcrescentar taxa ICANN de US$ 0,20 por ano.\nValor promocional, sem o cupom exclusivo para novos clientes.\nNamecheap\nOs valores representam a consulta, não uma oferta do Instituto.\nPreços, promoções e regras podem mudar.\nValores em dólar não foram convertidos para reais; câmbio e encargos do pagamento dependem da contratação.\nConfirme o total e a renovação no fornecedor.",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-ec740a110dab47aa",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente.",
+      "text": "03 / Nossa escolha para esta etapa",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-f856cf10b416cab8",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente. · Publicar de forma simples. Investir quando fizer sentido.",
+      "text": "A hospedagem escolhida é a Vercel, com o endereço institutoesperanca.vercel.app.\nO site usa arquivos estáticos, e suas atualizações podem ser publicadas a partir do repositório mantido pela equipe.\nSe um domínio próprio for necessário, a opção .com.br no Registro.br oferece referência de custo em reais: R$ 40,00 por ano na consulta, além da hospedagem gratuita, desde que o nome esteja disponível e os requisitos sejam atendidos.",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-9c6604c8b6d7b055",
+      "source_id": "page:orcamento_hospedagem",
+      "title": "Orçamento de hospedagem · Um lugar na internet. Uma escolha consciente. · Publicar de forma simples. Investir quando fizer sentido. · O que entra nessa conta?",
+      "text": "Publicação inicial: Vercel Hobby com referência de US$ 0 por mês e subdomínio vercel.app, respeitando as condições do plano.\nCom domínio próprio .com.br: R$ 40,00 por ano na consulta.\nEste valor não inclui serviços adicionais.\nServiços adicionais: o formulário usa o EmailJS, sujeito às cotas do serviço.\nE-mail institucional e armazenamento em servidor exigem avaliação e orçamento separados.\nSustentabilidade digital: imagens compactas e carregamento de mídia sob demanda reduzem o volume de dados do site.\nNenhum fornecedor recebeu uma classificação ambiental sem verificação específica.\nConheça o Instituto",
+      "url": "orcamento_hospedagem.html#top"
+    },
+    {
+      "id": "chunk-50d9e7f21cfc2835",
+      "source_id": "page:participar",
+      "title": "Como participar",
+      "text": "Faça parte",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-2e59359036de014d",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido.",
+      "text": "Uma habilidade, uma boa ideia, tempo para ouvir.\nExistem muitas formas de se aproximar de uma causa e contribuir para uma rede de cuidado.",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-77ea1764c8bbde2f",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido.",
+      "text": "Escolha seu caminho",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-de12473159ad6052",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas.",
+      "text": "Explore as possibilidades de participação previstas na proposta do Instituto.",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-b33682fe1214639a",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas.",
+      "text": "Seu tempo",
+      "url": "participar.html#voluntariado"
+    },
+    {
+      "id": "chunk-f2a66cb883e86a23",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas. · Compartilhe o que você sabe",
+      "text": "Leitura, educação, comunicação, organização ou cuidados com o ambiente.\nSuas habilidades podem inspirar ideias para as iniciativas.\nTenho interesse em voluntariado",
+      "url": "participar.html#voluntariado"
+    },
+    {
+      "id": "chunk-a52f1e58810ad527",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas.",
+      "text": "Sua organização",
+      "url": "participar.html#parcerias"
+    },
+    {
+      "id": "chunk-7399198e56a77ffb",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas. · Imagine uma parceria",
+      "text": "Escolas, coletivos e empresas podem pensar juntos em ações educativas e redes de apoio alinhadas à nossa proposta.\nQuero propor uma parceria",
+      "url": "participar.html#parcerias"
+    },
+    {
+      "id": "chunk-8a06c59388745c34",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas.",
+      "text": "Seu apoio",
+      "url": "participar.html#apoio"
+    },
+    {
+      "id": "chunk-619cae55a6aacc9b",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas. · Converse sobre uma contribuição",
+      "text": "Materiais de leitura, itens para oficinas e outras formas de apoio podem fazer parte de futuras campanhas.\nConheça primeiro a proposta e as necessidades.\nTenho uma ideia de apoio",
+      "url": "participar.html#apoio"
+    },
+    {
+      "id": "chunk-43222c3c9fe5671d",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas.",
+      "text": "Sua voz",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-b86df2cc5ff4bcd8",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · A solidariedade tem muitas formas. · Faça a informação circular",
+      "text": "Conheça os temas de educação, inclusão e sustentabilidade.\nCompartilhar informação de fontes confiáveis já ajuda a ampliar essa conversa.\nExplore os conteúdos",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-600cac6efd7637cf",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · Antes de participar",
+      "text": "Entre em contato com o Instituto para consultar as formas de participação, a disponibilidade de atividades e as orientações para contribuir.",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-2eac1673fed7bb60",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido.",
+      "text": "Um passo de cada vez",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-ca26ddab0d09cbbf",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · Comece pelo que faz sentido para você. · Conheça uma causa",
+      "text": "Explore as frentes propostas e veja quais se conectam com seus interesses.\nVer projetos",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-0d6bf6b0d96d6443",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · Comece pelo que faz sentido para você. · Pense na sua contribuição",
+      "text": "Considere suas habilidades, sua disponibilidade e o tipo de atividade de que gostaria de participar.",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-f3296954868ef63e",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · Comece pelo que faz sentido para você. · Prepare uma mensagem",
+      "text": "Descreva sua ideia e envie sua mensagem pelo formulário de contato.\nConhecer o formulário",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-a51f4b9fa9505f23",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido.",
+      "text": "Ainda tem dúvidas?",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-d59f6de9d241271b",
+      "source_id": "page:participar",
+      "title": "Como participar · O seu jeito de ajudar também faz sentido. · Uma conversa pode ser o começo.",
+      "text": "Reunimos respostas sobre o Instituto, os projetos e as formas de participação para ajudar você a encontrar seu próximo passo.\nVer perguntas frequentes",
+      "url": "participar.html#top"
+    },
+    {
+      "id": "chunk-befcc08e02a1e78e",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes",
+      "text": "Vamos conversar",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-de982666b1893824",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras.",
+      "text": "Entenda a proposta do Instituto, as formas de participação e o que você encontra neste site.",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-4b5e017afb2d2d2a",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras.",
+      "text": "Perguntas frequentes",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-8104319ead2a1547",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar.",
+      "text": "Selecione uma pergunta para ler a resposta.\nVocê também pode navegar usando Tab e abrir cada item com Enter ou Espaço.\nIr para o contato",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-87f286c6256cf354",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · Como posso conhecer o Instituto Esperança?",
+      "text": "Explore as páginas sobre o Instituto e seus projetos.\nPara informações sobre atividades e participação, fale com a equipe por e-mail.\nConheça a proposta institucional",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-e0e4211fb62786e5",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · Quais são as áreas de atuação propostas?",
+      "text": "Educação; inclusão de pessoas com deficiência; apoio a crianças e adolescentes; redes para mães solo; acolhimento de famílias em situação de desabrigo; e conscientização ambiental.\nExplore as seis frentes",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-917a9f13f7d3adbb",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · Como posso demonstrar interesse em ser voluntário?",
+      "text": "No formulário de contato, escolha “Voluntariado”, descreva suas habilidades e interesses e envie sua mensagem.\nConsulte a equipe sobre as oportunidades disponíveis.\nEntrar em contato",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-50137b6d26988822",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · Posso doar dinheiro ou materiais pelo site?",
+      "text": "Esta versão não recebe pagamentos ou doações e não oferece chave Pix, conta bancária ou ponto de coleta.\nA página de participação apresenta ideias de apoio para futuras iniciativas.\nQualquer campanha real dependerá de organização e informações confirmadas.",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-53e9b4f8995ff306",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · Preciso de apoio. O site oferece atendimento?",
+      "text": "Entre em contato por e-mail para consultar as iniciativas e as possibilidades de apoio.\nO site não oferece atendimento de urgência.",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-4079df1ba5a7992f",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · Minha mensagem será enviada pelo formulário?",
+      "text": "Preencha os campos e selecione “Enviar mensagem”.\nA página confirma quando o envio é concluído.\nSe houver um erro, seu texto é preservado e você pode usar o e-mail do Instituto.",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-8b869b796daa3ca1",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · As fotos e os números representam ações reais do Instituto?",
+      "text": "As imagens são ilustrativas e possuem créditos.\nNão são registros de atividades do Instituto.\nA página de impacto apresenta objetivos e indicadores previstos, porque ainda não há resultados institucionais verificados.\nEntenda o compromisso com a transparência",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-ae1f74a820e3a54e",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Bom saber antes de começar. · Como navegar pelo site com mais acessibilidade?",
+      "text": "Use Tab para percorrer links e controles, Shift + Tab para voltar e Enter para ativar links.\nO atalho “Ir para o conteúdo” aparece ao receber foco.\nNa página de Acessibilidade você encontra os recursos disponíveis e orientações para ajustar a leitura.\nVer recursos de acessibilidade",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-d72e2d2175e59595",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras.",
+      "text": "A esperança se constrói junto",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-0bff8556558cba31",
+      "source_id": "page:perguntas-frequentes",
+      "title": "Perguntas frequentes · Suas dúvidas merecem respostas claras. · Já encontrou o seu próximo passo?",
+      "text": "Conheça as possibilidades de colaboração e as causas que fazem parte da nossa proposta.\nQuero fazer parte",
+      "url": "perguntas-frequentes.html#top"
+    },
+    {
+      "id": "chunk-3e389a95bdc47e8a",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas",
+      "text": "Nossas iniciativas",
+      "url": "projetos.html#top"
+    },
+    {
+      "id": "chunk-6b61f9c7dc66516e",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum.",
+      "text": "Educação, inclusão, acolhimento e sustentabilidade: conheça as frentes que dão forma à proposta do Instituto Esperança.",
+      "url": "projetos.html#top"
+    },
+    {
+      "id": "chunk-b6b475cc842052b6",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum.",
+      "text": "Encontre sua causa",
+      "url": "projetos.html#top"
+    },
+    {
+      "id": "chunk-22731c590c661e88",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades.",
+      "text": "Conheça nossas frentes de atuação e entre em contato para saber como participar.\n6 iniciativas propostas",
+      "url": "projetos.html#top"
+    },
+    {
+      "id": "chunk-39ad385fdeb0b71c",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades.",
+      "text": "Educação",
+      "url": "projetos.html#educacao"
+    },
+    {
+      "id": "chunk-aa7f6705ea82765d",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades. · Aprender abre caminhos",
+      "text": "Uma proposta de encontros de leitura, apoio aos estudos e compartilhamento de saberes para crianças, jovens e seus responsáveis.\nConheça a proposta\nPara quem: crianças, adolescentes e famílias em busca de oportunidades de aprendizagem.\nComo contribuir: sugerir atividades educativas, organizar materiais e compartilhar habilidades de ensino.\nTenho interesse em contribuir",
+      "url": "projetos.html#educacao"
+    },
+    {
+      "id": "chunk-3d8a4beb71321c68",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades.",
+      "text": "Inclusão",
+      "url": "projetos.html#inclusao"
+    },
+    {
+      "id": "chunk-829182db5bd83555",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades. · Participar é para todos",
+      "text": "Informação acessível e escuta de pessoas com deficiência para reconhecer barreiras e pensar em formas mais inclusivas de participação.\nConheça a proposta\nPara quem: pessoas com deficiência, familiares, cuidadores e a comunidade.\nComo contribuir: compartilhar experiências de acessibilidade e colaborar na revisão de materiais e atividades.\nEtapa: proposta de atuação.\nOs recursos digitais já presentes estão descritos na página de Acessibilidade.\nConheça a acessibilidade do site",
+      "url": "projetos.html#inclusao"
+    },
+    {
+      "id": "chunk-9e97d25ef2ec7d0e",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades.",
+      "text": "Crianças e adolescentes",
+      "url": "projetos.html#infancia"
+    },
+    {
+      "id": "chunk-3e5f74054ac83166",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades. · Espaço para crescer",
+      "text": "Atividades educativas, convivência e expressão para valorizar a infância e aproximar crianças, adolescentes e seus responsáveis.\nConheça a proposta\nPara quem: crianças e adolescentes, com participação e acompanhamento de responsáveis.\nComo contribuir: propor oficinas de arte, leitura e atividades culturais adequadas a cada faixa etária.\nQuero colaborar com a ideia",
+      "url": "projetos.html#infancia"
+    },
+    {
+      "id": "chunk-8286f2a684575b61",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades.",
+      "text": "Rede de apoio",
+      "url": "projetos.html#maes-solo"
+    },
+    {
+      "id": "chunk-f2f01ab378446f1a",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades. · Juntas, mais fortes",
+      "text": "Uma rede proposta para mães solo trocarem experiências, compartilharem informação e encontrarem apoio no cotidiano.\nConheça a proposta\nPara quem: mães que criam seus filhos sozinhas e pessoas interessadas em fortalecer redes de apoio.\nComo contribuir: sugerir temas para rodas de conversa e colaborar com materiais informativos.\nQuero saber mais",
+      "url": "projetos.html#maes-solo"
+    },
+    {
+      "id": "chunk-9368d818147ad885",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades.",
+      "text": "Acolhimento",
+      "url": "projetos.html#acolhimento"
+    },
+    {
+      "id": "chunk-3040f2f2d9070a44",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades. · Uma rede que acolhe",
+      "text": "Informação e articulação solidária voltadas a famílias em situação de desabrigo ou vulnerabilidade socioeconômica.\nConheça a proposta\nPara quem: famílias que precisam de acolhimento e pessoas interessadas em construir redes de solidariedade.\nComo contribuir: pensar em campanhas de arrecadação e em formas respeitosas de comunicar necessidades.\nPropor uma colaboração",
+      "url": "projetos.html#acolhimento"
+    },
+    {
+      "id": "chunk-6b5e168abee2f966",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades.",
+      "text": "Sustentabilidade",
+      "url": "projetos.html#meio-ambiente"
+    },
+    {
+      "id": "chunk-4bb0b17c8be7dc7b",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Ideias para transformar possibilidades. · Cuidar do nosso amanhã",
+      "text": "Educação ambiental que conecta escolhas do dia a dia, uso consciente de recursos e cuidado com os espaços compartilhados.\nConheça a proposta\nPara quem: estudantes, famílias e pessoas que desejam aprender e compartilhar práticas sustentáveis.\nComo contribuir: propor oficinas de reutilização e materiais educativos sobre consumo responsável.\nQuero somar nessa frente",
+      "url": "projetos.html#meio-ambiente"
+    },
+    {
+      "id": "chunk-9a721d7ff4d3df87",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum.",
+      "text": "A esperança se constrói junto",
+      "url": "projetos.html#top"
+    },
+    {
+      "id": "chunk-0eb72b8dd1d2b118",
+      "source_id": "page:projetos",
+      "title": "Projetos e iniciativas · Muitas formas de cuidar. Um propósito em comum. · Qual causa faz o seu coração bater?",
+      "text": "Seu tempo, seu conhecimento e suas ideias podem dar o primeiro passo em uma nova direção.\nQuero fazer parte",
+      "url": "projetos.html#top"
+    },
+    {
+      "id": "chunk-32433d4f5020dfc0",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto",
+      "text": "Nosso propósito",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-bc8637a9a6a061ca",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades.",
+      "text": "A esperança começa quando alguém encontra espaço para aprender, participar e ser ouvido.\nEssa é a ideia que move a nossa proposta.",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-b04440f720047bb4",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades.",
+      "text": "Quem somos",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-b8782477f9470070",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades. · Ninguém deveria caminhar sozinho.",
+      "text": "O Instituto Esperança é uma proposta de organização social voltada a pessoas e famílias em situação de vulnerabilidade.\nReunimos educação, inclusão e acolhimento em uma mesma visão: aproximar pessoas de novas possibilidades.\nNosso ponto de partida é a escuta.\nCrianças, adolescentes, pessoas com deficiência, mães solo e famílias em situação de desabrigo têm histórias e necessidades diferentes.\nUma rede de apoio precisa reconhecer cada uma delas.\nConheça o Instituto Esperança, nossos valores e as iniciativas que conectam educação, inclusão e cuidado com as pessoas.\nConheça nossas frentes de atuação\nEncontros que inspiram a nossa proposta.\nImagem ilustrativa: Larm Rmah / Unsplash.",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-c106f9039dfae3ea",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades.",
+      "text": "O que nos orienta",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-4ffaaaa202bb7cd0",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades. · Propósito que vira direção. · Nossa missão",
+      "text": "Aproximar pessoas e famílias de informação, aprendizagem e redes de apoio, com iniciativas de educação, inclusão e conscientização socioambiental.",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-0416125d89fd7539",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades. · Propósito que vira direção. · Nossa visão",
+      "text": "Construir um espaço acessível de articulação social, no qual comunidades, voluntários e parceiros encontrem caminhos para agir juntos.",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-efbc49354cfe9d2c",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades. · Propósito que vira direção. · Nossos valores",
+      "text": "Acolhimento, respeito, inclusão, transparência e responsabilidade socioambiental.\nComunicar com clareza também é uma forma de cuidar.",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-f07cc9374e5b6a1f",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades.",
+      "text": "Pessoas e planeta",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-91e2d81943c8c625",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades. · Cuidar de um futuro que é de todos.",
+      "text": "O impacto social e o cuidado com o ambiente fazem parte da mesma conversa.\nIncentivar o uso responsável de recursos, compartilhar conhecimento e tornar a informação acessível são atitudes que aproximam sustentabilidade e inclusão.\nNo site, isso se traduz em conteúdos de fácil leitura, páginas leves, recursos de navegação por teclado e imagens com descrição.\nNa proposta de atuação, significa pensar em ações que respeitem tanto as pessoas quanto o território em que vivem.\nComo pensamos o impacto",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-129ed0c410462033",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades.",
+      "text": "A esperança se constrói junto",
+      "url": "sobre.html#top"
+    },
+    {
+      "id": "chunk-ee7a3019700cd47f",
+      "source_id": "page:sobre",
+      "title": "Sobre o Instituto · Acreditar nas pessoas. Construir possibilidades. · Há lugar para você nessa história.",
+      "text": "Conheça as formas de participar e encontre uma causa que faça sentido para você.\nQuero fazer parte",
+      "url": "sobre.html#top"
+    }
+  ]
+}
