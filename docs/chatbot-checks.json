@@ -2,10 +2,13 @@
   "checks": {
     "initially_closed": true,
     "open_focus_label": true,
+    "textarea_grows_with_message": true,
     "whitespace_blocked": true,
+    "suggestion_moves_focus_to_message": true,
     "offline_is_error_not_fake_answer": true,
     "failed_question_preserved": true,
     "retry_no_duplicate_user": true,
+    "welcome_gives_way_to_conversation": true,
     "counter_clears": true,
     "session_stores_successful_pairs": true,
     "escape_restores_focus": true,
@@ -22,11 +25,17 @@
     "fits_768x1024": true,
     "fits_1440x1000": true,
     "fits_667x375": true,
+    "fits_390x430": true,
     "text_200_percent_accessible_with_scroll": true,
+    "close_visible_at_text_200_percent": true,
     "contrast_light": true,
+    "close_visible_light": true,
     "contrast_theme-dark": true,
+    "close_visible_theme-dark": true,
     "contrast_high-contrast": true,
+    "close_visible_high-contrast": true,
     "contrast_theme-dark high-contrast": true,
+    "close_visible_theme-dark high-contrast": true,
     "widget_acessibilidade": true,
     "widget_contato": true,
     "widget_galeria": true,
@@ -40,6 +49,6 @@
     "widget_projetos": true,
     "widget_sobre": true
   },
-  "passed": 39,
-  "total": 39
+  "passed": 48,
+  "total": 48
 }

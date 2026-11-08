@@ -50,6 +50,12 @@ Arquivos principais:
 - `api/chat.js`: validação da requisição, histórico, limites e cancelamento.
 - `js/chatbot.js`: interface, histórico nesta aba, fontes e repetição de consultas que falharam.
 
+## Interface do chat
+
+O painel tem cabeçalho com identidade da Esperança, ações para reiniciar e fechar, e uma tela de boas-vindas com sugestões. Ao começar uma conversa, a abertura dá lugar às mensagens, com balões distintos para visitante e assistente e links para conferir as fontes. O campo de mensagem cresce com o texto e mantém o envio por Enter e a quebra de linha por Shift + Enter.
+
+No celular, o painel ocupa a área disponível e acompanha o teclado. O visual usa as cores do site, com temas claro, escuro e de alto contraste e respeito à preferência de movimento reduzido. O redesign passou nas 48 verificações da interface, incluindo ampliação de texto a 200%, foco, sugestões, navegação e seis tamanhos de tela. As capturas de referência ficam em `docs/screenshots/chatbot-*.png`.
+
 ## Histórico e limites
 
 A interface mantém até 20 mensagens na sessionStorage da aba. A conversa acompanha a navegação entre as páginas do site. “Nova conversa” apaga o histórico e cancela uma consulta pendente. Apenas perguntas com respostas concluídas entram no histórico enviado ao agente. Em erro, a pergunta é preservada e pode ser repetida sem criar mensagens duplicadas.
