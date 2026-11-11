@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "29fb9c3036f5a13cfe40c6a16b953e2977b97cd73b217f680091f49ae2f4c447",
+  "version": "02defd333658070fc2c7dee07d572480217b7781dc200173805316f307f153c3",
   "sources": [
     {
       "id": "page:acessibilidade",
@@ -98,45 +98,59 @@
       "url": "acessibilidade.html#top"
     },
     {
-      "id": "chunk-1b281f70e8eedbdb",
+      "id": "chunk-4840bae4c8b4eb09",
       "source_id": "page:acessibilidade",
       "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler.",
-      "text": "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável.\nSuas preferências ficam salvas neste navegador quando o armazenamento está disponível.\nVocê também pode usar o zoom do próprio navegador.\nNo computador, experimente Ctrl + + para ampliar e Ctrl + 0 para restaurar.",
+      "text": "Escolha o tema, as cores e o tamanho do texto para uma leitura confortável.\nSuas preferências ficam salvas neste navegador quando o armazenamento está disponível.\nVocê também pode usar o zoom do próprio navegador.\nNo computador, experimente Ctrl + + para ampliar e Ctrl + 0 para restaurar.\nUm compromisso contínuo",
       "url": "acessibilidade.html#top"
     },
     {
-      "id": "chunk-c4f8ab830700eb29",
+      "id": "chunk-c086142376f408a4",
       "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta.",
+      "text": "A acessibilidade do site está em melhoria contínua.\nTestes com tecnologias assistivas e sugestões das pessoas usuárias ajudam a identificar ajustes.\nNossa referência: introdução à acessibilidade da W3C",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-9959b0dbbe96a895",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Encontrou uma dificuldade?",
+      "text": "Ao descrever uma barreira, conte em qual página ela aconteceu, qual recurso você tentou usar e, se souber, o navegador ou a tecnologia assistiva utilizada.\nUse o formulário para enviar sua mensagem ao Instituto.\nPreparar relato",
+      "url": "acessibilidade.html#top"
+    },
+    {
+      "id": "chunk-f838f5caa8d8a5df",
+      "source_id": "page:acessibilidade",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Preferências de leitura",
       "text": "Tamanho do texto\nTamanho do texto: 100%.\nTema do site O modo escuro usa fundos profundos e luz suave, mantendo as cores das imagens.\nCores para daltonismo Experimente a paleta mais confortável para você.\nLinks sublinhados e marcas de seleção ajudam a identificar ações sem depender só das cores.\nContraste da interface",
       "url": "acessibilidade.html#top"
     },
     {
-      "id": "chunk-b5d6f8225c608702",
+      "id": "chunk-1e6c34d02f178f6c",
       "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Preferências de leitura",
       "text": "Reforça a diferença entre texto e fundo, os contornos e o foco.\nFunciona com o tema claro ou escuro e prioriza a legibilidade das outras paletas.",
       "url": "acessibilidade.html#contrast-hint"
     },
     {
-      "id": "chunk-0a08cedec2e0f4c4",
+      "id": "chunk-5c0655ec4ac73436",
       "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Preferências de leitura",
       "text": "Inversão de cores",
       "url": "acessibilidade.html#top"
     },
     {
-      "id": "chunk-0d52f8eadd197b08",
+      "id": "chunk-816b46629ad8b4d0",
       "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Preferências de leitura",
       "text": "Inverte todas as cores da página, incluindo imagens.\nO tema escolhido continua o mesmo.",
       "url": "acessibilidade.html#invert-hint"
     },
     {
-      "id": "chunk-21025d39c4dae6ee",
+      "id": "chunk-a75607163044cb0b",
       "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar. · Mais conforto para ler. · Preferências de leitura",
-      "text": "Esses controles ajustam a apresentação.\nNenhum dado pessoal é solicitado.",
+      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Preferências de leitura · Leitura em voz alta",
+      "text": "Ouça os trechos ao passar o mouse ou navegar com o teclado.\nEscolha a voz e a velocidade.\nEsses controles ajustam a apresentação.\nNenhum dado pessoal é solicitado.",
       "url": "acessibilidade.html#top"
     },
     {
@@ -200,27 +214,6 @@
       "source_id": "page:acessibilidade",
       "title": "Acessibilidade · Você escolhe como navegar. · Explore sem o mouse.",
       "text": "Use os comandos do teclado para percorrer o conteúdo.\nOs mesmos links estão disponíveis no menu e no rodapé.\nComandos básicos de navegação\nTecla\nO que faz\nTab\nVai para o próximo link, botão ou campo.\nShift + Tab\nVolta para o item anterior.\nEnter\nAbre o link ou ativa o controle selecionado.\nEspaço\nAtiva um botão ou abre uma pergunta da lista de dúvidas.\nEsc\nFecha a ampliação de imagem da galeria.",
-      "url": "acessibilidade.html#top"
-    },
-    {
-      "id": "chunk-fa48decfa06169a9",
-      "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar.",
-      "text": "Um compromisso contínuo",
-      "url": "acessibilidade.html#top"
-    },
-    {
-      "id": "chunk-c086142376f408a4",
-      "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta.",
-      "text": "A acessibilidade do site está em melhoria contínua.\nTestes com tecnologias assistivas e sugestões das pessoas usuárias ajudam a identificar ajustes.\nNossa referência: introdução à acessibilidade da W3C",
-      "url": "acessibilidade.html#top"
-    },
-    {
-      "id": "chunk-9959b0dbbe96a895",
-      "source_id": "page:acessibilidade",
-      "title": "Acessibilidade · Você escolhe como navegar. · Acessibilidade se constrói com escuta. · Encontrou uma dificuldade?",
-      "text": "Ao descrever uma barreira, conte em qual página ela aconteceu, qual recurso você tentou usar e, se souber, o navegador ou a tecnologia assistiva utilizada.\nUse o formulário para enviar sua mensagem ao Instituto.\nPreparar relato",
       "url": "acessibilidade.html#top"
     },
     {
