@@ -176,10 +176,24 @@ PAGES = {
 <section class="section" aria-labelledby="titulo-ajustes">
     <div class="container split">
         <div class="section-heading">
-            <p class="eyebrow">Sua leitura, do seu jeito</p>
-            <h2 id="titulo-ajustes">Mais conforto para ler.</h2>
-            <p>Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.</p>
-            <p>Você também pode usar o zoom do próprio navegador. No computador, experimente <kbd>Ctrl</kbd> + <kbd>+</kbd> para ampliar e <kbd>Ctrl</kbd> + <kbd>0</kbd> para restaurar.</p>
+            <div>
+                <p class="eyebrow">Sua leitura, do seu jeito</p>
+                <h2 id="titulo-ajustes">Mais conforto para ler.</h2>
+                <p>Escolha o tema, as cores e o tamanho do texto para uma leitura confortável. Suas preferências ficam salvas neste navegador quando o armazenamento está disponível.</p>
+                <p>Você também pode usar o zoom do próprio navegador. No computador, experimente <kbd>Ctrl</kbd> + <kbd>+</kbd> para ampliar e <kbd>Ctrl</kbd> + <kbd>0</kbd> para restaurar.</p>
+            </div>
+            <div class="accessibility-commitment">
+                <p class="eyebrow">Um compromisso contínuo</p>
+                <h2 id="titulo-melhoria">Acessibilidade se constrói<br>com escuta.</h2>
+                <p>A acessibilidade do site está em melhoria contínua. Testes com tecnologias assistivas e sugestões das pessoas usuárias ajudam a identificar ajustes.</p>
+                <a class="text-link" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/pt-BR">Nossa referência: introdução à acessibilidade da W3C <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="card accessibility-report">
+                <h3 id="titulo-dificuldade">Encontrou uma dificuldade?</h3>
+                <p>Ao descrever uma barreira, conte em qual página ela aconteceu, qual recurso você tentou usar e, se souber, o navegador ou a tecnologia assistiva utilizada.</p>
+                <p>Use o formulário para enviar sua mensagem ao Instituto.</p>
+                <a class="button button-primary" href="contato.html?assunto=acessibilidade">Preparar relato <span aria-hidden="true">→</span></a>
+            </div>
         </div>
         <div class="card accessibility-controls">
             <h3>Preferências de leitura</h3>
@@ -222,6 +236,11 @@ PAGES = {
             <span class="field-hint" id="invert-hint">Inverte todas as cores da página, incluindo imagens. O tema escolhido continua o mesmo.</span>
             </div>
             <button class="button button-outline" type="button" data-visual-reset>Restaurar preferências visuais</button>
+            <div class="reader-inline" data-reader-ui data-no-translate>
+                <h4 data-reader-key="title">Leitura em voz alta</h4>
+                <p data-reader-key="inline">Ouça os trechos ao passar o mouse ou navegar com o teclado. Escolha a voz e a velocidade.</p>
+                <button class="button button-outline" type="button" data-reader-open data-reader-key="configure" hidden>Configurar leitura em voz alta</button>
+            </div>
             <p class="small">Esses controles ajustam a apresentação. Nenhum dado pessoal é solicitado.</p>
             <noscript><p class="notice">Para usar os controles desta página, habilite o JavaScript. O zoom e as preferências do navegador continuam disponíveis.</p></noscript>
         </div>
@@ -262,22 +281,6 @@ PAGES = {
                     <tr><th scope="row"><kbd>Esc</kbd></th><td>Fecha a ampliação de imagem da galeria.</td></tr>
                 </tbody>
             </table>
-        </div>
-    </div>
-</section>
-<section class="section section-soft" aria-labelledby="titulo-melhoria">
-    <div class="container split">
-        <div class="section-heading">
-            <p class="eyebrow">Um compromisso contínuo</p>
-            <h2 id="titulo-melhoria">Acessibilidade se constrói<br>com escuta.</h2>
-            <p>A acessibilidade do site está em melhoria contínua. Testes com tecnologias assistivas e sugestões das pessoas usuárias ajudam a identificar ajustes.</p>
-            <a class="text-link" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/pt-BR">Nossa referência: introdução à acessibilidade da W3C <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="card">
-            <h3>Encontrou uma dificuldade?</h3>
-            <p>Ao descrever uma barreira, conte em qual página ela aconteceu, qual recurso você tentou usar e, se souber, o navegador ou a tecnologia assistiva utilizada.</p>
-            <p>Use o formulário para enviar sua mensagem ao Instituto.</p>
-            <a class="button button-primary" href="contato.html?assunto=acessibilidade">Preparar relato <span aria-hidden="true">→</span></a>
         </div>
     </div>
 </section>
