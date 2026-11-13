@@ -427,7 +427,7 @@ critérios forem verificados:
     adequada de títulos.
 -   [x] O formulário de contato contém rótulos associados aos campos e
     validação HTML5.
--   [x ] A página de mídia inclui `<video controls poster>`,
+-   [x] A página de mídia inclui `<video controls poster>`,
     `<audio controls>` e `<iframe>`, conforme aplicável ao conteúdo.
 -   [x] A interface permite navegação por teclado e apresenta contraste
     adequado.
