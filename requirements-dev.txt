@@ -1,0 +1,2 @@
+# Ferramenta de desenvolvimento; não é necessária no site publicado.
+ruff==0.14.4

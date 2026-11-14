@@ -3,6 +3,7 @@
 Usage: python -B scripts/update_phone_vendor.py --phone-version 1.13.15 --intl-version 29.5.10
 Run scripts/check_phone.py after every metadata update.
 """
+
 import argparse
 import base64
 import hashlib
@@ -16,15 +17,17 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def package(name, version):
-    with urllib.request.urlopen(f'https://registry.npmjs.org/{name}/{version}', timeout=30) as response:
+    with urllib.request.urlopen(
+        f"https://registry.npmjs.org/{name}/{version}", timeout=30
+    ) as response:
         info = json.load(response)
-    with urllib.request.urlopen(info['dist']['tarball'], timeout=30) as response:
+    with urllib.request.urlopen(info["dist"]["tarball"], timeout=30) as response:
         content = response.read()
-    algorithm, expected = info['dist']['integrity'].split('-', 1)
+    algorithm, expected = info["dist"]["integrity"].split("-", 1)
     actual = base64.b64encode(hashlib.new(algorithm, content).digest()).decode()
     if actual != expected:
-        raise RuntimeError(f'Package integrity mismatch: {name}@{version}')
-    return tarfile.open(fileobj=io.BytesIO(content), mode='r:gz')
+        raise RuntimeError(f"Package integrity mismatch: {name}@{version}")
+    return tarfile.open(fileobj=io.BytesIO(content), mode="r:gz")
 
 
 def write_member(archive, name, destination):
@@ -33,58 +36,84 @@ def write_member(archive, name, destination):
 
 
 def country_rules(metadata, examples):
-    if metadata['version'] != 4:
-        raise RuntimeError('Review the new metadata schema before generating phone limits.')
+    if metadata["version"] != 4:
+        raise RuntimeError("Review the new metadata schema before generating phone limits.")
     countries = {}
-    for code, country in metadata['countries'].items():
+    for code, country in metadata["countries"].items():
         lengths = set()
         for description in country[11][:2]:
             if description:
                 lengths.update(description[1] if len(description) > 1 else country[3])
         if not lengths:
-            raise RuntimeError(f'No personal telephone numbering lengths for {code}')
+            raise RuntimeError(f"No personal telephone numbering lengths for {code}")
         # Shared calling codes can inherit their formats from the main region.
-        source = country if country[4] else metadata['countries'][metadata['country_calling_codes'][country[0]][0]]
+        source = (
+            country
+            if country[4]
+            else metadata["countries"][metadata["country_calling_codes"][country[0]][0]]
+        )
         formats = [
             {
-                'pattern': item[0],
-                'format': item[1],
-                'leading': item[2][-1] if len(item) > 2 and item[2] else '',
-                'prefix': (item[3] if len(item) > 3 else '') or source[6] or '',
+                "pattern": item[0],
+                "format": item[1],
+                "leading": item[2][-1] if len(item) > 2 and item[2] else "",
+                "prefix": (item[3] if len(item) > 3 else "") or source[6] or "",
             }
             for item in (source[4] or [])
         ]
         countries[code] = {
-            'callingCode': country[0], 'lengths': sorted(lengths),
-            'example': examples.get(code, ''), 'formats': formats,
+            "callingCode": country[0],
+            "lengths": sorted(lengths),
+            "example": examples.get(code, ""),
+            "formats": formats,
         }
     return countries
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phone-version', default='1.13.15')
-    parser.add_argument('--intl-version', default='29.5.10')
+    parser.add_argument("--phone-version", default="1.13.15")
+    parser.add_argument("--intl-version", default="29.5.10")
     args = parser.parse_args()
-    with package('libphonenumber-js', args.phone_version) as archive:
-        target = ROOT / 'assets/vendor/libphonenumber-js'
-        write_member(archive, 'package/bundle/libphonenumber-max.js', target / 'libphonenumber-max.js')
-        write_member(archive, 'package/LICENSE', target / 'LICENSE')
-        write_member(archive, 'package/LICENSE.Apache', target / 'LICENSE.Apache')
-        metadata = json.load(archive.extractfile('package/metadata.max.json'))
-        examples = json.load(archive.extractfile('package/examples.mobile.json'))
+    with package("libphonenumber-js", args.phone_version) as archive:
+        target = ROOT / "assets/vendor/libphonenumber-js"
+        write_member(
+            archive, "package/bundle/libphonenumber-max.js", target / "libphonenumber-max.js"
+        )
+        write_member(archive, "package/LICENSE", target / "LICENSE")
+        write_member(archive, "package/LICENSE.Apache", target / "LICENSE.Apache")
+        metadata = json.load(archive.extractfile("package/metadata.max.json"))
+        examples = json.load(archive.extractfile("package/examples.mobile.json"))
         countries = country_rules(metadata, examples)
-        data = {'version': args.phone_version, 'countries': countries}
-        (target / 'phone-data.js').write_text('/* Generated by scripts/update_phone_vendor.py; do not edit numbering rules manually. */\nwindow.esperancaPhoneData = ' + json.dumps(data, separators=(',', ':')) + ';\n', encoding='utf-8')
-        (target / 'README.md').write_text(f'# libphonenumber-js {args.phone_version}\n\nLocally bundled `max` build: complete Google libphonenumber numbering metadata, precise validation and formatting. MIT license.\n\n`phone-data.js` contains mobile/fixed-line lengths, national format descriptors and example numbers generated from the exact same package metadata. No country rules are handwritten.\n\nUpstream: https://github.com/catamphetamine/libphonenumber-js\n\nRefresh: `python -B scripts/update_phone_vendor.py --phone-version <version> --intl-version <version>`, then run the phone and contact browser checks.\n', encoding='utf-8')
-    with package('intl-tel-input', args.intl_version) as archive:
-        target = ROOT / 'assets/vendor/intl-tel-input'
-        for name in ('js/intlTelInput.min.js', 'js/utils.js', 'css/intlTelInput.css', 'img/flags.webp', 'img/flags@2x.webp'):
-            write_member(archive, 'package/dist/' + name, target / name)
-        write_member(archive, 'package/LICENSE', target / 'LICENSE')
-        (target / 'README.md').write_text(f'# intl-tel-input {args.intl_version}\n\nLocal country selector, flags, search and translated country names. MIT license.\n\nThe contact form delegates parsing, formatting and validation to the pinned libphonenumber-js/max bundle. The historical `utils.js` asset is retained for compatibility and is not loaded by the form.\n\nUpstream: https://intl-tel-input.com/docs/\n\nUpdate using `scripts/update_phone_vendor.py` and run the phone browser checks.\n', encoding='utf-8')
-    print(f'Updated libphonenumber-js {args.phone_version} ({len(countries)} regions) and intl-tel-input {args.intl_version}.')
+        data = {"version": args.phone_version, "countries": countries}
+        (target / "phone-data.js").write_text(
+            "/* Generated by scripts/update_phone_vendor.py; do not edit numbering rules manually. */\nwindow.esperancaPhoneData = "
+            + json.dumps(data, separators=(",", ":"))
+            + ";\n",
+            encoding="utf-8",
+        )
+        (target / "README.md").write_text(
+            f"# libphonenumber-js {args.phone_version}\n\nLocally bundled `max` build: complete Google libphonenumber numbering metadata, precise validation and formatting. MIT license.\n\n`phone-data.js` contains mobile/fixed-line lengths, national format descriptors and example numbers generated from the exact same package metadata. No country rules are handwritten.\n\nUpstream: https://github.com/catamphetamine/libphonenumber-js\n\nRefresh: `python -B scripts/update_phone_vendor.py --phone-version <version> --intl-version <version>`, then run the phone and contact browser checks.\n",
+            encoding="utf-8",
+        )
+    with package("intl-tel-input", args.intl_version) as archive:
+        target = ROOT / "assets/vendor/intl-tel-input"
+        for name in (
+            "js/intlTelInput.min.js",
+            "css/intlTelInput.css",
+            "img/flags.webp",
+            "img/flags@2x.webp",
+        ):
+            write_member(archive, "package/dist/" + name, target / name)
+        write_member(archive, "package/LICENSE", target / "LICENSE")
+        (target / "README.md").write_text(
+            f"# intl-tel-input {args.intl_version}\n\nLocal country selector, flags, search and translated country names. MIT license.\n\nThe contact form delegates parsing, formatting and validation to the pinned libphonenumber-js/max bundle. Only assets used by this integration are included.\n\nUpstream: https://intl-tel-input.com/docs/\n\nUpdate using `scripts/update_phone_vendor.py` and run the phone browser checks.\n",
+            encoding="utf-8",
+        )
+    print(
+        f"Updated libphonenumber-js {args.phone_version} ({len(countries)} regions) and intl-tel-input {args.intl_version}."
+    )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

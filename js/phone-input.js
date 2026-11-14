@@ -1,16 +1,21 @@
 /* International telephone input. All numbering rules come from libphonenumber-js/max. */
 (() => {
   'use strict';
-  const t = text => window.esperancaI18n?.t(text) || text;
+  const t = (text) => window.esperancaI18n?.t(text) || text;
   const numberTypes = new Set(['FIXED_LINE', 'MOBILE', 'FIXED_LINE_OR_MOBILE']);
   const digit = /\p{Nd}/u;
-  const normalise = value => value.normalize('NFKC').replace(/[\u2010-\u2015\u2212]/g, '-').replace(/[\u200e\u200f\u061c]/g, '').replace(/\p{Nd}/gu, character => {
-    let start = character.codePointAt(0);
-    const point = start;
-    while (digit.test(String.fromCodePoint(start - 1))) start--;
-    return String((point - start) % 10);
-  });
-  const digits = value => value.replace(/\D/g, '');
+  const normalise = (value) =>
+    value
+      .normalize('NFKC')
+      .replace(/[\u2010-\u2015\u2212]/g, '-')
+      .replace(/[\u200e\u200f\u061c]/g, '')
+      .replace(/\p{Nd}/gu, (character) => {
+        let start = character.codePointAt(0);
+        const point = start;
+        while (digit.test(String.fromCodePoint(start - 1))) start--;
+        return String((point - start) % 10);
+      });
+  const digits = (value) => value.replace(/\D/g, '');
 
   window.esperancaPhoneInput = {
     create(input, uiTranslations) {
@@ -24,14 +29,16 @@
       let previous = { value: '', country: 'br', start: 0, end: 0 };
       let rejection = '';
       const ready = Boolean(lib && data && typeof window.intlTelInput === 'function');
-      const selectable = new Set(ready ? window.intlTelInput.getAllCountries().map(item => item.iso2.toUpperCase()) : []);
+      const selectable = new Set(
+        ready ? window.intlTelInput.getAllCountries().map((item) => item.iso2.toUpperCase()) : [],
+      );
       const country = () => (widget?.getSelectedCountry()?.iso2 || previous.country).toUpperCase();
-      const showError = message => {
+      const showError = (message) => {
         if (!error) return;
         error.textContent = t(message);
         error.hidden = !message;
       };
-      const inspect = raw => {
+      const inspect = (raw) => {
         if (raw.length > 250) return { syntax: true, tooLong: true, valid: false };
         const text = normalise(raw).trim();
         const formatter = new lib.AsYouType(country());
@@ -43,33 +50,75 @@
         const rules = data[region];
         let national = formatter.getNationalNumber();
         if (!international && national.length > digits(text).length) national = digits(text);
-        const significantLength = international ? digits(text).length - (number?.countryCallingCode.length || 0) : national.length;
-        const tooLong = !rules || Math.max(national.length, significantLength) > Math.max(...rules.lengths);
-        const parsed = lib.parsePhoneNumberFromString(text, { defaultCountry: region, extract: false });
-        const syntax = /^[+\d\s()./\-]*$/.test(text) && (text.match(/\+/g)?.length || 0) <= 1 && (!text.includes('+') || international);
-        const exactInternational = !international || !parsed || '+' + digits(text) === parsed.number;
+        const significantLength = international
+          ? digits(text).length - (number?.countryCallingCode.length || 0)
+          : national.length;
+        const tooLong =
+          !rules || Math.max(national.length, significantLength) > Math.max(...rules.lengths);
+        const parsed = lib.parsePhoneNumberFromString(text, {
+          defaultCountry: region,
+          extract: false,
+        });
+        const syntax =
+          /^[+\d\s()./\-]*$/.test(text) &&
+          (text.match(/\+/g)?.length || 0) <= 1 &&
+          (!text.includes('+') || international);
+        const exactInternational =
+          !international || !parsed || '+' + digits(text) === parsed.number;
         // Some plans let parsers expand local subscriber numbers with an inferred area code.
         // A contact number must include every significant digit supplied by the visitor.
-        const suppliedDigits = digits(text).length - (international ? parsed?.countryCallingCode.length || 0 : 0);
+        const suppliedDigits =
+          digits(text).length - (international ? parsed?.countryCallingCode.length || 0 : 0);
         const complete = parsed && parsed.nationalNumber.length <= suppliedDigits;
-        const valid = syntax && complete && exactInternational && !tooLong && parsed?.isPossible() && parsed.isValid() && !parsed.ext
-          && numberTypes.has(parsed.getType()) && data[parsed.country || region]?.callingCode === rules?.callingCode;
-        return { text, formatter, number, parsed, international, region, rules, national, tooLong, syntax, valid: Boolean(valid) };
+        const valid =
+          syntax &&
+          complete &&
+          exactInternational &&
+          !tooLong &&
+          parsed?.isPossible() &&
+          parsed.isValid() &&
+          !parsed.ext &&
+          numberTypes.has(parsed.getType()) &&
+          data[parsed.country || region]?.callingCode === rules?.callingCode;
+        return {
+          text,
+          formatter,
+          number,
+          parsed,
+          international,
+          region,
+          rules,
+          national,
+          tooLong,
+          syntax,
+          valid: Boolean(valid),
+        };
       };
-      const messageFor = state => {
-        if (!state.syntax) return 'Use apenas números e os separadores de um telefone, sem letras ou ramal.';
-        if (state.tooLong) return 'Este número tem mais dígitos do que o permitido para o país selecionado.';
-        const reason = lib.validatePhoneNumberLength(state.text, { defaultCountry: state.region, extract: false });
-        if (reason === 'TOO_SHORT') return 'O telefone está incompleto. Inclua o código de área, quando houver.';
-        if (reason === 'TOO_LONG') return 'Este número tem mais dígitos do que o permitido para o país selecionado.';
+      const messageFor = (state) => {
+        if (!state.syntax)
+          return 'Use apenas números e os separadores de um telefone, sem letras ou ramal.';
+        if (state.tooLong)
+          return 'Este número tem mais dígitos do que o permitido para o país selecionado.';
+        const reason = lib.validatePhoneNumberLength(state.text, {
+          defaultCountry: state.region,
+          extract: false,
+        });
+        if (reason === 'TOO_SHORT')
+          return 'O telefone está incompleto. Inclua o código de área, quando houver.';
+        if (reason === 'TOO_LONG')
+          return 'Este número tem mais dígitos do que o permitido para o país selecionado.';
         return 'Confira o país, o código de área e o número de telefone.';
       };
       const validate = (reveal = false) => {
         if (reveal) showErrors = true;
         let message = '';
         if (input.value.trim()) {
-          message = !ready ? 'Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.'
-            : (() => { const state = inspect(input.value); return state.valid ? '' : messageFor(state); })();
+          message = !ready
+            ? 'Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.'
+            : (() => {
+                const state = inspect(input.value);
+                return state.valid ? '' : messageFor(state);
+              })();
         }
         input.setCustomValidity(t(message));
         input.setAttribute('aria-invalid', String(Boolean(message)));
@@ -77,21 +126,30 @@
         return !message;
       };
       const snapshot = () => {
-        previous = { value: input.value, country: country().toLowerCase(), start: input.selectionStart, end: input.selectionEnd };
+        previous = {
+          value: input.value,
+          country: country().toLowerCase(),
+          start: input.selectionStart,
+          end: input.selectionEnd,
+        };
       };
-      const reject = message => {
+      const reject = (message) => {
         rejection = message;
         showError(message);
       };
       const addsPastLimit = (raw, state) => {
         if (!previous.value || previous.start !== previous.end) return false;
         const before = inspect(previous.value);
-        return before.region === state.region && before.national.length >= Math.max(...before.rules.lengths)
-          && digits(normalise(raw)).length > digits(normalise(previous.value)).length;
+        return (
+          before.region === state.region &&
+          before.national.length >= Math.max(...before.rules.lengths) &&
+          digits(normalise(raw)).length > digits(normalise(previous.value)).length
+        );
       };
       const updatePlaceholder = () => {
         const rules = data[country()];
-        const example = rules?.example && lib.parsePhoneNumberFromString('+' + rules.callingCode + rules.example);
+        const example =
+          rules?.example && lib.parsePhoneNumberFromString('+' + rules.callingCode + rules.example);
         input.placeholder = example?.formatNational() || '';
         input.dataset.phoneMaxDigits = String(Math.max(...rules.lengths));
       };
@@ -105,22 +163,34 @@
           const pattern = new RegExp(`^(?:${format.pattern})$`);
           if (!pattern.test(state.national)) continue;
           const replacement = format.prefix
-            ? format.format.replace('$1', () => format.prefix) : format.format;
+            ? format.format.replace('$1', () => format.prefix)
+            : format.format;
           const formatted = state.national.replace(pattern, replacement);
           const nationalDigits = digits(state.national.replace(pattern, format.format));
           // E.g. Argentine mobile transformations belong to the parser, not this fallback.
           if (nationalDigits !== state.national || digits(formatted) !== digits(partial)) continue;
           let common = 0;
-          while (common < Math.min(partial.length, formatted.length) && partial[common] === formatted[common]) common++;
-          const matchesPrefix = !format.leading || new RegExp(`^(?:${format.leading})`).test(state.national);
+          while (
+            common < Math.min(partial.length, formatted.length) &&
+            partial[common] === formatted[common]
+          )
+            common++;
+          const matchesPrefix =
+            !format.leading || new RegExp(`^(?:${format.leading})`).test(state.national);
           const score = (matchesPrefix ? 1000 : 0) + common;
-          if (score > bestScore) { best = formatted; bestScore = score; }
+          if (score > bestScore) {
+            best = formatted;
+            bestScore = score;
+          }
         }
         return best;
       };
       const apply = (raw, caret = raw.length, notify = false) => {
         if (updating || composing) return;
-        if (!ready) { validate(true); return; }
+        if (!ready) {
+          validate(true);
+          return;
+        }
         const state = inspect(raw);
         if (!state.syntax || state.tooLong || addsPastLimit(raw, state) || raw.length > 250) {
           updating = true;
@@ -129,16 +199,25 @@
           input.setSelectionRange(previous.start, previous.end);
           updating = false;
           updatePlaceholder();
-          reject(state.syntax ? 'Este número tem mais dígitos do que o permitido para o país selecionado.' : 'Use apenas números e os separadores de um telefone, sem letras ou ramal.');
+          reject(
+            state.syntax
+              ? 'Este número tem mais dígitos do que o permitido para o país selecionado.'
+              : 'Use apenas números e os separadores de um telefone, sem letras ou ramal.',
+          );
           validate();
           return;
         }
         updating = true;
-        if (selectable.has(state.region) && state.region.toLowerCase() !== widget.getSelectedCountry()?.iso2) widget.setSelectedCountry(state.region.toLowerCase());
+        if (
+          selectable.has(state.region) &&
+          state.region.toLowerCase() !== widget.getSelectedCountry()?.iso2
+        )
+          widget.setSelectedCountry(state.region.toLowerCase());
         let formatted;
         if (!state.text) formatted = '';
         else if (state.valid) formatted = state.parsed.formatNational();
-        else if (state.international && state.number) formatted = new lib.AsYouType(state.region).input(state.national);
+        else if (state.international && state.number)
+          formatted = new lib.AsYouType(state.region).input(state.national);
         else formatted = state.formatter.input('');
         if (!state.valid && state.text) formatted = formatCompleteLength(state, formatted);
         const before = digits(normalise(raw.slice(0, caret))).length;
@@ -146,7 +225,12 @@
         const target = Math.max(0, before + (state.international ? change : 0));
         let position = 0;
         if (caret === raw.length) position = formatted.length;
-        else while (position < formatted.length && digits(formatted.slice(0, position)).length < target) position++;
+        else
+          while (
+            position < formatted.length &&
+            digits(formatted.slice(0, position)).length < target
+          )
+            position++;
         input.value = formatted;
         input.setSelectionRange(position, position);
         rejection = '';
@@ -156,15 +240,21 @@
         if (notify) input.dispatchEvent(new Event('input', { bubbles: true }));
         updating = false;
       };
-      const insert = text => {
+      const insert = (text) => {
         const start = input.selectionStart ?? input.value.length;
         const end = input.selectionEnd ?? start;
-        apply(input.value.slice(0, start) + text + input.value.slice(end), start + text.length, true);
+        apply(
+          input.value.slice(0, start) + text + input.value.slice(end),
+          start + text.length,
+          true,
+        );
       };
-      const createWidget = translations => {
+      const createWidget = (translations) => {
         widget = window.intlTelInput(input, {
           initialCountry: previous.country,
-          onlyCountries: Object.keys(data).filter(code => selectable.has(code)).map(code => code.toLowerCase()),
+          onlyCountries: Object.keys(data)
+            .filter((code) => selectable.has(code))
+            .map((code) => code.toLowerCase()),
           countryNameLocale: document.documentElement.lang || 'pt-BR',
           uiTranslations: translations,
           separateDialCode: true,
@@ -176,21 +266,32 @@
         updatePlaceholder();
       };
       if (ready) createWidget(uiTranslations);
-      input.addEventListener('beforeinput', event => {
+      input.addEventListener('beforeinput', (event) => {
         if (updating || composing || event.isComposing) return;
         snapshot();
         if (!ready && event.inputType.startsWith('insert')) {
           event.preventDefault();
-          reject('Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.');
+          reject(
+            'Não foi possível carregar a validação do telefone. Tente novamente ou deixe este campo opcional em branco.',
+          );
           return;
         }
         const start = input.selectionStart ?? input.value.length;
         const end = input.selectionEnd ?? start;
-        if (event.inputType === 'deleteContentBackward' || event.inputType === 'deleteContentForward') {
+        if (
+          event.inputType === 'deleteContentBackward' ||
+          event.inputType === 'deleteContentForward'
+        ) {
           const backward = event.inputType === 'deleteContentBackward';
           let index = backward ? start - 1 : start;
-          if (start === end && index >= 0 && index < input.value.length && !/\d/.test(input.value[index])) {
-            while (index >= 0 && index < input.value.length && !/\d/.test(input.value[index])) index += backward ? -1 : 1;
+          if (
+            start === end &&
+            index >= 0 &&
+            index < input.value.length &&
+            !/\d/.test(input.value[index])
+          ) {
+            while (index >= 0 && index < input.value.length && !/\d/.test(input.value[index]))
+              index += backward ? -1 : 1;
             if (index >= 0 && index < input.value.length) {
               event.preventDefault();
               const from = backward ? index : start;
@@ -203,33 +304,51 @@
           const state = inspect(candidate);
           if (!state.syntax || state.tooLong || addsPastLimit(candidate, state)) {
             event.preventDefault();
-            reject(state.syntax ? 'Este número tem mais dígitos do que o permitido para o país selecionado.' : 'Use apenas números e os separadores de um telefone, sem letras ou ramal.');
+            reject(
+              state.syntax
+                ? 'Este número tem mais dígitos do que o permitido para o país selecionado.'
+                : 'Use apenas números e os separadores de um telefone, sem letras ou ramal.',
+            );
           }
         }
       });
-      input.addEventListener('paste', event => {
+      input.addEventListener('paste', (event) => {
         if (!event.clipboardData) return;
         event.preventDefault();
         snapshot();
         insert(event.clipboardData.getData('text'));
       });
-      input.addEventListener('drop', event => {
+      input.addEventListener('drop', (event) => {
         if (!event.dataTransfer) return;
         event.preventDefault();
         snapshot();
         insert(event.dataTransfer.getData('text'));
       });
-      input.addEventListener('input', () => apply(input.value, input.selectionStart ?? input.value.length), true);
-      input.addEventListener('change', () => { apply(input.value); validate(true); });
+      input.addEventListener(
+        'input',
+        () => apply(input.value, input.selectionStart ?? input.value.length),
+        true,
+      );
+      input.addEventListener('change', () => {
+        apply(input.value);
+        validate(true);
+      });
       input.addEventListener('blur', () => validate(true));
-      input.addEventListener('compositionstart', () => { snapshot(); composing = true; });
-      input.addEventListener('compositionend', () => { composing = false; apply(input.value); });
+      input.addEventListener('compositionstart', () => {
+        snapshot();
+        composing = true;
+      });
+      input.addEventListener('compositionend', () => {
+        composing = false;
+        apply(input.value);
+      });
       input.addEventListener('countrychange', () => {
         if (updating || !ready) return;
         // Keep existing digits on a country change; flag incompatibility rather than silently deleting digits.
         rejection = '';
         updatePlaceholder();
-        if (!inspect(input.value).tooLong) apply(input.value, input.selectionStart ?? input.value.length);
+        if (!inspect(input.value).tooLong)
+          apply(input.value, input.selectionStart ?? input.value.length);
         validate(true);
         snapshot();
       });
@@ -239,10 +358,15 @@
           if (!input.value.trim() || !ready) return '';
           const state = inspect(input.value);
           if (!state.valid) return '';
-          return format === 'INTERNATIONAL' ? state.parsed.formatInternational() : state.parsed.number;
+          return format === 'INTERNATIONAL'
+            ? state.parsed.formatInternational()
+            : state.parsed.number;
         },
         setLocale(translations) {
-          if (!ready) { validate(); return; }
+          if (!ready) {
+            validate();
+            return;
+          }
           snapshot();
           updating = true;
           widget.destroy();

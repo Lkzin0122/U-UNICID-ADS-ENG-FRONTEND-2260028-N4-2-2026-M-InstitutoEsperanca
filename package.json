@@ -3,16 +3,28 @@
   "version": "1.0.0",
   "private": true,
   "description": "Site acadêmico do Instituto Esperança com assistente institucional",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "node --env-file-if-exists=.env scripts/dev-server.cjs",
     "build": "node scripts/build_vercel.cjs",
     "test": "node --test scripts/check_chat.cjs scripts/check_agent.cjs scripts/check_knowledge.cjs scripts/check_cloud.cjs scripts/check_vercel.cjs",
     "test:speech": "python scripts/check_speech_reader.py --browser all",
-    "test:chat-ui": "python scripts/check_chat_actions.py --browser all",
     "knowledge:build": "python scripts/build_chat_knowledge.py",
     "knowledge:check": "python scripts/build_chat_knowledge.py --check",
     "ai:check": "node --env-file-if-exists=.env scripts/check_ai.cjs",
-    "ai:test": "node --env-file-if-exists=.env scripts/check_chat_live.cjs"
+    "ai:test": "node --env-file-if-exists=.env scripts/check_chat_live.cjs",
+    "format": "prettier --write \"css/**/*.css\" \"js/**/*.js\" \"server/**/*.cjs\" \"api/**/*.js\" \"scripts/**/*.cjs\" \"assets/*.html\" \"*.json\" \"*.css\"",
+    "format:check": "prettier --check \"css/**/*.css\" \"js/**/*.js\" \"server/**/*.cjs\" \"api/**/*.js\" \"scripts/**/*.cjs\" \"assets/*.html\" \"*.json\" \"*.css\"",
+    "site:build": "python -B scripts/build_site.py",
+    "site:check": "python -B scripts/check_site.py",
+    "verify": "npm run format:check && npm run lint:python && npm run site:check && npm run knowledge:check && npm test",
+    "format:python": "python -m ruff format scripts",
+    "lint:python": "python -m ruff check scripts && python -m ruff format --check scripts",
+    "test:chat-ui": "python scripts/check_chat_actions.py --browser all"
+  },
+  "devDependencies": {
+    "prettier": "3.6.2"
   }
 }

@@ -1,0 +1,17 @@
+/* render-video — recurso de mídia local. */
+body {
+  margin: 0;
+  background: #0e2c4a;
+  color: white;
+  font:
+    16px Arial,
+    sans-serif;
+}
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+p {
+  margin: 24px;
+}

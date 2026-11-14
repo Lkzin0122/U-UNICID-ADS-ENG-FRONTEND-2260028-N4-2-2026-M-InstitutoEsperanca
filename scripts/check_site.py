@@ -2,6 +2,7 @@
 
 Complementa, mas não substitui, a validação HTML e os testes no navegador.
 """
+
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
@@ -53,9 +54,11 @@ class PageParser(HTMLParser):
         elif self.stack and self.stack[-1] == tag:
             self.stack.pop()
         else:
-            self.errors.append(f"L{self.getpos()[0]}: fechamento </{tag}> inesperado, pilha {self.stack[-4:]}")
+            self.errors.append(
+                f"L{self.getpos()[0]}: fechamento </{tag}> inesperado, pilha {self.stack[-4:]}"
+            )
             if tag in self.stack:
-                self.stack = self.stack[:self.stack.index(tag)]
+                self.stack = self.stack[: self.stack.index(tag)]
 
 
 def audit():
@@ -66,7 +69,10 @@ def audit():
         page.feed(path.read_text(encoding="utf-8"))
         pages[path] = page
     for path, page in pages.items():
-        add = lambda message: errors.append(f"{path.name}: {message}")
+
+        def add(message):
+            errors.append(f"{path.name}: {message}")
+
         for error in page.errors:
             add(error)
         if page.stack:
@@ -80,9 +86,45 @@ def audit():
         html = [a for t, a, _ in page.elements if t == "html"]
         if len(html) != 1 or html[0].get("lang") != "pt-BR":
             add("idioma deve ser pt-BR")
-        descriptions = [a for t, a, _ in page.elements if t == "meta" and a.get("name") == "description"]
+        descriptions = [
+            a for t, a, _ in page.elements if t == "meta" and a.get("name") == "description"
+        ]
         if len(descriptions) != 1 or not descriptions[0].get("content"):
             add("meta description ausente ou vazia")
+        stylesheets = [
+            attrs.get("href")
+            for tag, attrs, _ in page.elements
+            if tag == "link" and attrs.get("rel") == "stylesheet"
+        ]
+        expected_styles = [
+            "css/style.css",
+            f"css/{path.stem}.css",
+            "css/palette.css",
+            "css/chatbot.css",
+            "css/speech-reader.css",
+        ]
+        if stylesheets[: len(expected_styles)] != expected_styles:
+            add("estilos devem carregar base, página, paleta, chatbot e leitor nessa ordem")
+        scripts = [attrs for tag, attrs, _ in page.elements if tag == "script" and attrs.get("src")]
+        if sum(script["src"] == "js/speech-reader.js" for script in scripts) != 1:
+            add("a página deve carregar o leitor em voz alta uma única vez")
+        for script in scripts:
+            if "defer" not in script:
+                add(f"script sem defer: {script['src']}")
+        shared_chat_assets = {
+            "js/emailjs-config.js",
+            "js/contact-service.js",
+            "js/chat-actions.js",
+            "js/chat-copy.js",
+        }
+        if not shared_chat_assets.issubset({attrs["src"] for attrs in scripts}):
+            add("faltam dependências compartilhadas do chatbot e do envio de contato")
+        contact_assets = {"js/contact.js", "js/phone-input.js"}
+        loaded_contact = {attrs["src"] for attrs in scripts} & contact_assets
+        if path.name == "contato.html" and loaded_contact != contact_assets:
+            add("o contato deve carregar seus controles de formulário")
+        elif path.name != "contato.html" and loaded_contact:
+            add("recursos exclusivos do contato carregados em outra página")
         for previous, current in zip(page.headings, page.headings[1:]):
             if current[0] > previous[0] + 1:
                 add(f"L{current[1]}: salto de h{previous[0]} para h{current[0]}")
@@ -94,8 +136,17 @@ def audit():
                 add(f"L{line}: imagem sem alt")
             if tag == "img" and not (attrs.get("src") or attrs.get("srcset")):
                 add(f"L{line}: imagem sem src ou srcset")
-            if tag in ("input", "textarea", "select") and attrs.get("type") not in ("hidden", "submit", "button", "reset"):
-                if attrs.get("id") not in page.labels and not attrs.get("aria-label") and not attrs.get("aria-labelledby"):
+            if tag in ("input", "textarea", "select") and attrs.get("type") not in (
+                "hidden",
+                "submit",
+                "button",
+                "reset",
+            ):
+                if (
+                    attrs.get("id") not in page.labels
+                    and not attrs.get("aria-label")
+                    and not attrs.get("aria-labelledby")
+                ):
                     add(f"L{line}: campo sem label associado")
             for ref_attr in ("aria-labelledby", "aria-describedby", "aria-controls"):
                 for identifier in attrs.get(ref_attr, "").split():

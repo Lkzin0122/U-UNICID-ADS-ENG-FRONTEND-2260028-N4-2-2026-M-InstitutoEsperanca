@@ -3,6 +3,7 @@
 Run: python -B scripts/check_phone.py
 Detailed evidence is saved to docs/phone-checks.json.
 """
+
 import json
 from pathlib import Path
 from check_contact import run_browser_checks
@@ -11,9 +12,9 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def check_phone(client, origin):
-    client.navigate(origin + '/contato.html')
-    google = json.loads((ROOT / 'scripts/fixtures/phone-examples.json').read_text(encoding='utf-8'))
-    client.evaluate('window.googlePhoneExamples = ' + json.dumps(google))
+    client.navigate(origin + "/contato.html")
+    google = json.loads((ROOT / "scripts/fixtures/phone-examples.json").read_text(encoding="utf-8"))
+    client.evaluate("window.googlePhoneExamples = " + json.dumps(google))
     report = client.evaluate("""(() => {
       const input = document.querySelector('#telefone');
       const widget = intlTelInput.getInstance(input);
@@ -129,7 +130,7 @@ def check_phone(client, origin):
       phoneTest.set('US', '');
       return report;
     })()""")
-    report['formatting'] = client.evaluate("""(() => {
+    report["formatting"] = client.evaluate("""(() => {
       const cases = [
         ['BR','1188899999','(11) 8889-9999',false],
         ['BR','11888999999','(11) 88899-9999',false],
@@ -151,7 +152,7 @@ def check_phone(client, origin):
           pass:phoneTest.input.value === expected && phoneTest.controller.validate() === valid};
       });
     })()""")
-    report['brazilFormatting'] = client.evaluate("""(() => {
+    report["brazilFormatting"] = client.evaluate("""(() => {
       const areas = ['11','12','13','14','15','16','17','18','19','21','22','24','27','28',
         '31','32','33','34','35','37','38','41','42','43','44','45','46','47','48','49',
         '51','53','54','55','61','62','63','64','65','66','67','68','69','71','73','74','75','77','79',
@@ -171,67 +172,112 @@ def check_phone(client, origin):
       return result;
     })()""")
     # Trusted browser text insertion uses beforeinput/input, as on mobile and autofill.
-    for country, number, expected in (('br', '11961234567', '(11) 96123-4567'), ('us', '2015550123', '(201) 555-0123')):
-        client.evaluate('phoneTest.set(' + json.dumps(country) + ', "")')
+    for country, number, expected in (
+        ("br", "11961234567", "(11) 96123-4567"),
+        ("us", "2015550123", "(201) 555-0123"),
+    ):
+        client.evaluate("phoneTest.set(" + json.dumps(country) + ', "")')
         for character in number:
-            client.call('Input.insertText', {'text': character})
-        before = client.evaluate('phoneTest.input.value')
-        client.call('Input.insertText', {'text': '999'})
-        report['interactions'][country + '_trusted_typing_and_cap'] = client.evaluate('phoneTest.input.value === ' + json.dumps(expected) + ' && phoneTest.input.value === ' + json.dumps(before) + ' && phoneTest.controller.validate()')
+            client.call("Input.insertText", {"text": character})
+        before = client.evaluate("phoneTest.input.value")
+        client.call("Input.insertText", {"text": "999"})
+        report["interactions"][country + "_trusted_typing_and_cap"] = client.evaluate(
+            "phoneTest.input.value === "
+            + json.dumps(expected)
+            + " && phoneTest.input.value === "
+            + json.dumps(before)
+            + " && phoneTest.controller.validate()"
+        )
     cases = {
-        'mobile_selection_can_become_landline': """(() => {phoneTest.set('BR','11961234567');phoneTest.input.setSelectionRange(5,10);phoneTest.paste('3012');return phoneTest.input.value==='(11) 3012-4567' && phoneTest.controller.getNumber()==='+551130124567';})()""",
-        'landline_selection_can_become_mobile': """(() => {phoneTest.set('BR','1130124567');phoneTest.input.setSelectionRange(5,9);phoneTest.paste('96123');return phoneTest.input.value==='(11) 96123-4567' && phoneTest.controller.getNumber()==='+5511961234567';})()""",
-        'unicode_brazil_digits_use_complete_short_format': """(() => {phoneTest.set('BR','११९१२३४५६७');return phoneTest.input.value==='(11) 9123-4567' && !phoneTest.controller.validate();})()""",
-        'international_paste_switches_country_before_limit': """(() => {phoneTest.set('US','');phoneTest.paste('+49 30 1234567890123');return phoneTest.controller.getNumber()==='+49301234567890123' && intlTelInput.getInstance(phoneTest.input).getSelectedCountry().iso2==='de';})()""",
-        'overlong_paste_does_not_silently_change_number': """(() => {phoneTest.set('US','2015550123');const before=phoneTest.input.value;phoneTest.input.select();phoneTest.paste('201555012399');return phoneTest.input.value===before && phoneTest.controller.getNumber()==='+12015550123' && !document.querySelector('#phone-error').hidden;})()""",
-        'selection_replacement_at_max': """(() => {phoneTest.set('US','2015550123');phoneTest.input.setSelectionRange(1,4);phoneTest.paste('202');return phoneTest.controller.getNumber()==='+12025550123';})()""",
-        'country_change_preserves_digits_and_blocks_invalid_number': """(() => {phoneTest.set('BR','11961234567');const before=phoneTest.input.value.replace(/\\D/g,'');intlTelInput.getInstance(phoneTest.input).setSelectedCountry('us');return phoneTest.input.value.replace(/\\D/g,'')===before && !phoneTest.controller.validate() && phoneTest.controller.getNumber()==='';})()""",
-        'noncancelable_input_restores_last_number': """(() => {phoneTest.set('US','2015550123');const before=phoneTest.input.value;phoneTest.input.value+='999';phoneTest.input.dispatchEvent(new InputEvent('input',{inputType:'insertText',data:'999',bubbles:true}));return phoneTest.input.value===before && phoneTest.controller.validate();})()""",
-        'optional_phone_can_be_empty': """(() => {phoneTest.set('US','');return phoneTest.controller.validate() && phoneTest.controller.getNumber()==='' && phoneTest.input.checkValidity();})()""",
-        'invalid_autofill_cannot_submit': """(() => {phoneTest.set('US','');let calls=0;window.fetch=()=>{calls++;return Promise.resolve({ok:true});};for(const [id,value] of Object.entries({nome:'Teste',email:'teste@example.com',assunto:'outro',mensagem:'Mensagem de teste sem envio real.'}))document.getElementById(id).value=value;phoneTest.input.value='1235550123';document.querySelector('#contact-form').requestSubmit();return calls===0 && !phoneTest.input.checkValidity();})()""",
-        'composition_normalises_fullwidth_digits': """(() => {phoneTest.set('US','');phoneTest.input.dispatchEvent(new CompositionEvent('compositionstart'));phoneTest.input.value='２０１５５５０１２３';phoneTest.input.dispatchEvent(new InputEvent('input',{isComposing:true,bubbles:true}));phoneTest.input.dispatchEvent(new CompositionEvent('compositionend'));return phoneTest.controller.getNumber()==='+12015550123';})()""",
-        'oversized_paste_is_rejected_without_truncation': """(() => {phoneTest.set('US','2015550123');const before=phoneTest.input.value;phoneTest.input.select();phoneTest.paste('9'.repeat(10000));return phoneTest.input.value===before;})()""",
-        'missing_area_code_is_not_inferred': """(() => {phoneTest.set('AI','');phoneTest.input.value='4612345';return !phoneTest.controller.validate() && phoneTest.controller.getNumber()==='';})()""",
+        "mobile_selection_can_become_landline": """(() => {phoneTest.set('BR','11961234567');phoneTest.input.setSelectionRange(5,10);phoneTest.paste('3012');return phoneTest.input.value==='(11) 3012-4567' && phoneTest.controller.getNumber()==='+551130124567';})()""",
+        "landline_selection_can_become_mobile": """(() => {phoneTest.set('BR','1130124567');phoneTest.input.setSelectionRange(5,9);phoneTest.paste('96123');return phoneTest.input.value==='(11) 96123-4567' && phoneTest.controller.getNumber()==='+5511961234567';})()""",
+        "unicode_brazil_digits_use_complete_short_format": """(() => {phoneTest.set('BR','११९१२३४५६७');return phoneTest.input.value==='(11) 9123-4567' && !phoneTest.controller.validate();})()""",
+        "international_paste_switches_country_before_limit": """(() => {phoneTest.set('US','');phoneTest.paste('+49 30 1234567890123');return phoneTest.controller.getNumber()==='+49301234567890123' && intlTelInput.getInstance(phoneTest.input).getSelectedCountry().iso2==='de';})()""",
+        "overlong_paste_does_not_silently_change_number": """(() => {phoneTest.set('US','2015550123');const before=phoneTest.input.value;phoneTest.input.select();phoneTest.paste('201555012399');return phoneTest.input.value===before && phoneTest.controller.getNumber()==='+12015550123' && !document.querySelector('#phone-error').hidden;})()""",
+        "selection_replacement_at_max": """(() => {phoneTest.set('US','2015550123');phoneTest.input.setSelectionRange(1,4);phoneTest.paste('202');return phoneTest.controller.getNumber()==='+12025550123';})()""",
+        "country_change_preserves_digits_and_blocks_invalid_number": """(() => {phoneTest.set('BR','11961234567');const before=phoneTest.input.value.replace(/\\D/g,'');intlTelInput.getInstance(phoneTest.input).setSelectedCountry('us');return phoneTest.input.value.replace(/\\D/g,'')===before && !phoneTest.controller.validate() && phoneTest.controller.getNumber()==='';})()""",
+        "noncancelable_input_restores_last_number": """(() => {phoneTest.set('US','2015550123');const before=phoneTest.input.value;phoneTest.input.value+='999';phoneTest.input.dispatchEvent(new InputEvent('input',{inputType:'insertText',data:'999',bubbles:true}));return phoneTest.input.value===before && phoneTest.controller.validate();})()""",
+        "optional_phone_can_be_empty": """(() => {phoneTest.set('US','');return phoneTest.controller.validate() && phoneTest.controller.getNumber()==='' && phoneTest.input.checkValidity();})()""",
+        "invalid_autofill_cannot_submit": """(() => {phoneTest.set('US','');let calls=0;window.fetch=()=>{calls++;return Promise.resolve({ok:true});};for(const [id,value] of Object.entries({nome:'Teste',email:'teste@example.com',assunto:'outro',mensagem:'Mensagem de teste sem envio real.'}))document.getElementById(id).value=value;phoneTest.input.value='1235550123';document.querySelector('#contact-form').requestSubmit();return calls===0 && !phoneTest.input.checkValidity();})()""",
+        "composition_normalises_fullwidth_digits": """(() => {phoneTest.set('US','');phoneTest.input.dispatchEvent(new CompositionEvent('compositionstart'));phoneTest.input.value='２０１５５５０１２３';phoneTest.input.dispatchEvent(new InputEvent('input',{isComposing:true,bubbles:true}));phoneTest.input.dispatchEvent(new CompositionEvent('compositionend'));return phoneTest.controller.getNumber()==='+12015550123';})()""",
+        "oversized_paste_is_rejected_without_truncation": """(() => {phoneTest.set('US','2015550123');const before=phoneTest.input.value;phoneTest.input.select();phoneTest.paste('9'.repeat(10000));return phoneTest.input.value===before;})()""",
+        "missing_area_code_is_not_inferred": """(() => {phoneTest.set('AI','');phoneTest.input.value='4612345';return !phoneTest.controller.validate() && phoneTest.controller.getNumber()==='';})()""",
     }
     for name, expression in cases.items():
-        report['interactions'][name] = client.evaluate(expression)
+        report["interactions"][name] = client.evaluate(expression)
     client.evaluate("phoneTest.set('BR', '')")
-    for character in '1191234567':
-        client.call('Input.insertText', {'text': character})
-    report['interactions']['eight_subscriber_digits_use_four_four'] = client.evaluate("phoneTest.input.value === '(11) 9123-4567' && !phoneTest.controller.validate()")
-    client.call('Input.insertText', {'text':'8'})
-    report['interactions']['ninth_subscriber_digit_moves_hyphen'] = client.evaluate("phoneTest.input.value === '(11) 91234-5678' && phoneTest.controller.validate()")
-    client.call('Input.dispatchKeyEvent', {'type':'keyDown','key':'Backspace','code':'Backspace','windowsVirtualKeyCode':8})
-    client.call('Input.dispatchKeyEvent', {'type':'keyUp','key':'Backspace','code':'Backspace','windowsVirtualKeyCode':8})
-    report['interactions']['deleting_ninth_digit_restores_four_four'] = client.evaluate("phoneTest.input.value === '(11) 9123-4567'")
-    report['interactions']['brazil_international_paste_uses_complete_short_format'] = client.evaluate("""(() => {
+    for character in "1191234567":
+        client.call("Input.insertText", {"text": character})
+    report["interactions"]["eight_subscriber_digits_use_four_four"] = client.evaluate(
+        "phoneTest.input.value === '(11) 9123-4567' && !phoneTest.controller.validate()"
+    )
+    client.call("Input.insertText", {"text": "8"})
+    report["interactions"]["ninth_subscriber_digit_moves_hyphen"] = client.evaluate(
+        "phoneTest.input.value === '(11) 91234-5678' && phoneTest.controller.validate()"
+    )
+    client.call(
+        "Input.dispatchKeyEvent",
+        {"type": "keyDown", "key": "Backspace", "code": "Backspace", "windowsVirtualKeyCode": 8},
+    )
+    client.call(
+        "Input.dispatchKeyEvent",
+        {"type": "keyUp", "key": "Backspace", "code": "Backspace", "windowsVirtualKeyCode": 8},
+    )
+    report["interactions"]["deleting_ninth_digit_restores_four_four"] = client.evaluate(
+        "phoneTest.input.value === '(11) 9123-4567'"
+    )
+    report["interactions"]["brazil_international_paste_uses_complete_short_format"] = (
+        client.evaluate("""(() => {
       phoneTest.set('US','');phoneTest.paste('+55 11 8889-9999');
       return phoneTest.input.value === '(11) 8889-9999' && intlTelInput.getInstance(phoneTest.input).getSelectedCountry().iso2 === 'br' && !phoneTest.controller.validate();
     })()""")
+    )
     client.evaluate("phoneTest.set('US','2015550123');phoneTest.input.setSelectionRange(6,6)")
-    client.call('Input.dispatchKeyEvent', {'type': 'keyDown', 'key': 'Backspace', 'code': 'Backspace', 'windowsVirtualKeyCode': 8})
-    client.call('Input.dispatchKeyEvent', {'type': 'keyUp', 'key': 'Backspace', 'code': 'Backspace', 'windowsVirtualKeyCode': 8})
-    report['interactions']['backspace_over_separator_removes_digit'] = client.evaluate("phoneTest.input.value.replace(/\\D/g,'').length === 9")
-    for locale in ('en', 'zh-CN', 'de', 'fr', 'es-419', 'ru', 'ja', 'hi', 'pt-BR'):
-        report['interactions']['phone_locale_' + locale] = client.evaluate("""(async () => {
+    client.call(
+        "Input.dispatchKeyEvent",
+        {"type": "keyDown", "key": "Backspace", "code": "Backspace", "windowsVirtualKeyCode": 8},
+    )
+    client.call(
+        "Input.dispatchKeyEvent",
+        {"type": "keyUp", "key": "Backspace", "code": "Backspace", "windowsVirtualKeyCode": 8},
+    )
+    report["interactions"]["backspace_over_separator_removes_digit"] = client.evaluate(
+        "phoneTest.input.value.replace(/\\D/g,'').length === 9"
+    )
+    for locale in ("en", "zh-CN", "de", "fr", "es-419", "ru", "ja", "hi", "pt-BR"):
+        report["interactions"]["phone_locale_" + locale] = client.evaluate(
+            """(async () => {
           phoneTest.set('US','2015550123');
           const picker=document.querySelector('#language-picker');
-          picker.value=""" + json.dumps(locale) + """;picker.dispatchEvent(new Event('change',{bubbles:true}));
+          picker.value="""
+            + json.dumps(locale)
+            + """;picker.dispatchEvent(new Event('change',{bubbles:true}));
           for(let i=0;i<100 && document.documentElement.lang!==picker.value;i++)await new Promise(resolve=>setTimeout(resolve,20));
           const preserved=phoneTest.controller.getNumber()==='+12015550123' && intlTelInput.instances.size===1;
           phoneTest.input.value='1235550123';phoneTest.controller.validate(true);
           const phrase='Confira o país, o código de área e o número de telefone.';
           const translated=esperancaI18n.t(phrase);
           return preserved && document.querySelector('#phone-error').textContent===translated && (picker.value==='pt-BR' || translated!==phrase);
-        })()""")
+        })()"""
+        )
     for width, height in ((390, 844), (768, 1024), (1440, 1000)):
-        client.call('Emulation.setDeviceMetricsOverride', {'width':width,'height':height,'deviceScaleFactor':1,'mobile':width < 600})
-        report['interactions']['phone_error_layout_' + str(width)] = client.evaluate("document.documentElement.scrollWidth <= innerWidth + 1 && getComputedStyle(document.querySelector('#phone-error')).display !== 'none'")
-    client.call('Network.enable')
-    for asset in ('libphonenumber-max.js', 'phone-data.js', 'phone-input.js', 'intlTelInput.min.js'):
-        client.call('Network.setBlockedURLs', {'urls':['*' + asset + '*']})
-        client.navigate(origin + '/contato.html')
-        report['interactions']['failure_closed_' + asset] = client.evaluate("""(async () => {
+        client.call(
+            "Emulation.setDeviceMetricsOverride",
+            {"width": width, "height": height, "deviceScaleFactor": 1, "mobile": width < 600},
+        )
+        report["interactions"]["phone_error_layout_" + str(width)] = client.evaluate(
+            "document.documentElement.scrollWidth <= innerWidth + 1 && getComputedStyle(document.querySelector('#phone-error')).display !== 'none'"
+        )
+    client.call("Network.enable")
+    for asset in (
+        "libphonenumber-max.js",
+        "phone-data.js",
+        "phone-input.js",
+        "intlTelInput.min.js",
+    ):
+        client.call("Network.setBlockedURLs", {"urls": ["*" + asset + "*"]})
+        client.navigate(origin + "/contato.html")
+        report["interactions"]["failure_closed_" + asset] = client.evaluate("""(async () => {
           let calls=0;
           window.fetch=async () => {calls++;return {ok:true,status:200};};
           for(const [id,value] of Object.entries({nome:'Teste',email:'teste@example.com',assunto:'outro',mensagem:'Mensagem simulada, nenhum e-mail real.',telefone:'2015550123'}))document.getElementById(id).value=value;
@@ -244,16 +290,61 @@ def check_phone(client, origin):
           await new Promise(resolve=>setTimeout(resolve,0));
           return invalidBlocked && calls===1;
         })()""")
-    client.call('Network.setBlockedURLs', {'urls':[]})
-    report['javascript_errors'] = [event['params'].get('exceptionDetails') for event in client.events if event.get('method') == 'Runtime.exceptionThrown']
-    (ROOT / 'docs/phone-checks.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    failures = [region for region in report['regions'] if not all(region[key] for key in ('selectable', 'example', 'national', 'cap', 'submission', 'invalid'))]
-    fixture_failures = [fixture for fixture in report['fixtures'] if not fixture['pass']]
-    example_failures = [example for example in report['independentExamples'] if not all(example[key] for key in ('accepted', 'paste', 'typed'))]
-    formatting_failures = [case for case in report['formatting'] if not case['pass']]
-    print(json.dumps({'regions':len(report['regions']), 'region_failures':failures, 'independent_examples':len(report['independentExamples']), 'example_failures':[{key:value for key,value in example.items() if key != 'trace'} for example in example_failures], 'fixture_failures':fixture_failures, 'formatting_failures':formatting_failures, 'brazil_formatting':report['brazilFormatting']}, ensure_ascii=True, indent=2))
-    return {'all_regions':len(report['regions']) == report['supportedRegions'] and bool(report['regions']) and not failures, 'google_fixed_and_mobile_examples':bool(report['independentExamples']) and not example_failures, 'specific_fixtures':not fixture_failures, 'complete_length_formatting':not formatting_failures, 'all_brazilian_area_codes':not report['brazilFormatting']['failures'], **report['interactions'], 'no_javascript_errors':not report['javascript_errors']}
+    client.call("Network.setBlockedURLs", {"urls": []})
+    report["javascript_errors"] = [
+        event["params"].get("exceptionDetails")
+        for event in client.events
+        if event.get("method") == "Runtime.exceptionThrown"
+    ]
+    (ROOT / "docs/phone-checks.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    failures = [
+        region
+        for region in report["regions"]
+        if not all(
+            region[key]
+            for key in ("selectable", "example", "national", "cap", "submission", "invalid")
+        )
+    ]
+    fixture_failures = [fixture for fixture in report["fixtures"] if not fixture["pass"]]
+    example_failures = [
+        example
+        for example in report["independentExamples"]
+        if not all(example[key] for key in ("accepted", "paste", "typed"))
+    ]
+    formatting_failures = [case for case in report["formatting"] if not case["pass"]]
+    print(
+        json.dumps(
+            {
+                "regions": len(report["regions"]),
+                "region_failures": failures,
+                "independent_examples": len(report["independentExamples"]),
+                "example_failures": [
+                    {key: value for key, value in example.items() if key != "trace"}
+                    for example in example_failures
+                ],
+                "fixture_failures": fixture_failures,
+                "formatting_failures": formatting_failures,
+                "brazil_formatting": report["brazilFormatting"],
+            },
+            ensure_ascii=True,
+            indent=2,
+        )
+    )
+    return {
+        "all_regions": len(report["regions"]) == report["supportedRegions"]
+        and bool(report["regions"])
+        and not failures,
+        "google_fixed_and_mobile_examples": bool(report["independentExamples"])
+        and not example_failures,
+        "specific_fixtures": not fixture_failures,
+        "complete_length_formatting": not formatting_failures,
+        "all_brazilian_area_codes": not report["brazilFormatting"]["failures"],
+        **report["interactions"],
+        "no_javascript_errors": not report["javascript_errors"],
+    }
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run_browser_checks(check_phone)

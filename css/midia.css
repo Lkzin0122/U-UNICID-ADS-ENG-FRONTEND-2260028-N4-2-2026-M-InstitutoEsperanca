@@ -1,0 +1,22 @@
+/* Instituto Esperança — Estilos de midia. */
+@import url('components/accordion.css');
+.small-text,
+.media-caption {
+  font-size: 0.78rem !important;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.media-caption {
+  margin-top: 16px;
+}
+
+.media-feature figcaption {
+  font-size: 0.75rem;
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+.presentation-frame {
+  min-height: 550px;
+}
