@@ -15,8 +15,10 @@
 
   **Equipe**                          Instituto Esperança
 
-  **Integrantes**                     Jonathan Santos dos Anjos; Addiel Anthonny
-                                      Arguedas Sangalli; Lucas Bitencourt; Caio Rian;
+  **Integrantes**                     Jonathan Santos dos Anjos (RGM: 49815075); Addiel Anthonny
+                                      Arguedas Sangalli (RGM: 50323865); Lucas Bitencourt (RGM: 50262050); Caio Rian (RGM: 50446681);
+
+  **Disciplina**: Desenvolvimento Front-End Web (UNICID)
 
   **Data de elaboração**              26/09/2026
 
@@ -261,14 +263,14 @@ compreensão por usuários e mecanismos de busca.
 Instituto Esperança
 ├── Início (index.html)  <!--Feito-->
 ├── Sobre (sobre.html)  <!--Feito-->
-├── Projetos (projetos.html)  
-├── Impacto (impacto.html) <!--em andamento-->
-├── Acessibilidade (acessibilidade.html)
-├── Galeria (galeria.html)
-├── Mídia (midia.html)
-├── Notícias (noticias.html) <!--em andamento-->
+├── Projetos (projetos.html) <!--Feito-->
+├── Impacto (impacto.html) <!--Feito-->
+├── Acessibilidade (acessibilidade.html) <!--Feito-->
+├── Galeria (galeria.html) <!--Feito-->
+├── Mídia (midia.html) <!--Feito-->
+├── Notícias (noticias.html) <!--Feito-->
 ├── Contato (contato.html) <!--Feito-->
-└── Orçamento de hospedagem (orcamento_hospedagem.html)
+└── Orçamento de hospedagem (orcamento_hospedagem.html) <!--Feito-->
 ```
 
 **Fluxo de navegação:** a página inicial apresenta o projeto e oferece
@@ -299,8 +301,8 @@ visão.
 
 -   **HTML5:** estruturação semântica das dez páginas e dos formulários.
 -   **CSS3:** identidade visual, layout e responsividade.
--   **JavaScript:** opcional nesta etapa, podendo ser utilizado para
-    interações complementares sem substituir os recursos nativos de
+-   **Python:** Verificação de larguras de celular, tablet e desktop, idiomas, texto ampliado e menu.
+-   **JavaScript:** utilizado para interações complementares sem substituir os recursos nativos de
     acessibilidade e validação.
 -   **Organização de arquivos:** pastas `css/`, `js/`, `img/`, `assets/`
     e `docs/`.
@@ -317,7 +319,7 @@ visão.
   -----------------------------------------------------------------------
   Integrante                          Responsabilidades previstas
   ----------------------------------- -----------------------------------
-  **Lucas Bitencourt**                Programação e design da interface.
+  **Lucas Bitencourt**                Documentação, programação e design da interface.
 
   **Jonathan Santos dos Anjos**       Documentação, programação e design.
 
@@ -417,27 +419,27 @@ consulta uma base indexada do conteúdo do site. Veja [chatbot.md](chatbot.md).
 O projeto será considerado pronto para entrega quando os seguintes
 critérios forem verificados:
 
--   [ ] As dez páginas previstas estão criadas e interligadas.
--   [ ] Todas as páginas possuem navegação consistente e links
+-   [x] As dez páginas previstas estão criadas e interligadas.
+-   [x] Todas as páginas possuem navegação consistente e links
     funcionais.
--   [ ] O conteúdo aborda sustentabilidade e impacto social de forma
+-   [x] O conteúdo aborda sustentabilidade e impacto social de forma
     pertinente.
--   [ ] A estrutura utiliza elementos semânticos HTML5 e hierarquia
+-   [x] A estrutura utiliza elementos semânticos HTML5 e hierarquia
     adequada de títulos.
--   [ ] O formulário de contato contém rótulos associados aos campos e
+-   [x] O formulário de contato contém rótulos associados aos campos e
     validação HTML5.
--   [ ] A página de mídia inclui `<video controls poster>`,
+-   [x] A página de mídia inclui `<video controls poster>`,
     `<audio controls>` e `<iframe>`, conforme aplicável ao conteúdo.
--   [ ] A interface permite navegação por teclado e apresenta contraste
+-   [x] A interface permite navegação por teclado e apresenta contraste
     adequado.
--   [ ] O site se adapta a celulares, tablets e computadores.
--   [ ] O HTML foi verificado no W3C Validator e os erros encontrados
+-   [x] O site se adapta a celulares, tablets e computadores.
+-   [x] O HTML foi verificado no W3C Validator e os erros encontrados
     foram corrigidos ou documentados.
--   [ ] A pasta `docs/` contém o README, o diário de bordo, o orçamento
+-   [x] A pasta `docs/` contém o README, o diário de bordo, o orçamento
     de hospedagem na Vercel, a comparação de domínios e as evidências de testes.
--   [ ] Os arquivos estão organizados nas pastas previstas e o projeto
+-   [x] Os arquivos estão organizados nas pastas previstas e o projeto
     está compactado para entrega.
--   [ ] Os conteúdos factuais e os dados apresentados foram conferidos;
+-   [x] Os conteúdos factuais e os dados apresentados foram conferidos;
     dados ilustrativos estão identificados como tais.
 
 ## 13. Aprovação
