@@ -47,6 +47,18 @@
       title:'सुनकर पढ़ें', open:'साइट सुनें', close:'बंद करें', intro:'साइट पर चुनी गई भाषा में सुनें। पढ़ना चालू करें और टेक्स्ट पर माउस रखें या Tab से आगे बढ़ें।', enable:'माउस रखने पर पढ़ना चालू करें', disable:'माउस रखने पर पढ़ना बंद करें', gender:'पसंदीदा आवाज़', auto:'अपने आप', female:'महिला', male:'पुरुष', voice:'उपलब्ध आवाज़', speed:'गति', preview:'नमूना सुनें', page:'यह पेज पढ़ें', stop:'पढ़ना रोकें', hint:'आवाज़ें ब्राउज़र और डिवाइस पर निर्भर करती हैं। कुछ को इंटरनेट चाहिए। रोकने के लिए Esc दबाएँ।', ready:'आवाज़ चुनें और नमूना सुनें।', active:'पढ़ना चालू है। टेक्स्ट पर माउस रखें या Tab से आगे बढ़ें।', stopped:'पढ़ना रोक दिया गया।', sample:'नमस्ते! इंस्टीट्यूटो एस्पेरांसा की साइट पढ़ने में यह आवाज़ आपका साथ देगी।', unavailable:'इस भाषा में कोई आवाज़ उपलब्ध नहीं है। डिवाइस की वाणी सेटिंग में आवाज़ जोड़ें या दूसरा ब्राउज़र आज़माएँ।', genderMissing:'इस भाषा की आवाज़ों में इस पसंद की पहचान नहीं हुई। सूची से आवाज़ चुनें और नमूना सुनें।', unsupported:'यह ब्राउज़र आवाज़ में पढ़ने की सुविधा नहीं देता। दूसरा ब्राउज़र या डिवाइस का स्क्रीन रीडर इस्तेमाल करें।', error:'आवाज़ शुरू नहीं हो सकी। नमूना सुनें या दूसरी आवाज़ चुनें।', blocked:'आवाज़ चलाने के लिए ब्राउज़र को एक क्लिक चाहिए। साइट सुनें खोलें और पढ़ना चालू करें।', reading:'इस पेज का टेक्स्ट पढ़ा जा रहा है।', done:'पढ़ना पूरा हुआ।', empty:'पढ़ने के लिए कोई टेक्स्ट नहीं है।', configure:'आवाज़ में पढ़ने की सेटिंग', inline:'माउस रखने या कीबोर्ड से आगे बढ़ने पर टेक्स्ट सुनें। आवाज़ और गति चुनें।',
     },
   };
+  const voiceCopy = {
+    'pt-BR': {system:'Automática do dispositivo', refresh:'Atualizar vozes', loading:'Carregando vozes. Você já pode tentar a voz automática.', unavailable:'O navegador não listou vozes neste idioma. Tente a voz automática, atualize a lista ou instale uma voz nas configurações de fala do dispositivo.', activate:'Liberar áudio', blocked:'Selecione Liberar áudio para permitir a leitura nesta página.', fallback:'A voz escolhida falhou. Tentando outra voz do dispositivo.'},
+    en: {system:'Device automatic voice', refresh:'Refresh voices', loading:'Loading voices. You can already try the automatic voice.', unavailable:'The browser did not list voices in this language. Try the automatic voice, refresh the list or install a voice in your device speech settings.', activate:'Enable audio', blocked:'Select Enable audio to allow reading on this page.', fallback:'The selected voice failed. Trying another device voice.'},
+    'es-419': {system:'Voz automática del dispositivo', refresh:'Actualizar voces', loading:'Cargando voces. Ya puedes probar la voz automática.', unavailable:'El navegador no enumeró voces en este idioma. Prueba la voz automática, actualiza la lista o instala una voz en los ajustes del dispositivo.', activate:'Habilitar audio', blocked:'Selecciona Habilitar audio para permitir la lectura en esta página.', fallback:'La voz elegida falló. Probando otra voz del dispositivo.'},
+    fr: {system:'Voix automatique de l’appareil', refresh:'Actualiser les voix', loading:'Chargement des voix. Vous pouvez déjà essayer la voix automatique.', unavailable:'Le navigateur ne répertorie aucune voix dans cette langue. Essayez la voix automatique, actualisez la liste ou installez une voix dans les réglages de l’appareil.', activate:'Autoriser l’audio', blocked:'Sélectionnez Autoriser l’audio pour permettre la lecture sur cette page.', fallback:'La voix choisie a échoué. Essai d’une autre voix de l’appareil.'},
+    de: {system:'Automatische Gerätestimme', refresh:'Stimmen aktualisieren', loading:'Stimmen werden geladen. Sie können die automatische Stimme bereits ausprobieren.', unavailable:'Der Browser hat keine Stimmen für diese Sprache aufgelistet. Versuchen Sie die automatische Stimme, aktualisieren Sie die Liste oder installieren Sie eine Stimme auf Ihrem Gerät.', activate:'Audio aktivieren', blocked:'Wählen Sie Audio aktivieren, um das Vorlesen auf dieser Seite zu erlauben.', fallback:'Die gewählte Stimme ist fehlgeschlagen. Eine andere Gerätestimme wird versucht.'},
+    'zh-CN': {system:'设备自动语音', refresh:'刷新语音', loading:'正在加载语音。您现在就可以尝试自动语音。', unavailable:'浏览器未列出此语言的语音。请尝试自动语音、刷新列表或在设备设置中安装语音。', activate:'允许音频', blocked:'请选择“允许音频”以在此页面启用朗读。', fallback:'所选语音播放失败。正在尝试设备上的其他语音。'},
+    ru: {system:'Автоматический голос устройства', refresh:'Обновить голоса', loading:'Загрузка голосов. Уже можно попробовать автоматический голос.', unavailable:'Браузер не перечислил голоса для этого языка. Попробуйте автоматический голос, обновите список или установите голос в настройках устройства.', activate:'Разрешить звук', blocked:'Выберите «Разрешить звук», чтобы включить чтение на этой странице.', fallback:'Выбранный голос не работает. Пробуем другой голос устройства.'},
+    ja: {system:'端末の自動音声', refresh:'音声を更新', loading:'音声を読み込み中です。自動音声は今すぐ試せます。', unavailable:'この言語の音声が一覧にありません。自動音声を試すか、一覧を更新するか、端末に音声を追加してください。', activate:'音声を許可', blocked:'このページで読み上げるには「音声を許可」を選んでください。', fallback:'選択した音声を再生できません。端末の別の音声を試しています。'},
+    hi: {system:'डिवाइस की स्वचालित आवाज़', refresh:'आवाज़ें अपडेट करें', loading:'आवाज़ें लोड हो रही हैं। आप अभी स्वचालित आवाज़ आज़मा सकते हैं।', unavailable:'ब्राउज़र ने इस भाषा की आवाज़ें नहीं दिखाईं। स्वचालित आवाज़ आज़माएँ, सूची अपडेट करें या डिवाइस में आवाज़ जोड़ें।', activate:'ऑडियो चालू करें', blocked:'इस पेज पर पढ़ने के लिए ऑडियो चालू करें चुनें।', fallback:'चुनी गई आवाज़ नहीं चली। डिवाइस की दूसरी आवाज़ आज़मा रहे हैं।'},
+  };
+  for (const language of Object.keys(copy)) Object.assign(copy[language], voiceCopy[language]);
   const root = document.documentElement;
   const synth = window.speechSynthesis;
   const supported = Boolean(synth && window.SpeechSynthesisUtterance);
@@ -88,9 +100,9 @@
     <div class="reader-fields">
       <div class="field"><label for="reader-gender" data-reader-key="gender"></label><select id="reader-gender"><option value="auto" data-reader-key="auto"></option><option value="female" data-reader-key="female"></option><option value="male" data-reader-key="male"></option></select></div>
       <div class="field"><label for="reader-rate" data-reader-key="speed"></label><select id="reader-rate"><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></div>
-      <div class="field reader-voices"><label for="reader-voice" data-reader-key="voice"></label><select id="reader-voice" aria-describedby="reader-voice-note"></select><span id="reader-voice-note" class="field-hint"></span></div>
+      <div class="field reader-voices"><label for="reader-voice" data-reader-key="voice"></label><select id="reader-voice" aria-describedby="reader-voice-note"></select><span id="reader-voice-note" class="field-hint" role="status"></span><button type="button" class="button button-outline reader-refresh" data-reader-refresh data-reader-key="refresh"></button></div>
     </div>
-    <div class="reader-actions"><button type="button" class="button button-outline" data-reader-preview data-reader-key="preview"></button><button type="button" class="button button-outline" data-reader-page data-reader-key="page"></button><button type="button" class="button button-outline" data-reader-stop data-reader-key="stop"></button></div>
+    <div class="reader-actions"><button type="button" class="button button-primary" data-reader-activate data-reader-key="activate" hidden></button><button type="button" class="button button-outline" data-reader-preview data-reader-key="preview"></button><button type="button" class="button button-outline" data-reader-page data-reader-key="page"></button><button type="button" class="button button-outline" data-reader-stop data-reader-key="stop"></button></div>
     <p class="reader-status" role="status" aria-live="polite" data-reader-status></p>
     <p class="reader-hint" data-reader-key="hint"></p>`;
   document.body.append(panel);
@@ -98,8 +110,12 @@
   dock.className = 'reader-dock';
   dock.setAttribute('data-reader-ui', '');
   dock.setAttribute('data-no-translate', '');
+  // A non-modal top-layer control stays in the viewport even when a visual
+  // accessibility filter on body changes the containing block of fixed elements.
+  const dockPopover = typeof dock.showPopover === 'function';
+  if (dockPopover) dock.setAttribute('popover', 'manual');
   dock.hidden = true;
-  dock.innerHTML = '<button type="button" data-reader-stop><span aria-hidden="true">■</span> <span data-reader-key="stop"></span></button><button type="button" data-reader-open>' + icon + '</button>';
+  dock.innerHTML = '<p class="reader-dock-status" role="status" aria-live="polite" data-reader-status></p><div class="reader-dock-actions"><button type="button" data-reader-activate data-reader-key="activate" hidden></button><button type="button" data-reader-stop><span aria-hidden="true">■</span> <span data-reader-key="stop"></span></button><button type="button" data-reader-open>' + icon + '</button></div>';
   document.body.append(dock);
   const $ = selector => panel.querySelector(selector);
   const voiceSelect = $('#reader-voice');
@@ -111,68 +127,119 @@
   let targetOrigin = null;
   let highlighted = null;
   let currentUtterance = null;
+  let playbackTimer = null;
+  let voiceTimer = null;
+  let voicesLoading = false;
+  let voiceSignature = '';
+  let audioUnlocked = false;
+  let activationDenied = false;
+  let pendingSpeech = null;
   let pageMode = false;
   let suppressFocus = false;
-  const status = key => { statusKey = key; $('[data-reader-status]').textContent = t(key); };
-  const normalize = value => value.toLowerCase().replaceAll('_', '-');
+  const status = key => {
+    statusKey = key;
+    for (const element of [panel, dock]) element.querySelector('[data-reader-status]').textContent = t(key);
+  };
+  const normalize = value => String(value || '').toLowerCase().replaceAll('_', '-');
   const languageVoices = () => voices.filter(voice => normalize(voice.lang).split('-')[0] === normalize(locale()).split('-')[0]);
   const voiceId = voice => `${voice.voiceURI}|${voice.lang}|${voice.name}`;
-  // The Web Speech API has no gender field. Only classify known Microsoft names;
-  // all other voices remain selectable by name. Never fake gender by changing pitch.
+  // The Web Speech API has no gender field. Classify explicit voice labels and
+  // known catalog names only. Never fake gender by changing pitch.
   // Catalog: support.microsoft.com/en-us/accessibility/windows/narrator/appendix-a-supported-languages-and-voices
   const knownVoices = {
     female: /\b(maria|francisca|thalita|brenda|zira|hazel|susan|jenny|aria|hedda|katja|hortense|julie|denise|helena|laura|sabina|dalia|elvira|irina|svetlana|ayumi|haruka|nanami|huihui|yaoyao|xiaoxiao|xiaoyi|kalpana|swara)(?:neural|multilingual)?\b/i,
     male: /\b(daniel|antonio|david|mark|george|guy|ryan|stefan|conrad|paul|henri|pablo|raul|alvaro|jorge|pavel|dmitry|ichiro|keita|kangkang|yunxi|yunjian|hemant|madhur)(?:neural|multilingual)?\b/i,
   };
   const genderOf = voice => {
-    if (!/microsoft/i.test(voice.name)) return null;
-    return Object.keys(knownVoices).find(gender => knownVoices[gender].test(voice.name)) || null;
+    const name = voice.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    if (/\b(female|feminina|feminine)\b/i.test(name)) return 'female';
+    if (/\b(male|masculina|masculine)\b/i.test(name)) return 'male';
+    if (/microsoft/i.test(name)) return Object.keys(knownVoices).find(gender => knownVoices[gender].test(name)) || null;
+    if (normalize(voice.lang).split('-')[0] === 'pt') {
+      if (/\b(luciana|joana)\b/i.test(name)) return 'female';
+      if (/\b(felipe|joaquim)\b/i.test(name)) return 'male';
+    }
+    return null;
   };
   const selectedVoice = () => languageVoices().find(voice => voiceId(voice) === voiceSelect.value);
+  const needsActivation = () => !audioUnlocked && (activationDenied || navigator.userActivation?.hasBeenActive !== true);
   const sync = () => {
-    const available = supported && languageVoices().length > 0;
     $('[data-reader-enable]').textContent = t(settings.enabled ? 'disable' : 'enable');
     $('[data-reader-enable]').setAttribute('aria-pressed', String(settings.enabled));
-    for (const selector of ['[data-reader-enable]', '[data-reader-preview]', '[data-reader-page]', '#reader-voice', '#reader-gender', '#reader-rate']) $(selector).disabled = !available;
+    for (const selector of ['[data-reader-enable]', '[data-reader-preview]', '[data-reader-page]', '[data-reader-refresh]', '#reader-voice', '#reader-gender', '#reader-rate']) $(selector).disabled = !supported;
     $('[data-reader-stop]').disabled = !settings.enabled && !currentUtterance;
-    dock.hidden = !settings.enabled && !currentUtterance;
+    for (const element of [panel, dock]) {
+      const button = element.querySelector('[data-reader-activate]');
+      button.hidden = !supported || (statusKey !== 'blocked' && (!settings.enabled || !needsActivation()));
+      if (button.hidden && document.activeElement === button) element.querySelector('[data-reader-stop]').focus({preventScroll:true});
+    }
+    const dockHadFocus = dock.contains(document.activeElement);
+    dock.hidden = panel.open || (!settings.enabled && !currentUtterance && !['blocked','error'].includes(statusKey));
+    if (dockPopover) {
+      if (dock.hidden && dock.matches(':popover-open')) dock.hidePopover();
+      else if (!dock.hidden && !dock.matches(':popover-open')) dock.showPopover();
+    }
+    if (dock.hidden && dockHadFocus && !panel.open) launcher.focus({preventScroll:true});
   };
-  const populateVoices = () => {
-    voices = supported ? synth.getVoices() : [];
-    const available = languageVoices().sort((a,b) => Number(normalize(b.lang) === normalize(locale())) - Number(normalize(a.lang) === normalize(locale())) || Number(b.default) - Number(a.default) || a.name.localeCompare(b.name));
+  const populateVoices = (resetSelection = false) => {
+    try { voices = supported ? Array.from(synth.getVoices()).filter(voice => voice && typeof voice.lang === 'string' && typeof voice.name === 'string') : []; }
+    catch { voices = []; }
+    const available = languageVoices().sort((a,b) => Number(normalize(b.lang) === normalize(locale())) - Number(normalize(a.lang) === normalize(locale())) || Number(Boolean(b.default)) - Number(Boolean(a.default)) || a.name.localeCompare(b.name));
     const preferred = available.filter(voice => genderOf(voice) === settings.gender);
     const saved = available.find(voice => voiceId(voice) === settings.voices[locale()]);
     const selected = saved || (settings.gender === 'auto' ? available[0] : preferred[0] || available[0]);
-    voiceSelect.replaceChildren();
-    for (const voice of available) {
-      const gender = genderOf(voice);
-      const option = new Option(`${voice.name} · ${voice.lang}${gender ? ` · ${t(gender)}` : ''}`, voiceId(voice));
-      voiceSelect.append(option);
+    const signature = JSON.stringify([locale(), available.map(voice => [voiceId(voice), genderOf(voice)])]);
+    // Identical voiceschanged events must not close a desktop select's popup.
+    if (signature !== voiceSignature || resetSelection === true) {
+      const changed = signature !== voiceSignature;
+      voiceSignature = signature;
+      if (changed) {
+        voiceSelect.replaceChildren(new Option(t('system'), 'auto'));
+        for (const voice of available) {
+          const gender = genderOf(voice);
+          voiceSelect.append(new Option(`${voice.name} · ${voice.lang}${gender ? ` · ${t(gender)}` : ''}`, voiceId(voice)));
+        }
+      }
+      voiceSelect.value = settings.voices[locale()] === 'auto' ? 'auto' : selected ? voiceId(selected) : 'auto';
     }
-    if (selected) voiceSelect.value = voiceId(selected);
-    else voiceSelect.append(new Option('—', ''));
-    $('#reader-voice-note').textContent = !supported ? t('unsupported') : !available.length ? t('unavailable') : settings.gender !== 'auto' && !preferred.length ? t('genderMissing') : '';
+    $('#reader-voice-note').textContent = !supported ? t('unsupported') : !available.length ? t(voicesLoading ? 'loading' : 'unavailable') : settings.gender !== 'auto' && !preferred.length ? t('genderMissing') : '';
     sync();
+  };
+  const refreshVoices = () => {
+    clearTimeout(voiceTimer);
+    let attempt = 0;
+    const poll = () => {
+      voicesLoading = supported && attempt < 6;
+      populateVoices();
+      if (supported && !languageVoices().length && attempt < 6) {
+        voiceTimer = setTimeout(poll, [250,500,1000,2000,4000,4000][attempt++]);
+      } else { voicesLoading = false; populateVoices(); }
+    };
+    poll();
   };
   const clearHighlight = () => { highlighted?.classList.remove('reader-highlight'); highlighted = null; };
   const cancel = () => {
     generation++;
     clearTimeout(timer);
+    clearTimeout(playbackTimer);
     timer = null;
+    playbackTimer = null;
     target = null;
     targetOrigin = null;
     currentUtterance = null;
     pageMode = false;
     clearHighlight();
-    if (supported) synth.cancel();
+    if (supported) { try { synth.cancel(); } catch { /* Keep controls usable if the speech service fails. */ } }
     sync();
   };
   const stop = () => {
     const restoreFocus = dock.contains(document.activeElement);
     settings.enabled = false;
+    pendingSpeech = null;
     save();
     cancel();
     status('stopped');
+    sync();
     if (restoreFocus) launcher.focus({preventScroll:true});
   };
   const chunks = text => {
@@ -191,50 +258,82 @@
   };
   const speak = (items, fullPage = false) => {
     cancel();
-    const voice = selectedVoice();
-    if (!voice) { status(supported ? 'unavailable' : 'unsupported'); return; }
+    if (!supported) { status('unsupported'); return; }
+    activationDenied = false;
+    pendingSpeech = {items, fullPage};
     const queue = items.flatMap(item => chunks(item.text).map(text => ({ text, element:item.element })));
-    if (!queue.length) { status('empty'); return; }
+    if (!queue.length) { pendingSpeech = null; status('empty'); sync(); return; }
+    const selected = selectedVoice();
+    const alternatives = languageVoices().filter(voice => voice !== selected).sort((a,b) => Number(genderOf(b) === settings.gender) - Number(genderOf(a) === settings.gender) || Number(Boolean(b.localService)) - Number(Boolean(a.localService)));
+    const candidates = selected ? [selected, ...alternatives.slice(0, 1), null] : [null, ...alternatives.slice(0, 2)];
+    let voiceIndex = 0;
     const token = generation;
     pageMode = fullPage;
-    if (fullPage) status('reading');
+    status(fullPage ? 'reading' : settings.enabled ? 'active' : 'ready');
     let index = 0;
     const next = () => {
       if (token !== generation) return;
       clearHighlight();
       if (index === queue.length) {
         currentUtterance = null;
+        pendingSpeech = null;
         pageMode = false;
         if (fullPage) status('done');
         sync();
         return;
       }
-      const item = queue[index++];
+      const item = queue[index];
+      const voice = candidates[voiceIndex];
       const utterance = new SpeechSynthesisUtterance(item.text);
       currentUtterance = utterance;
-      utterance.lang = voice.lang;
-      utterance.voice = voice;
+      utterance.lang = voice?.lang || locale();
+      if (voice) utterance.voice = voice;
       utterance.rate = settings.rate;
       utterance.onstart = () => {
-        if (token !== generation) return;
+        if (token !== generation || currentUtterance !== utterance) return;
+        audioUnlocked = true;
+        if (statusKey === 'blocked') status(fullPage ? 'reading' : settings.enabled ? 'active' : 'ready');
+        clearTimeout(playbackTimer);
+        playbackTimer = setTimeout(() => utterance.onerror({error:'timeout'}), Math.max(30000, item.text.length * 180 / settings.rate + 15000));
         highlighted = item.element;
         highlighted?.classList.add('reader-highlight');
-      };
-      utterance.onend = next;
-      utterance.onerror = event => {
-        if (token !== generation) return;
-        cancel();
-        settings.enabled = false;
-        save();
         sync();
+      };
+      utterance.onend = () => {
+        if (token !== generation || currentUtterance !== utterance) return;
+        clearTimeout(playbackTimer);
+        currentUtterance = null;
+        index++;
+        next();
+      };
+      utterance.onerror = event => {
+        if (token !== generation || currentUtterance !== utterance) return;
+        clearTimeout(playbackTimer);
+        currentUtterance = null;
+        if (['voice-unavailable','language-unavailable','network','synthesis-failed','synthesis-unavailable','audio-busy','timeout'].includes(event.error) && voiceIndex + 1 < candidates.length) {
+          voiceIndex++;
+          try { synth.cancel(); } catch {}
+          status('fallback');
+          next();
+          return;
+        }
+        cancel();
+        if (event.error === 'not-allowed') { audioUnlocked = false; activationDenied = true; }
+        else { settings.enabled = false; pendingSpeech = null; }
+        save();
         status(event.error === 'not-allowed' ? 'blocked' : 'error');
+        sync();
       };
       sync();
-      try { synth.speak(utterance); } catch { utterance.onerror({error:'synthesis-failed'}); }
+      playbackTimer = setTimeout(() => utterance.onerror({error:'timeout'}), 10000);
+      try {
+        if (synth.paused) synth.resume();
+        synth.speak(utterance);
+      } catch { utterance.onerror({error:'synthesis-failed'}); }
     };
     next();
   };
-  const ignored = 'script,style,noscript,svg,[hidden],[inert],[aria-hidden="true"],[data-reader-ui],dialog:not([open]),[contenteditable="true"]';
+  const ignored = 'script,style,noscript,svg,[hidden],[inert],[aria-hidden="true"],[data-reader-ui],dialog:not([open]),[contenteditable]:not([contenteditable="false"])';
   const visible = element => element && !element.closest(ignored) && element.getClientRects().length > 0 && getComputedStyle(element).visibility === 'visible';
   const labelText = element => {
     const labelled = element.getAttribute('aria-labelledby');
@@ -268,6 +367,7 @@
   };
   const schedule = (element, origin) => {
     if (!settings.enabled || pageMode || panel.open || !element || element === target) return;
+    if (needsActivation()) { status('blocked'); sync(); return; }
     const text = plainText(element);
     if (!text.trim()) return;
     cancel();
@@ -296,17 +396,23 @@
   const closePanel = () => {
     suppressFocus = true;
     panel.close();
+    sync();
     queueMicrotask(() => { suppressFocus = false; });
   };
-  const openPanel = () => { cancel(); populateVoices(); panel.showModal(); };
+  const openPanel = () => { cancel(); pendingSpeech = null; refreshVoices(); if (!panel.open) panel.showModal(); sync(); };
   launcher.addEventListener('click', openPanel);
   document.querySelectorAll('[data-reader-open]').forEach(button => {
     button.hidden = false;
     button.addEventListener('click', openPanel);
   });
   $('[data-reader-close]').addEventListener('click', () => { cancel(); closePanel(); });
-  panel.addEventListener('click', event => { if (event.target === panel) { cancel(); closePanel(); } });
+  panel.addEventListener('click', event => {
+    if (event.target !== panel) return;
+    const rect = panel.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) { cancel(); closePanel(); }
+  });
   panel.addEventListener('cancel', () => stop());
+  panel.addEventListener('close', sync);
   document.querySelectorAll('[data-reader-stop]').forEach(button => button.addEventListener('click', stop));
   $('[data-reader-enable]').addEventListener('click', () => {
     if (settings.enabled) { stop(); return; }
@@ -318,12 +424,18 @@
   });
   $('[data-reader-preview]').addEventListener('click', () => speak([{text:t('sample')}]));
   $('[data-reader-page]').addEventListener('click', () => { closePanel(); readPage(); });
+  $('[data-reader-refresh]').addEventListener('click', refreshVoices);
+  document.querySelectorAll('[data-reader-activate]').forEach(button => button.addEventListener('click', () => {
+    const pending = pendingSpeech;
+    status(settings.enabled ? 'active' : 'ready');
+    speak(pending?.items || [{text:t('active')}], pending?.fullPage || false);
+  }));
   $('#reader-gender').addEventListener('change', event => {
     cancel();
     settings.gender = event.target.value;
     delete settings.voices[locale()];
     save();
-    populateVoices();
+    populateVoices(true);
   });
   voiceSelect.addEventListener('change', () => { cancel(); settings.voices[locale()] = voiceSelect.value; save(); });
   $('#reader-rate').addEventListener('change', event => { cancel(); settings.rate = Number(event.target.value); save(); });
@@ -336,8 +448,11 @@
   document.addEventListener('focusin', event => { if (!suppressFocus) schedule(readableTarget(event.target), 'focus'); });
   document.addEventListener('focusout', event => { if (targetOrigin === 'focus' && target?.contains(event.target)) cancel(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') stop(); });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) cancel(); });
-  window.addEventListener('pagehide', cancel);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancel(); pendingSpeech = null; status(settings.enabled ? 'active' : 'stopped'); sync(); }
+  });
+  window.addEventListener('pagehide', () => { clearTimeout(voiceTimer); cancel(); });
+  window.addEventListener('focus', refreshVoices);
   const translate = () => {
     for (const element of document.querySelectorAll('[data-reader-key]')) element.textContent = t(element.dataset.readerKey);
     for (const element of [launcher, panel, dock]) element.lang = locale();
@@ -348,7 +463,12 @@
     status(statusKey);
     populateVoices();
   };
-  document.addEventListener('esperanca:languagechange', () => { cancel(); statusKey = 'ready'; translate(); });
-  if (supported) synth.addEventListener('voiceschanged', populateVoices);
+  document.addEventListener('esperanca:languagechange', () => { cancel(); pendingSpeech = null; statusKey = 'ready'; translate(); refreshVoices(); });
+  if (supported) {
+    if (typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', populateVoices);
+    else synth.onvoiceschanged = populateVoices;
+  }
   translate();
+  refreshVoices();
+  if (settings.enabled) { status(needsActivation() ? 'blocked' : 'active'); sync(); }
 })();

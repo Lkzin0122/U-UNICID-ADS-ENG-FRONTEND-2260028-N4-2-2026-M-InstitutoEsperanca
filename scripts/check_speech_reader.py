@@ -3,6 +3,7 @@
 Speech is mocked to verify utterances and cancellation deterministically, without
 depending on installed voices or playing audio during automated tests.
 """
+import argparse
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -17,8 +18,9 @@ ARTIFACTS.mkdir(exist_ok=True)
 MOCK = r"""
 window.__speechLog = [];
 window.__speechVoices = [
-  {name:'Microsoft Maria', lang:'pt-BR', voiceURI:'maria', default:true},
-  {name:'Microsoft Daniel', lang:'pt-BR', voiceURI:'daniel'},
+  {name:'Microsoft Maria', lang:'pt-BR', voiceURI:'maria', default:true, localService:true},
+  {name:'Microsoft Daniel', lang:'pt-BR', voiceURI:'daniel', localService:true},
+  {name:'Luciana', lang:'pt-BR', voiceURI:'luciana', localService:true},
   {name:'Microsoft Zira', lang:'en-US', voiceURI:'zira'},
   {name:'Microsoft David', lang:'en-US', voiceURI:'david'},
   ...['de-DE','fr-FR','es-MX','ru-RU','ja-JP','zh-CN','hi-IN'].map(lang => ({name:'Test voice ' + lang, lang, voiceURI:lang})),
@@ -28,9 +30,10 @@ class MockSpeech extends EventTarget {
   speak(utterance) {
     this.current = utterance;
     window.__speechLog.push({text:utterance.text, lang:utterance.lang, voice:utterance.voice?.name, rate:utterance.rate});
-    utterance.onstart?.();
+    if (!this.paused && !window.__speechSkipStart) utterance.onstart?.();
   }
   cancel() { const previous = this.current; this.current = null; previous?.onerror?.({error:'interrupted'}); }
+  resume() { this.paused = false; window.__speechResumed = (window.__speechResumed || 0) + 1; }
 }
 Object.defineProperty(window, 'speechSynthesis', {value:new MockSpeech(), configurable:true});
 window.SpeechSynthesisUtterance = class { constructor(text) { this.text = text; } };
@@ -43,13 +46,15 @@ class QuietHandler(SimpleHTTPRequestHandler):
         pass
 
 
-def check():
+def check(browser_name):
+    artifacts = ARTIFACTS / browser_name
+    artifacts.mkdir(exist_ok=True)
     server = ThreadingHTTPServer(('127.0.0.1', 0), partial(QuietHandler, directory=str(ROOT)))
     Thread(target=server.serve_forever, daemon=True).start()
     base = f'http://127.0.0.1:{server.server_port}'
     try:
         with sync_playwright() as playwright:
-            browser = playwright.chromium.launch()
+            browser = getattr(playwright, browser_name).launch()
             context = browser.new_context(viewport={'width':1440, 'height':1000})
             context.add_init_script(MOCK)
             page = context.new_page()
@@ -72,7 +77,30 @@ def check():
             page.locator('#reader-gender').select_option('female')
             page.locator('[data-reader-preview]').click()
             assert page.evaluate('__speechLog.at(-1).voice') == 'Microsoft Maria'
-            page.screenshot(path=str(ARTIFACTS / 'panel-desktop.png'))
+            # Changing voice preferences must not dismiss or disable desktop fields.
+            page.locator('#reader-gender').focus()
+            page.keyboard.press('Home')
+            page.keyboard.press('ArrowDown')
+            page.keyboard.press('ArrowDown')
+            page.keyboard.press('Tab')
+            assert page.locator('#reader-gender').input_value() == 'male'
+            assert page.locator('#speech-reader-panel').evaluate('(el) => el.open')
+            page.locator('#reader-gender').select_option('female')
+            page.locator('#reader-voice').select_option('luciana|pt-BR|Luciana')
+            page.locator('[data-reader-preview]').click()
+            assert page.evaluate('__speechLog.at(-1).voice') == 'Luciana'
+            page.evaluate('speechSynthesis.dispatchEvent(new Event("voiceschanged"))')
+            assert page.locator('#reader-voice').input_value() == 'luciana|pt-BR|Luciana'
+            page.locator('#reader-voice').click()
+            page.evaluate('speechSynthesis.dispatchEvent(new Event("voiceschanged"))')
+            page.keyboard.press('Home')
+            page.keyboard.press('ArrowDown')
+            page.keyboard.press('Enter')
+            assert page.locator('#reader-voice').input_value() == 'maria|pt-BR|Microsoft Maria'
+            assert page.locator('#speech-reader-panel').evaluate('(el) => el.open')
+            page.locator('#reader-gender').select_option('male')
+            page.locator('#reader-gender').select_option('female')
+            page.screenshot(path=str(artifacts / 'panel-desktop.png'))
 
             # Dialog traps focus and returns it to the launcher when dismissed.
             page.locator('[data-reader-close]').focus()
@@ -93,6 +121,16 @@ def check():
 
             # Keyboard reads accessible names; typed fields are never spoken.
             page.goto(base + '/contato.html')
+            assert page.evaluate('__speechLog.length') == 0, 'Navigation itself must stay silent'
+            already_activated = page.evaluate('navigator.userActivation?.hasBeenActive === true')
+            page.locator('h1').hover()
+            page.wait_for_timeout(450)
+            if not already_activated:
+                assert page.evaluate('__speechLog.length') == 0, 'Missing audio activation must not trigger speech'
+                assert page.locator('.reader-dock [data-reader-activate]').is_visible()
+            page.keyboard.press('Tab')
+            page.wait_for_timeout(450)
+            assert page.evaluate('__speechLog.length') > 0, 'Keyboard navigation provides a user activation too'
             page.locator('#nome').fill('PRIVATE-NAME-DO-NOT-SPEAK')
             page.locator('#nome').focus()
             page.wait_for_timeout(450)
@@ -130,7 +168,7 @@ def check():
             page.goto(base + '/sobre.html')
             page.evaluate("""() => {
               const main = document.querySelector('main');
-              main.innerHTML = '<h1>First heading</h1><p>First paragraph.</p><div hidden><p>HIDDEN-TEXT</p></div><p aria-hidden="true">SECRET-DECORATION</p><p>' + 'Long readable text. '.repeat(30) + '</p><label for="private">Your name</label><input id="private" value="SECRET-INPUT"><p>Last paragraph.</p>';
+              main.innerHTML = '<h1>First heading</h1><p>First paragraph.</p><div hidden><p>HIDDEN-TEXT</p></div><p aria-hidden="true">SECRET-DECORATION</p><div contenteditable>SECRET-EDITOR</div><p>' + 'Long readable text. '.repeat(30) + '</p><label for="private">Your name</label><input id="private" value="SECRET-INPUT"><p>Last paragraph.</p>';
             }""")
             page.locator('.reader-launcher').click()
             page.locator('[data-reader-page]').click()
@@ -151,31 +189,117 @@ def check():
             page.evaluate('__finishSpeech()')
             assert page.evaluate('__speechLog.length') == before, 'Cancel must not advance the queue'
 
-            # Late voice loading, missing languages and playback errors.
+            # Empty voice catalogs must not lock supported desktop controls.
             page.goto(base + '/acessibilidade.html')
+            page.locator('#language-picker').select_option('pt-BR')
+            page.wait_for_function('document.documentElement.lang === "pt-BR"')
             page.evaluate('window.__savedVoices = __speechVoices; __speechVoices = []; speechSynthesis.dispatchEvent(new Event("voiceschanged"))')
             page.locator('.reader-launcher').click()
-            assert page.locator('[data-reader-preview]').is_disabled()
+            for selector in ['#reader-gender', '#reader-rate', '#reader-voice', '[data-reader-preview]', '[data-reader-enable]', '[data-reader-page]']:
+                assert page.locator(selector).is_enabled(), selector
             assert page.locator('#reader-voice-note').inner_text()
-            page.evaluate('__speechVoices = __savedVoices; speechSynthesis.dispatchEvent(new Event("voiceschanged"))')
-            assert page.locator('[data-reader-preview]').is_enabled()
+            page.locator('#reader-gender').select_option('female')
+            page.locator('[data-reader-preview]').click()
+            assert page.evaluate('__speechLog.at(-1).lang') == 'pt-BR'
+            assert page.evaluate('__speechLog.at(-1).voice') is None
+            # Some browsers fill getVoices without sending voiceschanged.
+            page.evaluate('__speechVoices = __savedVoices')
+            page.wait_for_function('document.querySelector("#reader-voice").options.length > 1')
+            page.locator('#reader-voice').select_option('auto')
+            page.locator('[data-reader-refresh]').click()
+            assert page.locator('#reader-voice').input_value() == 'auto', 'Explicit automatic selection must persist'
             page.locator('[data-reader-preview]').click()
             page.evaluate('speechSynthesis.current.onerror({error:"not-allowed"})')
-            assert 'click' in page.locator('[data-reader-status]').inner_text()
-            assert not page.locator('.reader-dock').is_visible()
+            assert 'Liberar áudio' in page.locator('.reader-panel [data-reader-status]').inner_text()
+            assert page.locator('.reader-panel [data-reader-activate]').is_visible()
+            page.locator('.reader-panel [data-reader-activate]').click()
+            assert page.evaluate('speechSynthesis.current') is not None
+            assert page.locator('.reader-panel [data-reader-activate]').is_hidden()
             page.locator('[data-reader-close]').click()
+
+            # Resuming a paused browser engine, replacing a failed voice, and
+            # ignoring late callbacks must not strand the page reading queue.
+            page.locator('.reader-launcher').click()
+            page.locator('#reader-gender').select_option('male')
+            page.locator('#reader-gender').select_option('female')
+            page.evaluate('speechSynthesis.paused = true')
+            page.locator('[data-reader-preview]').click()
+            assert page.evaluate('__speechResumed') == 1
+            assert page.evaluate('__speechLog.at(-1).voice') == 'Microsoft Maria'
+            page.evaluate('window.__staleSpeech = speechSynthesis.current; speechSynthesis.current.onerror({error:"voice-unavailable"})')
+            assert page.evaluate('__speechLog.at(-1).voice') == 'Luciana'
+            before = page.evaluate('__speechLog.length')
+            page.evaluate('__staleSpeech.onend(); __staleSpeech.onerror({error:"interrupted"})')
+            assert page.evaluate('__speechLog.length') == before
+            assert page.evaluate('speechSynthesis.current.voice.name') == 'Luciana'
+            page.evaluate('speechSynthesis.current.onerror({error:"network"})')
+            assert page.evaluate('__speechLog.at(-1).voice') is None
+            page.evaluate('speechSynthesis.current.onerror({error:"synthesis-failed"})')
+            assert 'Não foi possível' in page.locator('.reader-panel [data-reader-status]').inner_text()
+            assert page.locator('[data-reader-preview]').is_enabled()
+            page.locator('[data-reader-close]').click()
+            assert page.locator('.reader-dock').is_visible(), 'Playback failures must be visible outside the closed panel'
+            page.locator('.reader-dock [data-reader-stop]').click()
+            assert page.locator('.reader-dock').is_hidden()
+
+            # Silent engines that never send onstart/onend have bounded retries.
+            page.clock.install()
+            page.locator('.reader-launcher').click()
+            page.evaluate('__speechSkipStart = true')
+            page.locator('[data-reader-preview]').click()
+            page.clock.fast_forward(10001)
+            assert page.evaluate('__speechLog.at(-1).voice') == 'Luciana'
+            page.clock.fast_forward(10001)
+            page.clock.fast_forward(10001)
+            assert page.evaluate('speechSynthesis.current') is None
+            assert 'Não foi possível' in page.locator('.reader-panel [data-reader-status]').inner_text()
+            page.evaluate('__speechSkipStart = false')
+            page.locator('[data-reader-preview]').click()
+            for _ in range(3):
+                page.clock.fast_forward(120000)
+            assert page.evaluate('speechSynthesis.current') is None, 'Missing end event must not hang forever'
+            page.locator('[data-reader-close]').click()
+            page.locator('.reader-dock [data-reader-stop]').click()
+            page.clock.resume()
+
+            # Pointer clicks in panel padding and closed overlays leave the
+            # desktop page usable; no invisible modal may cover the content.
+            page.locator('.reader-launcher').click()
+            rect = page.locator('#speech-reader-panel').bounding_box()
+            page.mouse.click(rect['x'] + 5, rect['y'] + 5)
+            assert page.locator('#speech-reader-panel').evaluate('(el) => el.open')
+            page.keyboard.press('Escape')
+            assert not page.locator('#speech-reader-panel').evaluate('(el) => el.open')
+            page.locator('[data-theme-preference]').select_option('dark')
+            page.locator('[data-theme-preference]').select_option('light')
+
+            # Color filters must not move the stop control below the document.
+            # This also exercises top-layer controls without making the page inert.
+            for width in [1440, 390, 320]:
+                page.set_viewport_size({'width':width, 'height':844})
+                for profile in ['off', 'achromatopsia']:
+                    page.locator('select[data-color-vision]').select_option(profile)
+                    page.locator('.reader-launcher').click()
+                    page.locator('[data-reader-enable]').click()
+                    page.evaluate('window.scrollTo(0, 400)')
+                    assert page.locator('.reader-dock').evaluate('(el) => { const r=el.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight && r.left >= 0 && r.right <= innerWidth; }'), (width, profile)
+                    page.locator('.reader-dock [data-reader-stop]').click()
+                    assert page.locator('.reader-dock').is_hidden()
+                page.evaluate('window.scrollTo(0, 0)')
+            page.set_viewport_size({'width':1440, 'height':1000})
+            page.locator('[data-visual-reset]').click()
 
             # All pages load the shared entry point, even on mobile and with large text.
             for file in ROOT.glob('*.html'):
-                page.goto(base + '/' + file.name)
+                page.goto(base + '/' + file.name, wait_until='domcontentloaded')
                 assert page.locator('.reader-launcher').count() == 1, file.name
             page.goto(base + '/acessibilidade.html')
             page.locator('#language-picker').select_option('pt-BR')
             page.wait_for_function('document.documentElement.lang === "pt-BR"')
-            page.locator('section[aria-labelledby="titulo-ajustes"]').screenshot(path=str(ARTIFACTS / 'accessibility-desktop.png'))
+            page.locator('section[aria-labelledby="titulo-ajustes"]').screenshot(path=str(artifacts / 'accessibility-desktop.png'))
             page.set_viewport_size({'width':390, 'height':844})
             page.locator('.reader-launcher').click()
-            page.screenshot(path=str(ARTIFACTS / 'panel-mobile.png'))
+            page.screenshot(path=str(artifacts / 'panel-mobile.png'))
             page.locator('[data-reader-close]').click()
             page.locator('[data-font-size="increase"]').click(click_count=10)
             page.locator('.reader-launcher').click()
@@ -185,13 +309,14 @@ def check():
             page.locator('[data-font-size="reset"]').click()
             page.locator('[data-theme-preference]').select_option('dark')
             page.locator('.reader-launcher').click()
-            page.screenshot(path=str(ARTIFACTS / 'panel-dark.png'))
+            page.screenshot(path=str(artifacts / 'panel-dark.png'))
             assert not errors, errors
             context.close()
 
             unavailable = browser.new_context()
             unavailable.add_init_script("Object.defineProperty(window, 'speechSynthesis', {value:undefined});")
             other = unavailable.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
             other.goto(base + '/index.html')
             other.locator('.reader-launcher').click()
             assert other.locator('[data-reader-enable]').is_disabled()
@@ -201,6 +326,7 @@ def check():
             no_storage = browser.new_context()
             no_storage.add_init_script(MOCK + "Object.defineProperty(window, 'localStorage', {get(){throw new Error('Storage blocked')}});")
             other = no_storage.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
             other.goto(base + '/index.html')
             other.locator('.reader-launcher').click()
             other.locator('[data-reader-enable]').click()
@@ -208,12 +334,75 @@ def check():
             other.wait_for_timeout(450)
             assert other.evaluate('__speechLog.length') >= 2
             no_storage.close()
+
+            fresh = browser.new_context()
+            # Playwright evaluation/actions can set native userActivation, so
+            # explicitly pin the inactive state for this permission scenario.
+            fresh.add_init_script(MOCK + "Object.defineProperty(navigator, 'userActivation', {value:{hasBeenActive:false}}); localStorage.setItem('esperanca-speech-preferences', JSON.stringify({enabled:true}));")
+            other = fresh.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
+            other.goto(base + '/index.html')
+            other.locator('h1').hover()
+            other.wait_for_timeout(450)
+            assert other.evaluate('__speechLog.length') == 0, 'Saved preferences must not bypass a fresh browser activation'
+            other.locator('.reader-dock [data-reader-activate]').click()
+            assert other.evaluate('__speechLog.length') == 1
+            other.locator('.reader-dock [data-reader-stop]').click()
+            fresh.close()
+
+            # Engines with a throwing voice service or only the legacy event
+            # property still offer automatic playback and recoverable settings.
+            legacy = browser.new_context()
+            legacy.add_init_script(MOCK + "speechSynthesis.addEventListener = undefined; speechSynthesis.getVoices = () => {throw new Error('Voice service starting')};")
+            other = legacy.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
+            other.goto(base + '/index.html')
+            other.locator('.reader-launcher').click()
+            other.locator('#reader-gender').select_option('female')
+            other.locator('[data-reader-preview]').click()
+            assert other.evaluate('__speechLog.at(-1).voice') is None
+            other.evaluate("__speechVoices = [{name:'Microsoft Daniel', lang:'pt-BR', voiceURI:'daniel', default:true}, {name:'Luciana', lang:'pt-BR', voiceURI:'luciana'}]; speechSynthesis.getVoices = () => __speechVoices; speechSynthesis.onvoiceschanged()")
+            other.locator('[data-reader-preview]').click()
+            assert other.evaluate('__speechLog.at(-1).voice') == 'Luciana', 'Female preference must work with non-Microsoft voices'
+            other.locator('[data-reader-close]').click()
+            legacy.close()
+
+            touch = browser.new_context(viewport={'width':390, 'height':844}, has_touch=True)
+            touch.add_init_script(MOCK)
+            other = touch.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
+            other.goto(base + '/index.html')
+            other.locator('.reader-launcher').tap()
+            other.locator('[data-reader-page]').tap()
+            assert other.evaluate('__speechLog.length') == 1
+            other.evaluate('__finishSpeech()')
+            assert 'Toda mudança' in other.evaluate('__speechLog.at(-1).text')
+            other.locator('.reader-dock [data-reader-stop]').tap()
+            assert other.evaluate('speechSynthesis.current') is None
+            touch.close()
+
+            # Inspect real platform support as well, without producing audio.
+            native = browser.new_context()
+            other = native.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
+            other.goto(base + '/index.html')
+            other.locator('.reader-launcher').click()
+            native_supported = other.evaluate('Boolean(window.speechSynthesis && window.SpeechSynthesisUtterance)')
+            assert other.locator('[data-reader-preview]').is_enabled() == native_supported
+            other.locator('[data-reader-close]').click()
+            assert not other.locator('#speech-reader-panel').evaluate('(el) => el.open')
+            native.close()
+            assert not errors, errors
             browser.close()
-        print('PASS: hover, keyboard, stop, 9 languages, voices, page queue, privacy, storage, mobile and 12 pages.')
-        print(f'Screenshots: {ARTIFACTS}')
+        print(f'PASS ({browser_name}): desktop controls, automatic/female voices, delayed discovery, activation, engine errors/timeouts, hover, keyboard, stop, 9 languages, page queue, privacy, storage, mobile and 12 pages.')
+        print(f'Screenshots: {artifacts}')
     finally:
         server.shutdown()
 
 
 if __name__ == '__main__':
-    check()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--browser', choices=['chromium', 'firefox', 'webkit', 'all'], default='chromium')
+    browser = parser.parse_args().browser
+    for browser_name in (['chromium', 'firefox', 'webkit'] if browser == 'all' else [browser]):
+        check(browser_name)

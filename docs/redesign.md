@@ -94,3 +94,5 @@ O [Nu Html Checker da W3C](https://validator.w3.org/nu/) permite validar um arqu
 Exemplo de requisição: `POST https://validator.w3.org/nu/?out=json`, com o documento no corpo e o cabeçalho `Content-Type: text/html; charset=utf-8`. Esse procedimento envia o conteúdo HTML ao serviço externo; não é necessário publicar o site previamente.
 
 Execute a validação sobre os arquivos gerados após mudanças. A validação de marcação complementa a revisão de navegação, teclado, responsividade e mídia; ela não certifica acessibilidade. Este documento descreve a manutenção e não substitui um relatório dos testes efetivamente realizados.
+
+Em 14/11/2026, o Nu Html Checker verificou as 12 páginas sem erros ou avisos. Os resultados, a versão do verificador e os hashes dos arquivos estão em [w3c-validation.json](w3c-validation.json).

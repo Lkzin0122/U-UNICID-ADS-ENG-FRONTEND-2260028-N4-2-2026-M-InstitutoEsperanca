@@ -148,6 +148,11 @@ kbd{font:inherit;font-size:.85em;background:var(--tint);border:1px solid var(--l
 /* A composição da index permite que os textos cresçam sem alargar as colunas. */
 .home-page :is(.hero-grid,.intro-grid,.project-grid,.participation-grid,.trust-grid,.explore-grid,.footer-grid,.footer-nav)>*{min-width:0}
 .home-page :is(h1,h2,h3,p,.button,.text-link,.hero-footnote,.hero-sticker,.footer-nav a){overflow-wrap:anywhere}
+/* Preserve readability when long headings or links meet narrow screens and zoom. */
+main :is(h1,h2,h3,h4,p,.button,.text-link){overflow-wrap:anywhere}
+.split>*,.grid-2>*,.grid-3>*,.footer-grid>*,.footer-nav>*{min-width:0}
+.footer-nav :is(h2,a){overflow-wrap:anywhere}
+@media(max-width:390px){.page-hero h1{font-size:clamp(2rem,10vw,2.6rem)}}
 .home-page :is(.button,.text-link,.hero-footnote)>[aria-hidden],.home-page .purpose-grid p>span{flex-shrink:0}
 .home-page .path-row>div{min-width:0}
 .home-page .path-number{flex-shrink:0}

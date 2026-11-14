@@ -14,12 +14,16 @@
 .reader-fields .field{margin:0}
 .reader-voices{grid-column:1/-1}
 .reader-fields select{max-width:100%}
+.reader-refresh{align-self:flex-start;min-height:44px;padding:8px 14px;font-size:.8rem}
 .reader-actions{display:flex;flex-wrap:wrap;gap:10px;margin-block:22px 16px}
 .reader-actions .button{flex:1;padding:10px 14px;font-size:.8rem}
 .reader-panel .reader-status{padding:12px 14px;border-radius:8px;background:var(--tint);color:var(--ink);font-size:.8rem}
 .reader-panel .reader-hint{margin-top:14px;font-size:.72rem}
 .reader-panel button:disabled{opacity:.55;cursor:not-allowed;transform:none}
-.reader-dock{position:fixed;z-index:65;left:20px;bottom:20px;display:flex;align-items:stretch;max-width:calc(100vw - 40px);border:1px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink);box-shadow:0 8px 24px #0002}
+.reader-dock{position:fixed;inset:auto;z-index:65;left:20px;bottom:20px;margin:0;padding:0;display:flex;flex-direction:column;align-items:stretch;width:max-content;max-width:min(420px,calc(100vw - 40px));border:1px solid var(--line);border-radius:12px;background:var(--white);color:var(--ink);box-shadow:0 8px 24px #0002}
+.reader-dock::backdrop{background:transparent;pointer-events:none}
+.reader-dock-status{margin:0;padding:10px 14px;border-bottom:1px solid var(--line);font-size:.78rem;line-height:1.5;overflow-wrap:anywhere}
+.reader-dock-actions{display:flex;flex-wrap:wrap}
 .reader-dock button{display:flex;align-items:center;justify-content:center;gap:10px;min-height:48px;min-width:48px;padding:10px 14px;border:0;border-radius:12px;background:transparent;color:inherit;font-size:.8rem;font-weight:700}
 .reader-dock button+button{border-left:1px solid var(--line);border-radius:0 12px 12px 0}
 .reader-highlight{outline:3px solid var(--focus);outline-offset:4px;border-radius:3px}
