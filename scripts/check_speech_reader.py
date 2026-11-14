@@ -45,6 +45,16 @@ window.__finishSpeech = () => { const current = speechSynthesis.current; speechS
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
+    # This suite isolates the native browser contract. The bundled WebAssembly
+    # engine is exercised with real audio synthesis by check_bundled_speech.py.
+    def do_GET(self):
+        if self.path == "/js/speech-engine.js":
+            self.send_response(200)
+            self.send_header("Content-Type", "application/javascript")
+            self.end_headers()
+            return
+        super().do_GET()
+
     def log_message(self, *args):
         pass
 

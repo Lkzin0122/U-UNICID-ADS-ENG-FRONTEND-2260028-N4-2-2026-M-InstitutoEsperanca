@@ -303,3 +303,8 @@ Os cinco prompts abaixo foram revisados para melhorar a clareza, mantendo a inte
 Os pedidos foram transformados em mudancas de codigo e verificados com analise estatica, testes automatizados e inspecao visual. Os testes de integracao simulam os servicos externos quando indicado, evitando envios de e-mail ou reproducao de audio durante a execucao.
 
 Essas verificacoes ajudam a identificar regressoes, mas nao garantem ausencia de falhas em todos os dispositivos. As vozes disponiveis dependem do navegador e do sistema; o envio real depende da configuracao do EmailJS e da autorizacao da conta de e-mail. A revisao da equipe e os testes com pessoas usuarias continuam necessarios.
+
+
+## 17. Voz pronta incluida
+
+O leitor agora inclui vozes sintetizadas locais para os nove idiomas, com variantes feminina e masculina. Elas funcionam mesmo sem vozes instaladas no dispositivo e sao identificadas como "Voz pronta do site". O primeiro uso carrega o motor de voz; nao exige chave de API. Consulte [vozes prontas](vozes-prontas.md).

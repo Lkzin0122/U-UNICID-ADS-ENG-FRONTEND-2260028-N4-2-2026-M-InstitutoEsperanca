@@ -29,6 +29,7 @@ SHARED_SCRIPTS = (
     "js/chat-copy.js",
     "js/accessibility.js",
     "js/site.js",
+    "js/speech-engine.js",
     "js/speech-reader.js",
     "js/chatbot.js",
 )
