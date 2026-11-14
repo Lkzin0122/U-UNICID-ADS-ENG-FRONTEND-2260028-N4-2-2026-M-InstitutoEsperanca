@@ -429,9 +429,41 @@
     },
   };
   for (const language of Object.keys(copy)) Object.assign(copy[language], voiceCopy[language]);
+  const bundledNames = {
+    'pt-BR': 'Voz pronta do site',
+    en: 'Built-in site voice',
+    'es-419': 'Voz incluida del sitio',
+    fr: 'Voix intégrée au site',
+    de: 'Integrierte Website-Stimme',
+    'zh-CN': '网站内置语音',
+    ru: 'Встроенный голос сайта',
+    ja: 'サイト内蔵の音声',
+    hi: 'साइट की अंतर्निहित आवाज़',
+  };
+  for (const language of Object.keys(copy)) copy[language].bundled = bundledNames[language];
+  const loadingBundled = {
+    'pt-BR': 'Preparando a voz do site. O primeiro uso pode demorar alguns instantes.',
+    en: 'Preparing the built-in voice. The first use may take a moment.',
+    'es-419': 'Preparando la voz del sitio. El primer uso puede tardar un momento.',
+    fr: 'Préparation de la voix intégrée. La première utilisation peut prendre un instant.',
+    de: 'Die integrierte Stimme wird vorbereitet. Der erste Start kann einen Moment dauern.',
+    'zh-CN': '正在准备内置语音。首次使用可能需要一些时间。',
+    ru: 'Подготовка встроенного голоса. Первый запуск может занять некоторое время.',
+    ja: '内蔵音声を準備しています。初回は少し時間がかかります。',
+    hi: 'साइट की आवाज़ तैयार हो रही है। पहली बार कुछ समय लग सकता है।',
+  };
+  for (const language of Object.keys(copy))
+    copy[language].loadingBundled = loadingBundled[language];
   const root = document.documentElement;
-  const synth = window.speechSynthesis;
-  const supported = Boolean(synth && window.SpeechSynthesisUtterance);
+  const synth = window.esperancaSpeechEngine || window.speechSynthesis;
+  const Utterance =
+    window.SpeechSynthesisUtterance ||
+    class {
+      constructor(text) {
+        this.text = text;
+      }
+    };
+  const supported = Boolean(synth);
   const storageKey = 'esperanca-speech-preferences';
   const settings = { enabled: false, gender: 'auto', rate: 1, voices: {} };
   try {
@@ -546,6 +578,7 @@
   const rankedVoices = () =>
     languageVoices().sort(
       (a, b) =>
+        Number(Boolean(a.bundled)) - Number(Boolean(b.bundled)) ||
         Number(normalize(b.lang) === normalize(speechLocale())) -
           Number(normalize(a.lang) === normalize(speechLocale())) ||
         Number(Boolean(b.default)) - Number(Boolean(a.default)) ||
@@ -561,6 +594,7 @@
     male: /\b(daniel|antonio|david|mark|george|guy|ryan|stefan|conrad|paul|henri|pablo|raul|alvaro|jorge|pavel|dmitry|ichiro|keita|kangkang|yunxi|yunjian|hemant|madhur)(?:neural|multilingual)?\b/i,
   };
   const genderOf = (voice) => {
+    if (voice.bundled) return voice.gender;
     const name = voice.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     if (/\b(female|feminina|feminine)\b/i.test(name)) return 'female';
     if (/\b(male|masculina|masculine)\b/i.test(name)) return 'male';
@@ -645,7 +679,7 @@
           const gender = genderOf(voice);
           voiceSelect.append(
             new Option(
-              `${voice.name} · ${voice.lang}${gender ? ` · ${t(gender)}` : ''}`,
+              `${voice.bundled ? t('bundled') : voice.name} · ${voice.lang}${gender ? ` · ${t(gender)}` : ''}`,
               voiceId(voice),
             ),
           );
@@ -760,7 +794,10 @@
       );
     // Retry only explicit voices in this language. A device-default fallback can
     // pronounce Hindi (or any other selected language) with the wrong voice.
-    const candidates = [selected, ...alternatives.slice(0, 2)];
+    const bundled = alternatives.find((voice) => voice.bundled);
+    const candidates = [
+      ...new Set([selected, ...alternatives.slice(0, bundled ? 1 : 2), bundled].filter(Boolean)),
+    ];
     let voiceIndex = 0;
     const token = generation;
     pageMode = fullPage;
@@ -779,7 +816,7 @@
       }
       const item = queue[index];
       const voice = candidates[voiceIndex];
-      const utterance = new SpeechSynthesisUtterance(item.text);
+      const utterance = voice.bundled ? { text: item.text } : new Utterance(item.text);
       currentUtterance = utterance;
       utterance.lang = voice.lang.replaceAll('_', '-');
       utterance.voice = voice;
@@ -787,7 +824,7 @@
       utterance.onstart = () => {
         if (token !== generation || currentUtterance !== utterance) return;
         audioUnlocked = true;
-        if (statusKey === 'blocked')
+        if (statusKey === 'blocked' || statusKey === 'loadingBundled')
           status(fullPage ? 'reading' : settings.enabled ? 'active' : 'ready');
         clearTimeout(playbackTimer);
         playbackTimer = setTimeout(
@@ -842,8 +879,12 @@
         sync();
       };
       sync();
-      playbackTimer = setTimeout(() => utterance.onerror({ error: 'timeout' }), 10000);
+      playbackTimer = setTimeout(
+        () => utterance.onerror({ error: 'timeout' }),
+        voice.bundled ? 60000 : 10000,
+      );
       try {
+        if (voice.bundled) status('loadingBundled');
         if (synth.paused) synth.resume();
         synth.speak(utterance);
       } catch {

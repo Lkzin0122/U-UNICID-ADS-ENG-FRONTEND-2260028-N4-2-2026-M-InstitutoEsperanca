@@ -1,0 +1,10 @@
+{
+  "package": "espeak-ng",
+  "version": "1.0.2",
+  "integrity": "sha512-Xe4YC7d/+O06zYpsqrJ3LpbETdL/IO8JrnAmWcQEMoRFmMLWU+2y2HnpEkOCnqZfb40MBDVyP4ppfusKdWbPcQ==",
+  "source": {
+    "url": "git+https://github.com/ianmarmour/espeak-ng.js.git",
+    "type": "git"
+  },
+  "tarball": "https://registry.npmjs.org/espeak-ng/-/espeak-ng-1.0.2.tgz"
+}
