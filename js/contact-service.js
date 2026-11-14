@@ -2,6 +2,7 @@
 (() => {
   'use strict';
   let busy = false;
+  // FORMATO DO E-MAIL: valida a estrutura; não comprova que a caixa exista.
   function validEmail(value) {
     if (typeof value !== 'string' || value.length > 254 || /\s/.test(value)) return false;
     const parts = value.split('@');
@@ -27,6 +28,7 @@
       return false;
     }
   }
+  // SERVIÇO COMPARTILHADO: formulário e chatbot usam o mesmo envio pelo EmailJS.
   async function send(params, { signal } = {}) {
     if (!validEmail(params.reply_to)) throw new Error('invalid_email');
     if (

@@ -1,7 +1,8 @@
-/* Native voices plus ready-to-use local eSpeak NG voices. No text leaves the site. */
+/* Motor de voz: integra vozes nativas e eSpeak NG local sem enviar o texto a uma API. */
 (() => {
   'use strict';
   const native = window.speechSynthesis;
+  // IDIOMAS: relaciona o idioma do site à voz incluída no eSpeak NG.
   const tags = {
     'pt-BR': ['pt-br', 'pt-BR'],
     en: ['en-us', 'en-US'],
@@ -40,6 +41,7 @@
     active = null;
     utterance?.onerror?.({ error });
   }
+  // INTERRUPÇÃO: para o áudio e descarta síntese pendente quando necessário.
   function cancel() {
     const synthesizing = Boolean(active && !source);
     sequence++;
@@ -61,6 +63,7 @@
       native?.cancel();
     } catch {}
   }
+  // REPRODUÇÃO: encaminha a voz nativa ou gera áudio local no Worker.
   function speak(utterance) {
     if (!utterance.voice?.bundled) {
       native.speak(utterance);

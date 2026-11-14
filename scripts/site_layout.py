@@ -2,6 +2,7 @@
 
 from html import escape
 
+# MENU: uma definição compartilhada mantém os links consistentes nas 12 páginas.
 NAV = [
     ("Início", "index.html"),
     (
@@ -42,6 +43,7 @@ def brand():
     return '<a href="index.html" class="brand" aria-label="Instituto Esperança — início"><span class="brand-mark"><img src="img/Logo.png" width="30" height="27" alt=""></span><span data-no-translate><small>INSTITUTO</small><strong>esperança<span class="brand-period">.</span></strong></span></a>'
 
 
+# CABEÇALHO: inclui atalho de teclado para o conteúdo, identidade e navegação.
 def header(current):
     nav_items = []
     for label, destination in NAV:
@@ -67,6 +69,7 @@ def header(current):
 <div class="nav-actions"><a class="button button-primary nav-cta" href="participar.html"><span data-i18n="Faça parte">Faça parte</span> <span aria-hidden="true">↗</span></a><a class="button button-outline nav-accessibility" href="acessibilidade.html" aria-label="Acessibilidade"><span aria-hidden="true" data-no-translate>◐</span><span data-i18n="Acessibilidade">Acessibilidade</span></a></div></div></header>"""
 
 
+# RODAPÉ: reúne links, seletor de idioma e crédito do projeto.
 def footer(current):
     language_options = '<option value="pt-BR">Português (Brasil)</option><option value="en">English</option><option value="zh-CN">普通话</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es-419">Español (Latinoamérica)</option><option value="ru">Русский</option><option value="ja">日本語</option><option value="hi">हिन्दी (Hindi)</option>'
     columns = [

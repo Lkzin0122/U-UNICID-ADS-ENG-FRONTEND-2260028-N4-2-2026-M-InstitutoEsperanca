@@ -1,5 +1,8 @@
 # Organização do código
 
+Para apresentar o projeto ao professor, siga o [roteiro de apresentação](roteiro-apresentacao.md),
+que relaciona cada área aos comentários dos arquivos e sugere demonstrações.
+
 Revisão de 14/11/2026. O projeto continua com as 12 páginas e as integrações
 existentes. A organização separa estilos, conteúdo, comportamentos do navegador
 e serviços do servidor.

@@ -12,6 +12,7 @@ from build_chat_knowledge import build_index, render
 from site_layout import footer, header
 
 ROOT = Path(__file__).resolve().parent.parent
+# FONTES: cada módulo fornece título, descrição e HTML de suas páginas.
 CONTENT_MODULES = (
     "content_home",
     "content_contact",
@@ -19,6 +20,7 @@ CONTENT_MODULES = (
     "content_resources",
     "content_media",
 )
+# RECURSOS: a ordem garante base visual, estilos da página e preferências de cores.
 SHARED_STYLES = ("css/style.css",)
 THEME_STYLES = ("css/palette.css", "css/chatbot.css", "css/speech-reader.css")
 SHARED_SCRIPTS = (
@@ -56,6 +58,7 @@ def page_assets(filename):
     return styles, scripts
 
 
+# MONTAGEM: reúne metadados, cabeçalho, conteúdo principal e rodapé.
 def render_page(filename, page):
     styles, scripts = page_assets(filename)
     assets = "\n".join(
@@ -77,6 +80,7 @@ def render_page(filename, page):
     return f'''<!DOCTYPE html>
 <html lang="pt-BR" id="top">
 <head>
+  <!-- METADADOS: codificação, adaptação à tela, título e descrição para cada página. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1744bc">
@@ -86,17 +90,21 @@ def render_page(filename, page):
 {assets}
 </head>
 <body{body_class}>
+<!-- CABEÇALHO COMPARTILHADO: gerado por scripts/site_layout.py. -->
 {header(filename)}
 {breadcrumb}
+<!-- CONTEÚDO DA PÁGINA: editado nos módulos scripts/content_*.py. -->
 <main id="conteudo-principal" tabindex="-1">
 {page["content"]}
 </main>
+<!-- RODAPÉ COMPARTILHADO: links, idiomas e crédito do projeto. -->
 {footer(filename)}
 </body>
 </html>
 '''
 
 
+# GERAÇÃO: grava os HTMLs e atualiza o índice pesquisado pelo chatbot.
 def main():
     pages = {}
     for module_name in CONTENT_MODULES:

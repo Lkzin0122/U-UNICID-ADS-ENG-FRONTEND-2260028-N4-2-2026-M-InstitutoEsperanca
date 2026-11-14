@@ -7,6 +7,7 @@
   flex-shrink: 0;
 }
 
+/* ABERTURA: apresentação principal, título, imagem e chamadas para participação. */
 .home-hero {
   padding: 48px 0 45px;
   overflow: hidden;
@@ -513,6 +514,7 @@
   padding: 4px;
 }
 
+/* RESPONSIVIDADE: amplia a composição conforme cresce a largura disponível. */
 @media (min-width: 600px) {
   .purpose-grid {
     grid-template-columns: repeat(3, 1fr);

@@ -1,6 +1,7 @@
-/* Optional speech assistance. Uses the voices offered by the browser; no API key. */
+/* Leitura opcional: controla vozes do navegador e vozes locais incluídas no site. */
 (() => {
   'use strict';
+  // TEXTOS DA INTERFACE: rótulos e mensagens do leitor para os nove idiomas.
   const copy = {
     'pt-BR': {
       title: 'Leitura em voz alta',
@@ -455,6 +456,7 @@
   for (const language of Object.keys(copy))
     copy[language].loadingBundled = loadingBundled[language];
   const root = document.documentElement;
+  // MOTOR: usa a integração de vozes locais/nativas quando disponível.
   const synth = window.esperancaSpeechEngine || window.speechSynthesis;
   const Utterance =
     window.SpeechSynthesisUtterance ||
@@ -499,6 +501,7 @@
   const t = (key) => (copy[locale()] || copy['pt-BR'])[key];
   const icon =
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>';
+  // CONTROLES: cria o botão de abertura, o painel e a barra de parada da leitura.
   const launcher = document.createElement('button');
   launcher.type = 'button';
   launcher.className = 'reader-launcher';
@@ -571,6 +574,7 @@
     String(value || '')
       .toLowerCase()
       .replaceAll('_', '-');
+  // VOZES COMPATÍVEIS: filtra pelo idioma antes de escolher voz ou tentar recuperação.
   const languageVoices = () =>
     voices.filter(
       (voice) => normalize(voice.lang).split('-')[0] === normalize(locale()).split('-')[0],
@@ -716,6 +720,7 @@
     highlighted?.classList.remove('reader-highlight');
     highlighted = null;
   };
+  // CANCELAMENTO: invalida callbacks antigos e remove áudio, temporizadores e destaque.
   const cancel = () => {
     generation++;
     clearTimeout(timer);
@@ -761,6 +766,7 @@
     if (rest) parts.push(rest);
     return parts;
   };
+  // FILA DE LEITURA: divide textos longos em trechos e acompanha início, fim e falhas.
   const speak = (items, fullPage = false) => {
     cancel();
     if (languageChanging) return;
@@ -912,6 +918,7 @@
       [...(element.labels || [])].map((label) => label.innerText).join(' ')
     );
   };
+  // TEXTO ACESSÍVEL: lê rótulos dos campos, nunca os dados privados digitados neles.
   const plainText = (element) => {
     if (!visible(element)) return '';
     if (element.matches('input,textarea')) return labelText(element); // Never speak typed private data.
@@ -948,6 +955,7 @@
     const candidate = element.closest(interactive) || element.closest(blocks);
     return candidate && visible(candidate) ? candidate : null;
   };
+  // MOUSE E TECLADO: espera uma breve pausa para evitar leitura a cada movimento.
   const schedule = (element, origin) => {
     if (
       languageChanging ||

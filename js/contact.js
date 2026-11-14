@@ -4,6 +4,7 @@
   const form = document.querySelector('#contact-form');
   if (form) {
     const phoneInput = form.querySelector('#telefone');
+    // TEXTOS DO TELEFONE: rótulos e avisos acompanham o idioma do site.
     const phoneUi = {
       hi: {
         selectedCountryAriaLabel: 'फ़ोन का देश बदलें; अभी ${countryName} (${dialCode}) चुना गया है',
@@ -147,6 +148,7 @@
     document.addEventListener('esperanca:languagechange', () =>
       phoneController?.setLocale(phoneUi[document.documentElement.lang] || phoneUi['pt-BR']),
     );
+    // RASCUNHO: restaura a sessão primeiro e usa o armazenamento local como alternativa.
     const draftKey = 'esperanca-contact-draft';
     const draftFields = ['nome', 'email', 'telefone', 'assunto', 'mensagem'];
     const draftStores = ['sessionStorage', 'localStorage'];
@@ -224,6 +226,7 @@
     const contactAddress = fallback.getAttribute('href').slice('mailto:'.length);
     const t = (phrase) => window.esperancaI18n?.t(phrase) || phrase;
     const emailInput = form.querySelector('#email');
+    // VALIDAÇÃO: complementa o HTML para exigir domínio completo no e-mail.
     const validateEmail = () => {
       emailInput.setCustomValidity(
         emailInput.value && !window.esperancaContact.validEmail(emailInput.value.trim())
@@ -286,6 +289,7 @@
       renderStatus();
       if (!sending) result.focus();
     };
+    // ENVIO: valida, bloqueia duplicatas e só limpa os campos após resposta de sucesso.
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (sending) return;

@@ -34,6 +34,7 @@
     people:
       '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 4v2"/></svg>',
   };
+  // INTERFACE: monta botão, painel, mensagens e atalhos do assistente.
   const widget = document.createElement('div');
   widget.className = 'esperanca-chat';
   widget.lang = 'pt-BR';
@@ -82,6 +83,32 @@
   const $ = (selector) => widget.querySelector(selector);
   const launcher = $('.chat-launcher');
   const panel = $('.chat-panel');
+  // VOLTAR AO TOPO: aparece com a rolagem e fica acima do botão do chat.
+  const backToTop = document.createElement('button');
+  backToTop.type = 'button';
+  backToTop.className = 'chat-back-to-top';
+  backToTop.hidden = true;
+  backToTop.innerHTML =
+    '<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="m6 14 6-6 6 6M12 8v12"/></svg>';
+  widget.append(backToTop);
+  const updateBackToTop = () => {
+    backToTop.hidden = window.scrollY < 300 || !panel.hidden;
+    const label = translateLabel('Voltar ao topo');
+    backToTop.setAttribute('aria-label', label);
+    backToTop.title = label;
+  };
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  document.addEventListener('esperanca:languagechange', updateBackToTop);
+  backToTop.addEventListener('click', () => {
+    document.querySelector('#conteudo-principal')?.focus({ preventScroll: true });
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'instant'
+        : 'smooth',
+    });
+  });
+  updateBackToTop();
   const log = $('.chat-log');
   const form = $('.chat-form');
   const input = $('#chat-question');
@@ -121,6 +148,7 @@
       );
     return action.label;
   };
+  // CONTATO INTEGRADO: dados deste formulário ficam separados do histórico enviado à IA.
   const contactDraftKey = 'esperanca-chat-contact-draft-v1';
   let contactPending = false;
   let contactController = null;
@@ -170,6 +198,7 @@
     log.hidden = form.hidden = false;
     input.focus();
   }
+  // AÇÕES: executa apenas IDs do catálogo local, sem aceitar comandos ou URLs livres da IA.
   function executeAction(id) {
     if (!Object.hasOwn(actionCatalog, id) || contactPending) return;
     const action = actionCatalog[id];
@@ -311,6 +340,7 @@
     }
   });
 
+  // FONTES: confere os links recebidos antes de mostrá-los como referências.
   function safeSources(sources) {
     if (!Array.isArray(sources)) return [];
     return sources.slice(0, 6).flatMap((source) => {
@@ -342,6 +372,7 @@
       return [];
     });
   }
+  // HISTÓRICO: recupera pares válidos de pergunta/resposta somente nesta aba.
   function restoreTranscript() {
     try {
       const saved = JSON.parse(sessionStorage.getItem(sessionKey));
@@ -480,6 +511,7 @@
   }
   function toggle(open) {
     panel.hidden = !open;
+    updateBackToTop();
     launcher.setAttribute('aria-expanded', String(open));
     launcher.setAttribute('aria-label', chatText(open ? 'close' : 'open'));
     $('.chat-launcher-label').textContent = chatText(open ? 'close' : 'open');
@@ -498,6 +530,7 @@
       return 'A resposta está demorando mais que o esperado. Sua pergunta foi preservada; você pode tentar novamente.';
     return 'Não consegui me conectar à IA agora. Sua pergunta foi preservada; tente novamente em instantes.';
   }
+  // CONVERSA COM A API: envia contexto, trata falhas e permite repetir a pergunta.
   async function ask(message, userMessage = null) {
     if (pending) return;
     const id = ++requestId;
@@ -600,6 +633,7 @@
   }
 
   transcript = restoreTranscript();
+  // IDIOMA DA INTERFACE: atualiza rótulos e controles sem apagar a conversa.
   function translateUI() {
     widget.lang = document.documentElement.lang;
     widget.querySelectorAll('[data-chat-text]').forEach((element) => {
