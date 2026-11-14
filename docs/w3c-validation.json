@@ -1,124 +1,116 @@
 {
-  "date": "2026-10-24",
+  "date": "2026-11-14",
   "timezone": "America/Sao_Paulo",
   "endpoint": "https://validator.w3.org/nu/?out=json",
   "max_concurrent_requests": 3,
   "results": [
     {
       "file": "acessibilidade.html",
-      "sha256": "14017d6c1ab4f3873f5f1860f94327303c9aa2b517cd45951d76798be8e22dcd",
+      "sha256": "2aed9736d024eb88e3f11a62036e70cc411c88519f08ca208e78dad755d377c4",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "contato.html",
-      "sha256": "a6aa131e7d9a0059c7c936920c3cae7b82430765de81b77d3cc5177dec412066",
+      "sha256": "913de5c939c6176900a4581fe53df232fdfd7f63638503639ffb5a04db081971",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "galeria.html",
-      "sha256": "cd617fcb537e5d079fa357d9bb9b6dd39ef4a137205406198ffcfefa4d4d7ac2",
+      "sha256": "68ab535819c388276b3f53e17741450417e4ac7b67da03c0cd3e91c9b9f0a7a0",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "impacto.html",
-      "sha256": "1201dc09f50cb4eeeaf01372429d21eb26b99442e33c65cc2d0df792c6552750",
+      "sha256": "11d75ab9b40643ee2d7d98a2a92726a7ae433f77fa615a12c7abe8f17aeaf8f5",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "index.html",
-      "sha256": "7e237f5e691e02761b092a34f18a2abd2fbff58b4fd11f2bb13242dae76fd8fe",
+      "sha256": "1fa3609636b1b6c82f2ada52d4cb19fa837c92b1acee770ad39f3fac0c1310d8",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "midia.html",
-      "sha256": "23f26e3751565641b2f3491ac9d1c0ccd88d95112231ca7eb4288c083e32e0e8",
+      "sha256": "81f8c36b94acc88fb6fae30f550bc332738db516537646ae9b982772009e5fb3",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "noticias.html",
-      "sha256": "1e6013307b4437f442822c0e8f42aa9f696785443a29fcf5d8b70fd4559ed6fd",
+      "sha256": "cee36cd9c3f3e9010069043fd036f3bb6abea36db34302efdb2a94587cef4afc",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "orcamento_hospedagem.html",
-      "sha256": "1007836ba4b42f2e926d3478efbbbdb9d5705d5ab6e72cfc666891244fe3fec9",
+      "sha256": "1d536fdce9dc02cf3756f0e7c0368a9d850553077c27ff32d8764dd9c714d550",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "participar.html",
-      "sha256": "6f3435b90e8964c5b28fc06ccd822b52b32b551973f67f49cea471a5703c8930",
+      "sha256": "e2dd24343ab1a8938bc3b54a66417ae230bbbefe7dc07332afca18b5205805b4",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "perguntas-frequentes.html",
-      "sha256": "b1cba429445943d2230535efd3b297580498b778a95b51a151265d7a25f99f4d",
+      "sha256": "81bfee35eb21527c3415b747ed1cde22353c35b36959094a4c489f10c2f18a36",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "projetos.html",
-      "sha256": "3a71e7ed83f86ede4e817420f0704f65b76e5b614ce9f20ca1b9b196faa8b357",
+      "sha256": "90544715a006488e2921116de8821c2c543c46d8a3bf4726b3044f595b148353",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     },
     {
       "file": "sobre.html",
-      "sha256": "f65b37c58b772af717bb9a7b1689df5874b01e324d63172c6699c74561a0ac5b",
+      "sha256": "dd561caa7cec99ea59a7bd58102980b1659bc8691709217b722547200a59e78f",
       "status": "completed",
       "errors": 0,
       "warnings": 0,
-      "checker_version": "26.10.18",
+      "checker_version": "26.11.10",
       "messages": []
     }
-  ],
-  "summary": {
-    "files": 12,
-    "completed": 12,
-    "errors": 0,
-    "warnings": 0,
-    "network_failures": 0,
-    "response_failures": 0
-  }
+  ]
 }

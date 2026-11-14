@@ -408,8 +408,9 @@ JavaScript é necessário para o envio de contato pelo EmailJS. O formulário
 mantém a validação no navegador e envia para institutoesperancaunicid@outlook.com,
 conforme o destinatário fixo configurado no template do serviço. Sem JavaScript,
 o endereço de e-mail continua disponível. Não há armazenamento próprio de mensagens no site.
-O chatbot institucional também usa JavaScript e um servidor Node.js conectado
-ao modelo local no Ollama. O agente consulta uma base indexada do conteúdo do site.
+O chatbot institucional usa JavaScript e uma API Node.js. Na Vercel, a API usa
+o provedor configurado; na execução local, usa Ollama por padrão. O agente
+consulta uma base indexada do conteúdo do site. Veja [chatbot.md](chatbot.md).
 
 ## 12. Critérios de aceitação
 
@@ -433,7 +434,7 @@ critérios forem verificados:
 -   [ ] O HTML foi verificado no W3C Validator e os erros encontrados
     foram corrigidos ou documentados.
 -   [ ] A pasta `docs/` contém o README, o diário de bordo, o orçamento
-    orçamento de hospedagem na Vercel, comparação de domínios e as evidências de testes.
+    de hospedagem na Vercel, a comparação de domínios e as evidências de testes.
 -   [ ] Os arquivos estão organizados nas pastas previstas e o projeto
     está compactado para entrega.
 -   [ ] Os conteúdos factuais e os dados apresentados foram conferidos;

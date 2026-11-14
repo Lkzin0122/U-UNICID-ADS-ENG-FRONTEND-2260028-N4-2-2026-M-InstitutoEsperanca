@@ -129,12 +129,12 @@ PAGES = {
         </div>
         <div class="table-wrap" role="region" aria-labelledby="titulo-dominios" tabindex="0">
             <table>
-                <caption>Preços de domínio consultados em 24/10/2026. Valores anuais na moeda original.</caption>
+                <caption>Preços de domínio consultados em 14/11/2026. Valores anuais na moeda original.</caption>
                 <thead><tr><th scope="col">Opção</th><th scope="col">Primeiro ano</th><th scope="col">Renovação anual</th><th scope="col">O que considerar</th><th scope="col">Fonte oficial</th></tr></thead>
                 <tbody>
                     <tr><th scope="row">.com.br · Registro.br</th><td>R$ 40,00</td><td>R$ 40,00</td><td>Pagamento em reais. Confira os requisitos de registro e a disponibilidade do nome.</td><td><a class="text-link" href="https://registro.br/dominio/">Registro.br <span aria-hidden="true">↗</span></a></td></tr>
                     <tr><th scope="row">.org · Porkbun</th><td>US$ 7,98 <small>(promoção)</small></td><td>US$ 11,84</td><td>Preço de registro promocional para o primeiro ano. A tabela informa taxas ICANN incluídas.</td><td><a class="text-link" href="https://porkbun.com/products/domains">Porkbun <span aria-hidden="true">↗</span></a></td></tr>
-                    <tr><th scope="row">.com · Namecheap</th><td>US$ 11,28 <small>(promoção)</small></td><td>US$ 18,48</td><td>Acrescentar taxa ICANN de US$ 0,20 por ano. Valor promocional, sem o cupom exclusivo para novos clientes.</td><td><a class="text-link" href="https://www.namecheap.com/domains/registration/gtld/com/">Namecheap <span aria-hidden="true">↗</span></a></td></tr>
+                    <tr><th scope="row">.com · Namecheap</th><td>US$ 12,08 <small>(promoção)</small></td><td>US$ 19,98</td><td>Acrescentar taxa ICANN de US$ 0,20 por ano. Valor promocional, sem o cupom exclusivo para novos clientes.</td><td><a class="text-link" href="https://www.namecheap.com/domains/registration/gtld/com/">Namecheap <span aria-hidden="true">↗</span></a></td></tr>
                 </tbody>
             </table>
         </div>
