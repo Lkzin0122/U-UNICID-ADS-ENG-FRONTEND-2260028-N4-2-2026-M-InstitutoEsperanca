@@ -39,6 +39,13 @@ um destaque suave, sem partículas voando.
 | Restaurar preferências visuais | Volta ao tema do sistema, texto em 100%, paleta original, contraste e inversão desligados. |
 
 As paletas alternativas são opções de leitura, não filtros de simulação de visão.
+
+O chatbot usa a mesma paleta. Seu botão tem superfície clara/escura e contorno
+de destaque para continuar visível sobre o rodapé; o cabeçalho acompanha a
+faixa superior. O painel usa a camada superior do navegador quando disponível,
+mantendo o posicionamento durante a aplicação de filtros. Botões de contorno
+trocam as cores de fundo e texto sem transição intermediária, evitando baixo
+contraste durante mudanças rápidas de tema e paleta.
 Links, estados e eixos do projeto continuam identificados por texto. Estados
 selecionados possuem `aria-pressed` e uma marca visual adicional.
 

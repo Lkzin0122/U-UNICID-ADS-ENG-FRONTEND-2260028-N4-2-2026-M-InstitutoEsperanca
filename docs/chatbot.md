@@ -56,6 +56,43 @@ O painel tem cabeçalho com identidade da Esperança, ações para reiniciar e f
 
 No celular, o painel ocupa a área disponível e acompanha o teclado. O visual usa as cores do site, com temas claro, escuro e de alto contraste e respeito à preferência de movimento reduzido. O redesign passou nas 48 verificações da interface, incluindo ampliação de texto a 200%, foco, sugestões, navegação e seis tamanhos de tela. As capturas de referência ficam em `docs/screenshots/chatbot-*.png`.
 
+## Ações integradas ao site
+
+A barra do chat permite enviar contato, escolher entre os nove idiomas, abrir
+as 12 páginas e ajustar tema, contraste e tamanho de texto. Pedidos diretos,
+como “abra projetos”, “mude o idioma para hindi” e “ativar alto contraste”,
+funcionam no navegador mesmo sem a IA. O chat acompanha a navegação na mesma
+aba. As opções visuais usam a mesma configuração e persistência dos controles
+da página de acessibilidade.
+
+As perguntas enviadas à API incluem somente o idioma e o nome de uma página
+conhecida como contexto adicional. O agente responde no idioma selecionado e
+pode sugerir até três ações por seus IDs no catálogo `js/chat-actions.js`.
+O servidor e a interface rejeitam IDs desconhecidos. As sugestões são botões:
+renderizar ou restaurar uma resposta nunca executa uma ação automaticamente.
+
+“Enviar contato” abre um formulário dentro do painel, com nome, e-mail,
+assunto e mensagem. O botão “Enviar ao Instituto” faz o envio pelo EmailJS;
+os campos desse formulário não entram no histórico nem nas requisições à IA.
+Um rascunho fica somente na sessão da aba e é apagado após sucesso ou ao iniciar
+nova conversa. Erros e timeout preservam o texto e oferecem o aplicativo de
+e-mail. Não há repetição automática de envios. A conta de e-mail conectada
+precisa estar ativa e autorizada a enviar.
+
+O botão flutuante usa superfície e contorno que permanecem visíveis sobre o
+rodapé azul. Cabeçalho, balões, campos e ações seguem a paleta compartilhada,
+incluindo temas, daltonismo, inversão, alto contraste e cores do sistema.
+
+Para validar sem enviar e-mails reais ou consultar provedores de IA:
+
+```sh
+uv run --with playwright python scripts/check_chat_actions.py --browser all
+```
+
+O teste verifica ações locais, sugestões da IA simulada, idioma, navegação,
+privacidade dos campos de contato, falha, sucesso, bloqueio de duplicatas,
+timeout, e-mail incompleto, contraste, posição com filtros, celular e zoom.
+
 ## Histórico e limites
 
 A interface mantém até 20 mensagens na sessionStorage da aba. A conversa acompanha a navegação entre as páginas do site. “Nova conversa” apaga o histórico e cancela uma consulta pendente. Apenas perguntas com respostas concluídas entram no histórico enviado ao agente. Em erro, a pergunta é preservada e pode ser repetida sem criar mensagens duplicadas.

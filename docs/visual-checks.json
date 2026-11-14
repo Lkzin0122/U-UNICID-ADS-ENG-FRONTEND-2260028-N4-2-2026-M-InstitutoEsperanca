@@ -1,65 +1,65 @@
 {
-  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.0.0 Safari/537.36",
   "pages": [
     {
       "page": "acessibilidade.html",
       "modes": 40,
-      "textChecks": 5280
+      "textChecks": 5480
     },
     {
       "page": "contato.html",
       "modes": 40,
-      "textChecks": 4160
+      "textChecks": 4240
     },
     {
       "page": "galeria.html",
       "modes": 40,
-      "textChecks": 3760
+      "textChecks": 3840
     },
     {
       "page": "impacto.html",
       "modes": 40,
-      "textChecks": 5800
+      "textChecks": 5880
     },
     {
       "page": "index.html",
       "modes": 40,
-      "textChecks": 5680
+      "textChecks": 5760
     },
     {
       "page": "midia.html",
       "modes": 40,
-      "textChecks": 3400
+      "textChecks": 3480
     },
     {
       "page": "noticias.html",
       "modes": 40,
-      "textChecks": 4000
+      "textChecks": 4080
     },
     {
       "page": "orcamento_hospedagem.html",
       "modes": 40,
-      "textChecks": 4840
+      "textChecks": 4920
     },
     {
       "page": "participar.html",
       "modes": 40,
-      "textChecks": 4040
+      "textChecks": 4120
     },
     {
       "page": "perguntas-frequentes.html",
       "modes": 40,
-      "textChecks": 3640
+      "textChecks": 3720
     },
     {
       "page": "projetos.html",
       "modes": 40,
-      "textChecks": 5480
+      "textChecks": 5560
     },
     {
       "page": "sobre.html",
       "modes": 40,
-      "textChecks": 3440
+      "textChecks": 3520
     }
   ],
   "layouts": [
@@ -714,26 +714,26 @@
   ],
   "contrast": [],
   "skipped": [],
-  "hoverTextChecks": 17200,
+  "hoverTextChecks": 17640,
   "forcedColors": [
     {
       "page": "acessibilidade.html",
-      "checked": 132,
+      "checked": 137,
       "failures": []
     },
     {
       "page": "contato.html",
-      "checked": 104,
+      "checked": 106,
       "failures": []
     },
     {
       "page": "galeria.html",
-      "checked": 94,
+      "checked": 96,
       "failures": []
     },
     {
       "page": "noticias.html",
-      "checked": 100,
+      "checked": 102,
       "failures": []
     }
   ],

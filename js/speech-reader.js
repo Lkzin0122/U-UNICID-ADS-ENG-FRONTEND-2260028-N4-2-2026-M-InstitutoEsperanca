@@ -48,15 +48,15 @@
     },
   };
   const voiceCopy = {
-    'pt-BR': {system:'Automática do dispositivo', refresh:'Atualizar vozes', loading:'Carregando vozes. Você já pode tentar a voz automática.', unavailable:'O navegador não listou vozes neste idioma. Tente a voz automática, atualize a lista ou instale uma voz nas configurações de fala do dispositivo.', activate:'Liberar áudio', blocked:'Selecione Liberar áudio para permitir a leitura nesta página.', fallback:'A voz escolhida falhou. Tentando outra voz do dispositivo.'},
-    en: {system:'Device automatic voice', refresh:'Refresh voices', loading:'Loading voices. You can already try the automatic voice.', unavailable:'The browser did not list voices in this language. Try the automatic voice, refresh the list or install a voice in your device speech settings.', activate:'Enable audio', blocked:'Select Enable audio to allow reading on this page.', fallback:'The selected voice failed. Trying another device voice.'},
-    'es-419': {system:'Voz automática del dispositivo', refresh:'Actualizar voces', loading:'Cargando voces. Ya puedes probar la voz automática.', unavailable:'El navegador no enumeró voces en este idioma. Prueba la voz automática, actualiza la lista o instala una voz en los ajustes del dispositivo.', activate:'Habilitar audio', blocked:'Selecciona Habilitar audio para permitir la lectura en esta página.', fallback:'La voz elegida falló. Probando otra voz del dispositivo.'},
-    fr: {system:'Voix automatique de l’appareil', refresh:'Actualiser les voix', loading:'Chargement des voix. Vous pouvez déjà essayer la voix automatique.', unavailable:'Le navigateur ne répertorie aucune voix dans cette langue. Essayez la voix automatique, actualisez la liste ou installez une voix dans les réglages de l’appareil.', activate:'Autoriser l’audio', blocked:'Sélectionnez Autoriser l’audio pour permettre la lecture sur cette page.', fallback:'La voix choisie a échoué. Essai d’une autre voix de l’appareil.'},
-    de: {system:'Automatische Gerätestimme', refresh:'Stimmen aktualisieren', loading:'Stimmen werden geladen. Sie können die automatische Stimme bereits ausprobieren.', unavailable:'Der Browser hat keine Stimmen für diese Sprache aufgelistet. Versuchen Sie die automatische Stimme, aktualisieren Sie die Liste oder installieren Sie eine Stimme auf Ihrem Gerät.', activate:'Audio aktivieren', blocked:'Wählen Sie Audio aktivieren, um das Vorlesen auf dieser Seite zu erlauben.', fallback:'Die gewählte Stimme ist fehlgeschlagen. Eine andere Gerätestimme wird versucht.'},
-    'zh-CN': {system:'设备自动语音', refresh:'刷新语音', loading:'正在加载语音。您现在就可以尝试自动语音。', unavailable:'浏览器未列出此语言的语音。请尝试自动语音、刷新列表或在设备设置中安装语音。', activate:'允许音频', blocked:'请选择“允许音频”以在此页面启用朗读。', fallback:'所选语音播放失败。正在尝试设备上的其他语音。'},
-    ru: {system:'Автоматический голос устройства', refresh:'Обновить голоса', loading:'Загрузка голосов. Уже можно попробовать автоматический голос.', unavailable:'Браузер не перечислил голоса для этого языка. Попробуйте автоматический голос, обновите список или установите голос в настройках устройства.', activate:'Разрешить звук', blocked:'Выберите «Разрешить звук», чтобы включить чтение на этой странице.', fallback:'Выбранный голос не работает. Пробуем другой голос устройства.'},
-    ja: {system:'端末の自動音声', refresh:'音声を更新', loading:'音声を読み込み中です。自動音声は今すぐ試せます。', unavailable:'この言語の音声が一覧にありません。自動音声を試すか、一覧を更新するか、端末に音声を追加してください。', activate:'音声を許可', blocked:'このページで読み上げるには「音声を許可」を選んでください。', fallback:'選択した音声を再生できません。端末の別の音声を試しています。'},
-    hi: {system:'डिवाइस की स्वचालित आवाज़', refresh:'आवाज़ें अपडेट करें', loading:'आवाज़ें लोड हो रही हैं। आप अभी स्वचालित आवाज़ आज़मा सकते हैं।', unavailable:'ब्राउज़र ने इस भाषा की आवाज़ें नहीं दिखाईं। स्वचालित आवाज़ आज़माएँ, सूची अपडेट करें या डिवाइस में आवाज़ जोड़ें।', activate:'ऑडियो चालू करें', blocked:'इस पेज पर पढ़ने के लिए ऑडियो चालू करें चुनें।', fallback:'चुनी गई आवाज़ नहीं चली। डिवाइस की दूसरी आवाज़ आज़मा रहे हैं।'},
+    'pt-BR': {system:'Automática no idioma do site', refresh:'Atualizar vozes', loading:'Carregando vozes no idioma do site. Aguarde ou atualize a lista.', unavailable:'Nenhuma voz disponível no idioma do site. Atualize a lista ou instale uma voz nesse idioma nas configurações de fala do dispositivo.', activate:'Liberar áudio', blocked:'Selecione Liberar áudio para permitir a leitura nesta página.', fallback:'A voz escolhida falhou. Tentando outra voz no mesmo idioma.'},
+    en: {system:'Automatic in the site language', refresh:'Refresh voices', loading:'Loading voices in the site language. Please wait or refresh the list.', unavailable:'No voice is available in the site language. Refresh the list or install a voice in this language in your device speech settings.', activate:'Enable audio', blocked:'Select Enable audio to allow reading on this page.', fallback:'The selected voice failed. Trying another voice in the same language.'},
+    'es-419': {system:'Automática en el idioma del sitio', refresh:'Actualizar voces', loading:'Cargando voces en el idioma del sitio. Espera o actualiza la lista.', unavailable:'No hay voces en el idioma del sitio. Actualiza la lista o instala una voz en este idioma en los ajustes del dispositivo.', activate:'Habilitar audio', blocked:'Selecciona Habilitar audio para permitir la lectura en esta página.', fallback:'La voz elegida falló. Probando otra voz en el mismo idioma.'},
+    fr: {system:'Automatique dans la langue du site', refresh:'Actualiser les voix', loading:'Chargement des voix dans la langue du site. Patientez ou actualisez la liste.', unavailable:'Aucune voix dans la langue du site. Actualisez la liste ou installez une voix dans cette langue dans les réglages de votre appareil.', activate:'Autoriser l’audio', blocked:'Sélectionnez Autoriser l’audio pour permettre la lecture sur cette page.', fallback:'La voix choisie a échoué. Essai d’une autre voix dans la même langue.'},
+    de: {system:'Automatisch in der Website-Sprache', refresh:'Stimmen aktualisieren', loading:'Stimmen in der Website-Sprache werden geladen. Warten Sie oder aktualisieren Sie die Liste.', unavailable:'Keine Stimme in der Website-Sprache verfügbar. Aktualisieren Sie die Liste oder installieren Sie eine Stimme in dieser Sprache auf Ihrem Gerät.', activate:'Audio aktivieren', blocked:'Wählen Sie Audio aktivieren, um das Vorlesen auf dieser Seite zu erlauben.', fallback:'Die gewählte Stimme ist fehlgeschlagen. Eine andere Stimme in derselben Sprache wird versucht.'},
+    'zh-CN': {system:'自动匹配网站语言', refresh:'刷新语音', loading:'正在加载网站语言的语音。请稍候或刷新列表。', unavailable:'没有网站所选语言的可用语音。请刷新列表或在设备的语音设置中安装该语言的语音。', activate:'允许音频', blocked:'请选择“允许音频”以在此页面启用朗读。', fallback:'所选语音播放失败。正在尝试同一语言的其他语音。'},
+    ru: {system:'Автоматически на языке сайта', refresh:'Обновить голоса', loading:'Загрузка голосов на языке сайта. Подождите или обновите список.', unavailable:'Нет голоса на языке сайта. Обновите список или установите голос на этом языке в настройках речи устройства.', activate:'Разрешить звук', blocked:'Выберите «Разрешить звук», чтобы включить чтение на этой странице.', fallback:'Выбранный голос не работает. Пробуем другой голос на том же языке.'},
+    ja: {system:'サイトの言語に自動設定', refresh:'音声を更新', loading:'サイトの言語の音声を読み込み中です。待つか、一覧を更新してください。', unavailable:'サイトの言語の音声はありません。一覧を更新するか、端末の音声設定でこの言語の音声を追加してください。', activate:'音声を許可', blocked:'このページで読み上げるには「音声を許可」を選んでください。', fallback:'選択した音声を再生できません。同じ言語の別の音声を試しています。'},
+    hi: {system:'साइट की भाषा में स्वचालित आवाज़', refresh:'आवाज़ें अपडेट करें', loading:'साइट की भाषा की आवाज़ें लोड हो रही हैं। प्रतीक्षा करें या सूची अपडेट करें।', unavailable:'साइट की भाषा में कोई आवाज़ उपलब्ध नहीं है। सूची अपडेट करें या डिवाइस की वाणी सेटिंग में इस भाषा की आवाज़ जोड़ें।', activate:'ऑडियो चालू करें', blocked:'इस पेज पर ऑडियो की अनुमति देने के लिए ऑडियो चालू करें चुनें।', fallback:'चुनी गई आवाज़ नहीं चली। उसी भाषा की दूसरी आवाज़ आज़मा रहे हैं।'},
   };
   for (const language of Object.keys(copy)) Object.assign(copy[language], voiceCopy[language]);
   const root = document.documentElement;
@@ -75,6 +75,8 @@
   } catch { /* Speech still works when storage is unavailable. */ }
   const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(settings)); } catch {} };
   const locale = () => root.lang || 'pt-BR';
+  const speechLocales = { 'pt-BR':'pt-BR', en:'en-US', 'es-419':'es-MX', fr:'fr-FR', de:'de-DE', 'zh-CN':'zh-CN', ru:'ru-RU', ja:'ja-JP', hi:'hi-IN' };
+  const speechLocale = () => speechLocales[locale()] || locale();
   const t = key => (copy[locale()] || copy['pt-BR'])[key];
   const icon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5ZM15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></svg>';
   const launcher = document.createElement('button');
@@ -136,12 +138,14 @@
   let pendingSpeech = null;
   let pageMode = false;
   let suppressFocus = false;
+  let languageChanging = false;
   const status = key => {
     statusKey = key;
     for (const element of [panel, dock]) element.querySelector('[data-reader-status]').textContent = t(key);
   };
   const normalize = value => String(value || '').toLowerCase().replaceAll('_', '-');
   const languageVoices = () => voices.filter(voice => normalize(voice.lang).split('-')[0] === normalize(locale()).split('-')[0]);
+  const rankedVoices = () => languageVoices().sort((a,b) => Number(normalize(b.lang) === normalize(speechLocale())) - Number(normalize(a.lang) === normalize(speechLocale())) || Number(Boolean(b.default)) - Number(Boolean(a.default)) || a.name.localeCompare(b.name));
   const voiceId = voice => `${voice.voiceURI}|${voice.lang}|${voice.name}`;
   // The Web Speech API has no gender field. Classify explicit voice labels and
   // known catalog names only. Never fake gender by changing pitch.
@@ -161,7 +165,13 @@
     }
     return null;
   };
-  const selectedVoice = () => languageVoices().find(voice => voiceId(voice) === voiceSelect.value);
+  const preferredVoice = available => available.find(voice => genderOf(voice) === settings.gender) || available[0];
+  // Even "automatic" must select a voice in the site's language explicitly.
+  // Leaving utterance.voice unset can make an engine use the device's language.
+  const selectedVoice = () => {
+    const available = rankedVoices();
+    return available.find(voice => voiceId(voice) === voiceSelect.value) || preferredVoice(available);
+  };
   const needsActivation = () => !audioUnlocked && (activationDenied || navigator.userActivation?.hasBeenActive !== true);
   const sync = () => {
     $('[data-reader-enable]').textContent = t(settings.enabled ? 'disable' : 'enable');
@@ -174,7 +184,7 @@
       if (button.hidden && document.activeElement === button) element.querySelector('[data-reader-stop]').focus({preventScroll:true});
     }
     const dockHadFocus = dock.contains(document.activeElement);
-    dock.hidden = panel.open || (!settings.enabled && !currentUtterance && !['blocked','error'].includes(statusKey));
+    dock.hidden = panel.open || (!settings.enabled && !currentUtterance && !['blocked','error','unavailable'].includes(statusKey));
     if (dockPopover) {
       if (dock.hidden && dock.matches(':popover-open')) dock.hidePopover();
       else if (!dock.hidden && !dock.matches(':popover-open')) dock.showPopover();
@@ -184,10 +194,10 @@
   const populateVoices = (resetSelection = false) => {
     try { voices = supported ? Array.from(synth.getVoices()).filter(voice => voice && typeof voice.lang === 'string' && typeof voice.name === 'string') : []; }
     catch { voices = []; }
-    const available = languageVoices().sort((a,b) => Number(normalize(b.lang) === normalize(locale())) - Number(normalize(a.lang) === normalize(locale())) || Number(Boolean(b.default)) - Number(Boolean(a.default)) || a.name.localeCompare(b.name));
+    const available = rankedVoices();
     const preferred = available.filter(voice => genderOf(voice) === settings.gender);
     const saved = available.find(voice => voiceId(voice) === settings.voices[locale()]);
-    const selected = saved || (settings.gender === 'auto' ? available[0] : preferred[0] || available[0]);
+    const selected = saved || preferredVoice(available);
     const signature = JSON.stringify([locale(), available.map(voice => [voiceId(voice), genderOf(voice)])]);
     // Identical voiceschanged events must not close a desktop select's popup.
     if (signature !== voiceSignature || resetSelection === true) {
@@ -258,14 +268,19 @@
   };
   const speak = (items, fullPage = false) => {
     cancel();
+    if (languageChanging) return;
     if (!supported) { status('unsupported'); return; }
     activationDenied = false;
     pendingSpeech = {items, fullPage};
     const queue = items.flatMap(item => chunks(item.text).map(text => ({ text, element:item.element })));
     if (!queue.length) { pendingSpeech = null; status('empty'); sync(); return; }
+    refreshVoices();
     const selected = selectedVoice();
-    const alternatives = languageVoices().filter(voice => voice !== selected).sort((a,b) => Number(genderOf(b) === settings.gender) - Number(genderOf(a) === settings.gender) || Number(Boolean(b.localService)) - Number(Boolean(a.localService)));
-    const candidates = selected ? [selected, ...alternatives.slice(0, 1), null] : [null, ...alternatives.slice(0, 2)];
+    if (!selected) { pendingSpeech = null; status('unavailable'); sync(); return; }
+    const alternatives = rankedVoices().filter(voice => voice !== selected).sort((a,b) => Number(genderOf(b) === settings.gender) - Number(genderOf(a) === settings.gender));
+    // Retry only explicit voices in this language. A device-default fallback can
+    // pronounce Hindi (or any other selected language) with the wrong voice.
+    const candidates = [selected, ...alternatives.slice(0, 2)];
     let voiceIndex = 0;
     const token = generation;
     pageMode = fullPage;
@@ -286,8 +301,8 @@
       const voice = candidates[voiceIndex];
       const utterance = new SpeechSynthesisUtterance(item.text);
       currentUtterance = utterance;
-      utterance.lang = voice?.lang || locale();
-      if (voice) utterance.voice = voice;
+      utterance.lang = voice.lang.replaceAll('_', '-');
+      utterance.voice = voice;
       utterance.rate = settings.rate;
       utterance.onstart = () => {
         if (token !== generation || currentUtterance !== utterance) return;
@@ -366,7 +381,7 @@
     return candidate && visible(candidate) ? candidate : null;
   };
   const schedule = (element, origin) => {
-    if (!settings.enabled || pageMode || panel.open || !element || element === target) return;
+    if (languageChanging || !settings.enabled || pageMode || panel.open || !element || element === target) return;
     if (needsActivation()) { status('blocked'); sync(); return; }
     const text = plainText(element);
     if (!text.trim()) return;
@@ -463,7 +478,8 @@
     status(statusKey);
     populateVoices();
   };
-  document.addEventListener('esperanca:languagechange', () => { cancel(); pendingSpeech = null; statusKey = 'ready'; translate(); refreshVoices(); });
+  document.addEventListener('esperanca:languagechanging', () => { languageChanging = true; cancel(); pendingSpeech = null; });
+  document.addEventListener('esperanca:languagechange', () => { languageChanging = false; cancel(); pendingSpeech = null; statusKey = 'ready'; translate(); refreshVoices(); });
   if (supported) {
     if (typeof synth.addEventListener === 'function') synth.addEventListener('voiceschanged', populateVoices);
     else synth.onvoiceschanged = populateVoices;

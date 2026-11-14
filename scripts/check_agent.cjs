@@ -129,3 +129,21 @@ test('valida a conexão do servidor e rejeita loopback em hospedagem remota', as
   await assert.rejects(runAgent({ message: 'a'.repeat(1001) }, f), error => error.code === 'invalid_input');
   assert.equal(f.calls.length, 0);
 });
+
+test('agente usa idioma e página atuais e sugere somente ações permitidas', async () => {
+  const f = fixture();
+  let call = 0;
+  f.fetchImpl = async (url, options) => {
+    const prompt = JSON.parse(options.body).messages[0].content;
+    if (++call === 1) return response({queries:['contato voluntariado']});
+    assert.match(prompt, /हिन्दी \(hi\)/);
+    assert.match(prompt, /página Projetos/);
+    assert.match(prompt, /nunca afirme que enviou/);
+    return response({answer:'आप यहाँ टीम को संदेश भेज सकते हैं।',source_ids:[],action_ids:['contact:open','page:projetos']});
+  };
+  const result = await runAgent({message:'Quero participar.',context:{language:'hi',page:'projetos.html'}},f);
+  assert.deepEqual(result.actions,['contact:open','page:projetos']);
+  call=0;
+  f.fetchImpl = async () => response(++call === 1 ? {queries:['contato']} : {answer:'Ação inválida',source_ids:[],action_ids:['https://externo.example/send']});
+  await assert.rejects(runAgent({message:'Como participar?'},f),error => error.code === 'invalid_response');
+});

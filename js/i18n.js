@@ -108,9 +108,15 @@
     };
     document.head.append(script);
   };
-  window.esperancaI18n = { get language() { return language; }, t: translated };
+  window.esperancaI18n = { get language() { return language; }, t: translated, setLanguage(next) {
+    if (!localeTags[next]) return false;
+    picker.value = next;
+    picker.dispatchEvent(new Event('change', {bubbles:true}));
+    return true;
+  } };
   picker.addEventListener('change', () => {
     document.documentElement.classList.add('language-changing');
+    document.dispatchEvent(new CustomEvent('esperanca:languagechanging', { detail: { language: picker.value } }));
     try { localStorage.setItem(storageKey, picker.value); } catch { /* Ignore unavailable storage. */ }
     load(picker.value);
     window.setTimeout(() => document.documentElement.classList.remove('language-changing'), 160);

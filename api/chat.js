@@ -1,6 +1,7 @@
 'use strict';
 const { runAgent, AgentError } = require('../server/agent.cjs');
 const MAX_BODY_BYTES = 96 * 1024;
+const {languages,pages} = require('../js/chat-actions.js');
 
 function reply(res, status, body) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -22,7 +23,13 @@ function validate(body) {
     total += item.content.length;
   }
   if (total > 24000) return null;
-  return { message, history: history.map(({ role, content }) => ({ role, content: content.trim() })) };
+  const input = { message, history: history.map(({ role, content }) => ({ role, content: content.trim() })) };
+  if (body.context !== undefined) {
+    const context = body.context;
+    if (!context || typeof context !== 'object' || Array.isArray(context) || typeof context.language !== 'string' || typeof context.page !== 'string' || !Object.hasOwn(languages,context.language) || !Object.values(pages).some(([path]) => path === context.page)) return null;
+    input.context = {language:context.language,page:context.page};
+  }
+  return input;
 }
 
 function createHandler({ agent = runAgent, now = Date.now } = {}) {
