@@ -2,70 +2,83 @@
 
 PHOTOS = [
     {
-        'file': 'comunidade-acolhimento.jpg', 'category': 'acolhimento',
-        'label': 'Acolhimento', 'title': 'Pertencer faz diferença.',
-        'alt': 'Crianças reunidas ao ar livre, próximas umas das outras, em um momento de convivência.',
-        'description': 'A convivência inspira nossa proposta de uma comunidade que acolhe.',
-        'credit': 'Larm Rmah / Unsplash',
-        'source': 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c',
+        "file": "comunidade-acolhimento.jpg",
+        "category": "acolhimento",
+        "label": "Acolhimento",
+        "title": "Pertencer faz diferença.",
+        "alt": "Crianças reunidas ao ar livre, próximas umas das outras, em um momento de convivência.",
+        "description": "A convivência inspira nossa proposta de uma comunidade que acolhe.",
+        "credit": "Larm Rmah / Unsplash",
+        "source": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c",
     },
     {
-        'file': 'educacao.jpg', 'category': 'educacao',
-        'label': 'Educação', 'title': 'Aprender abre caminhos.',
-        'alt': 'Livros empilhados com uma maçã, lápis coloridos e blocos com as letras A, B e C sobre uma mesa.',
-        'description': 'Livros, curiosidade e espaço para descobrir o mundo.',
-        'credit': 'Element5 Digital / Unsplash',
-        'source': 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b',
+        "file": "educacao.jpg",
+        "category": "educacao",
+        "label": "Educação",
+        "title": "Aprender abre caminhos.",
+        "alt": "Livros empilhados com uma maçã, lápis coloridos e blocos com as letras A, B e C sobre uma mesa.",
+        "description": "Livros, curiosidade e espaço para descobrir o mundo.",
+        "credit": "Element5 Digital / Unsplash",
+        "source": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
     },
     {
-        'file': 'natureza.jpg', 'category': 'ambiente',
-        'label': 'Meio ambiente', 'title': 'Cuidar também é plantar.',
-        'alt': 'Duas pessoas com luvas e máscaras plantam uma muda em uma área arborizada, acompanhadas por um grupo.',
-        'description': 'Pequenos cuidados com o ambiente podem ser compartilhados.',
-        'credit': 'Unsplash',
-        'source': 'https://images.unsplash.com/photo-1598335624134-5bceb5de202d',
+        "file": "natureza.jpg",
+        "category": "ambiente",
+        "label": "Meio ambiente",
+        "title": "Cuidar também é plantar.",
+        "alt": "Duas pessoas com luvas e máscaras plantam uma muda em uma área arborizada, acompanhadas por um grupo.",
+        "description": "Pequenos cuidados com o ambiente podem ser compartilhados.",
+        "credit": "Unsplash",
+        "source": "https://images.unsplash.com/photo-1598335624134-5bceb5de202d",
     },
     {
-        'file': 'voluntariado.jpg', 'category': 'acolhimento',
-        'label': 'Voluntariado', 'title': 'Presença que soma.',
-        'alt': 'Pessoa de costas, com boné e camiseta identificada com a palavra Volunteer, participa de um evento.',
-        'description': 'Tempo, habilidades e disposição para fazer parte.',
-        'credit': 'Unsplash',
-        'source': 'https://images.unsplash.com/photo-1559027615-cd4628902d4a',
+        "file": "voluntariado.jpg",
+        "category": "acolhimento",
+        "label": "Voluntariado",
+        "title": "Presença que soma.",
+        "alt": "Pessoa de costas, com boné e camiseta identificada com a palavra Volunteer, participa de um evento.",
+        "description": "Tempo, habilidades e disposição para fazer parte.",
+        "credit": "Unsplash",
+        "source": "https://images.unsplash.com/photo-1559027615-cd4628902d4a",
     },
     {
-        'file': 'livros.jpg', 'category': 'educacao',
-        'label': 'Leitura', 'title': 'Histórias para compartilhar.',
-        'alt': 'Estantes altas de madeira cheias de livros de diferentes tamanhos e cores.',
-        'description': 'A leitura aproxima pessoas de novas ideias e possibilidades.',
-        'credit': 'Unsplash',
-        'source': 'https://images.unsplash.com/photo-1507842217343-583bb7270b66',
+        "file": "livros.jpg",
+        "category": "educacao",
+        "label": "Leitura",
+        "title": "Histórias para compartilhar.",
+        "alt": "Estantes altas de madeira cheias de livros de diferentes tamanhos e cores.",
+        "description": "A leitura aproxima pessoas de novas ideias e possibilidades.",
+        "credit": "Unsplash",
+        "source": "https://images.unsplash.com/photo-1507842217343-583bb7270b66",
     },
 ]
 
 
 def gallery_photos():
-    return '\n'.join(f'''
-      <figure class="gallery-item" data-filter-item data-category="{photo['category']}">
-        <button type="button" class="gallery-image-button" data-lightbox="img/{photo['file']}" data-caption="{photo['title']} {photo['alt']} Imagem ilustrativa. {photo['credit']}." aria-label="Ampliar imagem: {photo['title']}">
-          <img src="img/{photo['file']}" alt="{photo['alt']}" loading="lazy" width="1100" height="760">
+    return "\n".join(
+        f'''
+      <figure class="gallery-item" data-filter-item data-category="{photo["category"]}">
+        <button type="button" class="gallery-image-button" data-lightbox="img/{photo["file"]}" data-caption="{photo["title"]} {photo["alt"]} Imagem ilustrativa. {photo["credit"]}." aria-label="Ampliar imagem: {photo["title"]}">
+          <img src="img/{photo["file"]}" alt="{photo["alt"]}" loading="lazy" width="1100" height="760">
           <span class="gallery-expand" aria-hidden="true">↗</span>
         </button>
         <figcaption>
-          <span class="tag">{photo['label']}</span>
-          <strong>{photo['title']}</strong>
-          <p>{photo['description']}</p>
-          <small>Imagem ilustrativa · <a href="{photo['source']}" rel="noopener noreferrer">{photo['credit']}</a></small>
+          <span class="tag">{photo["label"]}</span>
+          <strong>{photo["title"]}</strong>
+          <p>{photo["description"]}</p>
+          <small>Imagem ilustrativa · <a href="{photo["source"]}" rel="noopener noreferrer">{photo["credit"]}</a></small>
         </figcaption>
-      </figure>''' for photo in PHOTOS)
+      </figure>'''
+        for photo in PHOTOS
+    )
 
 
 PAGES = {
-    'galeria.html': {
-        'title': 'Galeria',
-        'description': 'Imagens que inspiram a proposta do Instituto Esperança: educação, convivência, voluntariado e cuidado com o meio ambiente.',
-        'section': 'conteudos',
-        'content': '''
+    "galeria.html": {
+        "title": "Galeria",
+        "description": "Imagens que inspiram a proposta do Instituto Esperança: educação, convivência, voluntariado e cuidado com o meio ambiente.",
+        "section": "conteudos",
+        "content": """
 <section class="page-hero">
   <div class="container">
     <p class="eyebrow">NOSSO OLHAR</p>
@@ -86,7 +99,9 @@ PAGES = {
       <button type="button" data-filter="ambiente" aria-pressed="false">Meio ambiente</button>
     </div>
     <p class="filter-status sr-only" data-filter-status role="status" aria-live="polite"></p>
-    <div class="gallery-grid">''' + gallery_photos() + '''
+    <div class="gallery-grid">"""
+        + gallery_photos()
+        + """
     </div>
     <p class="notice">As fotografias são ilustrativas e foram selecionadas no Unsplash. Elas representam os temas do projeto e não documentam atividades realizadas pelo Instituto. <a href="https://unsplash.com/license" rel="noopener noreferrer">Conheça a licença das imagens.</a></p>
   </div>
@@ -96,13 +111,13 @@ PAGES = {
     <div><p class="eyebrow">DA INSPIRAÇÃO À PROPOSTA</p><h2 id="galeria-proximo">Conheça as ideias por trás das imagens.</h2></div>
     <div><p>Em Projetos, você encontra as frentes de atuação propostas e as formas de se aproximar de cada uma delas.</p><a href="projetos.html" class="button button-primary">Explorar os projetos <span aria-hidden="true">↗</span></a></div>
   </div>
-</section>''',
+</section>""",
     },
-    'midia.html': {
-        'title': 'Mídia',
-        'description': 'Conheça a proposta do Instituto Esperança em vídeo, trilha instrumental e apresentação interativa, com alternativas textuais.',
-        'section': 'conteudos',
-        'content': '''
+    "midia.html": {
+        "title": "Mídia",
+        "description": "Conheça a proposta do Instituto Esperança em vídeo, trilha instrumental e apresentação interativa, com alternativas textuais.",
+        "section": "conteudos",
+        "content": """
 <section class="page-hero">
   <div class="container">
     <p class="eyebrow">VER, OUVIR E CONHECER</p>
@@ -167,6 +182,6 @@ PAGES = {
     <iframe class="presentation-frame" src="assets/apresentacao.html" title="Apresentação interativa: os três caminhos do Instituto Esperança" loading="lazy" width="1100" height="550"></iframe>
     <p class="media-caption">Conteúdo autoral do projeto. <a href="assets/apresentacao.html" class="text-link">Abrir a apresentação em página própria <span aria-hidden="true">↗</span></a></p>
   </div>
-</section>''',
+</section>""",
     },
 }

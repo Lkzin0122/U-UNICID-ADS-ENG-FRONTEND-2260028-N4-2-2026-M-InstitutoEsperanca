@@ -1,0 +1,14 @@
+/* Instituto Esperança — Estilos de orcamento hospedagem. */
+.price {
+  font-size: 2rem !important;
+  color: var(--blue-deep) !important;
+  font-weight: 700;
+  margin-block: 20px;
+}
+
+.price small {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 400;
+}

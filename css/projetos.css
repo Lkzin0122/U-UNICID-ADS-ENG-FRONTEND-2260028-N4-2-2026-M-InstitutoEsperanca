@@ -1,0 +1,31 @@
+/* Instituto Esperança — Estilos de projetos. */
+.card.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card.project-card .icon-badge {
+  margin-bottom: 15px;
+}
+
+.card.project-card details {
+  margin-block: 20px;
+  font-size: 0.84rem;
+  width: 100%;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.card.project-card summary {
+  font-weight: 600;
+  color: var(--blue-deep);
+}
+
+.card.project-card details p {
+  margin-top: 12px;
+}
+
+.card.project-card > .text-link {
+  margin-top: auto;
+}

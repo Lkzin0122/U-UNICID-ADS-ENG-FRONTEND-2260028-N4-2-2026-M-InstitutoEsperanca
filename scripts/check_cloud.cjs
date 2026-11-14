@@ -6,20 +6,53 @@ const { getConfig } = require('../server/model.cjs');
 function setup() {
   const calls = [];
   const store = {
-    version: 'cloud-test', sources: [{ id: 'projects', title: 'Projetos' }],
-    search: () => [{ id: 'education', source_id: 'projects', title: 'Educação', text: 'A frente de educação propõe leitura. Envie uma mensagem de interesse à equipe.', url: 'projetos.html#educacao', score: 1 }],
+    version: 'cloud-test',
+    sources: [{ id: 'projects', title: 'Projetos' }],
+    search: () => [
+      {
+        id: 'education',
+        source_id: 'projects',
+        title: 'Educação',
+        text: 'A frente de educação propõe leitura. Envie uma mensagem de interesse à equipe.',
+        url: 'projetos.html#educacao',
+        score: 1,
+      },
+    ],
   };
   const fetchImpl = async (url, options) => {
     const body = JSON.parse(options.body);
     calls.push({ url, options, body });
-    const value = calls.length === 1 ? { queries: ['educação leitura'] } : { answer: 'A proposta de educação inclui leitura. Você gostaria de conversar com a equipe?', source_ids: ['education'] };
-    return { ok: true, status: 200, json: async () => ({ choices: [{ finish_reason: 'stop', message: { role: 'assistant', content: JSON.stringify(value) } }] }) };
+    const value =
+      calls.length === 1
+        ? { queries: ['educação leitura'] }
+        : {
+            answer:
+              'A proposta de educação inclui leitura. Você gostaria de conversar com a equipe?',
+            source_ids: ['education'],
+          };
+    return {
+      ok: true,
+      status: 200,
+      json: async () => ({
+        choices: [
+          { finish_reason: 'stop', message: { role: 'assistant', content: JSON.stringify(value) } },
+        ],
+      }),
+    };
   };
-  return { store, fetchImpl, calls, config: { provider: 'vercel', deployed: true, apiKey: 'test-private-key', timeoutMs: 1000 } };
+  return {
+    store,
+    fetchImpl,
+    calls,
+    config: { provider: 'vercel', deployed: true, apiKey: 'test-private-key', timeoutMs: 1000 },
+  };
 }
 test('Vercel usa o Gateway hospedado com histórico, pesquisa e saída estruturada', async () => {
   const f = setup();
-  const history = [{ role: 'user', content: 'Quero ajudar com leitura.' }, { role: 'assistant', content: 'Podemos falar da frente de educação.' }];
+  const history = [
+    { role: 'user', content: 'Quero ajudar com leitura.' },
+    { role: 'assistant', content: 'Podemos falar da frente de educação.' },
+  ];
   const result = await runAgent({ message: 'Como participo dessa frente?', history }, f);
   assert.equal(f.calls.length, 2);
   for (const { url, options, body } of f.calls) {
@@ -31,7 +64,10 @@ test('Vercel usa o Gateway hospedado com histórico, pesquisa e saída estrutura
     assert.equal(body.response_format.json_schema.strict, true);
     assert.ok(!('think' in body));
     assert.ok(!('keep_alive' in body));
-    assert.deepEqual(body.messages.slice(1), [...history, { role: 'user', content: 'Como participo dessa frente?' }]);
+    assert.deepEqual(body.messages.slice(1), [
+      ...history,
+      { role: 'user', content: 'Como participo dessa frente?' },
+    ]);
   }
   assert.equal(result.mode, 'ai');
   assert.equal(result.sources[0].url, 'projetos.html#educacao');
@@ -61,15 +97,26 @@ test('Groq não usa uma credencial da Vercel quando falta sua chave', () => {
   const previous = process.env.GROQ_API_KEY;
   delete process.env.GROQ_API_KEY;
   try {
-    assert.throws(() => getConfig({ provider: 'groq', deployed: true, oidcToken: 'unrelated-token' }), error => error.code === 'ai_auth_missing');
-  } finally { if (previous !== undefined) process.env.GROQ_API_KEY = previous; }
-  assert.throws(() => getConfig({ provider: 'groq', apiKey: 'private', baseUrl: 'https://externo.example' }), error => error.code === 'invalid_config');
+    assert.throws(
+      () => getConfig({ provider: 'groq', deployed: true, oidcToken: 'unrelated-token' }),
+      (error) => error.code === 'ai_auth_missing',
+    );
+  } finally {
+    if (previous !== undefined) process.env.GROQ_API_KEY = previous;
+  }
+  assert.throws(
+    () => getConfig({ provider: 'groq', apiKey: 'private', baseUrl: 'https://externo.example' }),
+    (error) => error.code === 'invalid_config',
+  );
 });
 test('limite gratuito do Groq informa espera em vez de falha de conexão', async () => {
   const f = setup();
   f.config.provider = 'groq';
   f.fetchImpl = async () => ({ ok: false, status: 429, headers: { get: () => '25' } });
-  await assert.rejects(runAgent({ message: 'Quais são os projetos?' }, f), error => error.code === 'ai_rate_limited' && error.status === 429 && error.retryAfter === 25);
+  await assert.rejects(
+    runAgent({ message: 'Quais são os projetos?' }, f),
+    (error) => error.code === 'ai_rate_limited' && error.status === 429 && error.retryAfter === 25,
+  );
 });
 test('autenticação OIDC da execução chega ao Gateway sem chave manual', async () => {
   const f = setup();
@@ -81,23 +128,56 @@ test('autenticação OIDC da execução chega ao Gateway sem chave manual', asyn
     await runAgent({ message: 'Qual a proposta?' }, f);
     assert.equal(f.calls[0].options.headers.Authorization, 'Bearer test-runtime-oidc');
     assert.equal(f.calls[0].options.headers['ai-gateway-auth-method'], 'oidc');
-  } finally { if (previous !== undefined) process.env.AI_GATEWAY_API_KEY = previous; }
+  } finally {
+    if (previous !== undefined) process.env.AI_GATEWAY_API_KEY = previous;
+  }
 });
 test('destino da credencial é fixo e produção não tenta usar localhost', () => {
-  assert.throws(() => getConfig({ provider: 'vercel', deployed: true, baseUrl: 'https://externo.example', apiKey: 'private' }), error => error.code === 'invalid_config');
-  assert.throws(() => getConfig({ provider: 'ollama', deployed: true, baseUrl: 'http://127.0.0.1:11434' }), error => error.code === 'invalid_config');
+  assert.throws(
+    () =>
+      getConfig({
+        provider: 'vercel',
+        deployed: true,
+        baseUrl: 'https://externo.example',
+        apiKey: 'private',
+      }),
+    (error) => error.code === 'invalid_config',
+  );
+  assert.throws(
+    () => getConfig({ provider: 'ollama', deployed: true, baseUrl: 'http://127.0.0.1:11434' }),
+    (error) => error.code === 'invalid_config',
+  );
 });
 test('identifica a verificação exigida pela Vercel sem expor dados de cobrança', async () => {
   const f = setup();
-  f.fetchImpl = async () => ({ ok: false, status: 403, json: async () => ({ error: { type: 'customer_verification_required', message: 'private billing details' } }) });
-  await assert.rejects(runAgent({ message: 'Oi' }, f), error => error.code === 'ai_account_verification_required' && !error.message.includes('private'));
+  f.fetchImpl = async () => ({
+    ok: false,
+    status: 403,
+    json: async () => ({
+      error: { type: 'customer_verification_required', message: 'private billing details' },
+    }),
+  });
+  await assert.rejects(
+    runAgent({ message: 'Oi' }, f),
+    (error) =>
+      error.code === 'ai_account_verification_required' && !error.message.includes('private'),
+  );
 });
-test('erros de autenticação, crédito e provedor não expõem detalhes privados', async t => {
-  for (const [status, expected] of [[401, 'ai_auth_failed'], [403, 'ai_auth_failed'], [402, 'ai_quota_exceeded'], [429, 'ai_quota_exceeded'], [500, 'ai_provider_unavailable']]) {
+test('erros de autenticação, crédito e provedor não expõem detalhes privados', async (t) => {
+  for (const [status, expected] of [
+    [401, 'ai_auth_failed'],
+    [403, 'ai_auth_failed'],
+    [402, 'ai_quota_exceeded'],
+    [429, 'ai_quota_exceeded'],
+    [500, 'ai_provider_unavailable'],
+  ]) {
     await t.test(String(status), async () => {
       const f = setup();
       f.fetchImpl = async () => ({ ok: false, status, text: async () => 'private provider body' });
-      await assert.rejects(runAgent({ message: 'Oi' }, f), error => error.code === expected && !error.message.includes('private'));
+      await assert.rejects(
+        runAgent({ message: 'Oi' }, f),
+        (error) => error.code === expected && !error.message.includes('private'),
+      );
     });
   }
 });

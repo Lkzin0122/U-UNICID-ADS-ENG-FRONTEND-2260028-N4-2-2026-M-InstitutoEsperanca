@@ -1,0 +1,83 @@
+/* Instituto Esperança — Estilos de galeria. */
+.gallery-grid {
+  display: grid;
+  gap: 28px;
+}
+
+.gallery-item {
+  margin: 0;
+  min-width: 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 1.35;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.gallery-item button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.gallery-item button::after {
+  content: '↗';
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  background: var(--white);
+  color: var(--navy);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.gallery-item button img {
+  transition: transform 0.3s;
+}
+
+.gallery-item button:hover img {
+  transform: scale(1.035);
+}
+
+.gallery-item figcaption {
+  font-size: 0.8rem;
+  margin-top: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.gallery-item figcaption strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.gallery-item figcaption a {
+  text-decoration: underline;
+}
+
+.gallery-expand {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,157 +1,244 @@
-/* ==============================
-   Página Contato — mobile-first
-   ============================== */
+/* Instituto Esperança — Estilos de contato. */
 
-.page-hero {
-    background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
-    color: var(--branco);
-    padding: 3rem 0 2.5rem;
+.contact-grid {
+  display: grid;
+  gap: 35px;
 }
 
-.page-hero h1 {
-    font-size: clamp(1.8rem, 5vw, 3rem);
-    line-height: 1.15;
-    margin-bottom: 0.85rem;
+.contact-aside h2 {
+  margin-bottom: 22px;
 }
 
-.page-hero p {
-    max-width: 44rem;
-    color: rgba(255, 255, 255, 0.92);
+.contact-topics {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0;
 }
 
-.contato-formulario {
-    background: var(--creme);
+.contact-topics li {
+  margin: 12px 0;
+  font-size: 0.9rem;
 }
 
-.contato-formulario .section-header,
-.voluntariado .section-header {
-    margin-bottom: 1.75rem;
+.contact-topics span {
+  color: var(--blue);
+  margin-right: 10px;
 }
 
-.contato-formulario h2,
-.voluntariado h2 {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
-    margin-bottom: 0.65rem;
+.contact-help {
+  padding: 24px 0;
+  border-block: 1px solid var(--line);
+  margin-bottom: 25px;
 }
 
-.contato-formulario .section-header p:last-child,
-.voluntariado .section-header p:last-child {
-    color: var(--texto-claro);
-    max-width: 40rem;
+.contact-help h3 {
+  font-size: 1.1rem;
 }
 
-.form-contato,
-.form-voluntario {
-    max-width: 36rem;
-    display: grid;
-    gap: 1.15rem;
+.contact-help p {
+  font-size: 0.88rem;
+  margin-top: 12px;
 }
 
-.campo {
-    display: grid;
-    gap: 0.4rem;
+.contact-help .text-link {
+  margin-top: 15px;
 }
 
-.campo label {
-    font-weight: 700;
-    color: var(--azul-escuro);
-    font-size: 0.95rem;
+.form-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+  background: var(--white);
+  min-width: 0;
 }
 
-.campo input,
-.campo textarea,
-.campo select {
-    width: 100%;
-    min-height: 48px;
-    padding: 0.75rem 1rem;
-    border: 1.5px solid #d5dde3;
-    border-radius: 10px;
-    background: var(--branco);
-    color: var(--texto);
-    font: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
+.form-panel h2 {
+  font-size: 1.8rem;
 }
 
-.campo textarea {
-    min-height: 140px;
-    resize: vertical;
+.form-intro {
+  margin-top: 14px;
+  font-size: 0.86rem;
 }
 
-.campo select {
-    cursor: pointer;
-    appearance: none;
-    background-image: linear-gradient(45deg, transparent 50%, var(--azul-escuro) 50%),
-        linear-gradient(135deg, var(--azul-escuro) 50%, transparent 50%);
-    background-position: calc(100% - 18px) calc(50% - 3px),
-        calc(100% - 12px) calc(50% - 3px);
-    background-size: 6px 6px, 6px 6px;
-    background-repeat: no-repeat;
-    padding-right: 2.5rem;
+.form-panel form {
+  margin-top: 28px;
 }
 
-.campo input::placeholder,
-.campo textarea::placeholder {
-    color: #8a97a0;
+.form-row {
+  display: grid;
+  gap: 0 18px;
 }
 
-.campo input:hover,
-.campo textarea:hover,
-.campo select:hover {
-    border-color: var(--azul);
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 22px;
+  min-width: 0;
 }
 
-.campo input:focus,
-.campo textarea:focus,
-.campo select:focus {
-    outline: none;
-    border-color: var(--azul-escuro);
-    box-shadow: 0 0 0 3px rgba(52, 124, 207, 0.25);
+.field label {
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
-.form-contato .btn,
-.form-voluntario .btn {
-    justify-self: start;
-    border: none;
-    cursor: pointer;
-    font: inherit;
-    margin-top: 0.35rem;
+.field label > span {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--muted);
 }
 
-.voluntariado {
-    background: var(--branco);
+.form-result {
+  margin-top: 26px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
 }
 
-.voluntariado .form-voluntario {
-    background: var(--azul-claro);
-    border-left: 6px solid var(--azul);
-    border-radius: 14px;
-    padding: 1.35rem 1.25rem;
+.form-result h3 {
+  font-size: 1.1rem;
 }
 
-@media (min-width: 700px) {
-    .form-contato,
-    .form-voluntario {
-        max-width: 44rem;
-    }
-
-    .voluntariado .form-voluntario {
-        padding: 1.75rem 1.75rem;
-    }
+.form-result p {
+  font-size: 0.82rem;
+  margin-top: 12px;
 }
 
-@media (min-width: 960px) {
-    .page-hero {
-        padding: 4.5rem 0 3.5rem;
-    }
+.form-result pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+  font-size: 0.8rem;
+  background: var(--tint);
+  padding: 18px;
+  border-radius: 7px;
+  max-height: 350px;
+  overflow: auto;
+}
 
-    .contato-formulario,
-    .voluntariado {
-        padding-top: 3.5rem;
-        padding-bottom: 3.5rem;
-    }
+.team-grid {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
 
-    .voluntariado .form-voluntario {
-        max-width: 48rem;
-        padding: 2rem 2.25rem;
-    }
+.team-grid li {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.team-grid li > span {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--tint);
+  color: var(--blue);
+  font-size: 0.78rem;
+  flex-shrink: 0;
+}
+
+.team-grid strong {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.form-panel .iti {
+  display: block;
+  width: 100%;
+  --iti-country-selector-bg: var(--paper);
+  --iti-hover-color: var(--tint);
+  --iti-border-color: var(--line);
+}
+
+.form-panel .iti .iti__tel-input {
+  width: 100%;
+  min-width: 0;
+}
+
+.form-panel .iti__country-list {
+  max-width: min(360px, calc(100vw - 48px));
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.form-panel .iti__search-input {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.form-panel .iti__country:hover,
+.form-panel .iti__country.iti__highlight {
+  background: var(--tint);
+}
+
+.form-panel .iti__selected-country,
+.form-panel .iti__tel-input {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.contact-fields {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.contact-fields:disabled .button {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-result[data-state='error'] {
+  border-top-color: var(--notice-border);
+}
+
+.phone-error {
+  color: var(--notice-ink);
+  background: var(--notice-bg);
+  border-inline-start: 3px solid var(--notice-border);
+  border-radius: 4px;
+  padding: 8px 10px;
+}
+
+@media (min-width: 600px) {
+  .form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 70px;
+  }
+  .form-panel {
+    padding: 38px;
+  }
+  .team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 399px) {
+  .form-panel {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .form-panel h2 {
+    font-size: 2.8rem;
+  }
 }

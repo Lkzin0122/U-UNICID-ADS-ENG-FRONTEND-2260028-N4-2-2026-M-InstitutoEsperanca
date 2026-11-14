@@ -1,0 +1,84 @@
+/* Instituto Esperança — Estilos de acessibilidade. */
+.accessibility-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
+.accessibility-controls button {
+  min-width: 48px;
+}
+
+.small {
+  font-size: 0.78rem !important;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.card.accessibility-controls {
+  display: block;
+  margin: 0;
+}
+
+.accessibility-controls > .button-row {
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.accessibility-controls > p {
+  margin-block: 18px;
+}
+
+.accessibility-controls > .button-row .button {
+  padding: 12px 15px;
+}
+
+.accessibility-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.accessibility-commitment {
+  margin-top: 80px;
+}
+
+.accessibility-commitment .text-link {
+  margin-top: 24px;
+}
+
+.accessibility-report {
+  margin-top: 80px;
+}
+
+.section .accessibility-report h3 {
+  margin: 12px 0;
+  font-size: 1.27rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 900px) {
+  .section[aria-labelledby='titulo-ajustes'] .split > .section-heading {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 0;
+  }
+  .section[aria-labelledby='titulo-ajustes'] .accessibility-controls {
+    align-self: stretch;
+  }
+  .accessibility-commitment,
+  .accessibility-report {
+    margin-top: 0;
+  }
+}
+
+@media print {
+  .accessibility-controls {
+    display: none !important;
+  }
+}

@@ -2,13 +2,13 @@
 
 
 def hero(label, title, description):
-    return f'''<section class="page-hero">
+    return f"""<section class="page-hero">
     <div class="container">
         <p class="eyebrow">{label}</p>
         <h1>{title}</h1>
         <p class="lead">{description}</p>
     </div>
-</section>'''
+</section>"""
 
 
 def cta(title, description, label="Quero fazer parte", href="participar.html"):
@@ -31,7 +31,8 @@ PAGES = {
             "Nosso propósito",
             "Acreditar nas pessoas.<br><em>Construir possibilidades.</em>",
             "A esperança começa quando alguém encontra espaço para aprender, participar e ser ouvido. Essa é a ideia que move a nossa proposta.",
-        ) + '''
+        )
+        + """
 <section class="section">
     <div class="container split">
         <div>
@@ -64,7 +65,11 @@ PAGES = {
         <div><p>Incentivar o uso responsável de recursos, compartilhar conhecimento e tornar a informação acessível são atitudes que aproximam sustentabilidade e inclusão.</p><p>No site, isso se traduz em conteúdos de fácil leitura, páginas leves, recursos de navegação por teclado e imagens com descrição. Na proposta de atuação, significa pensar em ações que respeitem tanto as pessoas quanto o território em que vivem.</p><a class="text-link" href="impacto.html">Como pensamos o impacto <span aria-hidden="true">↗</span></a></div>
     </div>
 </section>
-''' + cta("Há lugar para você nessa história.", "Conheça as formas de participar e encontre uma causa que faça sentido para você."),
+"""
+        + cta(
+            "Há lugar para você nessa história.",
+            "Conheça as formas de participar e encontre uma causa que faça sentido para você.",
+        ),
     },
     "projetos.html": {
         "title": "Projetos e iniciativas",
@@ -74,7 +79,8 @@ PAGES = {
             "Nossas iniciativas",
             "Muitas formas de cuidar.<br><em>Um propósito em comum.</em>",
             "Educação, inclusão, acolhimento e sustentabilidade: conheça as frentes que dão forma à proposta do Instituto Esperança.",
-        ) + '''
+        )
+        + """
 <section class="section">
     <div class="container" data-filter-group>
         <div class="section-heading"><p class="eyebrow">Encontre sua causa</p><h2>Ideias para transformar possibilidades.</h2><p>Conheça nossas frentes de atuação e entre em contato para saber como participar.</p></div>
@@ -126,7 +132,11 @@ PAGES = {
         </div>
     </div>
 </section>
-''' + cta("Qual causa faz o seu coração bater?", "Seu tempo, seu conhecimento e suas ideias podem dar o primeiro passo em uma nova direção."),
+"""
+        + cta(
+            "Qual causa faz o seu coração bater?",
+            "Seu tempo, seu conhecimento e suas ideias podem dar o primeiro passo em uma nova direção.",
+        ),
     },
     "impacto.html": {
         "title": "Impacto e transparência",
@@ -136,7 +146,8 @@ PAGES = {
             "Impacto e transparência",
             "Transformar começa com<br><em>responsabilidade.</em>",
             "Cada iniciativa precisa de propósito, escuta e acompanhamento. Conheça os caminhos que queremos desenvolver e como pretendemos avaliar os resultados.",
-        ) + '''
+        )
+        + """
 <section class="section section-tint" aria-labelledby="titulo-ods" id="ods">
     <div class="container">
         <div class="section-heading">
@@ -221,7 +232,13 @@ PAGES = {
         <div><p>Um número só faz sentido quando sabemos de onde ele vem, a que período se refere e o que representa. A proposta é divulgar resultados acompanhados dessas informações, respeitando a privacidade das pessoas envolvidas.</p><p>Enquanto os dados institucionais não estiverem disponíveis, o site distingue iniciativas planejadas, conteúdo educativo e imagens ilustrativas.</p><a class="text-link" href="acessibilidade.html">Conheça os recursos de inclusão <span aria-hidden="true">↗</span></a></div>
     </div>
 </section>
-''' + cta("Boas perguntas ajudam a melhorar.", "Quer entender nossa proposta ou compartilhar uma sugestão? O primeiro passo é abrir uma conversa.", "Ir para contato", "contato.html?assunto=informacoes"),
+"""
+        + cta(
+            "Boas perguntas ajudam a melhorar.",
+            "Quer entender nossa proposta ou compartilhar uma sugestão? O primeiro passo é abrir uma conversa.",
+            "Ir para contato",
+            "contato.html?assunto=informacoes",
+        ),
     },
     "participar.html": {
         "title": "Como participar",
@@ -231,7 +248,8 @@ PAGES = {
             "Faça parte",
             "O seu jeito de ajudar<br><em>também faz sentido.</em>",
             "Uma habilidade, uma boa ideia, tempo para ouvir. Existem muitas formas de se aproximar de uma causa e contribuir para uma rede de cuidado.",
-        ) + '''
+        )
+        + """
 <section class="section">
     <div class="container">
         <div class="section-heading"><p class="eyebrow">Escolha seu caminho</p><h2>A solidariedade tem muitas formas.</h2><p>Explore as possibilidades de participação previstas na proposta do Instituto.</p></div>
@@ -260,7 +278,7 @@ PAGES = {
         <div><p>Reunimos respostas sobre o Instituto, os projetos e as formas de participação para ajudar você a encontrar seu próximo passo.</p><a class="button button-outline" href="perguntas-frequentes.html">Ver perguntas frequentes <span aria-hidden="true">↗</span></a></div>
     </div>
 </section>
-''',
+""",
     },
     "perguntas-frequentes.html": {
         "title": "Perguntas frequentes",
@@ -270,7 +288,8 @@ PAGES = {
             "Vamos conversar",
             "Suas dúvidas merecem<br><em>respostas claras.</em>",
             "Entenda a proposta do Instituto, as formas de participação e o que você encontra neste site.",
-        ) + '''
+        )
+        + """
 <section class="section">
     <div class="container split">
         <div class="section-heading"><p class="eyebrow">Perguntas frequentes</p><h2>Bom saber antes de começar.</h2><p>Selecione uma pergunta para ler a resposta. Você também pode navegar usando Tab e abrir cada item com Enter ou Espaço.</p><a class="text-link" href="contato.html">Ir para o contato <span aria-hidden="true">↗</span></a></div>
@@ -286,6 +305,10 @@ PAGES = {
         </div>
     </div>
 </section>
-''' + cta("Já encontrou o seu próximo passo?", "Conheça as possibilidades de colaboração e as causas que fazem parte da nossa proposta."),
+"""
+        + cta(
+            "Já encontrou o seu próximo passo?",
+            "Conheça as possibilidades de colaboração e as causas que fazem parte da nossa proposta.",
+        ),
     },
 }
