@@ -52,6 +52,16 @@ test('IA indisponível produz erro explícito, sem simular resposta de FAQ', asy
   const unexpected = createHandler({ agent: async () => { throw new Error('private-test-secret'); } });
   assert.ok(!JSON.stringify(await request(unexpected)).includes('private-test-secret'));
 });
+
+test('contexto do site aceita somente páginas e idiomas conhecidos', async () => {
+  let received;
+  const handler = createHandler({agent:async input => {received=input; return success;}});
+  assert.equal((await request(handler,{message:'Oi',context:{language:'en',page:'projetos.html'}})).status,200);
+  assert.deepEqual(received.context,{language:'en',page:'projetos.html'});
+  for (const context of [null,[],{language:'xx',page:'index.html'},{language:'en',page:'https://evil.example'},{language:'__proto__',page:'index.html'}]) {
+    assert.equal((await request(handler,{message:'Oi',context})).status,400);
+  }
+});
 test('limita solicitações e libera o limite após um minuto', async () => {
   let time = 0;
   const handler = createHandler({ agent: async () => success, now: () => time });

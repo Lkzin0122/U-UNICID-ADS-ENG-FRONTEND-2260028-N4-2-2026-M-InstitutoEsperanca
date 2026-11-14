@@ -1,6 +1,7 @@
 /* Chat Esperança: identidade institucional e espaço para a conversa. */
 .esperanca-chat{
-  --chat-header-bg:var(--accent-fill);--chat-header-ink:var(--on-yellow);
+  --chat-header-bg:var(--topbar);--chat-header-ink:var(--topbar-ink);
+  inset:auto;margin:0;padding:0;border:0;width:auto;height:auto;overflow:visible;background:transparent;
   position:fixed;right:max(20px,env(safe-area-inset-right));
   bottom:calc(max(20px,env(safe-area-inset-bottom)) + var(--chat-keyboard-offset,0px));
   z-index:60;color:var(--ink);font:1rem/1.5 Arial,Helvetica,sans-serif;
@@ -12,12 +13,12 @@
 
 .chat-launcher{
   display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;
-  max-width:calc(100vw - 24px);padding:14px 20px;border:1px solid var(--accent-ink);
-  border-radius:32px;background:var(--accent-fill);color:var(--on-yellow);
+  max-width:calc(100vw - 24px);padding:14px 20px;border:2px solid var(--accent-ink);
+  border-radius:32px;background:var(--white);color:var(--accent-ink);
   font-size:.84rem;font-weight:700;line-height:1.4;
-  box-shadow:0 8px 24px #0b24512e;transition:box-shadow .18s;
+  box-shadow:0 0 0 3px var(--white),0 8px 24px #0b24512e;transition:box-shadow .18s;
 }
-.chat-launcher:hover{background:var(--accent-hover);box-shadow:0 10px 28px #0b245142}
+.chat-launcher:hover{background:var(--tint);box-shadow:0 0 0 3px var(--white),0 10px 28px #0b245142}
 .chat-launcher svg{width:23px;height:23px}
 .chat-launcher-label{text-align:left}
 
@@ -26,7 +27,7 @@
   width:min(410px,calc(100vw - 40px));
   height:min(660px,calc(var(--chat-viewport-height,100dvh) - 116px));
   max-height:calc(var(--chat-viewport-height,100dvh) - 116px);
-  border:1px solid var(--line);border-radius:22px;background:var(--paper);
+  border:2px solid var(--field-line);border-radius:22px;background:var(--paper);
   box-shadow:0 24px 64px -16px #06172f66,0 4px 16px #06172f14;
   overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;
   animation:chat-enter .18s ease-out;
@@ -44,7 +45,7 @@
 .chat-avatar svg{width:23px;height:23px}
 .chat-heading{flex:1;min-width:0}
 .chat-heading h2{font-size:1.08rem;font-weight:700;letter-spacing:-.025em;line-height:1.35;overflow-wrap:anywhere}
-.chat-heading p{margin:3px 0 0;font-size:.7rem;line-height:1.5;color:var(--on-yellow-muted,var(--chat-header-ink))}
+.chat-heading p{margin:3px 0 0;font-size:.7rem;line-height:1.5;color:var(--chat-header-ink)}
 .chat-ai-badge{
   display:inline-block;vertical-align:middle;margin-left:4px;padding:2px 5px;
   border:1px solid currentColor;border-radius:5px;font-size:.55rem;letter-spacing:.06em;line-height:1.4;
@@ -55,7 +56,7 @@
   border:1px solid transparent;border-radius:10px;
   background:var(--chat-header-bg);color:var(--chat-header-ink);transition:border-color .18s;
 }
-.chat-close:hover,.chat-reset:hover{border-color:currentColor;background:var(--accent-hover)}
+.chat-close:hover,.chat-reset:hover{border-color:currentColor;background:color-mix(in srgb,var(--chat-header-ink) 12%,var(--chat-header-bg))}
 .chat-close svg{width:20px;height:20px}
 .chat-reset svg{width:18px;height:18px}
 .chat-header :focus-visible{outline-color:var(--chat-header-ink);outline-offset:0}
@@ -64,6 +65,24 @@
   flex:1;min-height:96px;overflow-y:auto;overscroll-behavior:contain;
   padding:22px;scrollbar-width:thin;scrollbar-color:var(--line) transparent;
 }
+.chat-tools{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--white);flex-shrink:0}
+.chat-tools button,.chat-action-buttons button{min-height:38px;padding:7px 10px;border:1px solid var(--field-line);border-radius:9px;background:var(--paper);color:var(--accent-link);font:600 .73rem/1.5 Arial,Helvetica,sans-serif;text-align:start;overflow-wrap:anywhere;max-width:100%}
+.chat-tools button:hover,.chat-action-buttons button:hover{background:var(--tint);border-color:var(--accent-ink);text-decoration:underline}
+.chat-action-buttons{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chat-contact{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:18px 20px;background:var(--paper);color:var(--ink)}
+.chat-contact h3{font-size:1.05rem;margin:0 0 10px}
+.chat-contact p{font-size:.8rem;line-height:1.65;margin:8px 0 14px}
+.chat-contact-fields{display:grid;gap:8px}
+.chat-contact label{font-size:.78rem;font-weight:700}
+.chat-contact input,.chat-contact textarea,.chat-contact select{font:1rem/1.5 Arial,Helvetica,sans-serif;background:var(--white);color:var(--ink);border-color:var(--field-line);margin-bottom:7px;max-width:100%}
+.chat-contact-privacy{color:var(--muted)}
+.chat-contact-status{font-weight:600;overflow-wrap:anywhere}
+.chat-contact-status:empty{display:none}
+.chat-contact-fallback{display:inline-block;color:var(--accent-link);text-decoration:underline;padding-block:8px}
+.chat-contact-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chat-contact-actions button{padding:10px 12px;min-height:44px;border:1px solid var(--accent-ink);border-radius:9px;background:var(--white);color:var(--accent-link);font-weight:600;max-width:100%;overflow-wrap:anywhere}
+.chat-contact-actions button[type="submit"]{background:var(--accent-fill);color:var(--on-yellow)}
+.chat-contact-actions button[type="submit"]:hover{background:var(--accent-hover)}
 .chat-message{
   width:fit-content;max-width:95%;margin:0 auto 18px 0;padding:14px 16px;
   border:1px solid var(--line);border-radius:5px 17px 17px;background:var(--white);overflow-wrap:anywhere;
@@ -81,7 +100,7 @@
 .chat-welcome{width:100%;max-width:none;margin:0 0 24px;padding:4px 0 0;border:0;border-radius:0;background:transparent}
 .chat-welcome-symbol{
   display:grid;place-items:center;width:54px;height:54px;margin-bottom:20px;
-  border-radius:18px;background:#fff0bd;color:#1744bc;
+  border-radius:18px;background:var(--tint);color:var(--accent-ink);border:1px solid var(--line);
 }
 .chat-welcome-symbol svg{width:27px;height:27px;stroke-width:1.7}
 .chat-welcome .chat-author{margin-bottom:10px;font-size:.58rem;letter-spacing:.09em;line-height:1.7;color:var(--muted)}
@@ -140,7 +159,7 @@
 .chat-error{padding:12px 20px;border-top:1px solid var(--line);background:var(--notice-bg,var(--tint));color:var(--notice-ink,var(--ink));flex-shrink:0}
 .chat-error p{margin:0;font-size:.79rem;line-height:1.6;overflow-wrap:anywhere}
 .chat-retry{min-height:38px;padding:7px 12px;margin-top:8px;border:1px solid currentColor;border-radius:8px;background:transparent;color:inherit;font-size:.76rem;font-weight:600}
-.theme-dark .chat-welcome-symbol{background:#493d19;color:#ffe6a1}
+.theme-dark .chat-welcome-symbol{background:var(--tint);color:var(--accent-ink)}
 .high-contrast .chat-welcome-symbol{background:var(--tint);color:var(--ink);border:1px solid var(--line)}
 .high-contrast .chat-input-row:focus-within{outline:2px solid var(--focus);outline-offset:2px}
 @keyframes chat-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -172,5 +191,10 @@
 }
 @media(prefers-reduced-motion:reduce){
   .esperanca-chat *,.esperanca-chat ::before{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media(forced-colors:active){
+  .esperanca-chat{color:CanvasText}
+  .chat-launcher,.chat-panel,.chat-tools,.chat-header,.chat-contact{background:Canvas;color:CanvasText;border-color:CanvasText}
+  .esperanca-chat button{forced-color-adjust:auto;border-color:ButtonText}
 }
 @media print{.esperanca-chat{display:none}}

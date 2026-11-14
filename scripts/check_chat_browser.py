@@ -5,6 +5,7 @@ Execute: python scripts/check_chat_browser.py.
 import base64
 import http.server
 import json
+import os
 import shutil
 import subprocess
 import tempfile
@@ -21,7 +22,8 @@ def run():
     threading.Thread(target=server.serve_forever, daemon=True).start()
     origin = f'http://127.0.0.1:{server.server_port}'
     browsers = [Path('C:/Program Files/Google/Chrome/Application/chrome.exe'), Path('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe')]
-    browser = next((candidate for candidate in browsers if candidate.exists()), None)
+    configured_browser = Path(os.environ.get('ESPERANCA_BROWSER_PATH', ''))
+    browser = configured_browser if configured_browser.is_file() else next((candidate for candidate in browsers if candidate.exists()), None)
     if not browser:
         raise RuntimeError('Nenhum Chromium instalado encontrado.')
     profile = Path(tempfile.mkdtemp(prefix='esperanca-chat-'))

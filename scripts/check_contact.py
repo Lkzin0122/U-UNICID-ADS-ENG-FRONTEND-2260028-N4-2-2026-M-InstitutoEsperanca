@@ -213,7 +213,8 @@ def run_browser_checks(check=check_contact):
 
     browsers = (Path('C:/Program Files/Google/Chrome/Application/chrome.exe'), Path('C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'))
     requested = os.environ.get('ESPERANCA_TEST_BROWSER')
-    browser = browsers[1] if requested == 'edge' and browsers[1].exists() else next((path for path in browsers if path.exists()), None)
+    configured_browser = Path(os.environ.get('ESPERANCA_BROWSER_PATH', ''))
+    browser = configured_browser if configured_browser.is_file() else browsers[1] if requested == 'edge' and browsers[1].exists() else next((path for path in browsers if path.exists()), None)
     if browser is None:
         raise RuntimeError('Nenhum Chromium instalado encontrado.')
     server = http.server.ThreadingHTTPServer(('127.0.0.1', 0), QuietHandler)

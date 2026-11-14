@@ -108,6 +108,17 @@
     });
   };
   updatePreferences();
+  window.esperancaVisual = Object.freeze({
+    get preferences() { return {...preferences}; },
+    set(patch) {
+      if (['system','light','dark'].includes(patch.theme)) preferences.theme = patch.theme;
+      if (typeof patch.contrast === 'boolean') preferences.contrast = patch.contrast;
+      if (typeof patch.invert === 'boolean') preferences.invert = patch.invert;
+      if (colorVisionOptions.includes(patch.colorVision)) preferences.colorVision = patch.colorVision;
+      if (Number.isFinite(patch.scale)) preferences.scale = Math.max(.9,Math.min(2,Math.round(patch.scale * 10) / 10));
+      updatePreferences(true);
+    },
+  });
   document.addEventListener('esperanca:languagechange', () => updatePreferences());
   document.querySelectorAll('[data-font-size]').forEach(button => button.addEventListener('click', () => {
     const action = button.dataset.fontSize;
@@ -291,6 +302,13 @@
     const fallback = form.querySelector('#contact-fallback');
     const contactAddress = fallback.getAttribute('href').slice('mailto:'.length);
     const t = phrase => window.esperancaI18n?.t(phrase) || phrase;
+    const emailInput = form.querySelector('#email');
+    const validateEmail = () => {
+      emailInput.setCustomValidity(emailInput.value && !window.esperancaContact.validEmail(emailInput.value.trim()) ? t('Informe um e-mail válido.') : '');
+      return emailInput.checkValidity();
+    };
+    emailInput.addEventListener('input', validateEmail);
+    emailInput.addEventListener('blur', validateEmail);
     const localizedValidation = new Map();
     form.addEventListener('invalid', event => {
       const field = event.target;
@@ -299,13 +317,14 @@
       field.setCustomValidity('');
       const missing = { nome: 'Informe seu nome.', email: 'Informe seu e-mail.', assunto: 'Selecione um assunto.', mensagem: 'Escreva sua mensagem.' };
       const phrase = field.validity.valueMissing ? missing[field.id]
-        : field.validity.typeMismatch ? 'Informe um e-mail válido.'
+        : field.validity.typeMismatch || (field.id === 'email' && field.validity.patternMismatch) ? 'Informe um e-mail válido.'
         : field.validity.tooShort ? 'Escreva uma mensagem com pelo menos 10 caracteres.'
         : field.validity.tooLong ? 'Respeite o limite de caracteres deste campo.' : '';
       if (phrase) { localizedValidation.set(field, phrase); field.setCustomValidity(t(phrase)); }
     }, true);
     document.addEventListener('esperanca:languagechange', () => {
       localizedValidation.forEach((phrase, field) => field.setCustomValidity(t(phrase)));
+      if (emailInput.validity.customError) validateEmail();
     });
     let sending = false;
     let statusPhrase = '';
@@ -328,7 +347,7 @@
       const value = id => form.querySelector(`#${id}`).value.trim();
       form.querySelector('#nome').setCustomValidity(value('nome') ? '' : t('Informe seu nome.'));
       form.querySelector('#mensagem').setCustomValidity(value('mensagem').length >= 10 ? '' : t('Escreva uma mensagem com pelo menos 10 caracteres.'));
-      if (!validatePhone() || !form.reportValidity()) { form.reportValidity(); return; }
+      if (!validateEmail() || !validatePhone() || !form.reportValidity()) { form.reportValidity(); return; }
 
       const params = {
         from_name: value('nome'),
@@ -352,17 +371,7 @@
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 20000);
       try {
-        const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            service_id: config.serviceId.trim(),
-            template_id: config.templateId.trim(),
-            user_id: config.publicKey.trim(),
-            template_params: params,
-          }),
-          signal: controller.signal,
-        });
+        const response = await window.esperancaContact.send(params, {signal:controller.signal});
         if (!response.ok) {
           // O corpo contém o motivo da recusa (serviço, template, domínio etc.).
           // Não registre o formulário ou a chave pública junto do diagnóstico.

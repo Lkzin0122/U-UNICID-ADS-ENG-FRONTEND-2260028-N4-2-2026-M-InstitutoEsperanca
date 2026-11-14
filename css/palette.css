@@ -91,7 +91,7 @@ html.inverted-colors{filter:invert(1)}
 .theme-dark:not(.high-contrast) :is(.card,.project-card,.form-panel,.media-card,.hero-sticker){box-shadow:0 14px 36px #0003}
 .button-dark{color:var(--on-dark);border-color:var(--line)}
 .button-dark:hover{color:var(--on-dark)}
-.button-outline,.menu-button{border-color:var(--field-line)}
+.button-outline,.menu-button{border-color:var(--field-line);transition:transform .2s,box-shadow .2s}
 .highlight::after{background:var(--marker);bottom:-.045em;height:.055em}
 .status-dot{background:var(--accent-ink);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent-fill) 35%,transparent)}
 .theme-dark:not(.high-contrast) .status-dot{background:var(--accent-ink);box-shadow:none}

@@ -47,6 +47,21 @@ As verificações automatizadas simulam as respostas do EmailJS e não enviam me
 
 ## Diagnóstico de falhas
 
+O formulário da página e o contato dentro do chatbot compartilham
+`js/contact-service.js`. A validação exige domínio completo com extensão,
+bloqueando exemplos como `nome@gmail`, espaços, pontos consecutivos e rótulos
+de domínio inválidos. Endereços com `+tag`, subdomínios e extensões como
+`.com.br` continuam aceitos. Essa verificação valida o formato; não confirma
+a existência da caixa de e-mail.
+
+O envio inclui `subject` e seu alias `title`, para os dois formatos de assunto
+usados no template. O chat não envia os dados de contato ao provedor de IA.
+
+Se o histórico mostrar `Outlook: Account suspended`, o responsável precisa
+concluir a verificação e o desbloqueio da conta Microsoft e testar novamente
+o serviço conectado no EmailJS. Alterar os IDs no código não remove essa
+restrição do provedor.
+
 Quando o EmailJS recusa uma requisição, o console do navegador registra `EmailJS: envio recusado.`, o status HTTP e o motivo devolvido pela API. O código não registra o conteúdo do formulário nem a chave pública no diagnóstico.
 
 Para consultar uma tentativa, abra as ferramentas do navegador com **F12**, selecione **Rede / Network**, clique na requisição `send` para `api.emailjs.com` e veja **Resposta / Response**. Esse texto permite distinguir um problema de template, serviço conectado ou permissão da conta. A mensagem genérica exibida no formulário, sozinha, não identifica a causa.

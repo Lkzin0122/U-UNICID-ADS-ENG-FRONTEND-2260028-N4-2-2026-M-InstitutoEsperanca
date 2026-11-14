@@ -23,13 +23,15 @@ window.__speechVoices = [
   {name:'Luciana', lang:'pt-BR', voiceURI:'luciana', localService:true},
   {name:'Microsoft Zira', lang:'en-US', voiceURI:'zira'},
   {name:'Microsoft David', lang:'en-US', voiceURI:'david'},
+  {name:'British default', lang:'en-GB', voiceURI:'british', default:true},
+  {name:'Hindi Fiji default', lang:'hi-FJ', voiceURI:'hindi-fiji', default:true},
   ...['de-DE','fr-FR','es-MX','ru-RU','ja-JP','zh-CN','hi-IN'].map(lang => ({name:'Test voice ' + lang, lang, voiceURI:lang})),
 ];
 class MockSpeech extends EventTarget {
   getVoices() { return window.__speechVoices; }
   speak(utterance) {
     this.current = utterance;
-    window.__speechLog.push({text:utterance.text, lang:utterance.lang, voice:utterance.voice?.name, rate:utterance.rate});
+    window.__speechLog.push({text:utterance.text, lang:utterance.lang, voice:utterance.voice?.name, voiceLang:utterance.voice?.lang, rate:utterance.rate});
     if (!this.paused && !window.__speechSkipStart) utterance.onstart?.();
   }
   cancel() { const previous = this.current; this.current = null; previous?.onerror?.({error:'interrupted'}); }
@@ -144,7 +146,8 @@ def check(browser_name):
             page.wait_for_timeout(450)
             assert page.evaluate('__speechLog.length') == before
 
-            # Every supported site language updates UI, voice language and sample.
+            # Preview, automatic selection and hover all use the site's language,
+            # including a regional match ahead of a device default in another region.
             for language, expected in [('en','en-US'),('de','de-DE'),('fr','fr-FR'),('es-419','es-MX'),('ru','ru-RU'),('ja','ja-JP'),('zh-CN','zh-CN'),('hi','hi-IN'),('pt-BR','pt-BR')]:
                 page.locator('#language-picker').select_option(language)
                 page.wait_for_function('(lang) => document.documentElement.lang === lang', arg=language)
@@ -154,7 +157,18 @@ def check(browser_name):
                 assert page.locator('#speech-reader-panel').get_attribute('lang') == language
                 if language not in ['en','pt-BR']:
                     assert page.locator('#reader-voice-note').inner_text(), 'Unknown gender needs an honest fallback'
-                page.locator('[data-reader-close]').click()
+                page.locator('#reader-voice').select_option('auto')
+                page.locator('[data-reader-preview]').click()
+                assert page.evaluate('__speechLog.at(-1).voiceLang') == expected, 'Automatic voice must match the site language'
+                page.locator('[data-reader-enable]').click()
+                page.evaluate('__finishSpeech()')
+                page.locator('h1').hover()
+                page.wait_for_timeout(450)
+                spoken = page.evaluate('__speechLog.at(-1)')
+                assert spoken['lang'] == expected
+                assert spoken['voiceLang'] == expected
+                assert spoken['text'] == ' '.join(page.locator('h1').inner_text().split())
+                page.keyboard.press('Escape')
 
             # Changing language while speaking cancels the old utterance.
             page.locator('.reader-launcher').click()
@@ -189,7 +203,8 @@ def check(browser_name):
             page.evaluate('__finishSpeech()')
             assert page.evaluate('__speechLog.length') == before, 'Cancel must not advance the queue'
 
-            # Empty voice catalogs must not lock supported desktop controls.
+            # Empty voice catalogs keep controls usable but must not delegate to
+            # a device default that might speak a different language.
             page.goto(base + '/acessibilidade.html')
             page.locator('#language-picker').select_option('pt-BR')
             page.wait_for_function('document.documentElement.lang === "pt-BR"')
@@ -199,9 +214,11 @@ def check(browser_name):
                 assert page.locator(selector).is_enabled(), selector
             assert page.locator('#reader-voice-note').inner_text()
             page.locator('#reader-gender').select_option('female')
+            before = page.evaluate('__speechLog.length')
             page.locator('[data-reader-preview]').click()
-            assert page.evaluate('__speechLog.at(-1).lang') == 'pt-BR'
-            assert page.evaluate('__speechLog.at(-1).voice') is None
+            assert page.evaluate('__speechLog.length') == before
+            assert page.evaluate('speechSynthesis.current') is None
+            assert 'Nenhuma voz' in page.locator('.reader-panel [data-reader-status]').inner_text()
             # Some browsers fill getVoices without sending voiceschanged.
             page.evaluate('__speechVoices = __savedVoices')
             page.wait_for_function('document.querySelector("#reader-voice").options.length > 1')
@@ -233,7 +250,7 @@ def check(browser_name):
             assert page.evaluate('__speechLog.length') == before
             assert page.evaluate('speechSynthesis.current.voice.name') == 'Luciana'
             page.evaluate('speechSynthesis.current.onerror({error:"network"})')
-            assert page.evaluate('__speechLog.at(-1).voice') is None
+            assert page.evaluate('__speechLog.at(-1).voice') == 'Microsoft Daniel'
             page.evaluate('speechSynthesis.current.onerror({error:"synthesis-failed"})')
             assert 'Não foi possível' in page.locator('.reader-panel [data-reader-status]').inner_text()
             assert page.locator('[data-reader-preview]').is_enabled()
@@ -351,7 +368,7 @@ def check(browser_name):
             fresh.close()
 
             # Engines with a throwing voice service or only the legacy event
-            # property still offer automatic playback and recoverable settings.
+            # property keep settings usable and recover when voices arrive.
             legacy = browser.new_context()
             legacy.add_init_script(MOCK + "speechSynthesis.addEventListener = undefined; speechSynthesis.getVoices = () => {throw new Error('Voice service starting')};")
             other = legacy.new_page()
@@ -360,12 +377,72 @@ def check(browser_name):
             other.locator('.reader-launcher').click()
             other.locator('#reader-gender').select_option('female')
             other.locator('[data-reader-preview]').click()
-            assert other.evaluate('__speechLog.at(-1).voice') is None
+            assert other.evaluate('__speechLog.length') == 0
+            assert 'Nenhuma voz' in other.locator('.reader-panel [data-reader-status]').inner_text()
             other.evaluate("__speechVoices = [{name:'Microsoft Daniel', lang:'pt-BR', voiceURI:'daniel', default:true}, {name:'Luciana', lang:'pt-BR', voiceURI:'luciana'}]; speechSynthesis.getVoices = () => __speechVoices; speechSynthesis.onvoiceschanged()")
             other.locator('[data-reader-preview]').click()
             assert other.evaluate('__speechLog.at(-1).voice') == 'Luciana', 'Female preference must work with non-Microsoft voices'
             other.locator('[data-reader-close]').click()
             legacy.close()
+
+            # Missing Hindi must never fall back to an English/Portuguese voice,
+            # even if a saved preference points at a voice in another language.
+            missing_hindi = browser.new_context()
+            missing_hindi.add_init_script(MOCK + """
+              __speechVoices = __speechVoices.filter(voice => !voice.lang.startsWith('hi'));
+              localStorage.setItem('esperanca-speech-preferences', JSON.stringify({voices:{hi:'zira|en-US|Microsoft Zira'}}));
+            """)
+            other = missing_hindi.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
+            other.goto(base + '/index.html')
+            other.locator('#language-picker').select_option('hi')
+            other.wait_for_function('document.documentElement.lang === "hi"')
+            other.locator('.reader-launcher').click()
+            assert other.locator('#reader-voice option').count() == 1
+            other.locator('[data-reader-preview]').click()
+            assert other.evaluate('__speechLog.length') == 0
+            assert other.locator('.reader-panel [data-reader-status]').inner_text() == 'साइट की भाषा में कोई आवाज़ उपलब्ध नहीं है। सूची अपडेट करें या डिवाइस की वाणी सेटिंग में इस भाषा की आवाज़ जोड़ें।'
+            other.locator('[data-reader-enable]').click()
+            other.locator('h1').hover()
+            other.wait_for_timeout(450)
+            assert other.evaluate('__speechLog.length') == 0
+            other.evaluate("__speechVoices.push({name:'Hindi India', lang:'hi-IN', voiceURI:'hindi-india'}); speechSynthesis.dispatchEvent(new Event('voiceschanged'))")
+            other.mouse.move(1, 1)
+            other.locator('h1').hover()
+            other.wait_for_timeout(450)
+            assert other.evaluate('__speechLog.at(-1).voiceLang') == 'hi-IN'
+            before = other.evaluate('__speechLog.length')
+            other.evaluate('speechSynthesis.current.onerror({error:"synthesis-failed"})')
+            assert other.evaluate('__speechLog.length') == before
+            assert other.evaluate('speechSynthesis.current') is None
+            missing_hindi.close()
+
+            # Cancel speech as soon as selection changes, before the language
+            # pack arrives; don't read old text while the translation is pending.
+            delayed_language = browser.new_context()
+            delayed_language.add_init_script(MOCK)
+            other = delayed_language.new_page()
+            other.on('pageerror', lambda error: errors.append(str(error)))
+            held_routes = []
+            other.route('**/js/locales/en.js', lambda route: held_routes.append(route))
+            other.goto(base + '/index.html')
+            other.locator('.reader-launcher').click()
+            other.locator('[data-reader-enable]').click()
+            assert other.evaluate('speechSynthesis.current') is not None
+            before = other.evaluate('__speechLog.length')
+            other.locator('#language-picker').select_option('en')
+            assert other.evaluate('speechSynthesis.current') is None
+            other.locator('h1').hover()
+            other.wait_for_timeout(450)
+            assert other.evaluate('__speechLog.length') == before
+            assert held_routes, 'The translation request should still be pending'
+            held_routes[0].continue_()
+            other.wait_for_function('document.documentElement.lang === "en"')
+            other.mouse.move(1, 1)
+            other.locator('h1').hover()
+            other.wait_for_timeout(450)
+            assert other.evaluate('__speechLog.at(-1).voiceLang') == 'en-US'
+            delayed_language.close()
 
             touch = browser.new_context(viewport={'width':390, 'height':844}, has_touch=True)
             touch.add_init_script(MOCK)
