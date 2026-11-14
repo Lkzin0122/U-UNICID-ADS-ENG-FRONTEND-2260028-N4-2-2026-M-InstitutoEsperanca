@@ -9,6 +9,7 @@ class AgentError extends Error {
   }
 }
 
+// CONFIGURAÇÃO: seleciona provedor e lê credenciais do ambiente do servidor.
 function getConfig(overrides = {}) {
   const deployed = overrides.deployed ?? Boolean(process.env.VERCEL);
   const provider = overrides.provider || process.env.AI_PROVIDER || (deployed ? 'groq' : 'ollama');
@@ -105,6 +106,7 @@ function abortError(externalSignal) {
       );
 }
 
+// TRANSPORTE: adapta a chamada ao provedor e trata timeout e erros de resposta.
 async function callModel(messages, format, { config, signal, externalSignal, fetchImpl, tokens }) {
   if (signal.aborted) throw abortError(externalSignal);
   const cloud = config.provider !== 'ollama';

@@ -10,6 +10,7 @@ function reply(res, status, body) {
   res.statusCode = status;
   res.end(JSON.stringify(body));
 }
+// ENTRADA HTTP: limita mensagem, histórico e contexto antes de chamar o agente.
 function validate(body) {
   if (!body || typeof body !== 'object' || Array.isArray(body) || typeof body.message !== 'string')
     return null;
@@ -52,6 +53,7 @@ function validate(body) {
   return input;
 }
 
+// ATENDIMENTO: controla origem, frequência de requisições e consultas simultâneas.
 function createHandler({ agent = runAgent, now = Date.now } = {}) {
   // Limites por processo; o modelo local atende uma geração por vez.
   const requests = new Map();

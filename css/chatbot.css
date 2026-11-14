@@ -26,6 +26,28 @@
 .esperanca-chat [hidden] {
   display: none !important;
 }
+/* NAVEGAÇÃO AUXILIAR: seta que retorna ao topo, acima do botão do chat. */
+.chat-back-to-top {
+  position: absolute;
+  right: 0;
+  bottom: 72px;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  border: 2px solid var(--accent-ink);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--accent-ink);
+  box-shadow:
+    0 0 0 3px var(--white),
+    0 6px 18px #0b24512e;
+  cursor: pointer;
+}
+.chat-back-to-top:hover {
+  background: var(--tint);
+}
 .esperanca-chat svg {
   display: block;
   fill: none;
@@ -77,6 +99,7 @@
   text-align: left;
 }
 
+/* PAINEL: limita dimensões, organiza as áreas internas e permite rolagem. */
 .chat-panel {
   position: absolute;
   right: 0;
@@ -197,6 +220,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--line) transparent;
 }
+/* ATALHOS: ações do site acessíveis sem digitar uma pergunta. */
 .chat-tools {
   display: flex;
   flex-wrap: wrap;
@@ -234,6 +258,7 @@
   gap: 7px;
   margin-top: 10px;
 }
+/* CONTATO: apresentação do formulário enviado pelo chat. */
 .chat-contact {
   flex: 1;
   min-height: 0;
@@ -313,6 +338,7 @@
 .chat-contact-actions button[type='submit']:hover {
   background: var(--accent-hover);
 }
+/* CONVERSA: diferencia mensagens da pessoa e do assistente. */
 .chat-message {
   width: fit-content;
   max-width: 95%;
@@ -521,6 +547,7 @@
     12px 0 currentColor;
   animation: chat-thinking 1.3s ease-in-out infinite;
 }
+/* COMPOSIÇÃO: campo de pergunta, envio e informações sobre a conversa. */
 .chat-form {
   padding: 16px 20px 14px;
   border-top: 1px solid var(--line);

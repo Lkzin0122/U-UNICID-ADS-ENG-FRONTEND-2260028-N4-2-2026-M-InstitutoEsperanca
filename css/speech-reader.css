@@ -31,6 +31,7 @@
   padding-block: 4px;
   gap: 4px 16px;
 }
+/* CONFIGURAÇÃO: painel para escolher voz, velocidade e forma de leitura. */
 .reader-panel {
   box-sizing: border-box;
   width: min(540px, calc(100% - 32px));
@@ -137,6 +138,7 @@
   cursor: not-allowed;
   transform: none;
 }
+/* LEITURA ATIVA: mantém os controles de parada acessíveis durante a navegação. */
 .reader-dock {
   position: fixed;
   inset: auto;

@@ -308,3 +308,8 @@ Essas verificacoes ajudam a identificar regressoes, mas nao garantem ausencia de
 ## 17. Voz pronta incluida
 
 O leitor agora inclui vozes sintetizadas locais para os nove idiomas, com variantes feminina e masculina. Elas funcionam mesmo sem vozes instaladas no dispositivo e sao identificadas como "Voz pronta do site". O primeiro uso carrega o motor de voz; nao exige chave de API. Consulte [vozes prontas](vozes-prontas.md).
+
+
+## 18. Explicacao do codigo para apresentacao
+
+Os arquivos principais possuem comentarios por responsabilidade, identificando estrutura, estilos, interacoes, contato, chatbot e leitura em voz alta. Consulte o [roteiro de apresentacao ao professor](roteiro-apresentacao.md) para seguir os fluxos e localizar os arquivos de cada area.

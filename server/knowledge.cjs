@@ -21,6 +21,7 @@ const SYNONYMS = [
   ['resultado', 'resultados', 'impacto', 'indicadores'],
 ];
 const CANONICAL = new Map(SYNONYMS.flatMap((group) => group.map((word) => [word, group[0]])));
+// NORMALIZAÇÃO: aproxima termos com acentos e formas equivalentes para a pesquisa.
 function normalize(text) {
   return String(text)
     .normalize('NFD')
@@ -38,6 +39,7 @@ function tokens(text) {
     );
 }
 
+// ÍNDICE EM MEMÓRIA: valida documentos e prepara frequências para calcular relevância.
 function createKnowledgeStore(index) {
   if (!index)
     index = JSON.parse(
@@ -88,6 +90,7 @@ function createKnowledgeStore(index) {
     for (const word of doc.words)
       documentFrequency.set(word, (documentFrequency.get(word) || 0) + 1);
 
+  // BUSCA BM25: classifica trechos pela presença e importância dos termos da pergunta.
   function search(query, { limit = 6 } = {}) {
     if (typeof query !== 'string') return [];
     const terms = [...new Set(tokens(query.slice(0, 1000)))];

@@ -8,6 +8,7 @@
     el.disabled = false;
   });
 
+  // ANIMAÇÃO DO RODAPÉ: controla cada clique e remove partículas ao terminar.
   const heartAnimations = new WeakMap();
   const reducedHeartMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('[data-heart-pop]').forEach((button) =>
@@ -95,6 +96,7 @@
     }),
   );
 
+  // NAVEGAÇÃO: abre o menu no celular, fecha ao sair e mantém submenus acessíveis.
   const menuButton = document.querySelector('.menu-button');
   const nav = document.querySelector('#main-nav');
   const groups = [...document.querySelectorAll('.nav-group')];
@@ -171,6 +173,7 @@
   });
   desktopQuery.addEventListener?.('change', closeMenu);
 
+  // FILTROS: mostra os cartões da categoria escolhida e atualiza a contagem.
   document.querySelectorAll('[data-filter-group]').forEach((group) => {
     const buttons = [...group.querySelectorAll('[data-filter]')];
     const items = [...group.querySelectorAll('[data-filter-item]')];
@@ -201,6 +204,7 @@
     );
   });
 
+  // GALERIA: reaproveita um único diálogo para ampliar imagens e suas legendas.
   const dialog = document.querySelector('#image-dialog');
   const dialogImage = document.querySelector('#dialog-image');
   const dialogCaption = document.querySelector('#dialog-caption');

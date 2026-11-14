@@ -1,4 +1,4 @@
-/* International telephone input. All numbering rules come from libphonenumber-js/max. */
+/* Telefone internacional: as regras de numeração vêm de libphonenumber-js/max. */
 (() => {
   'use strict';
   const t = (text) => window.esperancaI18n?.t(text) || text;
@@ -19,6 +19,7 @@
 
   window.esperancaPhoneInput = {
     create(input, uiTranslations) {
+      // INICIALIZAÇÃO: conecta o campo ao seletor de país e aos dados de numeração.
       const lib = window.libphonenumber;
       const data = window.esperancaPhoneData?.countries;
       const error = document.querySelector('#phone-error');
@@ -39,6 +40,7 @@
         error.hidden = !message;
       };
       const inspect = (raw) => {
+        // INTERPRETAÇÃO: separa código internacional e número nacional sem inventar dígitos.
         if (raw.length > 250) return { syntax: true, tooLong: true, valid: false };
         const text = normalise(raw).trim();
         const formatter = new lib.AsYouType(country());
@@ -110,6 +112,7 @@
         return 'Confira o país, o código de área e o número de telefone.';
       };
       const validate = (reveal = false) => {
+        // VALIDAÇÃO: mantém o telefone opcional, mas verifica valores preenchidos.
         if (reveal) showErrors = true;
         let message = '';
         if (input.value.trim()) {

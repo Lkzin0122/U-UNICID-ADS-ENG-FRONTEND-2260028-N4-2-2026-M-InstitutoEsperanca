@@ -2,6 +2,7 @@
 (() => {
   'use strict';
   const root = document.documentElement;
+  // PREFERÊNCIAS: guarda tema, contraste, inversão, paleta e escala de texto.
   const preferenceKey = 'esperanca-visual-preferences';
   const defaultPreferences = {
     scale: 1,
@@ -33,6 +34,7 @@
     /* As preferências continuam disponíveis sem armazenamento. */
   }
   const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  // APLICAÇÃO: classes e variáveis CSS atualizam a página e os controles juntos.
   const updatePreferences = (save = false) => {
     root.style.setProperty('--font-scale', preferences.scale);
     root.classList.toggle('high-contrast', preferences.contrast);
@@ -98,6 +100,7 @@
     });
   };
   updatePreferences();
+  // INTEGRAÇÃO: permite ao chatbot alterar as mesmas preferências da interface.
   window.esperancaVisual = Object.freeze({
     get preferences() {
       return { ...preferences };

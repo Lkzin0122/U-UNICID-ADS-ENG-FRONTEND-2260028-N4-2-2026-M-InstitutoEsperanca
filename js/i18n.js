@@ -1,4 +1,4 @@
-/* Applies locally bundled translations without replacing interactive elements. */
+/* Idiomas: aplica traduções locais preservando os elementos interativos da página. */
 (() => {
   'use strict';
   const localeTags = {
@@ -23,6 +23,7 @@
     /* Language switching still works without storage. */
   }
 
+  // CONTEÚDO ORIGINAL: registra textos e atributos para alternar idiomas sem perder eventos.
   const textRecords = [];
   const attrRecords = [];
   const headingRecords = [...document.querySelectorAll('h1,h2,h3')]
@@ -80,6 +81,7 @@
     const trailing = source.match(/\s*$/)?.[0] || '';
     return `${leading}${result}${trailing}`;
   };
+  // TRADUÇÃO: aplica o pacote, atualiza o idioma do HTML e avisa os outros módulos.
   const apply = () => {
     document.documentElement.lang = localeTags[language] || 'pt-BR';
     headingRecords.forEach((record) => {
@@ -123,6 +125,7 @@
     picker.setAttribute('aria-label', activePack['Idioma do site'] || 'Idioma do site');
     document.dispatchEvent(new CustomEvent('esperanca:languagechange', { detail: { language } }));
   };
+  // CARREGAMENTO: busca o pacote local e ignora respostas antigas de trocas rápidas.
   const load = (nextLanguage) => {
     language = localeTags[nextLanguage] ? nextLanguage : 'pt-BR';
     const token = ++loadToken;

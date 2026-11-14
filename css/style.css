@@ -1,5 +1,6 @@
 /* Instituto Esperança — Base compartilhada: estrutura, navegação, rodapé e componentes. */
 
+/* BASE: medidas reutilizáveis; as cores são definidas em palette.css. */
 :root {
   --radius: 18px;
   --font-scale: 1;
@@ -118,6 +119,7 @@ div[id] {
   scroll-margin-top: 115px;
 }
 
+/* ESTRUTURA: limita a largura do conteúdo e mantém margens consistentes. */
 .container {
   width: min(1180px, calc(100% - 40px));
   margin-inline: auto;
@@ -163,6 +165,7 @@ div[id] {
   text-decoration: underline;
 }
 
+/* NAVEGAÇÃO: cabeçalho, marca e menus compartilhados por todas as páginas. */
 .site-header {
   position: sticky;
   top: 0;
@@ -347,6 +350,7 @@ div[id] {
   gap: 24px;
 }
 
+/* COMPONENTES: botões seguem o mesmo formato e estados de interação. */
 .button {
   display: inline-flex;
   gap: 20px;
@@ -910,6 +914,7 @@ textarea::placeholder {
   color: var(--muted);
 }
 
+/* RODAPÉ: organização dos links, identidade e informações finais. */
 .site-footer {
   background: var(--navy);
   color: #fff;

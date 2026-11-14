@@ -26,6 +26,7 @@
     ja: '日本語',
     hi: 'हिन्दी',
   };
+  // CATÁLOGO: associa IDs estáveis a páginas, idiomas e preferências permitidas.
   const catalog = Object.fromEntries([
     ...Object.entries(pages).map(([key, [path, label]]) => [
       `page:${key}`,
@@ -53,6 +54,7 @@
       .toLowerCase()
       .trim()
       .replace(/[.!?]+$/, '');
+  // PEDIDOS DIRETOS: reconhece ações simples no navegador, mesmo sem conexão com a IA.
   function detect(message) {
     const text = normalize(message);
     if (

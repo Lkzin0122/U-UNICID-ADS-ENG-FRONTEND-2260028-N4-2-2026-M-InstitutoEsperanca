@@ -1,4 +1,4 @@
-/* eSpeak NG runs outside the UI thread. Files and voice data are hosted locally. */
+/* Síntese em segundo plano: o Worker gera áudio sem bloquear os controles da página. */
 import createEngine from '../assets/vendor/espeak-ng/espeak-ng.js';
 let binary;
 let queue = Promise.resolve();
@@ -7,6 +7,7 @@ self.onmessage = ({ data }) => {
     .catch(() => {})
     .then(async () => {
       try {
+        // O motor é carregado no primeiro uso e reaproveitado enquanto o Worker existir.
         binary ||= fetch(new URL('../assets/vendor/espeak-ng/espeak-ng.wasm', import.meta.url))
           .then((response) => {
             if (!response.ok) throw new Error('voice_download_failed');
