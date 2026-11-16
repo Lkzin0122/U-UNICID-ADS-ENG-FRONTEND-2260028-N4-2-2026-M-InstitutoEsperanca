@@ -1,6 +1,6 @@
 # Vozes incluidas no site
 
-O leitor inclui o motor eSpeak NG, distribuido no pacote `espeak-ng` 1.0.2,
+O leitor inclui o motor eSpeak NG, distribuido no pacote `@echogarden/espeak-ng-emscripten` 0.3.5,
 com dados locais para os nove idiomas do site. Ha variantes feminina e
 masculina. Estas vozes sao sintetizadas e tem sonoridade robotica.
 
@@ -9,8 +9,9 @@ compativeis com o idioma e a preferencia escolhida. Quando nao existem, o
 leitor seleciona uma voz incluida. A lista identifica essas opcoes como
 "Voz pronta do site". Tambem podem ser selecionadas manualmente.
 
-O motor e os dados estao em `assets/vendor/espeak-ng/`. O arquivo WebAssembly
-tem aproximadamente 18,5 MB e so e carregado ao usar uma voz incluida.
+O motor e os dados estao em `assets/vendor/espeak-ng/`. O modulo JavaScript inclui
+WebAssembly e usa um arquivo `.data`; juntos tem aproximadamente 24,9 MB e so
+sao carregados ao usar uma voz incluida.
 A sintese ocorre em um Web Worker e o texto permanece no navegador.
 Nao ha chave, assinatura ou chamada a um servico externo de voz.
 O navegador ainda exige uma interacao para permitir audio. O primeiro uso
@@ -22,6 +23,12 @@ este motor; as vozes nativas continuam sendo usadas quando disponiveis.
 `js/speech-engine.js` integra Web Audio e as vozes nativas aos controles
 existentes. `js/speech-worker.js` executa a sintese sem bloquear a interface.
 Parar, trocar de idioma e sair do trecho cancelam o audio anterior.
+O Worker valida voz, velocidade e tamanho do texto, limita o audio a dois minutos
+por trecho e e encerrado se uma sintese ficar sem resposta por 60 segundos.
+
+Atualize com `python -B scripts/update_speech_vendor.py`. O script verifica a
+integridade do pacote no registro npm. `python -B scripts/check_security_browser.py`
+testa as 18 variantes e as restricoes de entrada com a CSP de producao.
 
 Teste com vozes do sistema desativadas e reproducao silenciada:
 
@@ -38,5 +45,5 @@ nativas, mantendo seus testes de falhas independentes do motor incluido.
 
 Licenca e origem: veja `assets/vendor/espeak-ng/LICENSE`, `README.md` e
 `PROVENANCE.json`. O motor e distribuido sob GPL-3.0-or-later.
-Fontes: https://github.com/ianmarmour/espeak-ng.js e
+Fontes: https://github.com/echogarden-project/espeak-ng-emscripten e
 https://github.com/espeak-ng/espeak-ng.

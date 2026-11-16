@@ -22,7 +22,9 @@
     "verify": "npm run format:check && npm run lint:python && npm run site:check && npm run knowledge:check && npm test",
     "format:python": "python -m ruff format scripts",
     "lint:python": "python -m ruff check scripts && python -m ruff format --check scripts",
-    "test:chat-ui": "python scripts/check_chat_actions.py --browser all"
+    "test:chat-ui": "python scripts/check_chat_actions.py --browser all",
+    "security:dependencies": "npm audit && python -B scripts/check_dependencies.py",
+    "test:security-browser": "python -B scripts/check_security_browser.py"
   },
   "devDependencies": {
     "prettier": "3.6.2"

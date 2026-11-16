@@ -1,6 +1,7 @@
 'use strict';
 const { runAgent, AgentError } = require('../server/agent.cjs');
 const MAX_BODY_BYTES = 96 * 1024;
+const { isIP } = require('node:net');
 const { languages, pages } = require('../js/chat-actions.js');
 
 function reply(res, status, body) {
@@ -54,10 +55,14 @@ function validate(body) {
 }
 
 // ATENDIMENTO: controla origem, frequência de requisições e consultas simultâneas.
-function createHandler({ agent = runAgent, now = Date.now } = {}) {
+function createHandler({
+  agent = runAgent,
+  now = Date.now,
+  deployed = Boolean(process.env.VERCEL),
+} = {}) {
   // Limites por processo; o modelo local atende uma geração por vez.
   const requests = new Map();
-  const concurrency = process.env.VERCEL ? 4 : 1;
+  const concurrency = deployed ? 4 : 1;
   let active = 0;
   function limited(ip) {
     const time = now();
@@ -78,13 +83,36 @@ function createHandler({ agent = runAgent, now = Date.now } = {}) {
         error: 'Use POST para enviar uma pergunta.',
       });
     }
-    if (req.headers.origin) {
+    if (req.headers['sec-fetch-site'] === 'cross-site')
+      return reply(res, 403, { code: 'invalid_origin', error: 'Origem não permitida.' });
+    if (req.headers.origin !== undefined) {
       try {
-        if (new URL(req.headers.origin).host !== req.headers.host)
+        const origin = new URL(req.headers.origin);
+        const protocol = deployed || req.socket?.encrypted ? 'https:' : 'http:';
+        if (
+          origin.origin !== `${protocol}//${req.headers.host}` ||
+          req.headers.origin !== origin.origin
+        )
           return reply(res, 403, { code: 'invalid_origin', error: 'Origem não permitida.' });
       } catch {
         return reply(res, 403, { code: 'invalid_origin', error: 'Origem inválida.' });
       }
+    }
+    // Na Vercel, este cabeçalho é definido pela plataforma. Fora dela, só o socket é confiável.
+    const forwarded = req.headers['x-forwarded-for'];
+    const forwardedIp = typeof forwarded === 'string' ? forwarded.split(',')[0].trim() : '';
+    const ip = deployed
+      ? isIP(forwardedIp)
+        ? forwardedIp
+        : 'unknown'
+      : req.socket?.remoteAddress || 'local';
+    // Pedidos inválidos também contam; recuse excesso antes de interpretar o corpo.
+    if (limited(ip)) {
+      res.setHeader('Retry-After', '60');
+      return reply(res, 429, {
+        code: 'rate_limited',
+        error: 'Aguarde um minuto antes de enviar outra pergunta.',
+      });
     }
     if (!/^application\/json(?:\s*;|$)/i.test(req.headers['content-type'] || ''))
       return reply(res, 415, {
@@ -95,6 +123,8 @@ function createHandler({ agent = runAgent, now = Date.now } = {}) {
       return reply(res, 413, { code: 'body_too_large', error: 'Mensagem muito longa.' });
     let body;
     try {
+      if (typeof req.body === 'string' && Buffer.byteLength(req.body) > MAX_BODY_BYTES)
+        return reply(res, 413, { code: 'body_too_large', error: 'Mensagem muito longa.' });
       body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
       if (Buffer.byteLength(JSON.stringify(body) || '') > MAX_BODY_BYTES)
         return reply(res, 413, { code: 'body_too_large', error: 'Mensagem muito longa.' });
@@ -107,16 +137,6 @@ function createHandler({ agent = runAgent, now = Date.now } = {}) {
         code: 'invalid_message',
         error: 'Envie uma pergunta de até 1.000 caracteres e um histórico válido.',
       });
-    const ip = process.env.VERCEL
-      ? req.headers['x-forwarded-for']?.split(',')[0].trim()
-      : req.socket?.remoteAddress;
-    if (limited(ip || 'local')) {
-      res.setHeader('Retry-After', '60');
-      return reply(res, 429, {
-        code: 'rate_limited',
-        error: 'Aguarde um minuto antes de enviar outra pergunta.',
-      });
-    }
     if (active >= concurrency) {
       res.setHeader('Retry-After', '5');
       return reply(res, 429, {

@@ -59,6 +59,7 @@ test('Vercel usa o Gateway hospedado com histórico, pesquisa e saída estrutura
     assert.equal(url, 'https://ai-gateway.vercel.sh/v1/chat/completions');
     assert.equal(options.headers.Authorization, 'Bearer test-private-key');
     assert.equal(options.headers['ai-gateway-auth-method'], 'api-key');
+    assert.equal(options.redirect, 'error');
     assert.equal(body.model, 'google/gemini-2.5-flash-lite');
     assert.equal(body.response_format.type, 'json_schema');
     assert.equal(body.response_format.json_schema.strict, true);

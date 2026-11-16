@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const { spawn } = require('node:child_process');
 const { once, EventEmitter } = require('node:events');
 const path = require('node:path');
+const http = require('node:http');
 const { createHandler, MAX_BODY_BYTES } = require('../api/chat.js');
 const { AgentError } = require('../server/agent.cjs');
 const success = {
@@ -124,6 +125,36 @@ test('IA indisponível produz erro explícito, sem simular resposta de FAQ', asy
   assert.ok(!JSON.stringify(await request(unexpected)).includes('private-test-secret'));
 });
 
+test('origem exige protocolo correto e recusa URLs não canônicas e navegação entre sites', async () => {
+  let calls = 0;
+  const handler = createHandler({
+    agent: async () => {
+      calls++;
+      return success;
+    },
+  });
+  for (const origin of [
+    'https://localhost:3000',
+    'ftp://localhost:3000',
+    'http://user@localhost:3000',
+    'http://localhost:3000/path',
+    'http://localhost:3000?query',
+    'null',
+    '',
+  ]) {
+    assert.equal((await request(handler, undefined, { headers: { origin } })).status, 403);
+  }
+  assert.equal(
+    (await request(handler, undefined, { headers: { 'sec-fetch-site': 'cross-site' } })).status,
+    403,
+  );
+  assert.equal(calls, 0);
+  assert.equal(
+    (await request(handler, undefined, { headers: { origin: 'http://localhost:3000' } })).status,
+    200,
+  );
+});
+
 test('contexto do site aceita somente páginas e idiomas conhecidos', async () => {
   let received;
   const handler = createHandler({
@@ -176,6 +207,54 @@ test('evita gerações concorrentes e libera a próxima consulta', async () => {
   complete();
   assert.equal((await next).status, 200);
 });
+
+test('JSON grande é rejeitado antes da interpretação mesmo sem Content-Length', async () => {
+  let calls = 0;
+  const handler = createHandler({
+    agent: async () => {
+      calls++;
+      return success;
+    },
+  });
+  for (const body of ['{'.repeat(MAX_BODY_BYTES + 1), '界'.repeat(MAX_BODY_BYTES / 3 + 1)]) {
+    assert.equal((await request(handler, body)).status, 413);
+  }
+  assert.equal((await request(handler, '{')).status, 400);
+  assert.equal(calls, 0);
+});
+
+test('tentativas inválidas consomem limite e cabeçalho de IP não contorna o servidor local', async () => {
+  const handler = createHandler({ deployed: false, agent: async () => success });
+  for (let i = 0; i < 12; i++) {
+    const response = await request(handler, '{', {
+      socket: { remoteAddress: 'same-socket' },
+      headers: { 'x-forwarded-for': `192.0.2.${i + 1}` },
+    });
+    assert.equal(response.status, 400);
+  }
+  const limited = await request(handler, undefined, { socket: { remoteAddress: 'same-socket' } });
+  assert.equal(limited.status, 429);
+  assert.equal(limited.headers['Retry-After'], '60');
+});
+
+test('IP inválido da plataforma não causa erro nem cria chaves arbitrárias no limitador', async () => {
+  const handler = createHandler({ deployed: true, agent: async () => success });
+  for (let i = 0; i < 12; i++) {
+    assert.equal(
+      (await request(handler, undefined, { headers: { 'x-forwarded-for': [`invalid-${i}`] } }))
+        .status,
+      200,
+    );
+  }
+  assert.equal(
+    (await request(handler, undefined, { headers: { 'x-forwarded-for': 'also-invalid' } })).status,
+    429,
+  );
+  assert.equal(
+    (await request(handler, undefined, { headers: { 'x-forwarded-for': '192.0.2.1' } })).status,
+    200,
+  );
+});
 test('servidor local entrega páginas e API e protege arquivos internos', async () => {
   const child = spawn(process.execPath, ['scripts/dev-server.cjs'], {
     cwd: path.resolve(__dirname, '..'),
@@ -202,6 +281,17 @@ test('servidor local entrega páginas e API e protege arquivos internos', async 
     const page = await fetch(origin);
     assert.equal(page.status, 200);
     assert.match(await page.text(), /js\/chatbot.js/);
+    assert.match(page.headers.get('content-security-policy'), /frame-ancestors 'self'/);
+    assert.equal(page.headers.get('x-frame-options'), 'SAMEORIGIN');
+    const foreignHostStatus = await new Promise((resolve, reject) => {
+      http
+        .get(origin, { headers: { Host: 'attacker.example' } }, (response) => {
+          response.resume();
+          resolve(response.statusCode);
+        })
+        .on('error', reject);
+    });
+    assert.equal(foreignHostStatus, 403);
     const response = await fetch(origin + '/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Origin: origin },

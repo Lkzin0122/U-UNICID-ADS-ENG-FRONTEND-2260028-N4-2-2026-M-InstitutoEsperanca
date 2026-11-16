@@ -13,7 +13,7 @@ def check_contact_storage(client, origin):
         )
 
     navigate()
-    checks["salva_os_campos_nos_dois_armazenamentos"] = client.evaluate("""(() => {
+    checks["salva_os_campos_somente_na_sessao"] = client.evaluate("""(() => {
       const values = {nome:'Pessoa de teste', email:'pessoa@example.com', assunto:'parceria', mensagem:'Quero conhecer o projeto e colaborar.'};
       for (const [id, value] of Object.entries(values)) {
         const field = document.getElementById(id);
@@ -26,7 +26,7 @@ def check_contact_storage(client, origin):
       const session = sessionStorage.getItem('esperanca-contact-draft');
       const local = localStorage.getItem('esperanca-contact-draft');
       const draft = JSON.parse(session);
-      return session === local && Object.entries(values).every(([key, value]) => draft[key] === value)
+      return local === null && Object.entries(values).every(([key, value]) => draft[key] === value)
         && draft.country === 'gb' && !!draft.telefone;
     })()""")
     navigate()
@@ -38,10 +38,12 @@ def check_contact_storage(client, origin):
       && document.querySelector('#telefone').phoneController.getNumber() === '+442079460018'
       && window.intlTelInput.getInstance(document.querySelector('#telefone')).getSelectedCountry().iso2 === 'gb'""")
     )
-    client.evaluate("sessionStorage.removeItem('esperanca-contact-draft')")
+    client.evaluate(
+        "localStorage.setItem('esperanca-contact-draft', JSON.stringify({nome:'Rascunho antigo'}))"
+    )
     navigate()
-    checks["recupera_do_local_storage_sem_rascunho_da_sessao"] = client.evaluate(
-        "document.querySelector('#nome').value === 'Pessoa de teste' && !!sessionStorage.getItem('esperanca-contact-draft')"
+    checks["apaga_rascunho_persistente_antigo_sem_alterar_sessao"] = client.evaluate(
+        "document.querySelector('#nome').value === 'Pessoa de teste' && !localStorage.getItem('esperanca-contact-draft')"
     )
     client.evaluate("""(() => {
       const draft = JSON.parse(sessionStorage.getItem('esperanca-contact-draft'));
@@ -52,13 +54,13 @@ def check_contact_storage(client, origin):
     checks["sessao_tem_prioridade_e_assunto_do_link_prevalece"] = client.evaluate(
         "document.querySelector('#nome').value === 'Rascunho da sessao' && document.querySelector('#assunto').value === 'voluntariado'"
     )
-    checks["erro_de_envio_preserva_as_duas_copias"] = client.evaluate("""(async () => {
+    checks["erro_de_envio_preserva_apenas_a_sessao"] = client.evaluate("""(async () => {
       window.fetch = async () => ({ok:false, status:500, text:async () => 'Simulated failure'});
       document.querySelector('#contact-form').requestSubmit();
       await new Promise(resolve => setTimeout(resolve, 0));
       return document.querySelector('#form-result').dataset.state === 'error'
         && JSON.parse(sessionStorage.getItem('esperanca-contact-draft')).nome === 'Rascunho da sessao'
-        && sessionStorage.getItem('esperanca-contact-draft') === localStorage.getItem('esperanca-contact-draft');
+        && !localStorage.getItem('esperanca-contact-draft');
     })()""")
     checks["sucesso_limpa_campos_e_ambos_os_armazenamentos"] = client.evaluate("""(async () => {
       window.fetch = async () => ({ok:true, status:200});
@@ -71,8 +73,15 @@ def check_contact_storage(client, origin):
     client.evaluate("""sessionStorage.setItem('esperanca-contact-draft', '{invalid');
       localStorage.setItem('esperanca-contact-draft', JSON.stringify({nome:'Recuperado', mensagem:'<script>alert(1)</script>'}));""")
     navigate()
-    checks["rascunho_corrompido_usa_alternativa_e_texto_permanece_literal"] = client.evaluate(
-        "document.querySelector('#nome').value === 'Recuperado' && document.querySelector('#mensagem').value === '<script>alert(1)</script>'"
+    checks["rascunho_corrompido_nao_recupera_dados_persistentes"] = client.evaluate(
+        "document.querySelector('#nome').value === '' && !localStorage.getItem('esperanca-contact-draft')"
+    )
+    client.evaluate(
+        "sessionStorage.setItem('esperanca-contact-draft', JSON.stringify({mensagem:'<script>alert(1)</script>'}))"
+    )
+    navigate()
+    checks["texto_do_rascunho_permanece_literal"] = client.evaluate(
+        "document.querySelector('#mensagem').value === '<script>alert(1)</script>'"
     )
     client.call(
         "Page.addScriptToEvaluateOnNewDocument",
