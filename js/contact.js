@@ -148,10 +148,15 @@
     document.addEventListener('esperanca:languagechange', () =>
       phoneController?.setLocale(phoneUi[document.documentElement.lang] || phoneUi['pt-BR']),
     );
-    // RASCUNHO: restaura a sessão primeiro e usa o armazenamento local como alternativa.
+    // RASCUNHO: dados pessoais permanecem somente na sessão desta aba.
     const draftKey = 'esperanca-contact-draft';
     const draftFields = ['nome', 'email', 'telefone', 'assunto', 'mensagem'];
-    const draftStores = ['sessionStorage', 'localStorage'];
+    const draftStores = ['sessionStorage'];
+    try {
+      localStorage.removeItem(draftKey);
+    } catch {
+      /* O formulário continua funcionando se o armazenamento estiver bloqueado. */
+    }
     let draft = null;
     for (const store of draftStores) {
       try {
@@ -166,7 +171,7 @@
           break;
         }
       } catch {
-        /* Tente o outro armazenamento se este estiver indisponível ou corrompido. */
+        /* Ignore rascunhos indisponíveis ou corrompidos. */
       }
     }
     if (draft) {

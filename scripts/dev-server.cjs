@@ -5,7 +5,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { pipeline } = require('node:stream');
 const chat = require('../api/chat.js');
+const { isPublicFile } = require('../server/public-files.cjs');
 const root = path.resolve(__dirname, '..');
+const securityHeaders = require('../vercel.json').headers[0].headers;
 const mime = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -21,6 +23,7 @@ const mime = {
   '.webm': 'video/webm',
   '.mp4': 'video/mp4',
   '.vtt': 'text/vtt; charset=utf-8',
+  '.wasm': 'application/wasm',
 };
 const pages = new Set(fs.readdirSync(root).filter((name) => name.endsWith('.html')));
 function sendError(res, status, message) {
@@ -63,6 +66,7 @@ async function serveStatic(req, res, pathname) {
   if (
     relative.includes('\\') ||
     parts.some((part) => part.startsWith('.') || !part) ||
+    !isPublicFile(relative) ||
     !(pages.has(relative) || ['css', 'js', 'img', 'assets'].includes(parts[0]))
   ) {
     return sendError(res, 404, 'Página não encontrada.');
@@ -71,6 +75,9 @@ async function serveStatic(req, res, pathname) {
   if (!filename.startsWith(root + path.sep)) return sendError(res, 404, 'Página não encontrada.');
   let stat;
   try {
+    // Impede que um link simbólico dentro das pastas públicas exponha outro arquivo.
+    if ((await fs.promises.realpath(filename)) !== filename)
+      return sendError(res, 404, 'Página não encontrada.');
     stat = await fs.promises.stat(filename);
   } catch (error) {
     if (['ENOENT', 'ENOTDIR'].includes(error.code))
@@ -92,6 +99,10 @@ async function serveStatic(req, res, pathname) {
 }
 
 async function handleRequest(req, res) {
+  for (const { key, value } of securityHeaders) res.setHeader(key, value);
+  // Bloqueia Host externo, inclusive em tentativas de DNS rebinding contra o loopback.
+  if (!/^(?:localhost|127\.0\.0\.1|\[::1\])(?::\d{1,5})?$/i.test(req.headers.host || ''))
+    return sendError(res, 403, 'Host não permitido.');
   let pathname;
   try {
     pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);

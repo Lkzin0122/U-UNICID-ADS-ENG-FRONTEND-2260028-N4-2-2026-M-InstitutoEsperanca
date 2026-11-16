@@ -23,7 +23,9 @@ try:
         context = browser.new_context()
         probe = context.new_page()
         if not probe.evaluate("Boolean(window.AudioContext || window.webkitAudioContext)"):
-            print("SKIP: this browser build does not implement Web Audio; test on a build with audio support.")
+            print(
+                "SKIP: this browser build does not implement Web Audio; test on a build with audio support."
+            )
             browser.close()
             sys.exit(0)
         probe.close()

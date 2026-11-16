@@ -7,7 +7,7 @@
     'pt-BR': ['pt-br', 'pt-BR'],
     en: ['en-us', 'en-US'],
     'es-419': ['es-419', 'es-MX'],
-    fr: ['fr-fr', 'fr-FR'],
+    fr: ['fr', 'fr-FR'],
     de: ['de', 'de-DE'],
     'zh-CN': ['cmn', 'zh-CN'],
     ru: ['ru', 'ru-RU'],
@@ -34,15 +34,18 @@
   let worker,
     context,
     source,
+    watchdog,
     sequence = 0,
     active = null;
   function finishError(error = 'synthesis-failed') {
+    clearTimeout(watchdog);
     const utterance = active;
     active = null;
     utterance?.onerror?.({ error });
   }
   // INTERRUPÇÃO: para o áudio e descarta síntese pendente quando necessário.
   function cancel() {
+    clearTimeout(watchdog);
     const synthesizing = Boolean(active && !source);
     sequence++;
     active = null;
@@ -85,6 +88,7 @@
       worker.onerror = () => finishError();
       worker.onmessage = async ({ data }) => {
         if (data.id !== sequence || active !== utterance) return;
+        clearTimeout(watchdog);
         if (data.error) {
           finishError();
           return;
@@ -113,6 +117,12 @@
           if (id === sequence) finishError();
         }
       };
+      clearTimeout(watchdog);
+      watchdog = setTimeout(() => {
+        worker?.terminate();
+        worker = null;
+        finishError('synthesis-timeout');
+      }, 60000);
       worker.postMessage({
         id,
         text: utterance.text,
