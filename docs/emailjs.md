@@ -39,7 +39,7 @@ Assunto: {{subject}}
 - Exibe sucesso e limpa os campos somente após uma resposta HTTP de sucesso do EmailJS.
 - Preserva a mensagem em erros de rede, configuração, limite de requisições ou demora superior a 20 segundos. Não repete envios automaticamente, pois uma resposta perdida pode corresponder a uma mensagem já processada.
 - Oferece um link de e-mail com o texto preenchido quando o envio direto estiver indisponível.
-- Salva nome, e-mail, telefone, país, assunto e mensagem como rascunho em `sessionStorage` e `localStorage`, na chave `esperanca-contact-draft`, durante a edição. Ao abrir o contato, restaura primeiro o rascunho da sessão; se ele não existir ou estiver inválido, usa o armazenamento local. Um assunto válido no link tem prioridade sobre o assunto salvo.
+- Salva nome, e-mail, telefone, país, assunto e mensagem somente na `sessionStorage` da aba, na chave `esperanca-contact-draft`, durante a edição. Ao abrir o contato, remove qualquer cópia antiga da `localStorage`. Um assunto válido no link tem prioridade sobre o assunto salvo. O rascunho é apagado após envio confirmado; não persiste entre sessões do navegador.
 - Remove o rascunho dos dois armazenamentos após a confirmação de sucesso do EmailJS. Em caso de falha, mantém os dados para continuar depois. Falhas de acesso ao armazenamento não impedem o uso do formulário. Os dados enviados são processados pelo EmailJS e pelo provedor de e-mail conectado.
 - Sem JavaScript, o endereço de e-mail continua acessível na página.
 

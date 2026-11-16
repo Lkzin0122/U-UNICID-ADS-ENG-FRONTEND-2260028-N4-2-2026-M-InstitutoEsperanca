@@ -4,6 +4,20 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { isPublicFile } = require('../server/public-files.cjs');
+test('pastas públicas não autorizam credenciais, backups ou arquivos ocultos', () => {
+  for (const filename of [
+    'assets/.env',
+    'js/credentials.json',
+    'assets/private.key',
+    'assets/backup.zip',
+    'assets/../.env',
+    'assets/folder/.hidden/file.js',
+  ])
+    assert.equal(isPublicFile(filename), false, filename);
+  for (const filename of ['index.html', 'js/site.js', 'assets/vendor/espeak-ng/espeak-ng.data'])
+    assert.equal(isPublicFile(filename), true, filename);
+});
 test('publicação inclui o chat e mantém código, base e segredos fora dos arquivos estáticos', () => {
   const root = path.resolve(__dirname, '..');
   const build = spawnSync(process.execPath, ['scripts/build_vercel.cjs'], {

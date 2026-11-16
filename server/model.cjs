@@ -150,6 +150,8 @@ async function callModel(messages, format, { config, signal, externalSignal, fet
       method: 'POST',
       headers,
       signal,
+      // Não encaminhar a consulta a outro destino em caso de redirecionamento do provedor.
+      redirect: 'error',
       body: JSON.stringify(body),
     });
     if (!response.ok) {

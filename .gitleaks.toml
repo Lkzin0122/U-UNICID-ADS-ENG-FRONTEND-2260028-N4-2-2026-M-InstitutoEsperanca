@@ -1,0 +1,10 @@
+title = "Instituto Esperança — regras de segredos"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "context7-api-key"
+description = "Chave privada do Context7"
+regex = '''ctx7sk-[A-Za-z0-9_-]{20,}'''
+keywords = ["ctx7sk-"]

@@ -10,3 +10,14 @@ node_modules/
 npm-debug.log*
 .ruff_cache/
 .venv/
+
+# Chaves privadas, configurações locais e relatórios que podem conter segredos.
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.pypirc
+*credentials*.json
+gitleaks-report*
+entrega-*.zip

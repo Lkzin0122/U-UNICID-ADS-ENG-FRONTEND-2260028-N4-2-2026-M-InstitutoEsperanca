@@ -3,3 +3,11 @@
 .vscode/
 .env
 .env.*
+*.zip
+*.pem
+*.key
+*.p12
+*.pfx
+.npmrc
+.pypirc
+.github/
